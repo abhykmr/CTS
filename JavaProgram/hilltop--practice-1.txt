@@ -1,0 +1,92 @@
+Description
+
+The manager of Hilltop Boutique, an online fashion and lifestyle store, has approached you to create software discounts for wholesale orders based on product categories. 
+
+Functional Requirements:
+ 
+Req.#
+
+Requirements Description  
+
+ Type (Class)	
+Method Name
+
+Parameters
+
+Description
+
+1
+
+Extract the details of the Boutique order and create an object for the OrderInfo class.
+
+ OrderUtility	
+extractDetails
+
+String orderDetails
+
+This method accepts order details separated by colons as an argument and extracts the properties of the OrderInfo from the argument. It then sets these values to the orderinfo object and returns the object.
+
+2
+
+Calculate the bill amount to be paid by the customer for the order placed.
+
+ OrderInfo	
+calculateBillAmount  
+
+-
+
+This method calculates the bill amount to be paid by the customer after applying discounts based on the following. 
+
+Category    	Discount       
+ethnic	10%
+western	20%
+
+Constraints:
+
+productCategory is case-insensitive.
+When the quantity of the product ordered is less than 100, a delivery charge of 500 is added to the bill amount.
+The calculated bill amount should be returned as double.
+When the productCategory doesn't match any of the categories mentioned above, the method should return -1.
+
+You are provided with the main method in the UserInterface class as code template, and it is excluded from evaluation.
+
+
+Note:
+
+Edit only the OrderInfo and OrderUtility classes to implement the business requirements.
+The methods and the constructor should be public, and the attributes of the class should be private.
+In the Sample Input / Output provided, the highlighted text in bold corresponds to the input given by the user and the rest of the text represents the output.
+Ensure that the names for classes, attributes, and methods are provided as specified in the question description.
+Please do not use System.exit(0); to terminate the program.
+
+Input Format:  <orderId>: <customerName>: <productName>: <productCategory>: <quantity>: <price>
+
+Sample Input / Output 1
+
+Enter the order details 
+
+2003:Olivia:kurta:ethnic:250:450 
+
+Order details
+
+Order Id: 2003 
+
+Customer Name: Olivia 
+
+Product Name: kurta 
+
+Product category: ethnic
+
+Quantity: 250
+
+Amount to be paid: 101250.0
+
+  
+
+Sample Input / Output 2 
+
+Enter the order details 
+
+101:Oliva:dress:bridal:350:680
+
+Invalid order details

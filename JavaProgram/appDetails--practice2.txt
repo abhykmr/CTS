@@ -1,0 +1,122 @@
+Description
+
+
+
+
+Olivia, an app developer, wants to track her apps' ratings on the Play Store to improve their features. The manager asks for your help in developing a Java program to meet this requirement.
+
+Functional Requirement:
+
+Req. #
+
+Requirement Description  
+
+Method Name
+
+Parameters
+
+Responsibilities
+
+1
+
+Add the appName and its rating into appMap.
+
+ addAppDetails
+
+String appName, double rating  
+
+This method should add the appName and its rating into the appMap, which is implemented as a HashMap.
+
+Note: The appMap takes appName as key and rating as value.
+
+Constraints:
+
+appName is case-sensitive.
+2
+
+Find rating of the given app.
+
+
+
+ findAppRating
+
+String appName
+
+This method accepts appName as the argument and find the rating based on the specified appName.
+
+ Constraints:
+
+appName is case- sensitive.
+The appRating should be returned as double.
+When the appName is not present in the Map, return -1.
+
+
+You are provided with the main method in the UserInterface class as code template, and it is excluded from evaluation.
+
+Note:
+
+Edit only the AppInfo class to implement the business requirements.
+The methods should be public, and the attributes of the class should be private. 
+In the Sample Input / Output provided, the highlighted text in bold corresponds to the input given by the user and the rest of the text represents the output.
+Ensure that the names for classes, attributes, and methods are provided as specified in the question description.
+Please do not use System.exit(0); to terminate the program.
+
+
+
+Sample Input / Output 1:
+
+Enter number of records to be added:
+
+5
+
+Enter the details (App name : rating):
+
+Duolingo:4 
+
+Udemy:4.6 
+
+Shopsy:2.7 
+
+Picsart:2.9
+
+KineMaster video editor:3.6
+
+Enter the app name to be searched
+
+picsart
+
+Rating of picsart app is 2.9
+
+
+
+Sample Input / Output 2:
+
+Enter number of records to be added:
+
+3
+
+Enter the details (App name : rating):
+
+Spotify:4
+
+pay hub:4.7
+
+crop doctor:3.8
+
+Enter the app name to be searched
+
+twitter
+
+twitter is an invalid app name
+
+AppInfo.java
+UserInterface.java
+
+client
+Code Saved!
+TerminalX
+FeedbackX
+Next activity
+The Zero Effect
+Kudos!
+You have earned some XP points.

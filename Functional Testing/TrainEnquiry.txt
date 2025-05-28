@@ -1,0 +1,42 @@
+Read the requirement carefully and submit Test deliverables as mentioned below.
+
+Deliverable 1:  Identify four test scenarios for the mentioned requirement
+
+Deliverable 2: Write all the test cases using the appropriate testing techniques wherever applicable for the below requirement.
+
+Deliverable 3: Log the below mentioned defects effectively with all the details, relating the requirement mentioned such that the developers would understand.
+
+Note: you need not run any application. Ensure you submit the deliverables – test scenario, test case, and defect log. Use appropriate test artifact provided in the attachment.
+
+Write the Defect Description for the below Test Case.
+
+On clicking the Calendar icon and selecting the Journey date, the values are not getting displayed in the “Journey Date” textbox..
+On entering the first 3 characters of the places in the “From” Textbox and “To” textbox, all places starting with those characters are not listed.
+The user fills all the details and then clicks on “Clear” button; the data does not get erased.
+REQUIREMENT:
+
+Here is the requirement of Indian railways. This application is used to search for trains, Fare and the accommodation availability between stations. The below screen will help the user to search for trains based on From and To locations, Service Class, Journey date, Departure and Arrival time, Train type and the Journey type.
+
+Fields:
+
+From – Textbox.
+The current values available in database - Chennai, Coimbatore, Madurai
+To – Textbox.  
+The current values available in database - Tiruchirapalli, Kanyakumari
+Note: 
+3 to 4 starting characters can be given in the “From” & “To” Text Box. This will display a list of places with those starting characters and the user has to select from the list.
+Class – Dropdown box. 
+Current values available in database – Sleeper Class, First AC, Second AC.
+Date of Journey: Textbox.
+On clicking calendar Icon, Calendar will be displayed and user can select the date of journey. Date is displayed in DD-MM format.
+Departure Time Between: List Box.
+The user has to select the time from the list and the Time will be in 24 Hr Format
+Arrival Time Between: List Box.
+The user has to select the time from the list and the Time will be in 24 Hr Format
+Train Type – List Box.
+Current values available in database – All Types, Rajdhani, Superfast
+Journey type: Radio Button. (One-Way or Return Journey)
+Get Details – Button.
+The User after filling the required details, clicks the “Get Details” Button. The System validates the data. If Valid, The details of those trains meeting the User’s criteria are displayed in the Next Screen. If invalid, appropriate Error Messages are displayed.
+Clear – Button
+The User if after filling the details, clicks this “Clear” Button, the System erases the data entered/selected.
