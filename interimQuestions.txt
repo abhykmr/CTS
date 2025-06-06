@@ -1,0 +1,31 @@
+1. Create a for loop to print 1-10 except 5 & 8
+2. Create a while loop and implement break keyword
+3. Create a do while loop and implement continue keyword
+4. Create a Array List with Type as String; Add, update and Remove elements. Implement for each loop to print all values
+5. Create a HashMap with Integer and String Combination. Implement for each loop to print keys, values.
+6. Try to Create Xpath using forward and Reverse axis
+7. Create Xpath using and, or, text, contains, starts-with and end-width
+8. Create CSS using contains, starts-with and end-width
+9. Implement steps to create a static method for capruring screenshots
+10. Add steps to handle alert or pop up
+11. Add steps to handle iframe
+12. Add steps to interact with dropdown
+13. Implement Data Driven Testing and Parameterization
+14. Implement TestNG Group Concepts and Parallel Test Execution
+15. Give the complete annotations step by step for GIT Lifecycle
+
+16. Add steps to interact with webedit text box
+17. Call all API Navigation Commands
+18. Implement findElements and using that try to print the no of links and link text contents for google page
+19. Add Steps to drag and drop a element
+20. Add Steps for TestNG Hard and Soft Assertions
+21. Handle Array Index Out of Bound Exception using try catch and finally block
+22. HANDLE multiple windows
+23. Handle Cookies
+24. Check the existance of any WebElement
+25. Identify a Element using Link Text and Partial Link Text
+26. Implement ISuite Listeners in Selenium TestNG
+27. Implement IRetryAnalyzer Listeners
+28. Write down important steps for Date and Calendar function
+29. Implement Method Overloadding and Method Overridding
+30. Implement Java Encaptulation
