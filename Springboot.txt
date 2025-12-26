@@ -1,0 +1,188 @@
+Courses/Modules	Topics	Sub-Topics
+Agile Methodology	Introduction to Agile	Overview of Agile principles and values, Comparison with traditional waterfall methodology
+	Agile Manifesto	Understanding the four Agile values and twelve principles, Exploring how these values and principles guide Agile practices
+	Scrum Framework	Roles in Scrum (Product Owner, Scrum Master, Development Team), Scrum ceremonies (Sprint Planning, Daily Stand-up, Sprint Review, Sprint Retrospective), Scrum artifacts (Product Backlog, Sprint Backlog, Increment)
+	Agile Estimation and Planning	Techniques for Agile estimation (Story Points, Planning Poker), Agile planning techniques (Release Planning, Iteration Planning)
+	Agile User Stories	Writing effective user stories, Acceptance criteria for user stories
+	Agile Metrics and Reporting	Key Agile metrics (Velocity, Burndown Charts), Reporting progress in Agile projects
+GIT	Introduction to Version Control	Version Control Concepts-Definition and Purpose, Benefits of Version Control, Types of Version Control Systems
+	Understanding Git	What is Git-Introduction to Git, Git as a Distributed Version Control System (DVCS); Git Components-Working Directory, Staging Area, Repository
+	Setting Up Git	Installing Git-Download and Installation Steps, Configuring Basic Settings (username, email); Creating a Git Repository-Initializing a New Repository, Cloning an Existing Repository; 
+	Basic Git Commands	git init and git clone - Initializing a New Repository, Cloning an Existing Repository; git add-Staging Changes, Using Wildcards; git commit-Committing Changes, Adding Commit Messages; git status-Checking the Status of Your Repository; git log-Viewing Commit History, Options for Customizing Log Output;
+	Branching and Merging	Introduction to Branching-Creating and Managing Branches, Switching Between Branches; Merging Changes-Merging Branches, Handling Merge Conflicts; Branching Strategies-Feature Branching, Release Branching, Git Flow Workflow;
+	Remote Repositories	Adding Remote Repositories-Linking Local and Remote Repositories, Multiple Remotes; git pull and git push-Pulling Changes from a Remote Repository, Pushing Changes to a Remote Repository; Handling Remote Branches-Tracking and Creating Remote Branches;
+	Collaborating with Git	Forking and Pull Requests-Forking a Repository, Creating and Managing Pull Requests; Git Collaboration Workflows-Centralized Workflow, Feature Branch Workflow, Forking Workflow, Gitflow Workflow
+Angular (v19)	Introduction to Angular and Setting Up Environment	Overview of Angular, Setting Up the Development Environment-Installing Angular CLI and Creating a New Angular Project, Angular Project Structure and Files, Running and Building Angular Applications
+	TypeScript Essentials for Angular	Basic Types, Type Annotations, Interfaces and Type Aliases, Functions, Classes, Modules and Imports/Exports, Generics, Union and Intersection Types, Type Assertions and Type Guards, Asynchronous Programming
+	Angular Components	Creating Components, Component Interaction - Data Binding: Property Binding, Event Binding, and Two-way Binding, Component Lifecycle Hooks (ngOnInit, ngOnChanges, etc.), Parent-Child Component Communication (@Input and @Output)
+	Directives and Pipes	Built-in Directives - Structural Directives: *ngIf, *ngFor, and *ngSwitch, Attribute Directives: ngClass, ngStyle, ngModel, Custom Directives, Pipes - Built-in Pipes (e.g., date, uppercase, currency), Creating Custom Pipes
+	Angular Forms	Template-driven Forms - Basics of Template-driven Forms and Form Validation, Binding Data with ngModel and Handling Form Submission Reactive Forms - Setting Up Reactive Forms with FormBuilder, Form Control, FormGroup, and FormArray, Reactive Form Validation (Built-in Validators, Custom Validators)
+	Dependency Injection and Services	Introduction to Dependency Injection, Creating and Using Services, Hierarchical Dependency Injection
+	Angular Routing and Navigation	Setting Up Routing - Configuring Routes in app-routing.module.ts, Route Parameters and Query Parameters, Nested Routes and Lazy Loading Modules
+	Router Features	Router Guards: CanActivate, CanDeactivate, Resolve, Router Events and Navigation Lifecycle, Passing Data Between Routes
+	HTTP Client and APIs	Using Angular HTTP Client - Setting Up HTTPClientModule and Making HTTP Requests, GET, POST, PUT, DELETE Requests with HTTP Client , Handling API Responses - Observables and Promises in Angular, Error Handling and Retry Strategies, Interceptors for Modifying Requests and Responses
+	State Management in Angular	Introduction to State Management, Using Services for State Management, NgRx for Advanced State Management
+	Reactive Programming with RxJS	RxJS Observables and Operators, Reactive Patterns in Angular
+	Testing Angular Applications	Unit Testing with Jasmine and Karma, Component and Service Testing, End-to-End (E2E) Testing
+	Introduction to Node.js	Overview of Node.js and its role in web development, Node.js architecture: Single-threaded, non-blocking I/O, Node.js Module System - Understanding modules and require(), Exporting and importing modules
+	Core Node.js Modules	File System Module (fs) - Reading and writing files, Basic asynchronous operations with fs (e.g., readFile and writeFile), HTTP Module - Creating a basic HTTP server, Handling simple HTTP requests and responses
+	Asynchronous Programming Basics	Callbacks and Promises - Using callbacks for asynchronous operations, Introduction to Promises and .then() syntax, Async/Await Basics - Using async/await for cleaner asynchronous code
+Application Debugging - Front-end 	Debugging Angular Applications with Chrome DevTools	Setting Up the Environment, Launching the Application, Opening Chrome DevTools, Inspecting Elements, Debugging JavaScript, Debugging Angular Code
+	Debugging with Visual Studio Code	Installing Angular Extension, Attaching Visual Studio Code Debugger, Breakpoints and Watches, Debugging State Management
+
+
+
+
+
+
+
+Courses/Modules	Topics	Sub-Topics
+SOLID Design Principles	SOLID Principles	What & Why, The SOLID Principles of Object-Oriented Programming - The Single Responsibility Principle, The Open-Closed Principle, The Liskov Substitution Principle, The Interface Segregation Principle, The Dependency Inversion Principle ;
+Spring with Maven	Introduction to Spring Framework	Overview of the Spring Framework, Inversion of Control (IoC) and Dependency Injection (DI), Spring modules: Core, AOP, Data Access, ORM, MVC, etc., Benefits of using Spring in Java applications
+	Setting up a Spring Project with Maven	Introduction to Maven build tool, Creating a new Maven project, Adding Spring dependencies in the pom.xml file, Configuring Maven for building and managing dependencies
+	Spring IoC Container	Understanding the IoC container, Configuring the Spring IoC container using XML, Defining beans and their dependencies, ApplicationContext and BeanFactory
+	Spring Bean Configuration	Using annotations for bean configuration, Component scanning and Stereotype annotations, Java-based configuration with @Configuration, Mixing XML and Java-based configurations
+	Dependency Injection in Spring	Constructor injection, Setter injection, Autowiring dependencies, Qualifiers for resolving autowiring conflicts, Using @Resource and @Inject annotations
+	Spring AOP (Aspect-Oriented Programming)	Introduction to AOP concepts, Creating aspects and advice, Pointcuts and Joinpoints, AOP proxying mechanisms, Integrating AOP with Spring applications
+	Spring MVC and ORM	Overview of MVC and ORM, Configuration, Controller Layer, Model Layer, View Layer, Form Handling, Querying, Validation, Exception Handling
+	Spring Boot (Introduction)	Overview of Spring Boot, Simplifying Spring configuration with Boot, Creating a Spring Boot application, Auto-configuration and convention over configuration
+	Reactive Programming with Spring WebFlux	Overview of Reactive Web Framework and Non-blocking I/O, Creating and Configuring Reactive Controllers, Handling HTTP Requests and Responses with Mono and Flux, Integrating with NoSQL Databases using Reactive Repositories, Writing Unit and Integration Tests for Reactive Services
+Spring Data JPA with Spring Boot, Hibernate	Introduction to Spring Data JPA	Overview of Spring Data JPA, Relationship between JPA and Spring Data JPA, Advantages of using Spring Data JPA in Spring Boot
+	Setting Up a Spring Boot Project with Spring Data JPA	Creating a Spring Boot project, Adding Spring Data JPA dependencies, Configuring the application properties for database connection
+	Entity Mapping	Introduction to JPA entities, Mapping entities to database tables, Defining primary keys and relationships, Using annotations like @Entity, @Table, @Id, @GeneratedValue, etc.
+	Spring Data Repositories	Overview of Spring Data repositories, Creating repositories for entities, Derived queries from method names, Using Query DSL with @Query annotation, Custom query methods
+	CRUD Operations with Spring Data JPA	Implementing basic CRUD operations, Using JpaRepository methods for common operations, Executing custom queries with the repository
+	Query Methods and Named Queries	Defining query methods in repositories, Using keywords in query methods, Named queries with @NamedQuery and @NamedQueries, Executing dynamic queries
+	Pagination and Sorting	Implementing pagination with Page and Pageable, Sorting query results, Combining pagination and sorting
+	Auditing with Spring Data JPA	Enabling entity auditing, Using @CreatedBy, @LastModifiedBy, @CreatedDate, and @LastModifiedDate, Configuring auditing properties
+	Spring Data JPA Projections	Creating projections for specific data subsets, Interface-based and class-based projections, Using @Value and constructor expressions, Controlling the fetched data with projections
+	Spring Data JPA and Spring Boot Integration	Leveraging Spring Boot auto-configuration, Customizing data source configuration, Externalizing configuration with application properties, Managing multiple data sources
+	Spring Data JPA and Hibernate	Introduction to Spring Data JPA and Hibernate, Hibernate-specific Features - Leveraging Hibernate-specific annotations, Configuring Hibernate dialect and properties, Batch processing with Hibernate;
+
+
+
+Courses/Modules	Topics	Sub-Topics
+Spring REST with Spring Boot 3	Introduction to Spring REST and Spring Boot 3	Overview of RESTful architecture, Introduction to Spring REST, Benefits of using Spring Boot for RESTful services, Setting up a Spring Boot project for REST, What's New in Spring Boot 3?
+	Building a Simple REST Controller	Creating a basic REST controller, Defining request mappings, Handling HTTP methods (GET, POST, PUT, DELETE), Returning JSON responses
+	Request and Response Handling	Handling path variables and query parameters, Request body and form data processing, Customizing response status and headers, Exception handling in REST controllers
+	RESTful Resource Representation with DTOs	"Introduction to Data Transfer Objects (DTOs)
+Mapping entities to DTOs, Customizing JSON serialization and deserialization, Managing versioning and backward compatibility"
+	RESTful CRUD Operations	Implementing Create, Read, Update, and Delete operations, Utilizing HTTP methods for CRUD operations, Validating input data with annotations, Optimistic locking for concurrent updates
+	RESTful HATEOAS	Understanding HATEOAS (Hypermedia as the Engine of Application State), Adding links to resources, Building and consuming hypermedia-driven APIs
+	Content Negotiation and Media Types	"Configuring content negotiation
+Supporting different media types (JSON, XML), Using the Accept header for content negotiation, Producing and consuming custom media types"
+	Spring Boot Actuator for REST Monitoring	Integrating Spring Boot Actuator, Monitoring and managing RESTful services, Exposing custom metrics, Securing and customizing Actuator endpoints
+	Security and Authentication in RESTful APIs	Securing RESTful endpoints with Spring Security, Implementing authentication and authorization, Token-based authentication (JWT), Handling Cross-Origin Resource Sharing (CORS)
+	Testing RESTful APIs	Unit testing REST controllers with JUnit and Mockito, Integration testing for REST services, Using Spring Test and MockMvc, Test coverage and best practices
+	Documenting RESTful APIs	Introduction to API documentation tools (Swagger, Springdoc), Documenting REST APIs with Swagger/OpenAPI, Generating API documentation, Best practices for API documentation
+Microservices with Spring Boot 3 and Spring Cloud	Introduction to Microservices Architecture (MSA)	Overview of monolithic vs. microservices architecture, Advantages and challenges of microservices, Characteristics of microservices, Use cases and scenarios suitable for microservices
+	Spring Cloud for Microservices	Introduction to Spring Cloud, Features and components of Spring Cloud, Configuring microservices with Spring Cloud, Service discovery and registration with Spring Cloud Netflix Eureka
+	Spring Security for Microservices	Overview of Spring Security, Securing microservices using Spring Security, Authentication and authorization in a microservices environment, Configuring security for RESTful APIs
+	Centralized Authentication and Authorization	Implementing centralized authentication with OAuth 2.1/OIDC, Configuring Authorization Servers and Resource Servers, Using JSON Web Tokens (JWT) for secure communication, Single Sign-On (SSO) in a microservices architecture
+	Microservices Communication with Spring Cloud	Inter-service communication patterns, Using Spring Cloud Feign for declarative REST clients, Service orchestration and choreography, Circuit Breaker pattern with Spring Cloud Circuit Breaker
+	API Gateway and Edge Services	Introduction to API Gateways, Configuring API Gateway with Spring Cloud Gateway, Implementing edge services for routing and filtering, Load balancing and resilience patterns in an API Gateway
+	Fault Tolerance and Resilience	Implementing fault tolerance with Spring Cloud Hystrix, Circuit Breaker and fallback mechanisms, Retrying and fallback strategies for resilience, Handling transient faults in microservices
+	Spring Cloud Config	Externalized configuration in microservices, Configuring microservices using Spring Cloud Config, Dynamic configuration updates and refresh, Managing configuration properties for different environments
+	Monitoring and Metrics in Microservices	Introduction to microservices monitoring, Using Spring Boot Actuator for monitoring endpoints, Integrating monitoring tools (Prometheus, Grafana), Application and system-level metrics in microservices
+	Security Best Practices in Microservices	Role-based access control (RBAC) in microservices, Securing communication between microservices, Securing sensitive data in microservices, Implementing security policies and practices
+Application Debugging-Backend	Debugging Fundamentals	Understanding the Debugging Process, Setting Up Breakpoints, Inspecting Variables and Data
+	Debugging REST Endpoints	Debugging Request Mapping and URL Handling, Analyzing Request and Response Objects, Handling Authentication and Authorization Issues
+	Debugging Asynchronous Code	Handling Asynchronous Endpoint Calls, Inspecting Threads and Concurrency Issues
+
+
+
+
+
+Courses/Modules	Topics	Sub-Topics
+TDD using JUnit and Mockito	Introduction to Test-Driven Development (TDD)	Definition and principles of TDD, Benefits of TDD in software development, TDD lifecycle: Red-Green-Refactor, TDD vs. traditional development
+	Getting Started with JUnit	Overview of JUnit framework, Writing and running simple JUnit tests, Annotations in JUnit (e.g., @Test, @Before, @After), Assertions for verifying expected outcomes, Test fixture setup and teardown
+	Advanced JUnit Features	Parameterized tests, Test suites and categories, Test execution order, Exception testing, Timeout and performance testing
+	Mockito Basics	Introduction to Mockito, Mocking and stubbing, Verifying interactions, Argument matching, Handling void methods
+	Testing Spring Applications with JUnit and Mockito	Overview of Spring testing, Testing controllers, services, and repositories, Integration testing with Spring Boot, Mocking dependencies in Spring tests
+	Mocking External Dependencies	Mocking databases and repositories, Mocking external services (e.g., RESTful APIs), Mocking file I/O and network interactions, Strategies for testing code with external dependencies
+SLF4J and Lombok	SLF4J, Lombok	"SLF4J vs. Log4J vs. Lombok, SLF4J - Env Setup, Sample Logging, SLF4j - error messages, warning levels, parameterized logging, different appenders
+Lombok - Configuring Project using Lombok
+Logging using Lombok annotations"
+Code Quality Standards & SonarQube	Continuous Code Quality using SONAR	"Clean as you code - SONAR Intro, benefits
+Using SonarQube with Maven - Update connect URLs, Proxies in POM, Sonar architecture - how it works? SonarQube client and Server, Sonar Database
+Running Maven Sonar Goals for Static Code Analysis
+Use SonarQube to find the following:
+Finding Duplicate Code, Cyclomatic Complexity, Sphagetti Design, Lack of Unit Tests, Improper Coding Standards, Potential Bugs, Insufficient Comments,Interpreting Sonar Logs"
+
+
+
+
+
+Courses/Modules	Topics	Sub-Topics
+Docker	Introduction to Docker	Container Introduction, Container architecture, Overview of Docker, Docker architecture - Docker file, Working with containers, Container Communication, Docker Compose, open source; create, deploy and run applications in containers, package application, virtual machine, image, container
+	Hosting App using nginx, using command line and Dockerfile	nginx, pull, run, listing images, container name, detaching the process, port number, volumes, listing containers, listing non running containers, starting and stoping a container, Dockerfile, FROM, COPY, ENTRYPOINT, build, remove images and containers
+	Hosting a MySQL database with schema creation using docker	docker-compose.yml, docker-compose up command, mapping MySQL data file to local folder, schema creation script execution definition, defining port, password definition, docker compose up, executing mysql client on the mysql server container
+	Hosting a REST API Microservice using docker	Defining Dockerfile for REST API, building Dockerfile from docker-compose.yml, using depends_on in docker compose to define dependencies, using links to establish connectivity between REST API service and MySQL server, modify connection properties in REST API to connect to the docker instance
+Cloud and DevOps Basics using AWS	Introduction to Cloud Computing	Traditional IT deployment, Virtualization, Service-Oriented Architecture, Cloud vs On-Prem data centres, Pros and Cons
+	Cloud Service Models	IaaS, PaaS, SaaS
+	Cloud Deployment Models	Public cloud model, Private cloud model, Hybrid cloud model, Community cloud model
+	Cloud Service Providers	AWS, Azure, GCP
+	Advantages of Cloud Computing and various services provided by AWS	Benefits of Cloud computing, Various services available in AWS like Compute, Storage, Database etc. EC2, S3, Elastic BeanStalk
+	Introduction to AWS	Overview of cloud computing, Introduction to AWS services, Creating an AWS account, AWS global infrastructure
+	AWS Compute Services	Amazon EC2-Launching and configuring instances, AMIs (Amazon Machine Images), Security groups and key pairs; Amazon ECS-Docker and container basics, Creating and managing containers
+	AWS Storage Services	Amazon S3-Bucket creation and configuration, Uploading and downloading objects, S3 storage classes;
+		Amazon EBS-Creating and attaching volumes, Snapshotting and backup
+	AWS Networking	Amazon VPC-Subnets, route tables, and security groups, VPC peering; Elastic Load Balancer-Application Load Balancer (ALB) and Network Load Balancer (NLB)
+	AWS Database Services	Amazon RDS-Creating and managing database instances, Multi-AZ deployments;
+		Amazon DynamoDB-NoSQL basics
+		Creating and querying tables
+	AWS Identity and Access Management (IAM)	Users, groups, and roles, Policies and permissions, MFA (Multi-Factor Authentication)
+	AWS Serverless Computing	AWS Lambda-Creating and deploying functions, Integrating with other AWS services; AWS API Gateway-Creating and managing APIs
+	Introduction to AWS DevOps	Overview of DevOps, AWS Cloud Services, Infrastructure as Code (IaC), Continuous Integration (CI), Continuous Deployment (CD)
+	AWS CodeCommit	Introduction to AWS CodeCommit, Setting Up CodeCommit, Basic Version Control with CodeCommit, CodeCommit Workflows, Integration with AWS CodeBuild and CodePipeline
+	AWS CodeBuild	Introduction to AWS CodeBuild, Configuring CodeBuild Projects, Buildspec File, CodeBuild Artifacts, Customizing Build Environments
+	AWS CodeDeploy	Introduction to AWS CodeDeploy, Setting Up CodeDeploy, Deployment Hooks and AppSpec File, Rollbacks and Revisions, CodeDeploy Integrations
+	AWS CodePipeline	Introduction to AWS CodePipeline, Creating CodePipeline, Pipeline Execution and Artifacts, Pipeline Integrations, Pipeline Monitoring and Troubleshooting
+
+
+
+
+Week	Session Name	Module	Duration
+Week 1	Business communication	Email Etiquette	2
+Week 1	Cognorator - Verbal Communication	Group Discussion	2
+Week 2	Learning Agility	Problem Solving and Critical Thinking	2
+Week 2	Cognorator - Verbal Communication	Debate	2
+Week 3	Business communication	Conference call	2
+Week 3	Basic English	Tenses and SVA	2
+Week 4	Cognorator - Verbal Communication	Story Telling	2
+Week 4	Business Communication	Email and Chat coaching	2
+Week 5 - Before Interim Evaluation	Interview Clinic	Interview Skills	2
+	Mock Interview	Interview Skills	4
+Week 5	Business Communication	Coaching	2
+Week 6	Basic English	Article and basic grammar & SVA, Parts of speech	2
+Week 6	Cognorator - Verbal Communication	In a nutshell	2
+Week 7	Business Communication	Email and Chat coaching	2
+Week 7	Business Communication	Conference call coahing	2
+week 8	Cognorator - Verbal Communication	Presentation Skills	2
+Week 8 - Before Final Evaluation	Client interfacing Skills	Effective communication and Team work	2
+	Project Simulation	Client interfacing, stakeholder management etc	3
+
+
+
+
+Week	Session Name	Module	Duration
+Week 1	Business communication	Email Etiquette	2
+Week 1	Cognorator - Verbal Communication	Group Discussion	2
+Week 2	Learning Agility	Problem Solving and Critical Thinking	2
+Week 2	Cognorator - Verbal Communication	Debate	2
+Week 3	Business communication	Conference call	2
+Week 3	Basic English	Tenses and SVA	2
+Week 4	Cognorator - Verbal Communication	Story Telling	2
+Week 4	Business Communication	Email and Chat coaching	2
+Week 5 - Before Interim Evaluation	Interview Clinic	Interview Skills	2
+	Mock Interview	Interview Skills	4
+Week 5	Business Communication	Coaching	2
+Week 6	Basic English	Article and basic grammar & SVA, Parts of speech	2
+Week 6	Cognorator - Verbal Communication	In a nutshell	2
+Week 7	Business Communication	Email and Chat coaching	2
+Week 7	Business Communication	Conference call coahing	2
+week 8	Cognorator - Verbal Communication	Presentation Skills	2
+Week 8 - Before Final Evaluation	Client interfacing Skills	Effective communication and Team work	2
+	Project Simulation	Client interfacing, stakeholder management etc	3
+
+
