@@ -1,0 +1,612 @@
+CPC - Project Overview on Platforms & Products-20251016_120834-Meeting Recording
+October 16, 2025, 11:08AM
+49m 53s
+
+B S, Dineshkumar [S] started transcription
+
+Ashly Joseph   0:10
+Yeah, I hope my screen is visible.
+
+Dhakate, Khushali Ramkishan (Cognizant)   0:13
+Yeah, it is visible actually.
+
+B S, Dineshkumar [S]   0:13
+Yep.
+
+Ashly Joseph   0:15
+OK. Yeah. So yesterday we processed the NB like we so have to create an NB in actually. So today let's see processing an empty OK.
+We have to go to the options, so I have. Yeah.
+
+B S, Dineshkumar [S]   0:29
+Yeah.
+Yeah, but before that couple of thing MTA transaction, it is a midterm amendment. The transaction, while we call it as MTA and this MTA transaction we.
+I have to it will be enabled and we will be allowed to process within the policy period. When I say within the policy period, the policy TNU is for one year, so like, if you're taking a new business policy from 1st of October. So the expiry date of that policy, it would be.
+The 30th of September 2026. The tenure is one year. Within that one year tenure, a customer might have taken a set of coverage that is required based on their need for that policy. And that requirement may get change when they are into the policy period.
+Get to say like they have got a policy on 1st of October and suddenly they may think like, oh I I need a discoverage on this policy or they may need some changes related to the policy holder detail or if they have changed their.
+Business location from one location to another location. Then the address needs to be updated. So all this changes has whichever that they want to do within the policy tenure within. That's from the start date of policy and by the end date of policy. If they want to make any change then that.
+Transaction is MTA transaction midterm amendment and this MTA. There are two types, one it is financial finance related NTA and non financial it. There are two classification one is financial transaction.
+A non financial MTA transaction financial transaction is whatever the change that we do on a policy that will incur an premium that we may have to pay additional. So that is a financial MTA transaction, a non financial transaction is any change related to address or a name.
+So it it's mere the changes that we do on the policyholder personal details or the e-mail. So they are classified as a non financial MTA transfer here that will not incur any premium addition to the policy.
+OK.
+So there's a two classification. Yeah, I can go ahead.
+Ashley.
+
+Ashly Joseph   3:06
+Yeah, yeah. OK. So I have been doing. So I didn't see that I was screen sharing. I was, I just cloned a policy and I created the NB one second. OK, so you don't have to worry about what I did earlier. So yeah, now let's start with the process MTA.
+So this is my new business policy. So again in the options, if you Scroll down, you will see in the actions you will see and process MTA, OK. So when you want to process an MTA, when I'm actually score, you will click on this button.
+You will be in the new. You should select this new business one in the three. OK then you will see the process empty option.
+
+B S, Dineshkumar [S]   3:47
+Yeah. And one more thing actually. Can you just show the close this new business start date we can just see on this policy, so if you see the new business start date is 14/11/2025, it is in future date?
+
+Ashly Joseph   3:48
+I.
+Yeah.
+
+B S, Dineshkumar [S]   4:05
+OK, so now any MTA change on this policy that we do, it has to be on or after this date it won't allow you to select a date within this policy tenure period.
+OK. Yeah.
+
+Ashly Joseph   4:26
+OK. Yeah. So yeah, process MTA. So again we have to select the effective date. So this is our NP effective date. Yeah, 14th, 11th. So let's say we are making we can make usually we don't make an amendment on the same day, right.
+Maybe from the next day or any days from our effective NB effective date we can take an MTA effective date.
+
+B S, Dineshkumar [S]   4:50
+Can have December 1st, yeah.
+
+Ashly Joseph   4:52
+Yeah.
+OK, so yeah, I have selected December 1st but see the term end date remains the same as NP end date. OK so we are not see MTA is like within the same period you are making an amendment in the policy so it's just that that MPA will be effective from December 1st.
+
+B S, Dineshkumar [S]   5:14
+Yeah. And that change it will be on that policy till the end end period of that policy. So the term ended there is no change whatever the change that we make that is still that will be active till end of that policy period.
+
+Ashly Joseph   5:15
+Yeah.
+Yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   5:34
+Since set up the Jan November 1st, we are changing the effective date itself to December 1st. That is the MDAMTA we are making correct?
+
+B S, Dineshkumar [S]   5:43
+Yeah. Effective date of the change we have selected as 1st of December change, yeah, yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   5:46
+OK, I put the date of the change we have set up OK. Sorry. OK OK, sure.
+
+Ashly Joseph   5:49
+Yeah, yeah. The exact change we will do in the risk details, yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   5:53
+OK.
+
+B S, Dineshkumar [S]   5:53
+Yeah.
+
+Dhakate, Khushali Ramkishan (Cognizant)   5:54
+So this is permanent Mt, right?
+
+Thiruchitrambalam, Chellakannan (Cognizant)   5:57
+Leave it.
+
+B S, Dineshkumar [S]   5:57
+Yeah, yeah, yeah. Permanent MDA. Permanent MDA in the sense that would be applicable till end end date of that policy. So the end date of that is this with respect to this policy, it is 13 November 2026. So whatever change that we do now.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   6:00
+I.
+The emails.
+Yeah.
+
+B S, Dineshkumar [S]   6:13
+That will be permanent till 13 November 2026.
+
+Dhakate, Khushali Ramkishan (Cognizant)   6:17
+Yeah, OK. English.
+
+Ashly Joseph   6:20
+OK, so the reason I'm taking as a general adjustment, OK, you can take it as per your requirement. And so I'm just giving general adjustment here. So we'll not change any options here click on save.
+So now you can see an entry for MTA here. This is the version reference for MTA. So since it is already populated, you can go to see. You can see here policy number remains the same. The effective date, start date and the term and date. You can see here.
+Reason is mentioned here and if you go to the risk details you can see whatever details we have entered in NBA everything is carry forwarded into MPA, but you are allowed to edit anything, OK.
+So.
+Let's add another premise. OK, at Mt, so I'm for.
+I'm doing taking this clone feature.
+So I have created. I see this is my premise attain B I'm saying that at TMTI want to add one more premise, one more property. So I'm changing this address.
+Yeah. So this is the change I am making. OK. I'm just added a premise which is of having the same risk details which of premise, but only thing is it is in different address line. OK, that's only change I did. OK, now let's click on.
+Save a button, then the submit button is enabled. You can submit it from here or you can see a submit button here also OK.
+
+B S, Dineshkumar [S]   8:14
+And yeah, one thing so the.
+Status it was saying complete and if we are making any change and any off section that we have not updated with any of mandatory values then the status it would be pending.
+So as and when we update all the mandatory questions on the change that we wanted to do, then the status it would be seen as complete. So only once we see the the status as complete only then we will be enabled with the submit button.
+To submit a MTA code.
+Until we get that status as complete the submit button, it won't be visible for us to get submit and get the code.
+OK.
+
+Ashly Joseph   9:10
+Yeah.
+Yeah. So here we are seeing it is big clean. OK, so let's see.
+Yeah, see, now the status is also reflecting to decline. So when it is sticking, we should see why it decline, right. So we have to go to rating notes.
+OK. Yeah, it's the same, yeah.
+
+B S, Dineshkumar [S]   9:31
+So any any of our referral or decline messages, if something that's not seems to be correct, we will come to know in this rating note section.
+
+Ashly Joseph   9:46
+Yeah. So it is saying that start date is too far in the future. So I think there is limit for empty start date for that property or landlords product. I think it's 45 days then the NP effective date I believe. So yeah. If we change the.
+Yeah.
+Effective date. So somewhere we keep number for not. Yeah effective date right.
+
+B S, Dineshkumar [S]   10:13
+Let's go over 2020, maybe.
+
+Ashly Joseph   10:16
+Yeah.
+OK, I'm just changing it save changes.
+So again, it is in risk. Details like I'm not making any other changes. Let's submit it, OK.
+And it's again declined.
+I think it's not working properly.
+
+Sivaraj, Bhuvanendiran [S]   10:52
+Has to can I try 30 days within 30 day from current day?
+
+Ashly Joseph   10:57
+Yeah, but again, yeah, 20th. We played right.
+
+Sivaraj, Bhuvanendiran [S]   10:57
+Yeah.
+
+B S, Dineshkumar [S]   11:04
+No from policy.
+
+Sivaraj, Bhuvanendiran [S]   11:05
+Let's try 15 number.
+
+Ashly Joseph   11:08
+Just the next day, I don't see it is working correctly because we normally don't create the policies in core.
+
+Sivaraj, Bhuvanendiran [S]   11:11
+Yeah.
+
+Ashly Joseph   11:18
+Yeah. Let's see.
+With the 15th rate, because our NB start date was 14, so I'm just telling an empty on the 15th.
+Yeah, I think what you said was correct. Yeah. Yeah. So next, see, you can see it is the risk updated. This is a new status. We didn't see it before, right? So refer continue or and obtained risk updated. We haven't seen it. OK. So now let's click on you can click on view this details.
+Continue. Let's click on view risk details so it will go to risk details screen directly. OK, so you can see few things have come highlighted in this blue colour.
+
+B S, Dineshkumar [S]   12:05
+Whatever the change on the section we have made, yeah, it will be. And one more thing to notice. You can see the status. It would be risk updated. So earlier it was complete as in when it was complete we submitted and it wasn't submitted and when we.
+
+Ashly Joseph   12:07
+See.
+
+B S, Dineshkumar [S]   12:24
+Clicked on that pop-up box to view risk the status it would get changed to view risk.
+Terry Risk updated.
+
+Ashly Joseph   12:34
+Yeah, yeah. It's completed away because, yeah, there is a change right from the previous transaction like previous submission we did. So that is why it was single premise in the previous time. And this time when we submitted, we had made a change. We added one more premise. So that is why that section is.
+Is coming highlighted in this colour. So now if you see there is no save button, there is no submit button here. Also there is no save or submit so whenever it is in risk updated status you will see risk updated or otherwise you will see refer risk updated.
+So that means there is a refer and there is a risk updation also happened in that scenario. Also you will not see save and submit button here. So one thing you have to do is you have to accept the risk changes. You can do it from here or you can do it from here.
+So once you accept the risk changes, you will see the submit button OK yeah. So if yeah, initially you want to add.
+
+B S, Dineshkumar [S]   13:32
+Yeah.
+And one more thing. Yeah. Yeah, one more thing. The status now you can see it is obtained. So the obtained status it refers to code when we will quite often use this term when we start working on design or execution so.
+As and when you see a status as obtained that refers to quote status here in Azureus. So now we have got an MTA quote and there will be couple of documents triggered once we have got a quote so we can show that Ashley. Yeah.
+So now you you see here, so there is an MTA code documents that got triggered so the code status when when we start saying like we need to get a code then whatever the code whatever the state whatever the I mean.
+
+Ashly Joseph   14:15
+Yeah.
+
+B S, Dineshkumar [S]   14:33
+Policy that we start and that is in obtained status that we see in azuris that refers to code.
+OK.
+
+Ashly Joseph   14:43
+So the document is same as we see in CC, B2C and core that it will prefer. It will be the same document only. So there is no different but it's like it's placed in a different folder. That's it.
+
+B S, Dineshkumar [S]   14:56
+Yep.
+
+Ashly Joseph   14:57
+OK. Yeah, so now.
+Yeah. See, whatever status we see here, right, the obtained risk updated refer same status. It was there in NB also. OK. But when I submitted at NB we didn't see the risk obtained risk updated status in some scenarios when you keep on resubmitting the same code with some changes right at the NB code.
+Creation zone itself. You will see this updated status at NB. Also you can see that renewal also OK it will be there for any transaction. So we just saw it for the first time at MTA. That's all OK, so now let's so now it is in opt in status so we can go and accept it.
+If you want, you can make some more changes and then again submit it. But yeah, I'm going to accept it. Wait before that, I want to show you the premium summary.
+So yeah, the premiums are very screen.
+So you can see that new premium is 4/20 and the number of days we are calculating is 364. Earlier it would have been 365. But yeah, we have created empty on the next day, right. So now it is 364 and again additional premium we have to pay is 186.
+OK. Yeah. Including the tax, we have to pay this much.
+And if you want the directing notes.
+You can see there is an endorsement. Yeah, this endorsement was not there at the NB. Let's see.
+See, we didn't have any endorsement earlier. We have these two endorsement sectional level endorsement right. There was no policy level endorsement. But when it came to MPA, we got a policy level endorsement scene. The product PC is policy level, right.
+And whatever endorsement was there for the sectional label at 10 B, it is coming here. So the reason why we have this endorsement is, as it say, it's a multi premise clause. Whenever you have it more than one premise and this endorsement will get added. This is just a node to the customer. You can consider in such a such a sense.
+Yeah. So that is why it got added at empty. But yeah, if you had two premises at NB, you would have seen this endorsement at NB level also. OK, so now let's accept the wizard. Let's go to buy the policy. So we will click on accept Wizard.
+Yeah. So click next next and accept.
+And click on open policy.
+Yeah, so now our policy is accepted. So if you see.
+Yeah, that it is. The same insurance number will be the same. But yeah, the status is accepted. Let's go to electronic file.
+You can see it MTA accept statement of fact not MTA accept schedule. That is the policy level documents earlier we saw only two documents code level documents and the premium summary and all will remain the same.
+So the same details will be there and the rating mods also.
+So yeah, this is how you will create then.
+In. Yeah, sorry. Empty any queries on this.
+OK. So again you can see the process empty once again here you can have multiple empties on a policy. OK you can have an empty after no business and you have an empty and again you can process one more empty and or else let's say you have a new business after one day you renewed it.
+And after renewable, you have to make an adjustment. Then also you can process an empty. OK, so shall we go to renewable now, Dinesh?
+
+B S, Dineshkumar [S]   19:15
+Yeah, yeah, yeah.
+
+Ashly Joseph   19:17
+OK. Yeah. So when to process the renewal, yeah.
+
+B S, Dineshkumar [S]   19:19
+And yeah, before that, yes, yeah.
+
+Dhakate, Khushali Ramkishan (Cognizant)   19:21
+Oh.
+Actually, how many documents will generate after creating after performing MD?
+
+Ashly Joseph   19:32
+Uh.
+
+B S, Dineshkumar [S]   19:32
+Yeah. Again on that kushali for each and every transaction for new business code, whatever the document that needs to be triggered, we will get as a requirement there will be a coverage metrics where you will see a document that needs to be triggered.
+
+Ashly Joseph   19:34
+Yeah, go ahead.
+
+B S, Dineshkumar [S]   19:53
+Do you have a landlord handwriting Ashley?
+
+Dhakate, Khushali Ramkishan (Cognizant)   19:55
+Right.
+
+Ashly Joseph   19:58
+Which one? The Dennis.
+
+B S, Dineshkumar [S]   19:59
+And sorry, landlord and rating spec.
+
+Ashly Joseph   20:03
+And writing spec.
+
+B S, Dineshkumar [S]   20:07
+So that'll be a trigger matrix document trigger matrix that will show you like for new business at code status which document that needs to be triggered. So whichever the documents that.
+We have on the document trigger metrics those documents. It would get triggered.
+
+Ashly Joseph   20:28
+Uh, we need umm control the document, right?
+
+B S, Dineshkumar [S]   20:32
+No, no. Yeah, this and yeah, I opened it.
+
+Ashly Joseph   20:33
+Here we have.
+
+B S, Dineshkumar [S]   20:39
+Yeah.
+
+Ashly Joseph   20:45
+Policy governing policy submarine.
+And.
+
+B S, Dineshkumar [S]   20:53
+Can you? Yeah. Show the list of.
+And there needs to be a document trigger decline. Scroll down.
+Let's Scroll down.
+
+Ashly Joseph   21:13
+Yeah, this is the last one product over me.
+
+B S, Dineshkumar [S]   21:17
+OK.
+OK. Yeah. Maybe we can show in the next session, I'll get that. But yeah, Kushali, there will be a requirement we will get it like which document that needs to be triggered for each transaction. So based on that requirement we will get the documents.
+To get triggered. So as far as this policy, what we have seen for landlord so two it it used to trigger at MTA code for it when we accept that MTA. So that's why we were seeing 6 and it will differ from transaction to transaction. So new business at code level.
+
+Dhakate, Khushali Ramkishan (Cognizant)   21:40
+Yeah.
+
+B S, Dineshkumar [S]   21:59
+It would not be the same, so it may three or four and when we accept it, it may have some six or seven. So it depends from transaction to transaction and from each status. Again it will differ. All we will get as a requirement on the document trigger matrix.
+
+Dhakate, Khushali Ramkishan (Cognizant)   22:19
+Yeah. OK, finish.
+
+B S, Dineshkumar [S]   22:19
+Again, not not only for this new business MTA, again, we will have for renewal what document that needs to be triggered and for cancellation. All we will have in that metrics.
+
+Dhakate, Khushali Ramkishan (Cognizant)   22:32
+And we can start to perform the MTA means one day after effective date, right? We don't need to wait for 45 days.
+Right.
+
+B S, Dineshkumar [S]   22:40
+No, no, no, no. Yeah. Yeah. Within that policy period, you can even process on the same day or you can, it can be you can process it anything. Once the policy is effectively only thing is it the start date of MTA it needs to be.
+
+Dhakate, Khushali Ramkishan (Cognizant)   22:43
+Aye.
+With.
+
+B S, Dineshkumar [S]   22:57
+The same date of new business, new business or after new business and there will be a requirement like we can create a future MTA up to say like this many days say like we can create an MTA up to 30 days. So if you create if you select a date that is greater than.
+30 days of new business effective date then it won't allow you to do MTA. It needs to be within the period like within how much days in future we can able to get MTA that will be a requirement within that requirement. If you select any day then it will allow.
+
+Ashly Joseph   23:26
+Thank you.
+Yeah. See, we have this requirement that, yeah, inception date of the policy is more than 30 days in the future. Yeah, that is why we saw this decline attempt here earlier.
+So there will be a requirement given to us from the underwriter. So based on that the application will be here. So for the landlords, this was the requirement. We cannot create an MTA that it is from the today's from today's date.
+
+Dhakate, Khushali Ramkishan (Cognizant)   23:47
+OK.
+Aye.
+OK. And another question also if I want to do any temporary changes. So can I do it?
+
+Ashly Joseph   24:06
+Think it's? Yeah.
+
+B S, Dineshkumar [S]   24:14
+Yeah. Temporary changes. Yeah. Again, you you see another option? TMTA below. Ashley, can you, how are your mouse? Yeah, process TMTA. So this is in temporary MTA. The one lead difference for MTA and TMTA is.
+
+Ashly Joseph   24:23
+Be.
+
+B S, Dineshkumar [S]   24:32
+For MTA, whatever the change that we do, we will select the effective date and that change it will be effective till end of that policy. But for TMTA we will be selecting a end date like till which date we need this change on our policy.
+
+Dhakate, Khushali Ramkishan (Cognizant)   24:42
+OK.
+
+B S, Dineshkumar [S]   24:51
+So that is temporary MTA.
+
+Dhakate, Khushali Ramkishan (Cognizant)   24:52
+We have to start started and ended also there.
+
+B S, Dineshkumar [S]   24:55
+Yeah. Yeah. We have to select end date as well. So that is a within policy period for a temporary period, say like a month or two we if we want any change in the policy then we will process this transaction.
+This is this is available as a product like actually this is an insurance policy admin product this transaction it will be there in all the insurance policy admin systems. OK but we.
+Are not using this transaction currently in majority of the products that we are going to work on. If that transaction it is in scope then we will use it kushali otherwise we won't use. But this functionality it is there as part of actually as a policy admin system.
+
+Dhakate, Khushali Ramkishan (Cognizant)   25:44
+Yeah. OK then thank you.
+
+B S, Dineshkumar [S]   25:46
+Yeah.
+
+Ashly Joseph   25:50
+OK, so let's start with the renovals then, yeah.
+So we'll click on process renewal for processing the renewal. So you can see that the effective date is starting from 2026 and the term end date is 2027. Yeah, earlier we have the start in recent.
+In B we have it as 14th Lamb, 14th November 2025 and I'm not going to change anything and click on the save button.
+This is OK.
+OK, so now the auto risk details.
+So the same details, but we have filled in the MTA raid. Those details are populated here, but should be doing it let's.
+Let's delete this premise, OK, but we have added at MTA. Let's remove it.
+I don't know. In case I'm just removing it and I'm submitting it premium summary.
+OK, nothing is there. OK, let's up note. Let's see.
+
+B S, Dineshkumar [S]   27:11
+And yeah, one one more thing, just to add on add on here. So we are just showing this renewal transaction like how it can be done in Azure is core as a policy admin system but.
+
+Ashly Joseph   27:12
+I'll put the. Yeah, go ahead.
+
+B S, Dineshkumar [S]   27:27
+In real time, while we do a testing, so this renewal transaction, it would be of two types. So one it is a manual renewal and another is automatic renewal. So you might have seen on the policy creation journey.
+On the web portal on the B2C platform and the contact Centre, we showed you the policy creation rate that there will be an option, a check box which we can select whether we want policy to get auto renewed. If we have selected that as auto Renew.
+Then we don't need to process the renewal like how Ashley is showing now. So if that check box is checked, then whenever the policy that comes to a renewal stage, it would get renewed and again there isn't a separate.
+A flow like when the invitation it would be sent to customer because customer may not remember the end date of policy when it is getting due. So there will be a remainder. It would be sent to customer 30 days before the policy expiry date just to make sure like your policy is getting coming to.
+Expire and you need to renew it so they will remember it and if they have opted for an auto renew and if they have made all the payments and there is no outstanding premium that needs to be paid or if there is no claim raised against their policy that is outstanding.
+
+Ashly Joseph   28:42
+Yeah.
+
+B S, Dineshkumar [S]   28:58
+Then the policy it would get auto renewed on the expiry date and it will be effective the next day after the expiry date say like a scenario where they have any pending premium that they have not paid or if they have raised a claim.
+Then that, even though they have selected that policy as an auto renew, it would turn as an manual renewal policy reason. They have got a claim on that policy and that requires a review on that policy. So it needs to be verified first before.
+Where it gets renewed. So even though if they have selected auto renew as they have raised a claim on that policy. So that policy when it comes for renewal it has to be handled manually and then it needs to be renewed.
+So for that and raters, they will come to actual score and then they will see like why the policy it has not wait the policy it was not renewed and they will see the reason and they'll come to know like there isn't claim or.
+There is something that payment they have not made so they will chase with customer and then they will make sure like that policy is getting renewed once the pending items on that policy received from customer to GDLG.
+
+Ashly Joseph   30:23
+Yeah. So, in in the CC and just screen I option this is the NB create NB policy details. OK, so this is the policy number I think Dinesh accepted it. Yeah, I have created a Dinesh idea. So you can see it, right. But there's the by by default.
+But all that the invites will be auto renewal invites, but if you want you can change it here it will be changing it into auto renew. Manual renewal invites. You have to do the processor renewal manually, but if you would have selected it into an auto invite renewal you will get it renewed automatically.
+As the Vignesh mentioned, so we customer has these options when his NP is created. OK so now.
+And let's go to actual score and see when I submitted. Now this is a new status we haven't seen before. It is therefore is completed. That means there is a risk completion in the policy details. And again there is a refer created, OK. So let's view the risk details.
+Yeah. And again, we don't see any save submit buttons here. So whenever there is a risk update, we have to accept it. Yeah, and whatever is the no changes you can see highlighted, OK. So yeah.
+So this is the change the sum insured code risk updated and just see what I have it at NB level.
+It was 50,000 at NBA level, right?
+Now when it comes to renewal, automatically it got risk updated into 50.
+To 550 to 500. OK, so that is why we are seeing it in highlighted in this blue colour, OK, once you accept it?
+It's all you can see the buttons submit button. Now I'm not going to make any changes. I'm since it's a refer. Continue right. I have to clear the refer now. So where people go to?
+Authorised refact the authorization code for land loads. Any random number will work.
+So yeah, now it is in obtain status. If you want you can make some more changes. You can add a cover, any cover or anything you can do and save and submit it again and let's see the rating notes.
+Yeah, sorry before I cleared the refer I should have seen the red thing not see what happened. Again, this R020 got retriggered which we have cleared at NP but and when we processed empty we didn't see this refer. But when we processed the renewal we saw the refer again OK.
+So it's like they have said underwriters like there is a rule saying that this R020, if the condition is met at the renewal, this should be retriggered even though it was cleared at NP. And you can see the endorsement for the multi premise clause is not there because we have deleted.
+That premise rate it is not there and whatever endorsement we had at NP for the malicious damaged and theft bit in it, it's still there at rain level. So the endorsements will remain throughout the transaction angle. That section is remote.
+OK, so that is the rating notes and the premium summary.
+So you can see that at the renewal you are supposed to pay 493.
+OK and.
+Yeah, I think, yeah, yeah, yeah.
+
+B S, Dineshkumar [S]   34:33
+Can show the documents as well. This is at obtain status. Now you will see. Yeah renewal code documents so you can see now, right so far at code for renewal. Yeah, we are seeing 4 documents got triggered.
+
+Ashly Joseph   34:38
+Yeah.
+OK. And now let's accept it. OK, we are going to buy the policy, so we'll click on accept this.
+So keep on clicking next.
+Oh yeah, the policy is accepted. Documents will refresh the electronic frame. Yeah, you can see a renewal accept statement of schedule. Accept later acceptment like in four.
+Document that added for the accepted renewal.
+Yeah.
+Any questions on the ring?
+
+B S, Dineshkumar [S]   35:36
+Again to to have have you shown on opening the document Ashley, just double click, yeah.
+
+Ashly Joseph   35:42
+No, I didn't show them. Yeah, I'll show that.
+So we can double click or you can click on the edit button. Also you'll just double click.
+I can double click.
+I can see the document is open.
+With the details, we have had a lucky.
+So this is a so if if you want to see anything you have the download option here.
+You can download it into that folder wherever you want to download it, and then you can open it from there. So as a part of evidence, we would need that documents saved somewhere. Yeah. So this is how you will download it. Or you can that we have opened it, we can open it and then you can save it.
+With the file receive option.
+OK. So yeah, anything else?
+
+B S, Dineshkumar [S]   36:44
+No, nothing from me. Any queries is that we have seen so far. So the example MTA and the renewal is what we have seen here.
+But apart from this, there'll be different requirements that we would have like in an MTA. We will do a a future dated MTA and we will do current date MTA and on MTA as you mentioned we will do non financial.
+MTA transaction and financial transaction MTA that involve premium and again we will add cover. We will make changes to the edit existing cover. We will remove cover when we remove cover then there will be refund generated to customer. So all those kind of scenarios.
+
+Ashly Joseph   37:29
+SMS.
+I.
+
+B S, Dineshkumar [S]   37:36
+We will be testing for all the products that we have got on this project scope and similarly renewal again we will do some of policies. We will just leave it as such like whether it is getting auto renewed and there'll be scenarios.
+To make sure, like the policy, we can able to renew through manual way and again we will have some scenarios like why it coming into manual renewal whether there might be some pending premium they might have not paid or there might be claim.
+On that policy and we will have requirements for all this, like when the policy needs to change to auto renew from manual renewal. So based on those requirement, we will have all those scenarios as part of our testing. But the way how the renewal, it needs to be done in actual is is what?
+
+Ashly Joseph   38:17
+No.
+Yes.
+
+B S, Dineshkumar [S]   38:31
+We have seen and also the MTA transaction.
+Yeah.
+
+Ashly Joseph   38:37
+So we have left with the cancellation. So yeah, we can cancel NPS, we can cancel NPS, we can cancel renewals. OK. So it seems that the latest process to transaction is renewable. I mean so cancellation or renewable?
+
+B S, Dineshkumar [S]   38:40
+Yeah.
+
+Ashly Joseph   38:53
+OK, so we have the cancel process cancellation button option here. So let's click on it.
+So I'm saying that, yeah, FTD can be any date. Let's see 70.
+And think that we heard of one year from, but let's go 16112026.
+And let's see client cancels it. Same.
+Yeah.
+Yeah, now the status remains the same. That's not meant it.
+
+B S, Dineshkumar [S]   39:38
+So this cancellation, it would be pretty much straightforward where we just select the effective date of the cancellation of policy and then we have to select a reason and we will be processing it.
+
+Ashly Joseph   39:55
+Yeah. So yeah, we are getting the refund rate for these many days. Yeah, 4 -, 493, four, 93 will be refunded to the customer. So if we are OK, let's go and accept it.
+
+B S, Dineshkumar [S]   40:09
+Again, that will be documents triggered for cancellation as well.
+
+Ashly Joseph   40:15
+OK. Yeah.
+
+B S, Dineshkumar [S]   40:21
+Yeah.
+
+Ashly Joseph   40:24
+You'd see the electronic fire.
+I think for landlords we are not having any documents for cancellation, it's not at built.
+
+B S, Dineshkumar [S]   40:37
+OK.
+OK.
+Yeah.
+
+Ashly Joseph   40:44
+So I think we have covered all the transactions in actuators.
+
+B S, Dineshkumar [S]   40:49
+Yeah. Again, this cancellation track transaction, again this seem this seems to be quite straightforward, but again there will be a couple of requirements on the new products. So whatever that we have seen so far that is on the landlord product. So this product we are not going to work on this actual.
+That form, since landlord we have got it in aturis already, we are showing like how the aturis policy admin system it's going to behave like for processing different transaction but the actual products all the new products that we are going to get.
+They they will again have the same flow. What we have seen with the landlord product race and with respect to cancellation, again that'll be again set of requirements in UK. There used to be like if a customer.
+They get a new policy and they they may change their mind and then if they want to cancel within 14 days of period from the new new business effective date, then they can go and cancel their policy and they can get their full refund of policy of their policy premium.
+Say like if they have paid through a card payment method on October 10th, they have created a new policy and they have used their card and they have made a payment say like the policy premium is £100 and they changed their mind today on 16 October.
+And they are cancelling it. Then they'll get the full money refunded back so that cancellation we used to refer that there that is classified as cooling off period. So this is one of type we have got in cancellation. If they cancel a policy within.
+14 days of period from their new business. Effectively, that is a cooling of cancellation where they will get full money refunded, but if they do a cancellation after 14 days then that is a standard cancellation where there will be a cancellation fee charged to customer and also.
+The refund? It would be done based on the pro rata basis. When I say pro rata basis, whatever the period they have availed the coverage as part of their policy say like they have got a policy on 10th of October and they're cancelling it on.
+10th of November. So it's a 30 day period. So for that 30 day period, they will calculate the premium like how much it needs to be charged. On top of that, there will be cancellation fee and whatever the remaining that they have paid that would be sent as an refund to the customer.
+So that is another type of standard cancellation. So these are two type of cancellation. We have got one that is cancellation within cooling off period that is 14 days from policy effective date and another cancellation is that we will be processing after 14 days.
+OK, so MTA, we have seen renewal again. We have seen. So there are two types. So manual and auto and cancellation. Again we have seen today and this can this cancellation transaction. Again we saw yesterday like it can be processed in contact centre as well. The same thing we have in.
+Score, which we have seen today.
+
+Dhakate, Khushali Ramkishan (Cognizant)   44:28
+Dinesh, can't we do reinstate the policy here?
+
+B S, Dineshkumar [S]   44:29
+Yep.
+
+Dhakate, Khushali Ramkishan (Cognizant)   44:33
+That's OK.
+
+B S, Dineshkumar [S]   44:33
+Reinstate again you. You will have. So can you click on that cancellation, Ashley?
+Yeah.
+You see, you see option, right. Wait, wait, don't do. Don't do it. Yeah, you will have an option process. Reinstate reinstatement. If they again after cancelling. If customer they come back and say like I want the policy again. Yeah. Then we will use this reinstate and whatever the cover that they had earlier it would come.
+As a a standard cover what they have, they have selected and if they need something additional again they can tell to the contact centre, the consultant and the reinstatement transaction, which they cannot do by themself. They have to make a call and they have to reinstate the.
+Policy. That functionality is not enabled for a customer to do by themself.
+So they have to make a call and then they have to reinstate. But again, TMT, the temporary midterm amendment and reinstatement transaction, these two, we are not as far as the product that we are going to work, they are not majorly.
+
+Dhakate, Khushali Ramkishan (Cognizant)   45:31
+OK.
+OK.
+
+B S, Dineshkumar [S]   45:50
+Used in production, so if those two transaction they are in scope then we will test those two transaction other ways it will not be into our testing scope.
+But we have that option available because actual is is a policy admin system. So as part of that it has got all these features.
+
+Dhakate, Khushali Ramkishan (Cognizant)   46:03
+OK, good.
+OK. And what is this reassigned policy means means what is the difference between reassigned policy and renewal policy?
+
+B S, Dineshkumar [S]   46:22
+Reassign policy they can reassign to another insurer or it can be reassigned, reassigned to another policy holder, kind of, but I'm not sure what is that we have not.
+Used it.
+
+Dhakate, Khushali Ramkishan (Cognizant)   46:42
+OK.
+
+B S, Dineshkumar [S]   46:42
+So probably it would be more like say DL4B van is one of the brand or you can take this landlord as well. So landlord Landlord is the product and the brand in which the landlord product is sold that comes in DL4B brand for example.
+
+Dhakate, Khushali Ramkishan (Cognizant)   46:48
+You.
+
+B S, Dineshkumar [S]   47:01
+If DLG one day they prefer and they think like this needs to be sold under another brand, say like Churchill for business. So if they want to move all the policy that where.
+In DL4B landlord and that needs to be moved to Churchill for business brand. Then this reassign option will be used to reassign from 1 brand to another brand. This is one of the example that I'm saying. Likewise if they want to reassign any policy from 1:00.
+
+Dhakate, Khushali Ramkishan (Cognizant)   47:20
+Aye.
+Book.
+
+B S, Dineshkumar [S]   47:37
+Line of business to another line of business or one insurer to another insurer. Then this option will be used. All this we have because actually citizen policy admin system all this feature it would be provided to whoever.
+Use whoever is using this aturis for their policy administration. So since DLG they are doing their insurance business, they have got this aturis policy admin system. They have got licence to it and they're using it. They have aturis they will have so many functionalities and features available.
+On the product, but that may not be required for DLG, so whichever is required for DLG only those it will be used by DLG. OK but this options as a product admin system we will have it in naturalist.
+
+Dhakate, Khushali Ramkishan (Cognizant)   48:25
+I mean.
+Yeah. OK.
+
+B S, Dineshkumar [S]   48:34
+Yep.
+OK.
+Anymore questions from anybody?
+Fine. If nothing else, we'll close the call today and tomorrow we will look on the integration systems. So we will have there are so many integration systems that are linked to the policy admin system. And once we create the policy.
+The data it will flow to the downstream systems which are integrated to the policy admin system. We will see like what are those different integration systems that we have got on this project and you'll come to know like what kind of data it will flow to those.
+And why we are sending data to those systems. OK, so that we can see in tomorrow session.
+OK. Thanks, rish. Thank you all.
+
+Dhakate, Khushali Ramkishan (Cognizant)   49:44
+Thank you. Thank you, Ashley.
+
+Kumar R A, Dinesh [S]   49:45
+Thank you.
+
+B S, Dineshkumar [S]   49:46
+Yeah.
+
+Ashly Joseph   49:46
+Thank you. Bye.
+
+B S, Dineshkumar [S] stopped transcription
