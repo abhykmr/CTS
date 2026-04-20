@@ -1,0 +1,619 @@
+CPC - Project Overview on Platforms & Products-20251015_120502-Meeting Recording
+October 15, 2025, 11:05AM
+52m 59s
+
+Joseph, Ashly (Technology Services) [S] started transcription
+
+Joseph, Ashly (Technology Services) [S]   0:06
+Yeah. OK. So the recording has started. So yesterday we saw the web applications which is already there in the actuaries platform for landlords that is CC and they before yesterday see we saw that B2C application.
+Which is already there in the actuaries platform. So today we will see the actuaries application itself that standalone desktop application. OK, so.
+I'm not sharing the screen, sorry.
+I hope it is visible now.
+Is my application visible?
+
+Thiruchitrambalam, Chellakannan (Cognizant)   0:46
+Yes, yes, yes.
+
+Dhakate, Khushali Ramkishan (Cognizant)   0:46
+Yes.
+
+Joseph, Ashly (Technology Services) [S]   0:47
+Oh, OK.
+
+Kumar R A, Dinesh [S]   0:47
+Yeah.
+
+Joseph, Ashly (Technology Services) [S]   0:50
+Yeah. So this is the actual application. OK, so this is like an application where you can manage your policies where you can get your some reports about the policies, all those details it is they can be tracked here. So this is actual application, so.
+Based on the test environment you are working on, you can point it into either test or UAT or prod. You should leave. We will have access to both test and prod. We don't so test and UAT. We don't have access to prod so if you want to change the settings like you were asked to test in AUAT environment.
+You just have to go to once. Actually this is installed, you just have to right click on this icon here, go to settings and change the environment to UAT since that actually this application is already open for me. I'm not able to edit it otherwise you can edit it. OK so you will change that environment into your preferred environment and then you will.
+Search for the application and then you can start it. OK, so once you have the actuaries you will have your credentials. So with that credentials you can log in.
+I'm logging it with my credentials.
+So for every two weeks there will be refresh, so you have to reset your password. OK, so you can use this change password or forgotten password login with them. Using these options you will be able to do that.
+So I'm just logging in.
+My user is ready is in long like I got it long back so I have access to Eni login OK so for you you might get it in the DB login so you might get that ID starting with DB or something OK.
+So since I have logged into NI login but we are doing something in the DB login, DP means DL4 begin thing. In that way I'm doing the Switch user here see but if you are not, if you're directly having the DB user ID, you will be directly logging into the actual environment OK.
+So I just did the Switch user because I logged in with the DB NI login and I don't have the direct DB login access. So yeah, so for you when you log in with your DB ID, you will land in this screen directly. You don't have to go to my account and do the Switch, user and all.
+OK. Yeah. So, so this is your landing screen when you log in. So in that we don't have to go through each and every field here. The thing that we are of our interest is this broken one.
+So we'll click on this blocking. OK, so this is where you will start creating a code or where you will you want to search a policy or anything like that. We will start it here. So yesterday we created a code IPN, right? So the policy, right? So this is the IPN.
+So I am I want us to search that IPN in in my actuaries application. So what I will do I can search it here so I'll go to this broking always like for our testing we always do go with the broking. OK, we don't have to.
+For now, we don't have to look into any other tabs here. We will go to the broking. So we are going to search the policy because we have the IP in here. So I pin is associated with the policy. So we will go to locate policy.
+So now the search on we have so many options so. So since we have the policy number right insurance policy number, so we will go with insurance policy number option. Here we'll paste the policy number here and we'll click on search. So now you can see all that.
+Transactions we did yesterday for that policy, no business empty and all this we performed through CC right. All these transactions are displayed here. So if you want. Yeah all whatever we have created in B2C day before yesterday.
+And that will be also like I don't have the policy number here. If that is there, we can search with that IP and also here you can you will see all that transactions here. So whatever policy in whichever web pages we have created everything we can search it here.
+So let's click on new business.
+Just a minute. I'll be back.
+Thank you. Yeah, I'm back. OK. So I just clicked on that. One of the item in that list search list. I am taken to this screen. OK, so yeah, here you can see that tree. OK, so this is my client details.
+This is my new business. I can see the main details here. By default the main details comes here. So the target product is there. DLG property owners. The policy number is here the effective date I have created.
+All those details I can see here. OK, and the version difference is here. OK, then MTA. See if I want to go to MTA, I'll click on this button, this one in the tree and I'll go to the MTA related details.
+So this is the version definites, but the Mt will have the same policy number OK and for the cancellation again you can come here. So this is how you search for the policy. OK, so now let's say you haven't converted it into a policy. You have it in the.
+Code reference date only. OK, so you can go to locate code and yeah, by default we are having the code reference so you can search with your code reference ID here and click on search your code will come here and then click on double click on that list or you can click on the open code it will come OK.
+And.
+Let me see if I have another policy to open.
+Yeah, I have a code reference here. Yeah, let's. I see. Yeah. So if you want to add one more thing, OK, like you want to create a policy and you want to search something, you can just click on this plus button here multiple codes you can open here. OK, so let's go with the code reference. I hope it will.
+Be displayed with code reference. No, I think it's an RFQ level only because we have created it in B2C. So yeah, so we have to search with RFQ, reference whatever we have created in B2C that ID will be our RFQ reference. So you have to search with RFQ reference here. So you can see it here.
+Let's click on open IFQ.
+This one I have done one hands on myself. OK, so that is this. So this is not converted into policy. See if you see. Oh, sorry. It is also converted into policy. Yeah, you can see here. Yeah. You can search a policy with its code reference, RFQ reference or IPN. OK.
+So this is how you can search for multiple policies by clicking on this plus button. OK, so now let's go to the first one. Let's take the new business now. So we have seen this main details. Now if you click on this risk details, you can see that whatever details we have entered.
+We have entered in the CC all those details comes here. See, we have given all that declarations here and the address is coming here and the we had only one premise right. So that premise details is coming here.
+And yeah, all the same thing. It's it's whatever you enter in the CC or B to C everything is mapped into some fielding core. We call this as actual score also. OK, yeah. It will be mapped here and there will be sometimes the names will be same but.
+Sometimes that names will be little different, but yeah, we can make out. OK, so we have created a commercial promote today. So that is why the occupancy details is coming like commercial here and the occupant type we have selected the trade there as content. So it is coming under occupant type here.
+And the building, some insured the contents. We have added everything, carpets, landlords, everything is coming here. The option covers we added here. The property liability limit, the public liability limit. It is coming 10 million here so yeah.
+All the details related to the risk, you can see it in the risk details, OK. And yeah, if you want to see anything related to the premium. So the amounts and all right, so you can see it here. So you can see this is your.
+Final premium rose premium. You can see it here. OK. The final premium you will see if you want to override something, give it some Commission or if you want to give an override, you can do it by clicking on these buttons and yeah. And the tax you can see here.
+And what is? Yeah, you can view the electronic file. So you want to see where the documents are coming here. There it. So you can click on the electronic file to see the documents.
+I've seen all the documents you can see here.
+I can see it the the latest one comes on the top OK, I see the MTA related statement of fact, MTA schedule and the MTA Court level statement of fact MTA Court level schedule. Then before that we created NB right so NB statement of fact NB schedule and.
+Accept later. Yeah, we can check that also, but we normally test SOF and schedule, so yeah, all those documents will be present in the electronic file and electronic file. We saw premium summary screen we saw and the risk details we saw and another one is the claims history.
+So the if you want to add any claims right, you can add it under the claims history. OK so this comes under claims history and then we have the rating notes. So yeah. So the rating notes is the place where you will see all the information like if you have.
+The refers. You have to come to this rating notes tab and you will see the rating notes related information here. So not type means if it's a refer it will be refer continue if it is an endorsement then not type will be an endorsement.
+So section wise endorsements, you will see under each section if it is. If there is some information or endorsement that is applicable to the whole policy that will come under the policy tree like I mean the policies header. OK section wise things will come under section header.
+And you if you want any breakdown of the premium section wise breakdown, you can go to rating amounts. You can see the gross premium here. So the code premised details you had paid one node three and for public label data 7328, yeah. So that's a section wise breakdown if you want, you can go to.
+Rating amounts, but if you just want the gross premium and IPT, you can go to premium somewhere. So I hope the importance sections in this options are tab is familiar now. So now let's see to create a policy from the scratch. OK, so.
+This dish, yeah.
+
+Khiwasara, Adarsh (Technology Services)   13:05
+One doubt can we cannot edit those details right? It's already accepted policy, right?
+
+Joseph, Ashly (Technology Services) [S]   13:12
+That is why we cannot edit it. Yeah, if it was not.
+
+Khiwasara, Adarsh (Technology Services)   13:15
+I saw like edit so I was confused.
+
+Joseph, Ashly (Technology Services) [S]   13:18
+Yeah, yeah, yeah. I will show now. So I was just trying to explain the different sections based on a policy we already created, but I will show you how to edit it. Now when you create a code there you can you will be able to edit it here or if you had opened that in a code level right you will be able to edit it.
+
+Khiwasara, Adarsh (Technology Services)   13:28
+OK.
+
+Joseph, Ashly (Technology Services) [S]   13:38
+Because now everything I have already accepted it in the CC, all the fields are are non editable. Now it's all greyed out here.
+See, you don't have the option to edit anything, OK? Yeah, yeah.
+
+Khiwasara, Adarsh (Technology Services)   13:51
+OK, OK.
+
+Joseph, Ashly (Technology Services) [S]   13:54
+OK, now let's create one. So again, we don't have to log off and log in again. You just have to click one plus button. So earlier we did it for locate policy and locate code. We searched it. Now we will see how to create a new code from scratch in the core actual score.
+
+Khiwasara, Adarsh (Technology Services)   13:54
+Thank you.
+
+Joseph, Ashly (Technology Services) [S]   14:10
+So you can go with add company or add into each line. Normally go with add company.
+I know you have to give a company name. OK, let's say tested demo.
+Ashley and company type. This is the status of Inter TV. So it in yeah CC and B2C. So let's go with limited.
+Ashley.
+That's OK. I'm just giving the mandate refills. OK, so that are the ones with in in the star colour with that star in red colour. Yeah. So yeah, we have added everything mandatory whatever is pre populated. Let's leave it like that. Click on save button.
+Now let's click on add RFQ. Now yeah, add RFQ later option is also there. But yeah we normally go with add RFQ now if this feature is also use we will use it later but yeah for now let's see add RFQ now that's a common feature we not use here.
+So now we have created that company level details. Right now we need to see for which product we are going to create the policy. So I'm doing it for DLG property owner. So I will search for DLG.
+It is DLG property owners, the product name. So I have selected the property and I have to give the effective date and you can backdate it use today's date or use a future date. Let's go with November 7th and the time. If you have anything specific to test with the time you can go. Let's keep it like this.
+And the account execution area that is mandatory so you can search and take anything. Here I'm I'm selecting web pictures this. Yeah, it's not mandate to select anything like any specific value here.
+You can select anything in the drop down. So now we have ordered all the product level details and the when we want to start the cover like effective date of that product and all OK let's click on save button. So if you want any description to be added you can do that also with them. This is not mandatory yeah.
+
+Khiwasara, Adarsh (Technology Services)   16:16
+As the what is a product target and RFQ? Can you explain in detail like what is RFQ?
+
+Joseph, Ashly (Technology Services) [S]   16:18
+Yeah.
+Yeah, RFQ means it's I think it's for request for codes. The short form for request for code that is the like abbreviation. OK, one minute I'm getting.
+
+B S, Dineshkumar [S]   16:38
+So.
+
+Joseph, Ashly (Technology Services) [S]   16:40
+Yeah. Yeah, go ahead, Dinesh.
+
+B S, Dineshkumar [S]   16:41
+Yeah, yeah, yeah. Others. Yeah. While creating a policy, the policy code, it will have different status. So one such status is RFQ. So as part of this Azure this product they have.
+Sign if you are creating a new code, the first status of that code, it would come under RFQ so that is request for code and again the request for code. You will see a status pending there. The reason is.
+We have requested for a code creation, but the details to get a code that is not completed, so we need to fill in all the details. That's why it is pending as and when we complete filling all the details then status it would change from pending to complete.
+So while creating a code code quote and by journey while creating a new code, there will be different status that it would get changed based on the action that we perform on code creation others.
+That's how it works.
+
+Khiwasara, Adarsh (Technology Services)   17:58
+Yeah. OK. Yeah, I got it.
+
+Joseph, Ashly (Technology Services) [S]   18:00
+Yeah. Yeah, we we'll see a different status like how this pending changes and all, yeah.
+
+Khiwasara, Adarsh (Technology Services)   18:03
+And product.
+OK. And product target means?
+
+B S, Dineshkumar [S]   18:09
+Yeah, product target means we have different products and that we are going to work on this project rate. So we have DL4B, van DL4B SME in SME we have her and beauty. But in breakfast we saw all those product right. So for which product we are planning to create a code.
+
+Khiwasara, Adarsh (Technology Services)   18:17
+Yeah.
+Yeah, yeah.
+
+B S, Dineshkumar [S]   18:29
+So that product type you have to select before you create a code here.
+
+Khiwasara, Adarsh (Technology Services)   18:36
+OK, OK.
+
+B S, Dineshkumar [S]   18:37
+So currently we don't have the new products in in actual score. That's why Ashley she is showing the existing product that's already we have with the natural score.
+
+Khiwasara, Adarsh (Technology Services)   18:51
+OK.
+
+B S, Dineshkumar [S]   18:52
+That is a landlord DL4B landlord. Yeah. Landlord or property owners, they both are same.
+
+Khiwasara, Adarsh (Technology Services)   18:55
+OK, not not OK.
+
+Joseph, Ashly (Technology Services) [S]   18:59
+Yeah.
+
+Khiwasara, Adarsh (Technology Services)   19:00
+OK. Yeah. OK. Thank you.
+
+B S, Dineshkumar [S]   19:03
+Yeah.
+
+Joseph, Ashly (Technology Services) [S]   19:03
+Yeah. OK. Yeah. Yeah. So based on which product you are going to test, you have to say like the product has it OK? Yeah. So now we are in the RFQ landing screen. We can say that we are in the main detail, we always land in the main detail screen. So you can see that this is your RFQ reference.
+And these are the effective dates we have added previously. OK, so now what we have to do, we have to enter the risk details for the policy. So for that we should go into the risk details page.
+So let's click on the risk details. Yeah. See, now I can see if I expand it or you can click on this buttons there three and four. Yeah. You can expand it in all into the level and you can see that all these things are in bold letters. OK, that means it means there are some mandatory.
+Section which I haven't provided the data, so once I I provide the data for these old mandatory details you can see that it will move into the normal text. So now let's see which are the mandatory details I have to enter so company name, some details get populated from that details we have already added.
+In the ad company. OK and yeah, so now let's look into the.
+Yeah.
+Once we need to add so property owners I'm I have to select property owner and address. I have to add right? So let's click on add button and add an address.
+So click on the search button. From there I'm selecting just one, save it and again if you want to remove you feel like you wanted to remove it. You can remove it again. You can add a new address.
+And I save it and if you feel like you wanted to edit something here like I want to change the address line, you can manually change it. OK, this details and but I'm not changing it for some reference and we might have to do that. So business established 2000.
+And the convictions and well, even though it's not mandatory, I will provide it, it might give me an error at the end when I submit it. So yeah, I have added it just providing these details.
+OK, so now the first level details are added. Let's click on save because it's it is still not going that ball because why? Because it's the highest level, right when all this lowest levels details are mandatory, details are filled in, it will go. So if you want you can see it here.
+But let's go on, David.
+Let's say the buildings OK, so here in the contingencies, let's say all risk and the escape of water and I'll add some excess of 200.
+And the subsidence is, yeah, let's keep it 0 only now for the building declared value, let's keep 50,000 and method of adjustment as index linky.
+See, now you can see that all the mandatory details I have added here in the building and in the buildings. So that is why it moved into the standard text. OK, so now let's see in the code premise. So this is so these are the details see.
+See, these are all the policy level details. Whatever it comes under the under section one, right. These are the policy level details. OK. I'm just telling about the client and the poll is in high level, but if you want to give any details regarding the premises, I have to go into the code premise and I will add it here.
+So I am telling that I'm going to insure it for this particular property.
+So let's leave it and property type. Let's say it's a shop because I'm I am having a commercial property. OK, so 2000 zero.
+See, you don't.
+Is providing some random dates.
+Yeah, let's keep it like that. OK, so now.
+Let's fill the details for occupancy. So I'm saying it's a commercial occupant.
+And.
+Yeah, when I just clicked on it, I got the other details for it. I will have to select the trade. So I'll say it is accountancy. So now see, it is high level. It's everything more into standard label like standard text format. OK.
+I haven't added all the details. OK, so let's say you wanted. So this is your core level. You have to add some other covers to the core premises. OK. So if you scroll to the down and you can see you can add sections like contains business interruption and all.
+To this premise, OK you can add like this. OK you can click on this radio button, yes, and then you will get this option here. So again see it changed the format of this text. So here let's say it is of carpets and let's say it is 10,000.
+Yeah, so now.
+Yeah, it is added there. OK and see, I have to save it. I don't see the submit button here now, right? Let's save it. So now submit Button is enabled, OK, once everything is saved and all the mandatory details are added and you have saved it, you will get the submit button.
+So you have added a content from here, right? Similarly you can add one more cover here if we have seen it here, right business interruption. So you can add it by making yes here or you can click on this section and click on the add button here.
+And then whatever section you can add, it will come here so you can make this ACS.
+Then business induction is coming here. Umm, you can see, uh, not alternate accommodation. Let's.
+Then the receivable. You can add the same thing we have added like how for how many months, what is the month per per month and all those details you can add. But if you want to remove something right you can click on this remove button. I don't want to add it, I just select this button and I will just remove it.
+Yeah.
+OK. So again, in the policy level, you can add so many optional covers in CC we have added right, same optional covers. We have it here. We will have more here. OK this money director and offices were not there in CC. But here we have in the code. So if you want to add a public liability we'll click on this button it will.
+Get added here. OK, so yeah we have added since it's not mandatory, that is why it didn't come in the bowl letters.
+So let's have added it and again, if you want to add something, you can click on this one and you can click on this add button and from here also you can add it. OK so let's add malicious damage.
+So yeah, this is what added here. So this way since summation is not mandatory, I'm not adding anything. We normally don't add it. Yes, I'm not adding it OK and see you can see for this one I I'm having the add option because.
+Why? Because there are some subtypes that I can add it here, but for malicious damage general it is greater. That means I I'm not allowed to add anything, OK and again for core premises. If he had added the business interruption.
+And next time you don't see it because I have added all the options that I can add for that premise. I have already added it here so that is fine. It is greyed up now. OK, so let's remove this. So yeah, you can just do some hands on like how this add works and all.
+Add remove vendor. So next thing you have to see is another useful option is this clone one. OK so let's say you had one property here you want the exact details or you want to change some details here and there and that address is different you want to create a new premise.
+Details. So what in yeah, you can click on here and click on add.
+And you can make it into one also OK.
+So yeah, you will get the details again here you have to enter everything yourself, OK? You can do it that way. So I'm. I don't want to do that way. So I'm just removing it. So what I will do, I'll click on that highest level policy level and click on add.
+Sorry, not there, so I'll click on this one. The core premise cover section, then I'll click on clone this time.
+You see, the details are added here for the 2nd premise, so this is our first premise. This is our second premise and these two are policy level covers. OK, so if you click here and you, I want it for another.
+Address. See see if you see it's mode into complete status. Why? Because I have added all the mandatory fields so that is why it mode into pending it mode into complete.
+So I'm saying that, yeah, for this address I have the same details. If you want, you can change it the occupancy details. You can give a different rate. You can change the building, some insured.
+Let's say for this one it is 70,000. Yeah, yeah. More than 76. Yeah. OK, let's save it now. Submit is enabled. OK, so, yeah. So you're not seeing anything down here. OK, just this is the RFQ details you have completed all the RFQ details now.
+OK, now we let's submit it.
+So this is how you will end error is capturing.
+CC OK. Yeah. Yeah, it went to the claim. OK. Yeah. So see if you're sometimes you will see once you submit it right you will get when an RFQ is submitted it will turn into a court. So you will see an entry here automatically if you're not seeing it go to court received by default it will go.
+The code received and click on open code.
+OK. Yeah, there are some issues with actually. So for landlords, yeah. So now it is in the decline status and you can see the court is added here. So this is in the main details now. So you can see the court reference here, the court status, the effective date that whatever is effective date of the RFQ, we have given it comes further.
+Code also OK, so the same details you will see here. So now see if you can see the risk details here. So same section we have added here. Yeah all the details are there. All the details we have added in the RF level comes here.
+Now I want to see why it is declined. So all those kind of information comes in the rating notes. We have seen it earlier, right. So I'll go to rating notes and.
+OK, so it is declaimed by because.
+Because that building some I have entered is very less OK because of that they have declined the policy. So let me see. So you can see all those information if you come to the rating notes, OK. So if you want, if you normally you won't allow us to do that, but since this is the core application.
+Right you can and you are doing the testing right. You can see you want a proper product. So let me increase it.
+I don't know. Let's see. I'm just submitting it again after changing the details.
+We can it's I think it's there is an issue with the application. OK I was trying it before also it was going into error. So what I will do right see ideally we are supposed to see it in obtain status again leave that. Anyway I will show with an existing one.
+OK.
+See, this is the policy we have created in CC earlier, right? So I'm just.
+Trying to see what was the.
+Best I will source with the liquid coat.
+Yeah. So this is the code reference which I have converted into policy in CC. OK so I have the risk details here. So what I will do right see I have what I have shown earlier was I have tried to create a code from the scratch in.
+Core for landlord product, but it was going to decline and there were some issues in the back end. Ideally instead of decline or instead of error you will be presented with some obtained status and all you will be able to proceed. Since I am not able to show you that flow I will show it in a different way.
+OK, so this is also useful. OK, we need to learn this also. So if let's say you already have a policy created, OK and you want to create another policy which is almost similar to this one. OK, so you don't have to start it from the scratch. You don't have to go to this plus button create.
+Company and you don't have to do that way. OK, So what you can do if you know the court reference or policy reference, anything, you just come there and come to this clone is RFQ option is there. OK you just clone it you will directly.
+Have the RF2 created for it with all the risk details, so I'll go with this one. So if you want this one is the date which our previous policy had. So let's change it in the something in the.
+14th of November. OK. And so I'm not changing anything. Let's keep it like this only, OK, these these options and inheriting the current record and let from the current record. OK, just a date if you want. You can keep the date also.
+So see, whatever we did previously like add company and all add add company then add RFQ. We did we don't have to do anything OK for the same contact we are creating an another code now so this is the RFQ reference for the new one. So if you go to risk details.
+You can already see it is all populated. So now if you want you can clone it or you can change the address and all those things. You can do it OK? Yeah. Normally we do with clone as RFQ only. We will create one code and then we will click on creating, cloning and.
+Do that, and unless we have to create a no contact. OK, so now since the details are already populated and I have shown you have to add these details, right? And this is in complete status. Now I'm not changing anything. I'm just going to submit it.
+I hope this time it will return not decline or error.
+Yeah, so this time it worked. OK, it went to refer continue for with the risk features I have added.
+So if you click here you can see it is already there. If it was not there, you can click on open code.
+OK, it will come here. So I'll do one thing. It might confuse you with so many options open here. I'm just closing it.
+And I will just to locate this.
+So now yeah, you can see it as a single element here. We don't have anything in other details here. OK. Yeah, this one was already there. Yeah. OK. So you can see this is the RFQ I have submitted. And when I submitted it.
+A code was created and the code came in refer continuous status because of some details I have added. So I I cannot buy a policy with the refer continuous status to buy a policy I have. I have to get the status and obtain status. OK so we have seen painting.
+Completed, submitted and refer continuous status. OK, so now since it is refer continue. I know there are some refers associated with it so I have to go to rating notes then.
+Yeah, I can see that it is coming because of R020, because of the public liability interminity limits. So if you want, you can do this way. OK, you can see it read it fully. OK. And yeah, all those things, you can see it here.
+So now we have to clear the refer the same thing we didn't CC also. So for clearing the refer the option is authorised refer.
+No, let's click here. Any random code. OK, the same way we took it for CC, so authorised refer is the option we have to select and we have to click on same. Now you see it will change.
+Yeah, see, now it is changed into obtain status. OK, so when it is an obtain status, you can proceed with the buying the policy. So before that let's see what is the premium summary. If you want to see the code level premium, you can see it here.
+And if you want to overrate something, you can do it here. And yeah, even here also you can change the details. OK, you can change it here. It's not greyed out. You can update anything. You can add any any more extra covers at the court level. Also you just submit it and do it. That's fine.
+And the rating amount. So if the sectional level premiums you want to see, you can do that, OK. So and electronic file.
+You just have court level documents now because we we are in the court level only, OK, now we have to we are good with the policy we can just buy the policy. So that means we have we have to click on accept reset.
+So I'm just clicking on the accept we said here, so yeah, this is the option we are having. It's whatever is pre popular, just just keep it like that and click keep on clicking next buttons.
+Yeah, there is a mandatory field here, so I'm just saying consumer, whatever, it doesn't matter doesn't affect the pricing.
+Yeah. So this and we are getting this notification policy has been accepted and can now be invoiced. OK. So we normally go with open policy.
+So now you can see a new policy is created for us with this IPN 0026 is the IPN, so yeah, you can see it here. The 0026 and the version reference is. You can see that the associated quarter you can see it here see the same thing. You can see it here. So if you click on open court it will go here.
+OK, so yeah, this is how you will accept your policy. So once you are accepted, you again you can want to writing notes. You can go an electronic file to see that policy level documents. You can see it here.
+Yeah, I think, yeah. That's it. Yeah. Any questions in creating the NB in actual score?
+OK. Or else I'll go with the MTA option. Is that OK?
+
+Kumar R A, Dinesh [S]   40:24
+Yeah, I have one question in general, why do we have different different numbers? Do we know like version number, quote number is different and a policy number is different?
+
+Joseph, Ashly (Technology Services) [S]   40:27
+Yeah.
+Aye.
+Yeah, yeah, yeah. I don't know the reason, but yeah, we have this different options. Like what we have a each and every policy or every code will have a code reference. And I think code will have IQ and also yeah. And we can search your policy by using.
+It's called reference, or it's with IQN or it's IPN? Yeah, we have it like every every details we entered here, we'll have some both of these values. I'm not sure. Yeah.
+
+Kumar R A, Dinesh [S]   40:58
+OK.
+OK, the policy number right, it will be generated only when we purchase the policy or OK.
+
+Joseph, Ashly (Technology Services) [S]   41:11
+Correct. Yeah. Once you buy the policy completely, then only it will convert into a policy. So then you can see both that version difference. The policy version difference and the.
+IPN also just a minute and see 080. Yeah, yeah, yeah. The version difference is same for court level and the policy level, but the the IPN will come.
+Only when you purchase the policy. Yeah, IQ in will come when you are in the court level.
+
+Kumar R A, Dinesh [S]   41:38
+OK.
+OK. One question is we are, if you're creating a code in B to C journey and like we are abandoning the code with journey or like saving and exiting or doing anything like that.
+
+Joseph, Ashly (Technology Services) [S]   41:44
+Yeah. And that you can search.
+Yeah.
+Mm-hmm.
+Yeah.
+
+Kumar R A, Dinesh [S]   41:59
+Will that generate a code number or we because when we need to call customer need to call back to a call centre? How? How they can tell the information to get that code retrieved on the contact centre?
+
+Joseph, Ashly (Technology Services) [S]   42:03
+No.
+Yeah.
+Yeah. So if you have reached till the client summary, right, so not the summary code summary page there before the option covers in B2C, you will get the code reference there, right? You can come here and use the locate RFQ and search it with the locate RFQ option that give the number there.
+
+Kumar R A, Dinesh [S]   42:21
+Hmm.
+
+Joseph, Ashly (Technology Services) [S]   42:31
+But if you have like you didn't go till the code summary page, you won't have the RFQ reference. So in that case you can go to locate contact and try searching with the client name or the post code we have used there.
+Yeah, we will be getting those data client level details there, yeah.
+
+Kumar R A, Dinesh [S]   42:48
+OK.
+
+Joseph, Ashly (Technology Services) [S]   42:54
+And the e-mail. Yeah. Yeah, you can.
+
+Kumar R A, Dinesh [S]   42:54
+So that.
+That means in when we are going to code page, we will get the code reference and when they purchase the policy they will get the policy number.
+
+Joseph, Ashly (Technology Services) [S]   43:02
+Yeah.
+Yeah, yeah, correct.
+
+Kumar R A, Dinesh [S]   43:08
+So in B2C also we'll get two different numbers then.
+
+B S, Dineshkumar [S]   43:08
+So.
+
+Joseph, Ashly (Technology Services) [S]   43:08
+Yeah.
+Yes, yes, yeah.
+
+B S, Dineshkumar [S]   43:12
+Correct. Yeah. Until like the current behaviour we have in SSP, Dinesh, I'm not sure whether that is in requirement to get a policy policy number at the initial stage itself.
+
+Kumar R A, Dinesh [S]   43:13
+Yeah.
+
+Joseph, Ashly (Technology Services) [S]   43:26
+Hmm.
+
+B S, Dineshkumar [S]   43:27
+So if there isn't requirement then it will be there, but otherwise like Ashley how she mentioned that's how it works. So until we land to quote summary screen, we will not get the quote reference number and until we purchase the policy we will not have the policy number.
+
+Kumar R A, Dinesh [S]   43:28
+Hmm.
+OK.
+Oh.
+OK, so and again both will be different it it won't be same as in SSP right? It's from the start till the end. It won't be the same number. OK.
+
+B S, Dineshkumar [S]   43:53
+Both will be different. Same. Yeah. Yeah. No, no. Correct. Yeah, both.
+
+Joseph, Ashly (Technology Services) [S]   44:00
+I think version reference remains the same but I can see the code preference and IP and IQ and everything changes.
+
+Kumar R A, Dinesh [S]   44:10
+OK. Yeah.
+
+B S, Dineshkumar [S]   44:11
+Quote reference it will it will be different and yeah policy number it will be different IPN and policy both are same.
+
+Kumar R A, Dinesh [S]   44:21
+OK. Yeah.
+
+B S, Dineshkumar [S]   44:22
+And when we are creating a new code again, we will not have the RFQ reference as well Dinesh in B to CR contacts. And I think when contact centre probably we will have it if we say like before land.
+
+Joseph, Ashly (Technology Services) [S]   44:28
+Oh.
+
+Kumar R A, Dinesh [S]   44:32
+OK.
+
+B S, Dineshkumar [S]   44:41
+To quote summary screen in say like in previous lost screen, if you are just clicking on save and exit then that'll be quote reference in Contact Centre for that particular client. But we will not get in B2C.
+
+Kumar R A, Dinesh [S]   44:58
+OK.
+
+B S, Dineshkumar [S]   45:01
+We have to search only by their name.
+
+Kumar R A, Dinesh [S]   45:07
+Yeah, OK. Yeah, even if it is declined also you won't get any number, right decline or referred or will still get any numbers.
+
+B S, Dineshkumar [S]   45:14
+Decline. Yeah. Decline. Yeah. Yeah, decline. That will be a quote reference number. So in the referral screen, we will have those.
+
+Kumar R A, Dinesh [S]   45:20
+OK, OK. Yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   45:28
+That number will be different from the actual policy number, right? Once it is approved, whatever number they are, policy, number and decline. This code reference number that's both are different, right?
+
+Joseph, Ashly (Technology Services) [S]   45:29
+OK.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   45:44
+Yeah.
+
+Joseph, Ashly (Technology Services) [S]   45:44
+Yeah, yeah, they are different here.
+
+B S, Dineshkumar [S]   45:44
+Yep.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   45:46
+OK.
+
+Joseph, Ashly (Technology Services) [S]   45:50
+Yeah.
+So shall I proceed with the Mt is the initial?
+
+Thiruchitrambalam, Chellakannan (Cognizant)   45:53
+Yeah.
+
+B S, Dineshkumar [S]   45:56
+No, I think let's stop here. Ashley, for today, yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   45:56
+I.
+
+Joseph, Ashly (Technology Services) [S]   46:00
+OK, OK. Yeah.
+
+Khiwasara, Adarsh (Technology Services)   46:02
+One more doubt, I didn't see any payment screen means how the policy is paid after it is accepted.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   46:06
+Yeah.
+
+B S, Dineshkumar [S]   46:09
+Payment all it would be done in The thing is other. So why we are showing this actual scores just to get you all understand like whatever the policies that we create in front end in the two channels, one that is B to CN contact Centre what?
+
+Khiwasara, Adarsh (Technology Services)   46:25
+OK.
+
+B S, Dineshkumar [S]   46:27
+Cover the policy that we create in the front end, how those policy details are saved in address and before we get a policy creation journey in the front end platforms, we will be provided with a capability to.
+Create policy creation and actual score, so that's the that's the reason Ashley has provided on policy creation journey in actual score. What you're all seeing now on top of all this policy creation will only happen in.
+The two front end channels B2 CN contact Centre in production in real time, so there won't be any new business policy created in Azure score.
+
+Khiwasara, Adarsh (Technology Services)   47:15
+OK, got it.
+
+B S, Dineshkumar [S]   47:15
+So. So the payment integration, it will be there in B to C and contact Centre while we do a quote and by journey. So there you will have a world pay integration if you're going with card payment.
+And if you are choosing direct debit monthly installment, then we will provide bank account details and then we will purchase the policy. So those detail whatever that we provide as part of court and by journey they've all it will get saved here.
+OK.
+
+Khiwasara, Adarsh (Technology Services)   47:49
+OK. OK. OK.
+
+B S, Dineshkumar [S]   47:50
+Yeah, here we we will not have any payment. Like we will not have any capability on making payments in natural school because this here we there won't be any policy creation happening in production.
+
+Khiwasara, Adarsh (Technology Services)   48:01
+OK.
+OK. Yeah, OK. Got it.
+Thanks.
+
+B S, Dineshkumar [S]   48:12
+Good, good. Other shy, I think you are asking so many questions and I think yeah, you're getting on good other, I hope others you're also getting.
+On what is being discussed on this sessions and if we have got any queries, yeah please keep them posted to us.
+So we have just seen retrieving policy in natural score and creation of new policy today, right, Ashley?
+
+Joseph, Ashly (Technology Services) [S]   48:48
+Yes, yes. Yeah. And we have, I will show them the cloning of option also. Yeah.
+
+B S, Dineshkumar [S]   48:52
+Or cloning. Yeah. Yeah. OK.
+OK.
+
+Joseph, Ashly (Technology Services) [S]   48:56
+And also I have shown them that the sections for premium checking and the electronic fire up. Yeah, yeah, yeah.
+
+B S, Dineshkumar [S]   48:57
+Well.
+Yeah, yeah, rating notes rating now. OK, OK, fine. Fine. OK, then. Thanks. And tomorrow we will see on processing MTA cancellation and renewal transaction and natural score.
+Again, all this transaction on a need basis and raters, they will come to this actual score to do all those transaction. But other ways, majority of stuff all it will happen in contact centre where consultants they get details from customer and.
+They do the transaction processing. Yeah, we will see them tomorrow.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   49:43
+Yeah, and Khushali has she was trying to create some code and getting some error right. I would like to share the screen. Yeah.
+
+Dhakate, Khushali Ramkishan (Cognizant)   49:47
+Hello.
+Yes it is.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   49:58
+Yeah. Is it OK? Nisha, can she share this? Not we can. She can ask offline, so yeah.
+
+B S, Dineshkumar [S]   50:01
+Yeah. Yeah, yeah. Yeah, yeah, yeah, yeah.
+
+Dhakate, Khushali Ramkishan (Cognizant)   50:05
+Is it visible figure?
+
+B S, Dineshkumar [S]   50:07
+Yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   50:07
+Yeah.
+
+Dhakate, Khushali Ramkishan (Cognizant)   50:08
+Yeah. When I was creating a code now. So after creating the code I'm getting this error. I have two to three times but still same error I'm getting.
+
+B S, Dineshkumar [S]   50:22
+So this is for which product?
+
+Joseph, Ashly (Technology Services) [S]   50:23
+What?
+
+Dhakate, Khushali Ramkishan (Cognizant)   50:25
+This is B2.
+
+Joseph, Ashly (Technology Services) [S]   50:27
+I think the site is down.
+
+B S, Dineshkumar [S]   50:30
+OK.
+
+Joseph, Ashly (Technology Services) [S]   50:30
+Sometimes make a translation.
+
+Khiwasara, Adarsh (Technology Services)   50:31
+I'm also getting the same error.
+
+Dhakate, Khushali Ramkishan (Cognizant)   50:33
+OK.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   50:34
+Yeah.
+
+Joseph, Ashly (Technology Services) [S]   50:35
+Oh, you're trying to wait. Delete. OK.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   50:36
+Yeah.
+
+B S, Dineshkumar [S]   50:38
+No, no, just a moment. Can you can you go to that URL one that you are showing?
+
+Thiruchitrambalam, Chellakannan (Cognizant)   50:40
+And.
+
+Dhakate, Khushali Ramkishan (Cognizant)   50:40
+Hi.
+Yeah.
+Yeah.
+This one.
+Yeah, yeah.
+
+B S, Dineshkumar [S]   51:01
+OK, this is on landlord so guys see as he mentioned, so the landlord hoten by journey. This is just for your reference, but to understand on the current the product in which we are going to work.
+
+Dhakate, Khushali Ramkishan (Cognizant)   51:05
+Yeah.
+David.
+Aye.
+And.
+
+B S, Dineshkumar [S]   51:19
+Please go through the journey that we have got in current platform SSP once for deal 4B1 had in beauty bed and breakfast office, retail professional and all. So this one.
+Yeah, you can still do it just to get to know how the journey it is going to look like in actress. The one that you were doing it is the landlord product. So we are not going to get any change in this landlord journey.
+For to to know your to get to know understanding on the product, I would recommend to use the product related links that I have shared that currently exist in SSP.
+
+Dhakate, Khushali Ramkishan (Cognizant)   51:56
+Yeah.
+OK, finish.
+
+B S, Dineshkumar [S]   52:05
+OK, so landlord one, you don't need to worry because one thing is the look and feel, it would be different when it comes to Azure S, but to know more on the product, I would recommend using the existing platform, Horton Bay journeys.
+
+Dhakate, Khushali Ramkishan (Cognizant)   52:07
+Yeah.
+Yeah.
+
+B S, Dineshkumar [S]   52:24
+That is SSP one.
+
+Dhakate, Khushali Ramkishan (Cognizant)   52:27
+Yeah.
+Thank you.
+
+B S, Dineshkumar [S]   52:32
+Yeah. OK. Anymore. Any other questions?
+Oh, right, OK. Nothing else. Yeah. Thank you. Thanks, Ashley. We'll again catch up tomorrow. Thank you all. Bye.
+
+Joseph, Ashly (Technology Services) [S]   52:49
+I'm so good.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   52:51
+Thank you.
+
+B S, Dineshkumar [S]   52:52
+Yeah.
+
+Sivaraj, Bhuvanendiran [S]   52:52
+Thank you.
+
+Khiwasara, Adarsh (Technology Services)   52:54
+Thank you. Bye.
+
+Kumar R A, Dinesh [S]   52:55
+Thank you.
+
+Joseph, Ashly (Technology Services) [S] stopped transcription
