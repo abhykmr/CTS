@@ -1,0 +1,855 @@
+Acturis SDW - KT-20240108_103507-Meeting Recording
+January 8, 2024, 10:35AM
+51m 22s
+
+Surya Rabindranath Tagore [S] started transcription
+
+Surya Rabindranath Tagore [S]   0:03
+Already Sayed has given Katie last year.
+Because I think they should know.
+
+Nath, Surojit (Direct Line Group)   0:13
+OK uh, is my screen visible for all?
+Can anyone confirm this?
+My screen visible have shared the screen.
+
+Surya Rabindranath Tagore [S]   0:26
+Yeah, I can see.
+
+Nath, Surojit (Direct Line Group)   0:28
+OK, so let's start them from the acturis point of view.
+I will go with the acturis point of view, EG stable as everyone is aware of acturis, so where the details has been stored as per the table that I will explain and then I will go for part and service which is one of the complex part in the database in our creating converting all those I will explain that that part OK so when we are starting with the actuaries we are.
+
+Gurunathan, Arjun (Technology Services) [S]   0:54
+I'm surojit your screen is going blank, light is flickering between the ear diagram on the Gray screen.
+
+Surya Rabindranath Tagore [S]   0:55
+Ohh.
+
+R, Haswanth (Direct Line Group) left the meeting
+
+Nath, Surojit (Direct Line Group)   1:03
+OK.
+Let me reshare or I think so.
+I don't know why I can I?
+I need to drop off and I need to join from the browser then.
+
+Gurunathan, Arjun (Technology Services) [S]   1:14
+Yeah. OK.
+
+Nath, Surojit (Direct Line Group) left the meeting
+
+Nath, Surojit (Direct Line Group) joined the meeting
+
+Nath, Surojit (Direct Line Group)   2:32
+OK.
+Sorry, my against laptop got stuck.
+There's no sorting.
+Hello.
+
+Surya Rabindranath Tagore [S]   3:37
+If solution.
+
+Das, Surya (Direct Line Group)   3:37
+Yes.
+
+Nath, Surojit (Direct Line Group)   3:39
+OK.
+I think you saw me everyday.
+Stop now.
+I don't know what that video went blank all of a sudden.
+
+Gurunathan, Arjun (Technology Services) [S]   4:21
+Which I never AWS is it?
+
+Nath, Surojit (Direct Line Group)   4:23
+Uh, yes, they W 1.
+But now it was working.
+I don't know what happened.
+I'm just reloading you baby.
+
+Gurunathan, Arjun (Technology Services) [S]   4:39
+You can log in meanwhile Surya.
+Do you have the ER diagram so we can screen share and let them explain?
+
+Surya Rabindranath Tagore [S]   4:47
+Uh, my AW skirt also struck the let me try it again, yeah.
+
+Gurunathan, Arjun (Technology Services) [S]   4:51
+OK, OK.
+
+Nath, Surojit (Direct Line Group)   5:06
+Yes, now it is back.
+OK, I hope my screen is visible now.
+
+Surya Rabindranath Tagore [S]   5:26
+If we are able to see, yeah, the item.
+
+Nath, Surojit (Direct Line Group)   5:26
+Yes.
+Ah yes.
+So I was on the acturis front point of view.
+I was telling the all the tables where we are when, when when we are starting creating the data in acturis.
+OK, so once we are starting creating the policies, there are the few set of details which we need to enter are related to client related to contact email ID, username, password not username means not the password.
+Sorry, the contact details, the address, the email ID, the phone number, all those details details we need to store it so that details are stored into the client table in SDW their male, female and their bank details.
+Address details are stored over here, so here is the client.
+Is the main table and these are the other tables which are having a relation to it.
+For example, in the client table you will get only the name, the first name, the last name, the mobile number and all those.
+But if you want to go into the details, they are address key.
+The address is being stored into the address table, but in this table there will be an address key and you are also you will find there is an address key.
+
+Thangavelu, Abirami (Direct Line Group) left the meeting
+
+Nath, Surojit (Direct Line Group)   6:33
+OK, so there we need to do a left join and you can get the details of address 1, address 2, address 3.
+OK, so this is where you can get all the client related details.
+Also, if you want to get more details of it, for example you want to get the salutations, what salutations has been used.
+Mr misses.
+Doctor, PhD, holder.
+Those details are stored in contact people OK and also there are few more.
+Ohh details which we want to get it like a contact by either work key, home key, email address, SMS letter, social keys.
+This all details are stored over here so we can get from the client.
+You there is always a primary key client key from client key you can get all these details.
+OK, where all the details has been stored?
+What the very initial level when you are creating a policy so the client related details we can find it over here in that also when we are creating a policy in acturis there are few set of more details.
+We are selecting an appointee nominee managing dealer, so that all details are stored over here in contact people type one more contact people type.
+There will be one more column contact people type.
+
+Thangavelu, Abirami (Direct Line Group) joined the meeting
+
+Nath, Surojit (Direct Line Group)   7:56
+This that is little bit sorry, but there is one more column contact people type where it has been mentioned what type of people they are there for the managing dealer they are from the nominee.
+Such kind of details you can understand.
+
+Das, Surya (Direct Line Group)   8:13
+Contact person type is there, right?
+
+Nath, Surojit (Direct Line Group)   8:16
+Uh contact person type.
+
+Das, Surya (Direct Line Group)   8:16
+Extreme extreme.
+Extreme right.
+
+Nath, Surojit (Direct Line Group)   8:27
+It is lagging.
+
+Das, Surya (Direct Line Group)   8:29
+The yeah.
+Be besides that contact person table?
+
+Surya Rabindranath Tagore [S]   8:31
+Abu joint.
+
+Das, Surya (Direct Line Group)   8:32
+Yeah, of the fugo it is there below the additional.
+
+Nath, Surojit (Direct Line Group)   8:36
+Huh.
+Contact people like, correct, correct, correct percentage, yes.
+Uh, this is the table where you can understand whether it is a nominee or a managing dealer or appointee.
+Such kind of details we can get it from here because when you're creating a data into the actual risk, you select a value.
+What you want to give it as a nominee or such kind of details.
+So these details you will not find it in the contact people or not into the address not into the client key.
+So, but from there, if you want to get those details, you need to join and with contact people.
+Then from contact people you need to get the contact people type key and then you need to get the description from the description.
+You will be able to find whether it is a managing dealer or it is a nominee.
+Such kind of details.
+You will get it from here.
+OK, so this details we're using and also in the client there are few set of report questions.
+We are having it so in client related also report question.
+There will be a report question filled up.
+You can see contact report field type.
+So any questions which we are asking on the client level, so there will be a question answer key, OK, you're also this table is having relation contact people key report, uh filter key is having a relation with this with client key contact report field key OK.
+
+Gurunathan, Arjun (Technology Services) [S]   9:48
+I'm sure as it's one second.
+I don't think they understand what is it question and answer.
+
+Nath, Surojit (Direct Line Group)   9:57
+OK.
+Shall I go with the database then?
+
+Gurunathan, Arjun (Technology Services) [S]   9:58
+To be honest, yeah, I think you can show them the database or if you have acturis, you can show them how a sample question and answer is available.
+
+Nath, Surojit (Direct Line Group)   10:09
+OK, OK, that that is what the initial question was.
+I thought they will be aware of actuals.
+
+Gurunathan, Arjun (Technology Services) [S]   10:15
+In exactly, there are quite a few people who are joined so team the way acturis is structured is it is like a form and the form is nothing but you know structure of question and answer.
+You can consider it like an columnar approach.
+It should have an uh, horizontal table approach.
+What is the name or how much it is insured?
+Everything will be in a question format and whatever answers that you choose, so those answers will also be stored in the answers table.
+
+R, Haswanth (Direct Line Group) joined the meeting
+
+Gurunathan, Arjun (Technology Services) [S]   10:54
+Some information like client and all those things are directly available from those tables, but the configurable fields right?
+So because it is insurance domain.
+Uh, in Motability it is motor insurance.
+So you will have a driver.
+You will have, uh modifications made to that vehicle or vehicle information.
+Now you will have it in a configurable manner, for example name of the vehicle registration of the vehicle.
+All this will be the questions and correspondingly you will have answers to it.
+But when did you come to Symphony?
+It will be more of an uh umm, uh commercial product.
+If you have to recollect with what Subhash was explaining, right, uh, the *** brand, it's it's a little brand, you will have the commercial like in terms of property, meaning how many buildings are insured, whether it is a tech buildings, then what are the covers they have, it can be fire, earthquake or what is the calamity types.
+It is a.
+So those kind of configurable fields will come under question and answer, but ultimately from a back end point of view the tables will remain the same.
+However, the questions are the questions will remain the same wherever answers are there, the answers will remain the same.
+Uh, so surojit to now show you just to get your view of how it is in front end and then again you will see it how it is mapped in the back end.
+
+Nath, Surojit (Direct Line Group)   12:25
+I things are today W is having some problem again it got stuck.
+
+Gurunathan, Arjun (Technology Services) [S]   12:30
+Umm.
+
+Surya Rabindranath Tagore [S]   12:33
+Let me share my screen now surojit.
+
+Nath, Surojit (Direct Line Group)   12:36
+OK.
+
+Surya Rabindranath Tagore [S]   12:41
+Uh, are you giving me to see my screen?
+
+Gurunathan, Arjun (Technology Services) [S]   12:44
+Yeah.
+
+Surya Rabindranath Tagore [S]   12:45
+Yeah, this is actually the screen where like a this is the policy detail.
+OK.
+
+Nath, Surojit (Direct Line Group)   12:55
+So can you just click on the extreme first one?
+Yes.
+So this as I was telling about the client table, right?
+
+Surya Rabindranath Tagore [S]   12:58
+Yeah.
+
+Nath, Surojit (Direct Line Group)   13:01
+So if you are able to see whether the client is an individual or not, whether the context status is equal to live, if you see the title is equal to Mr the name, surname, the address is this all fields were related to the client table.
+OK, so this all details which are saying at the front end the external contact number that is stored into the client table and there's all this address was on the address table and the more mobile number and email ID right that you have seen from the contact people type contact people tables.
+So this is how the data of this client is stored into the different different tables which is the out of which one main table is a client table.
+From there you can bring up all the relations.
+Uh connect the client table with the address to get the address to connect the client with the other table to get the email ID numbers and all those.
+Connect the client table with other details so that you can get to know whether it is a managing dealer appointee or such kind of details so that is how the details has been stored of client of this.
+So UI which are able to see in the front that details are stored into the client and other tables which we have discussed just now.
+Now that is clear.
+What we are able to see into the tables of the tables which we discussed.
+So second table which I was just explaining regarding the report tables.
+OK, I do.
+You have that ER diagram also in front of you, Surya.
+
+Surya Rabindranath Tagore [S]   14:25
+Hmm, knowing to open it I think.
+
+Gurunathan, Arjun (Technology Services) [S]   14:44
+You can share it and chat with Surya or Surojit.
+
+Nath, Surojit (Direct Line Group)   14:47
+OK.
+
+Surya Rabindranath Tagore [S]   15:12
+Umm I I got it off Suresh.
+
+Nath, Surojit (Direct Line Group)   15:15
+OK, that's been done.
+
+Surya Rabindranath Tagore [S]   15:23
+No.
+
+Nath, Surojit (Direct Line Group)   15:25
+Hi.
+Yes.
+So we were on the report questions.
+Yeah.
+If you see there are tables like contact report filled up OK that is connected to the client table so that you need to join with contact report field keys to get.
+Now if you move to the UI, there are the set of question and answers.
+OK, these are the set of question and answer which we need to fill in.
+OK, so client related details, all related questions will be there in Question report key but there also there having key value pair that is a key for the question and there is a key for the answer.
+So again, you need to join with some other table to get the corresponding questions and corresponding answers for it.
+Now can we move to the table please?
+The ER diagram, huh?
+
+Surya Rabindranath Tagore [S]   16:16
+No.
+
+Nath, Surojit (Direct Line Group)   16:17
+OK, so once you are or you have joined that report question.
+This is basically key value pair table which you can see the field up table.
+So for that, if you want to get the question, what is actual question has been asked which were able to see into the UI for you need to join with contact report Question Key.
+If you see both the table contact report question and contact report filled up table, there's a common between contact report question key that you need to have a joint and then you can get a question text.
+There is a corresponding question which you are able to see into the UI that is a question text for that question.
+What was the answer?
+It has been stored in contact report answer OK that is also a joint.
+You need to do is contact report answer key with the contact report answer key to the next table.
+If you do it on that then you will get a further corresponding question.
+What was the question asked?
+Basically this is a common point from where you can get the corresponding questions from the other table and the answer from the other table that you will get both question and answer keys but not the actual question and answer.
+You will just get the keys from that keys.
+You need to go to the other table, joint it and get the values.
+What was what question?
+What answer was given?
+For the client.
+Understood.
+These are questions will be there.
+These are question one, reliability, reliability, all life life events, special term applied.
+If a client is having a special term applied, if there is a drop down again for drop down, there is another case you need to handle it drop down values.
+You can't get it directly.
+For that you need to check there is one column into the database.
+It will ask you tell you that whether the description value is 2 or one, because some places.
+If you see there is a directly text field, OK, if it is a text field.
+So in that case you can directly get the from answer from the answer text.
+If it is a drop down which is having a set of values predefined set of values for that you will get it from some other table.
+If it is a direct answer, you can get it from the answer text itself, which are able to see into the tables.
+
+Surya Rabindranath Tagore [S]   18:29
+For example here passcode and banner text will be normal text field and the scheme type and all.
+
+Nath, Surojit (Direct Line Group)   18:32
+Yes, normal text.
+
+Surya Rabindranath Tagore [S]   18:35
+We have a drop down values that we need to refer to some other table, right?
+
+Nath, Surojit (Direct Line Group)   18:36
+Drop downs.
+So are some other table?
+Yes, because these are description type, there is a description type will be 2 given.
+So for that you need to go to the other table that OK, this is a drop down that gives an indication that this is a drop down.
+So if it is a drop down go to join, join from other table and get the data from there.
+If it is a normal text field then you will get it from here itself.
+That is how we need to handle the drop down part before the text.
+
+Surya Rabindranath Tagore [S]   19:03
+Uh for a drop down?
+
+Nath, Surojit (Direct Line Group)   19:04
+Then it is pretty simple.
+
+Surya Rabindranath Tagore [S]   19:05
+Which table I need to refer this one?
+
+Nath, Surojit (Direct Line Group)   19:12
+In this that is no problem part.
+It is basically in the part and bridge when we are doing it in the report questions, we are not having it is simple in the report part but when we are going into the policy but that we have to handle the drop down part.
+
+Surya Rabindranath Tagore [S]   19:20
+OK.
+OK.
+
+Nath, Surojit (Direct Line Group)   19:28
+OK, so this is how we are storing the client details in our uh databases.
+How we are doing it?
+Any doubt why we are doing it?
+And yes, you may be a little bit problem with the SQL queries.
+I will explain you that while writing the queries as well, but I'm just explaining the outline structure of it.
+How were the details of Acturis is getting stored into the database?
+Is that clear?
+OK, I'm assuming that it is clear.
+OK, so once we are filling in creating the client, OK, we have we need to create the policy part, OK in the policy part also we need to fill in all the details.
+So for that we need to move to the policy table.
+OK, so policy related details, we are having effective date term and rate key whether the policy is live or not.
+When was the policy accepted?
+When the policy was created, what is the status of that policy on that policy, whether it was a new business?
+If you're doing MTMT on it, such kind of scenarios are there so those all details of that policy are getting stored into the policy table.
+OK, what is M new business when a new policy has been created for the very first time?
+That is a new business.
+If you are making any change into that policy, if you're amending any changes so that is an empty OK.
+If you're making any temporary changes by adding a vehicle or adding a driver, OK, that is A TM team.
+OK.
+In that also, there are certain stages you can cancel MTA.
+You can cancel it TMTA or.
+Also you can cancel the policy itself.
+OK, OK.
+There are few more scenarios you can cancel the policy.
+Cancel the avoid the policy itself.
+Cancellation.
+You have made a cancellation, but you think no, the cancellation is not required.
+The policy need to be live so you can write that cancellation so that all status related details are stored into the policy table.
+Also, how the policy table works is OK you made a new business example.
+You created a new business that will have a version number for it.
+OK, this one number for example, this is my version one as I'm creating a new business or for example if you are doing any coding in that if you're writing a code and you're giving it version one, if you're updating it that is a version 2.
+Again, you're updating.
+It is a version three, so that is how each policy is having a version number for it.
+Version 1, version 2 version three.
+But when you're creating a new version every time, the previous version will keep on negating expired and there will be latest version and that will have a status for it.
+To identify it.
+How it is, whether that has been live or not, there is a business event key and policy status key which you can understand what was happened.
+OK.
+In that also, if you see can you just go to the policy table a bit zoom.
+If you see that is one yes.
+
+Surya Rabindranath Tagore [S]   22:47
+If it was me.
+
+Nath, Surojit (Direct Line Group)   22:50
+So first is a policy key.
+Each policy will have a unique policy key, which is, that is, that is a primary key client key.
+If you want to join for that corresponding client, what was the client name?
+What was the the for?
+This policy was taken down.
+Details you going to get it?
+You can join the above client team table with this policy with client key.
+OK, let's all other details are there.
+You can see business event key policy status key which I told where you can understand what was the status of it.
+There is effective date key and policy end date key, old contact ref number OK old contact ref number in actually is nothing but the external policy reference number which we're having it.
+And then can you just go there is also version ref if you see in between there is a small version ref below the display name.
+That is what we are storing the versioning of the policies.
+OK, these are the different different versions.
+And also there is one more parameter called accepted date key when the policy is going live or getting your making making is going live so that is what the accepted date key come into.
+Picture it.
+Get entered so this day this policy has gone live or you have completed the entire process for it.
+So that time stamp will come sometime.
+What we do is we take the reference of it and create all our feeds depending on it, so that is also one of the important parameters that this day this went live or this day you completed the entire process for it because that can be future dated as well.
+But accepted date KB always be a current date.
+It will never be a future date of such kind of things.
+OK, from here also you can get a few more details of the insured details if policy insured details if you required.
+So in that case you will do a left join with policy insurer details and get the details about it.
+But rarely we use it.
+We don't require this table, but if you want to get it, you can get these details from here.
+OK, if you go to the UI but the UI I think so you need to create one basic customer for it so that they can understand about the policy details. Yes.
+So.
+
+Surya Rabindranath Tagore [S]   24:55
+Ohh I logged into production surojit so.
+
+Nath, Surojit (Direct Line Group)   24:55
+So yes, yes, yes, this is fine.
+So as the tool right in the policy table, these are the front view, we are able to see right there is a version ref at the top external external policy number.
+There is an old ball ref number.
+Then there is a code reference.
+All the policy related details one was affective, one was when it will get expired when is the renewal date client install account.
+This all details will be there in the policy table.
+OK, if you go for the report questions, there is this policy is also having a report questions.
+So in this also whether you want to go for a renewal, yes or no, there will be a drop down.
+If it is a migrated yes or no, whenever we go for a migration, there will be a status by default as yes, which means that this policy has been migrated and this was not newly created.
+This was migrated from the previous system.
+If you're creating it, it will be never.
+It will be always be blank or no, but it does policy special term has been applied on a policy or not extension auto extension policy gap.
+Hire those.
+All details can be filled over here.
+OK, Gap ad is nothing, but when the policy holder is not having a vehicle that time the gap air will be yes and there will be no vehicle details inside it.
+The vehicle registration number will be gap higher.
+Basically, when the car is totally damaged or such kind of scenario happens, so that car is not under the insurance cover so that time gap hire come into picture.
+OK, so in this also report questions, this detail is for as we seen into the client there was a client field report up questions so policies also having a report questions again it is the same pattern which you're falling at the client there will be again in one table which is having a key values of both the tables you need to get from one table you will get a question text and 1 from 1 table you will get the answer text.
+OK.
+Can you just cool?
+I think that is at the bottom.
+Second page policy table is big.
+Addition for report policy field up.
+OK, so you are also you are having the same report questions which we are just seeing in the front end, right gap hire special term applied or not such kind of details are stored over here policy related details again it is the same pattern which we did in the client.
+
+Surya Rabindranath Tagore [S]   27:12
+Yeah.
+
+Nath, Surojit (Direct Line Group)   27:24
+You will do a join with the policy table using policy report field up key for that key you will do a left join and then again do a left join with a policy report question and policy report answer so that you can get the both the question and answer into one table for that question what was the corresponding answer.
+OK, this is how we will be doing from the policy report question part.
+There are additional details as well.
+For example, if you are going for renewal, if you're going for when the policy has been voided, there is a voided table as well, so you will get to know the reason when it was voided.
+If you can just scroll up up.
+No means it.
+Scroll down.
+When the policy was getting why we are avoiding the policy, what was the reason for it?
+Because policy table can itself cannot handle all the data in one part, so they're just doing each end table has been created in the key value pair.
+Just joined with that column, for example word reason that is having a void ID so that if you join with that table you will know the reason why it was voided with what reason it was voided.
+Same with the cancellation when you're doing the cancellation again, it will tell you reason without because you unnecessary or you can't cancel the policy.
+You need to give the reason so for that also you have a table we need to join with that table cancellation policy we will get the reason for it specifically with the description.
+So from there you can get the data for it.
+So this is that where we storing the policy details.
+Once the policy has been created, there are few more set of details we need to fill in because we are not as of now, we are just created the policy.
+After that, the risk details come into the picture, which is one of the complex part.
+As we are, there are few set of sections we need to fill in.
+1st is the customer details mobility product.
+This is the customer detail which will be filling in then after that customer has been given then after that what will happen?
+We will give the vehicle so once the vehicle will given the vehicle details has been filled in was the vehicle is that for that vehicle that will be corresponding driver as well.
+So there will be a driver details attached to it, but in that driver may also have some kind of convictions and restrictions, some kind of he has break the rules.
+So there will be some restrictions on it.
+There will be some penalty on it.
+Such kind of convictions are restrictions.
+Are there OK, so there is a conviction and restrictions are at the driver level and not on the policy level level.
+Let us few set of levels as well.
+One is policy as the top and then the vehicle and then the driver associated to it.
+So top will be the policy, then the vehicle and then the drivers.
+That is what we are able to see the tree structure as well.
+OK.
+So now moving on to the first part, the mobility product.
+OK, So what?
+This is the table structure is bit different over here.
+Uh, let me or you can just open one excel sheet in front of you, so or.
+OK.
+So OK, so can you just write for example, policy number policy number and the next table will be question and next table will be the answer.
+No, no, this side it is a header.
+OK, so how the data has been stored into the databases?
+For example, what you will do is you want to know about the policy, mobility, power product where the client detail has been stored.
+Again, it is not again, basically because whatever updates you are doing it at each version.
+For example, you want to change the client details, so again it will not change into the client table, but it will change into the part answer bridge because these are the two total different entities on the database side.
+Client is a totally separate different table, but if you're making changes into the risk details.
+Of the acturis so that data is being stored into the part Answer bridge part.
+OK, so any changes?
+Because what happens is as a tool rate, if you remember policy versions keep on changing, so each version is having set of its own data.
+They're keeping all the data even though it is an history or it has been expired.
+It has been live or it is of no use, but those datas has been kept into the database.
+OK.
+
+Surya Rabindranath Tagore [S]   32:34
+OK.
+
+Nath, Surojit (Direct Line Group)   32:36
+So now coming to the part from the policy you, yes.
+
+Surya Rabindranath Tagore [S]   32:38
+Ohh yeah, sorry to interrupt gain this example.
+The new business, we have only one driver with the conviction, but we have one empty happened here.
+If you look into the rest details, there is one more driver has been added.
+So database will have both the history.
+
+Nath, Surojit (Direct Line Group)   33:00
+Yes, because what will happen is all the details if you're seeing in front of you all the details, mobility, product details, vehicle driver, two drivers, the first of new business was having one driver, so that many, all the records, driver vehicle, everything will be duplicated again for the next version because what happens is for each version they're keeping each and every record details in the database.
+What changes you have made?
+Because if you want to go backtrack it, it make it easy to go what was what was the detail filled in next version what was the detail was in previous version.
+You can easily go through it.
+So for each version, they're keeping the data even though it is the same or you're making any small minor changes as we are seeing in this example, there is one driver has been added, but ideally you may think why we are repeating it.
+OK, look, was the rest all the details are same.
+We just want Driver edition.
+We can see if this pace, but what if you have to your version?
+You have to go to the previous version and see what will details you have stored so that version, because one example is as I told it, there is a empty.
+You have done it and you have voided it so that previous version you need to go in that case the previous data should be stored over there.
+So that is why we are storing all the details, it should not.
+It is just not addition of one of the single rules, so every version is having the same data.
+If you're making any changes, duplication is there, but it is more effective to know about the history part.
+OK, so coming up to this part, how it is stored into the database.
+So from policy you will go to the part part part question.
+OK, part question is nothing but a table where this part has been segregated.
+That is your vehicle.
+Ohh, you said the mystically the part into the UI Motability product, vehicle drivers and your conviction restrictions are these are the certain parts.
+OK, when you're joining for this policy with the part table with the policy key, there will be set of parts.
+So this has stored into the part table for that part table there is a corresponding part answer bridge table.
+If you see in the table, there is a part answer bridge table at the little bit this is one of the important table OK because this is having a relation again the same way which you have seen in the client and also in the policy.
+This is storing the vehicle, the answer key and the proportion text answer key and the product Question Key.
+OK.
+Last question.
+Yes, put a question key and answer key.
+So again, for this it is just a number.
+So for to get that answer you need to join with product question and also there is a there is one more table at the bottom there is a product.
+Product question and product question answer if you see uh, can you just scroll to the right hand side?
+
+Surya Rabindranath Tagore [S]   36:01
+Yeah.
+
+Nath, Surojit (Direct Line Group)   36:02
+How you some part but each part?
+For example, the mobility product, you have a product number for it.
+Example that will be number XYZ for that XYZ there will be again a question and answer for it.
+For that you need to join with product question.
+So if there you will get the answer related question related to the be right.
+For example, the client details address.
+If it is having any convictions or not such kind of details questions will be there over there and product question answer is the place where you will get to know about the answers what has been stored for it.
+The name all those details name, date of birth, then address.
+All this will be stored over here.
+OK.
+But if you see in the product question answer, there is also called drop down answer type key.
+OK, if it is a drop down, in that case you need to take answer text from it.
+OK, in that case we need to take the details from other table.
+So the question key ha.
+Sorry, sorry.
+In part answer take part Answer Bridge.
+If you see there is an answer text as well, OK in the partials average, the last the third last.
+In this case, if it is a text field OK directly you will get it from the part answer bridge.
+For example, the name.
+If you go to the UI, the name and all this name, surname, title, these are the text field.
+So this details you will directly get it from the part answer bridge.
+OK.
+But if it is a drop down, OK.
+If you see there is also one more in the part that's a bridge and also in the product question I said there is one option drop down.
+If you see standard comprehensive and scheme type, these are the drop downs.
+In that case, if you can go to the schema.
+
+Gurunathan, Arjun (Technology Services) [S]   37:55
+So Reddit, can we show it in a table surojit.
+
+Nath, Surojit (Direct Line Group)   37:55
+In that case, if you see.
+Hi, yes, that also means I'm just giving the overview of the database and then we will means the how we will do it and then we'll move to the SQL or now itself shall I move.
+
+Gurunathan, Arjun (Technology Services) [S]   38:07
+OK, that's OK.
+Fine.
+
+Nath, Surojit (Direct Line Group)   38:10
+OK.
+
+Gurunathan, Arjun (Technology Services) [S]   38:10
+Maybe then we will have one more follow on session in that case, because we have got 15 minutes left, that's OK.
+
+Nath, Surojit (Direct Line Group)   38:18
+No, we're going to at least to understand the database and then you will I will start directly with the queries.
+
+Gurunathan, Arjun (Technology Services) [S]   38:18
+Are you covered in your own part?
+
+Nath, Surojit (Direct Line Group)   38:23
+So at least they will be familiar with the tables.
+
+Gurunathan, Arjun (Technology Services) [S]   38:24
+OK.
+Right, right.
+Understood.
+Team, I think you are all silent.
+I need an acknowledgement, though it may be a little big.
+Are you at least able to the correlate?
+How it is in USA and how the schema is?
+
+Mohammad Basha, Faiz (Direct Line Group) [S]   38:42
+Hmm.
+
+Janardan Bavkar, Bhagyashri (Direct Line Group)   38:43
+Yes it will.
+
+Mohammad Basha, Faiz (Direct Line Group) [S]   38:43
+Yes or no? Yes.
+
+Roy, Bipasha (Cognizant)   38:44
+Yes, it should.
+
+K, Barathraj (Direct Line Group)   38:45
+Yes, Sir.
+
+Gurunathan, Arjun (Technology Services) [S]   38:48
+OK.
+I'll be Ravi.
+How about you?
+
+Thangavelu, Abirami (Direct Line Group)   38:52
+Yes, I do.
+
+Gurunathan, Arjun (Technology Services) [S]   38:54
+OK.
+And suganya.
+Looking at you there.
+OK, not able to hear you.
+So when you're sure speaking.
+Alright, if you guys have any questions or not able to correlate that is fine.
+Please feel free to ask the questions the even though it is a very silly don't feel that it is silly or anything.
+It took us a click a lot of time in understanding it.
+So just trust the process.
+Go with the flow and once you see it in DB or you will be able to make full understanding.
+But if you feel anything as a doubt, feel free to stop and ask.
+Yeah.
+Sorry Surojit, I interrupted your flow good.
+
+Nath, Surojit (Direct Line Group)   39:55
+Is this all the flow we will take with one example as we used to started our uh analysis in same way?
+So we'll go with the same process.
+I'm just this will be an overview and then we will go with one policy and I will show you how to find out all the details.
+OK, so that query part also we will do it in the next session maybe?
+OK, so as I was telling about the drop down part, if you see on the UI, there was a standard policy type.
+But and also yes, while policy tag was there, there is a cover level is also there and also scheme type these are the drop downs.
+So for this there is a drop down value which is there into the table.
+If you see over there I that dropped down answer type key OK whenever it is a drop down it will have a value AS2 inside it which shows that it is a drop down.
+So if it is a drop down, we need to take that corresponding answer from the product question answer, you will not get directly in this table itself.
+OK.
+From that you there is also an answer text for it description.
+If you see there is a description option, so there you will get the details.
+Further drop down the standard comprehensive core fleet.
+Those are details will get it from the description in this there was a major challenges on the database.
+Set the data is stored one below the another.
+If you go to that Excel ones now, we will show how the database data has been stored into the Excel in database.
+Basically, if the policy number is, we are taking as hundred.
+The question we are taking as first name a client first name or policy holder first name we can give the name as my name itself surojit and for Surya itself.
+And then again the same policy question will be surname and the surname will be not.
+OK, so and again, the name again the address we can give it as Mumbai cover type or policy type scheme type such kind of thing.
+OK, so for each version this policy for example, this is a new business.
+OK, that will be a policy version for it.
+This will be of version one.
+This all that new business, OK and there is a version called one.
+OK, so in database this is how the data has been stolen below the another.
+Now, for example, again, if I'm doing an empty on it, OK, what will happen is again the same set of data will get copy pasted when below these again the version will be now from version one it will change to version 2.
+Because I did an empty on it.
+Now the status will be changed and this will have a corresponding business event key.
+These are the business event keys.
+There was a new business, then.
+Empty now the driver name has changed from Surya to Surya one.
+Or maybe such kind of things.
+So the data has been changed.
+This we have to convert it into a tabular form.
+Basically, you wanted to do it.
+If you can do it with a pivot or with a case function, but the challenge was yes, the same ID has been repeated multiple times, we need to find the unique one and get all the details.
+OK.
+And this is a one below the another two chat.
+This kind of data has been stored and this data take more amount of time because if you're storing same data multiple times it give the query becomes slow and it takes time as well.
+OK, so to overcome this challenge we were using pivot functions to convert this into.
+The pivot is nothing but you are now.
+You are this data question will get converted into the headers.
+Now it will get converted into first name, surname, Cover tab and Driver name.
+It is just a transpose you can consider and then this below that your data will be coming.
+Because most of your fields are such kind of data, we need to store it.
+It will be stored into search format only.
+So you need to convert this table above table into this format and show it into the version and bring up.
+Sometimes we have to bring up all the versions, so sometimes we need to bring up a few set of queers versions.
+It is not always fixed, so for that you will be having some more.
+The other unique column you need to create a surrogate keys and you need to bring up some logic so that you can convert all the details and convert into this format.
+For that to come up to this, first of all you need to confirm which should be comfortable with the join part.
+The part part Answer Bridge and those connections will be connections.
+Joins are important so that we will do it properly into the database site on the next session, but this all tables are required to get all the details so client is there policies there and part this.
+These three are the major tables in our policy set while dealing with the actuaries and this is how the data has been stored not only for the part but also for the report questions.
+Also, you have sown seen.
+That is how the data has been stored for that table as well for policy as well for the claim as well, even for each and every, the pattern is same the storing the data into the database that we will have a look.
+We will take one example of 1 policy and find out all the details from the UI.
+We will match it with the database.
+How we are doing it?
+OK, so these are the tables we will be using current.
+
+Surya Rabindranath Tagore [S]   45:28
+Team, this is like from Motability perspective.
+We are explaining it for Symphony also.
+The actuaries platform is same, but maybe the screens will be slightly different because that is a commercial business that reporting question whatever here we have seen it here.
+We cannot see the same kind of reporting questions, but the base tables and all.
+It is same only.
+
+Gurunathan, Arjun (Technology Services) [S]   45:53
+Umm so for example.
+People who did that?
+Uh mainframe?
+Exercise right?
+The IS2K and versus what you have seen here.
+Can somebody tell what is the key difference between the table structure in highest 2K mainframe DB versus what is in this acturis DB?
+I'm Bipasha I don't want you to answer anybody else.
+
+Janardan Bavkar, Bhagyashri (Direct Line Group)   46:25
+Uh hello?
+
+Gurunathan, Arjun (Technology Services) [S]   46:28
+Yeah.
+Who is it?
+
+Janardan Bavkar, Bhagyashri (Direct Line Group)   46:30
+Uh, that this year in S2K or the main table was policy and the client we joined client and other tables related to that and there was other class of business.
+
+Gurunathan, Arjun (Technology Services) [S]   46:30
+Yeah, but yeah, go ahead. Yeah.
+
+Janardan Bavkar, Bhagyashri (Direct Line Group)   46:44
+So class of business was the another main table.
+So in this day we so there are client is the main table after that policy and part.
+So this structure is different.
+
+Gurunathan, Arjun (Technology Services) [S]   46:57
+Correct.
+So there for every single entity you had a separate relational table with the respective columns and you have the associated data integrity primary key foreign key using which you were able to navigate and find the table information.
+But in this acturis product, because it is a SAS product and they're going to roll it out for many customers, they're bringing in that question and answer.
+So client separately deserve but anything to do with address, driver and vehicle etcetera will be in the part part part Answer bridge and in the question answer format.
+So we will not be doing extensive query in terms of separation, sorry, in the retained business coming back to the retained business, connect the dots with what Subhash had explained.
+Uh, why retain this?
+We are going to retain but two businesses, right?
+Uh.
+From that spreadsheet that he has given, for those, we will only make sure the MTS are still flowing in and because the new policy will be done by Rs A-Team.
+So we will make sure that as part of end to end testing, the newly created MTA is being successfully flowing into the respective downstream systems.
+But in terms of separation, that is where we will have to do it is a one off extract.
+Let's say there are 100 policies for this particular month in IS2K, the developer will write a code, extract it, we will write a code and extract it and we will make sure the extract is working fine.
+So maybe you will do it in IS2K you will do it in acturis.
+So contextually, our test approach will change, but most likely these are the two back ends that we seem to think at this point in time that you will be touching.
+So yeah, yeah, that is that we will have upcoming sessions with Subhash as well on the remaining patterns at the same time with surojit as well in terms of actually seeing it in the back end, you will not get access to this back end at this minute, only Symphony related product and brand access.
+You will get at a later point in time, but make sure to go through this videos and the ER diagram on that Surya has shared now.
+So slowly I think by next month or so we will get into the testing mode.
+Before we close the call, any question from anyone or Surya, do you want to convey anything Surya?
+
+Surya Rabindranath Tagore [S]   49:50
+Ohm, I'll share one document to raise the ServiceNow request.
+Uh, you guys can raise it.
+Maybe.
+I don't think this week it will be available, but yeah, we can start tracing the request.
+
+Gurunathan, Arjun (Technology Services) [S]   50:05
+This is for which one Surya.
+
+Surya Rabindranath Tagore [S]   50:07
+Ohh this for that actually says TW for Symphony.
+
+Gurunathan, Arjun (Technology Services) [S]   50:12
+OK, you got this.
+Cyber Ark counts as it.
+
+Surya Rabindranath Tagore [S]   50:16
+Uh.
+Cyberark account I need to follow up, but at least they can raise it and have it ready.
+
+Gurunathan, Arjun (Technology Services) [S]   50:24
+OK, alright.
+
+Surya Rabindranath Tagore [S]   50:26
+Yeah.
+
+Gurunathan, Arjun (Technology Services) [S]   50:26
+OK.
+
+Surya Rabindranath Tagore [S]   50:31
+Or at least with the one account 22 are some.
+I mean, they can play around.
+Still you get multiple accounts, yeah.
+
+Gurunathan, Arjun (Technology Services) [S]   50:36
+Alright.
+OK.
+
+Surya Rabindranath Tagore [S]   50:39
+OK.
+
+Gurunathan, Arjun (Technology Services) [S]   50:43
+Thanks, Sir.
+
+Surya Rabindranath Tagore [S]   50:43
+Ohh, I'd go sharad.
+
+Gurunathan, Arjun (Technology Services) [S]   50:43
+Surojit now go to.
+
+Surya Rabindranath Tagore [S]   50:45
+Yeah.
+Thank you so much.
+I'll set up a follow up session based on the Surojit availability this week and I have shared a data dictionary for Symphony, but I'll share yeah diagram and the data dictionary for a Motability that has explained it.
+
+Gurunathan, Arjun (Technology Services) [S]   50:52
+Umm.
+
+Surya Rabindranath Tagore [S]   51:00
+I'll share it in that group check.
+
+Gurunathan, Arjun (Technology Services) [S]   51:09
+All the team then thank you for your time.
+Bye bye.
+
+Mohammad Basha, Faiz (Direct Line Group) [S]   51:12
+Thanks for the thank you, Angel.
+
+Roy, Bipasha (Cognizant)   51:14
+Thank.
+
+Nath, Surojit (Direct Line Group)   51:14
+OK.
+
+R, Haswanth (Direct Line Group) left the meeting
+
+Sulaiman, Sudhina (Technology) [S]   51:17
+Thank you.
+
+Nath, Surojit (Direct Line Group) left the meeting
+
+K, Barathraj (Direct Line Group)   51:19
+Thank you.
+
+Surya Rabindranath Tagore [S]   51:21
+Thank you.
+
+Mohammad Basha, Faiz (Direct Line Group) [S] left the meeting
+
+Das, Surya (Direct Line Group) left the meeting
+
+Surya Rabindranath Tagore [S] stopped transcription
