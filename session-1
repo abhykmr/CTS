@@ -1,0 +1,329 @@
+CPC - Project Overview on Platforms & Products-20251006_120658-Meeting Recording
+6 October 2025, 11:06am
+49m 20s
+
+B S, Dineshkumar [S] started transcription
+
+B S, Dineshkumar [S]   0:03
+8.
+Hope you all can see my screen right.
+
+Khiwasara, Adarsh (Technology Services)   0:16
+Yes.
+
+Dhakate, Khushali Ramkishan (Cognizant)   0:16
+If.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   0:16
+Yeah. Finish. Yeah. Yeah.
+
+B S, Dineshkumar [S]   0:18
+OK. Yeah. So yeah, first thing on this project, so I'll just give a a background of this project. So the project, it is commercial platform consolidation where what are the products that DLG currently they offer to their customer in.
+Commercial space. So they have different policy admin system, so they have wide range of products that currently exist within DLG which they are offering to all their UK customers.
+This products they are in different policy admin system and this project what they wanted to achieve is they want to bring all this products into a single policy admin system. So that's the ultimate objective of this project and I have listed down what are the different products, what they.
+We have currently in production, so here they all these products, they come under a brand that is owned by DLG. So you can see here DL4B. So this is one of the brand, the DLG they have.
+And not only DL4B, so they have a different brands within DLG and whatever the brand that we speak here, the products and the brand we speak here, they are all related to the commercial insurance business. What DLG provide to their customer.
+So likewise, they have personal lines as well, where they have different set of products in personal lines through that brand. They will offer all the policies related to personal insurance. So that would be.
+Insurance that will be provided to individual say like it can be a car insurance or a vehicle that they own, or a property that they are owning whatever it can be, which is personal to personal belonging to them for which they are getting insured. That comes under personal.
+So they have different set of brands for all the personal lines, related brands. And here when we say commercial, it refers to a term business. So whoever they does a business in UK and they want to.
+Insure for the business, whatever the whatever the business data are doing. Then to get a insurance for the business they are doing, they those policies, those products, it all come into the commercial insurance. So under which DLC they have a classification DL4B which is directly.
+Backline for business, this is one of the DL GS own brand and they have another brand called C4B, So Churchill for business. So these are two different brand, they have, it's more like.
+You can assume like Samsung as a brand, they have wide range of products within Samsung and there will be a subsidiary company of Samsung or I'll take another example. You can take a Hyundai and Kia.
+So those two are different brands, OK, you might have seen Hyundai cars and then Kia cars in the market and let's take in a product of Hyundai say like venue, venue and sell toes.
+A venue and then Creta. So these are two products of Hyundai. Hyundai is a brand under Hyundai. We have venue and also a Creta. So those two are the products. So likewise DL4B.
+Is a brand here and these are the products which are similar like Creta and then venue. And if you take a brand of Kia again it's a brother and sister, sister automobile industry.
+So in Kia, whatever the brand, the brand venue, sorry, the product venue, we have another same kind of product within a Kia brand. So which is SONET and also the celtos which we have in celtos is.
+The product of Kia, which is very similar to Creta what we have in Hyundai. OK, hope you understand the difference between brand and the product.
+You guys understand?
+
+Dhakate, Khushali Ramkishan (Cognizant)   5:00
+He's Dinesh.
+
+B S, Dineshkumar [S]   5:01
+Yeah. So likewise, I gave an example just for your better understanding. So likewise DLG, they have different brands like DL4B and then C4B. So under this brand they are selling the same product in two different brands because customer.
+Some.
+Customer they like DL4B brand and some customer they like Churchill for business brand. It depends on customer like which brand they would they wanted to get the insurance insurance as a product from DLG. So that's why they have different brands under which they have all these products.
+OK, so that's this is more on the brand and products. So with respect to this project, commercial platform consolidation, so we have a deal 4B commercial van, this is one of the product. And then SME we used to call SME.
+The small medium enterprise, so under small medium enterprise you have we have all these different products hat and beauty bed and breakfast office, professional, retail and trade person. So let's look on what what all these products are about and.
+There is an van product which is being offered and Churchill for business brand as well and we have landlord product that comes under DL4B brand. OK. So these are all the products that we have what in our project scope.
+And all these products, so from commercial Vandal trade person, all these are currently in SSP select insurance policy, admin system. So when you say insurance policy admin system probably you guys might know at yours and SSP select and there is.
+Is in guide where policy admin system as well. So like guide where these are all the other probably insurance policy admin system what we have got on the market and DLG currently is using SSP select.
+On all this products, So what are the product that we see here, the one that I have selected right? So all this products, they are all existing currently in SSP, select Policy Statements platform. So we are going to migrate.
+All this products from this SSP select policy admin system into aturus so you can see I have just called it as Future Pass or passes just policy admin system and all the downstream integration whatever that exists currently in SSP select we are going to migrate them into aturus.
+Policy admin system and C4B ban. So Churchill for business under which this commercial ban product it currents it currently sits with sits with bright side serial. So this is again another policy admin system through which the ban product policy is being managed currently in product.
+So again, this product from this policy admin system, we are going to migrate it to Azureus and there is an another plan like the landlord product. Again this product it this is currently in Azureus. However there are the each, whatever.
+The product it can be, which is managed in the policy admin system. Definitely that'll be upstream on the downstream systems, which would be linked to the policy admin system. So for this landlord product, so all the downstream system, they are currently linked to the IS2000 mainframe.
+Platform so there isn't plan for this product once we move all this products. The band hadn't beauty button, breakfast office written all this once we move it into this arc actuaries platform.
+We want to decommission the downstream integration on this IS 2000 and bring it to the architecture of all these products where we have moved to Azure site. So we want to bring it into the Azure itself including the downstream integrations.
+So that's the entire project scope. What we have got on this project.
+Any questions so far?
+Yeah.
+OK, I'll consider us. No, given that silence.
+
+Khiwasara, Adarsh (Technology Services)   9:44
+Yeah, demos, I have a question so.
+
+B S, Dineshkumar [S]   9:46
+Yep, Yep.
+
+Khiwasara, Adarsh (Technology Services)   9:48
+So what is the motivation? Or like why they are moving from specific to actually when everything's in SSP?
+
+B S, Dineshkumar [S]   9:59
+The reason why they are moving from SSP select into Azure us.
+
+Khiwasara, Adarsh (Technology Services)   10:04
+Yes, Sir. Yeah.
+
+B S, Dineshkumar [S]   10:06
+Yeah, the main reason is there are multiple things. So one, there are some of the capabilities on the reporting perspective which they are unable to get from SSP select. So once the policy it has been created.
+So you will have the database where all the policy related details are stored on the different tables. From that the operations team they want to extract the data on different reports for their day-to-day business.
+So there are couple of capabilities which they want to be in place which is not there with SSP select. So that is one of the reason and another reason is the cost cost of using this SSP select insurance product. It is quite high compared comparing to the.
+Aturis one because in the app for Aturis product currently we are using for landlord product so that product so the LG aware like how they are managing the cost and the licence to use this aturis product.
+Comparing to the cost that they're paying for actuators with SSP select, it seems to be multiples time higher so they want to reduce the cost.
+On using the SSP select policy admin system and move it into Azure so cost is one of the main reason and other thing is the couple of capabilities which they wanted to be in place for their day-to-day business from operations perspective on the business as usual which is not satisfying their need so.
+They want to migrate it to answer us.
+
+Khiwasara, Adarsh (Technology Services)   11:56
+OK. Thanks. Yeah.
+
+B S, Dineshkumar [S]   11:56
+OK. Yeah. OK.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   11:59
+Finish one kustine on this commercial when currently it's being operated in two brands, right? BL for business and C4B, right. Yeah. So after this migration, the platform, I mean platform and migration.
+
+B S, Dineshkumar [S]   12:01
+Thank you.
+Yeah.
+Yeah.
+Yep, Yep.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   12:18
+There, the brand will be still the same Churchill and DL or it'll be same.
+
+B S, Dineshkumar [S]   12:23
+It will be same, same, same. Same yeah. There is no change in the brand. So brand it still remains same and again probably a couple of you might have had like DLG that's been bought by Aviva insurer. So again in Aviva again they will.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   12:30
+OK.
+
+B S, Dineshkumar [S]   12:42
+Still retain all this brand within Aviva because it is some of familiar brands to all their customers whom they have in UK market, so they won't change the brand name even if this goes to Aviva.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   12:50
+Yeah.
+
+B S, Dineshkumar [S]   12:59
+Found out, but things may change but there is no plan to change the brand or whatever that they have got currently in the market.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   12:59
+OK, got it.
+Aye.
+OK, OK, sure. Yeah.
+
+B S, Dineshkumar [S]   13:11
+Yep, OK.
+OK, so this is on that and.
+Moving to the next part, So what I have done is I have just took the links to understand for you all to get a view of each product, what they have got, what they are doing business currently with. So DL4B van.
+If you just go into this link.
+It will take you to the page.
+Where we can create a ban a journey. So let's not create any code here. So this is the production live environment. But why I have pulled this pages just to get you all a view of what this product actually.
+So that you will have better understanding of the product and when you test on this product, you will come to know more on like what has to be tested and why we are testing it and whether we are testing it correctly or not to do to satisfy all those three, we need to know about the product, what the product.
+The DLG is offering to their customer. OK, so that's the reason I have pulled all this links which will give you a update updates on like what what kind of product that they are selling to their customer and also.
+You can understand well what exactly they are trying to ensure. OK, so if you get into this site, this is on. You can also if you want, you can explore and see what they have or what DLG they're offering to their customer. So the personal line, if you click it will take you to the personal.
+The lines of products which DLG they are offering and currently I'm in the business. So under van you can just see why we why customer they choose DL4B van. So they have this section and what this van insurance is all about.
+So the van insurance when we say commercial van for example.
+Here one of the one who does a business, say like electrician, he runs a business with one of the name ABC Electrical services.
+That is the name of his business. And to do that business, he has got a van under his business name say like ABC Electrical Services. OK, so that Van he will use to take all his equipments.
+Which he want to.
+Which he wants to transfer from one place to one other place, wherever he he's planning to go and work for the clients whom he's going to work for. He may take all the equipments which he wanted along with him wherever he travel and go and do the best go and do the job related to electric.
+OK. That commercial, that van since it is taken under the his business name ABC Electrical Services when he's trying to get a insurance for a van that is used to for his business a person business.
+Then that is the commercial plan.
+You guys understand?
+Yeah.
+
+Dhakate, Khushali Ramkishan (Cognizant)   16:56
+Yes, vinesh.
+
+B S, Dineshkumar [S]   16:58
+Yeah. OK. So this commercial van insurance, something DLG is offering to all the customers whoever they they use a commercial van vehicle for their own business.
+Yeah.
+OK, so that is the commercial ban product and under this commercial van you you can see like what are the different covers, the DLC they are offering to their customer. So we have got two different coverage package. One is the comprehensive and under comprehensive.
+What are the?
+Different cover. It can cover the they are offering to their customer and these are all some of add on cover which they can add to their policy. You can read through all the add on covers what you have got in this site so it will they're all quite self-explanatory.
+And you can read through all the information and get understand like what are the add-on covers that DLG they are offering to their customer in in on top of the commercial coverage which they can select as a standard coverage.
+Yeah.
+And we have also third party fire and if this is another package where they can select as another standard coverage which which they can get insured based on the need on how they use their commercial van for their business.
+So they have got wide range of coverage which they can select based on their business need say like if they if a customer they use their plan to travel to some remote places where they feel like there is a.
+There is no security whether the van wherever he park, there is no security like he. He has some concerns on the security. Whether no one will damage his vehicle wherever he park, then he can go and prefer the third party fire and theft.
+Coverage to the policy the commercial van policy which he wants to get insured for his van if he feels like he need more beyond that. Just a minute. Just a minute. Welcome.
+OK. Yeah. So so this page, yeah, it will let you guys know like what the comprehensive cover it provides a standard cover from comprehensive package what all the different coverage that.
+A customer they can get and if a customer if he like, I don't only need a third party fire and theft. Along with that I need something like select the windscreen, the screen front on bank vehicle.
+If something damage happened to that, if you feel like I need coverage for that, then he will prefer to take this comprehensive coverage to get a policy from DLC. OK, so likewise for each and every product which I showed you.
+In the above table here you can see right so DL4B all this products so they have got like what the product is all about and who are their customer who is looking to get a product the insurance of those products OK and what kind?
+Kind of coverage they are providing to their customer and what are the different coverages which are available to them to select as part of their policy journey. So everything you have on this links what I have provided below.
+OK, so for DL4B1 you can refer to the slick and get to know what are the different coverage that DLG is going to offer. You can read through them and understand what they are all about and then you can also do a hands on on all this product just by.
+Creating a code journey on our test environment to get it understand better. OK so to give to give a walkthrough on all this journey on all the different products, it is again quite.
+Time taking process for all of us because everyone on the project, they are all currently occupied and we have lot many things that is currently going on within the project. So since we have everything that is available in place and it is handy to everyone.
+You can go through all the different products and understand them. What we have got on all this products within DLG space. OK, so that's why I have pulled everything to all of you can go through them and whenever you have any questions that you have on all any of the product you.
+You can reach out to me or Dinesh are so Dinesh, are is again familiar of all this products because he he's been working on all this product on the SSP select platform. So he's aware of all this products you can reach out to me or Dinesh are to understand more on all this products.
+OK.
+So the example that I gave hope you understand. Like what van insurance is.
+Before I move further.
+Yeah.
+OK, silence Hilton.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   23:56
+Finish the third party liability. That is something this man hit some other.
+
+Dhakate, Khushali Ramkishan (Cognizant)   23:57
+And.
+
+B S, Dineshkumar [S]   24:01
+Yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   24:06
+Car or something we dealt with first. OK, OK, OK.
+
+B S, Dineshkumar [S]   24:07
+Correct. Yep. Yeah. Yeah. Correct. Yep.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   24:11
+OK.
+
+B S, Dineshkumar [S]   24:12
+So third party and liability it refers what you have said. CK. Yeah. And you there there isn't a comparison of different cover like what kind of assistance that they will get with respect to rescue. Rescue is another cover. So even they have classified like.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   24:17
+Yeah.
+
+B S, Dineshkumar [S]   24:31
+What kind of coverage that they will get based on the selection of cover. So all the different things, whatever you wanted to know on the band product, you can get to know on the site.
+OK, it is. And one more thing.
+On the two different coverage, what I mentioned right that party different comprehensive. So if you look at the.
+Yeah.
+You do that? Yeah.
+Yeah, this PDF document it will explain what this product is all about. So the van insurance for.
+Third party fire and theft. What are all the different coverage which is ensured as part of this fire? The third party fire and theft coverage. So what is ensured and what are all the optional covers that a customer can get and what is not ensured and what are the?
+Restrictions they have on their coverage. So everything we have on this document to give us understanding like what DLG is all offering to their customer as part of this insurance product.
+Yeah.
+OK, so likewise comprehensive cover, you can also see like what are all the different coverage, the customer they will get as part of the comprehensive coverage and what is not insured for them. If a customer they select comprehensive coverage.
+For their policy creation. OK, so this is to give an understanding to.
+Of all the products which we are going to work, you can read through all these items which I'm going to share with you all and then once you get understanding of this, I have also provided a link.
+That you can explore and get into.
+Understanding of how the policy creation journey it will be so so for SME traits I have provided this link and for van code creation journey this is the link of test environment that currently exist in.
+SSP platform. So I have mentioned here like this is an SSP platform and this is just to do a hands on. So once you get to know.
+I am just explaining on this commercial van product, so for this van product it is in SSP platform and we are going to migrate it to Azureus to know on this commercial van product you have got a link here to understand more on what this product is all about and also.
+What are different coverages that DLC is offering? You can get to know all this and to again get to know like how the code journey. It is going to look like. You can again come down under this section.
+That I have mentioned like hands on on above products so you can get into this link and this is the security key.
+You would just need to provide.
+And start with an van creation journey. So the example vehicle registration number I have provided can just find Van. It will give van details and then you can just proceed with.
+Journey and see what are the different questions that are being asked and how the journey it is going to look like on our actual S platform. So it's going to be a mere same journey. What you you are all seeing here.
+So whatever the details that we provide here and what are the questions that are being asked on each of this section about your van, and then there'll be about policy holder details and the driver details and the policy details. So everything it is going to remain same.
+So nothing majorly there won't be changing any of these questions that much. So 90 to 95% of whatever the detail that are being asked in this code journey, they are all going to remain same after we migrate into.
+Actually as well, because it's just a platform migration. It's all about this project. So in the whatever the risk values that we see here, all this, it would remain same, OK. So you can explore around this journey and understand.
+On the ban policy creation, OK, you can also create a code and then see if you are able to create a code and then in the next section I'll share you the details on the referral that are going to get triggered after we.
+Create while we create a policy code and what are the different decline messages that we have in place once we submit for a code and how they are being handled so everything I'll share in the next session but to start with this on.
+To know the product what we are going to work on this project, you guys can start exploring on the details. What I have shared so far, yeah.
+OK.
+Any questions so far?
+A guy.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   30:39
+You'll share this document in that team chat, right? OK.
+
+B S, Dineshkumar [S]   30:41
+Yeah.
+Yeah, yeah, yeah, yeah. I'll, I'll, I'll, I'll share it. Yeah. So van product I have explained and the next thing I'll just give a high level intro on all this products. What all what they're all about and.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   30:46
+Yeah.
+
+B S, Dineshkumar [S]   31:01
+Then you can go through on all this products. OK, so for DL4B van alone, you might have to use this link. And for SME product the code journey you can use this link and I'll.
+Tell you like how you need to understand like what kind of code that we are going to create for all the different products. OK, yeah. So then next product, which is Heron Beauty, so here in UK.
+So they offer, it might be new to many of you because you I'm not sure how many of you know like how the insurance business that exists here in UK. So the vehicle insurance something.
+We may we all might be aware in, in even in India that that will be a vehicle motor insurance that would be taken by everyone and also it's now becoming quite common to get a health insurance as well. But beyond that it's something happening here in the UK. So what they are all about us.
+So hat and beauty when when you say the product hat and beauty so it just refers to a Barber or a saloon business that exists within India. So those kind of business, it exists here as well. So when a person he does a business related to.
+A Barber as a trade, by whether he has a Barber shop and he do a Barber business, or he's having a salon and he do a salon business. Or say like if an woman he's running in beautician related shop and he provides a different.
+Of different offering for a beautician to all the women's here in the UK she might be having a shop related to her and beauty. If they are doing this kind of different business which are related to her and beauty.
+A segment of business, say like they will have a shop to do their business and whatever the service they provide, DLG is offering them to get insurance for the service they provide to their customer and also the shop which they are using.
+To do their business if they are using a shop, say like a space of space that that they hold, that they hold in their name, they can insure their entire premise when they're in their shop and get the content.
+That are available within the premise can also be insured, for example, in the job that that might be the pipelines that need to be used for their business and they might have different.
+Contents say like whatever the products that they use from hat and beauty perspective like from Barber he might be using a couple of products to give a better service to their customer. So whatever the product that they use to do their business, even those product can be ensured.
+As part of this insurance product, hair and beauty. So that is all about this hair and beauty product. So to get a more better understanding. So if you get into this link, you'll come to know like what, what the.
+Hairdresser and bar Barber insurance is all about say, like if you can just read through this. So if you are a hairdresser Barber, making your clients look their best or vital for success, Direct Line group, it is giving insurance for all their needs. So under this.
+You can just see like what are all the different covers that are being hand that are being provided by DLG. So from my hair and beauty Barber or a saloon, they would be giving couple of hair related treatments as well.
+So you can see like what are the different treatments to which DLG is giving coverage to their customer who runs a hair and beauty or a Barber shop? OK. And here you can also see, like, the coverage which is offered under different traits. So.
+Addresser is one of the trait which they will use to to do their business and Barbara is another trait which which they will be using to do a business related to hair and beauty. So for all the different traits what are the coverage? Different coverages that is being covered.
+Under which treat everything you have here and also the treatments for whatever the treatment that they provide related to hair and beauty. So you can see like all this treatments like makeup, facial waxing, pedicure, manicure, nail building, nail treatment. So all.
+For if they are providing any services related to all this treatment related to her and duties and then DLG is going to cover insurance for all these treatments. And similarly as I mentioned, so building cover. So if they are owning premise.
+Where they do their business and if they want that premise to get insured as per of their policy, then DLG is going to provide a coverage for their building where they do their business and similarly the contention stock. So they may have couple of stocks.
+For different say like for to provide a different treatment, they may have a couple of creams that are made available and kept in kept as a stock in their premise, and if they want to cover the stock and the contents whatever, then they have to do their business. Then DLG is off.
+Bring the coverage to ensure their business contents and stock as well and if any theft happen to the place where they do their business then DLG has some coverage to give a a theft of taking so they can select A coverage like coverage limit like to how much.
+Extent. They want the insurance to get covered if something theft happened to their business promise, then they can select this coverage and select this cover and select the coverage limit and they can get the insurance insured insurance covered for theft of taking and similarly personal accident and then terrorism coverage.
+Due to terrorism, if something happened to their business premise and something damaged to the business place, then if they have covered, if they have ensured their policy with terrorism cover then DLG is going to provide them claim some some claim for the damage that is happened to their business location.
+So these are all different coverage. What DLG is providing for this had and beauty insurance to their customers in UK. So you can understand on this product read through what are all the different coverages that DLG is providing to.
+To their customer. Understand it and let me or Dinesh know if you have got any queries or you can also ask to bhuvi and Aravind also. So they are also a bit familiar on all these products.
+So guys can reach out to all four of us. If you have got any queries to understand more on this product.
+OK, so this is on her and beauty. Any questions so far?
+What?
+OK, I'll take the desk know. And again I have provided a link here which will provide you with the summary of the hair and beauty product, what that product is all about.
+What is covered as part of this product? So everything you will have about this product can read through and understand what DLC is offering and what are the different coverages and what are the different treatments that they offer as part of this product. Everything you have under this product summary document.
+OK.
+And to go through the journey, how the code journey of this product is going to look like again.
+You have this link again. We have to use the same security code.
+Much.
+Yeah.
+I.
+Yep. So once you provide the security code under this link. So for all the SME products, so SME, they call it as small, medium enterprise. So all this products had and beauty. But then breakfast office professional and retail, they all come under SME and the trade person.
+So this four products probably I'll explain in tomorrow's call, what are all these products are all about, but to do hands on on van, you can look on this.
+Site to start with the Van Code journey and you can use this for her and beauty for her and beauty. Again we have different traits.
+So when I say trade, the Haran beauty insurance.
+It will have different traits, so traits are like the kind of business they do. So under hair and beauty itself, there will be different traits with which they might be specialist. For example, 11 client, one customer. He might be a specialist to do a Barber business and another person.
+And who will be specialist in a nail technician? Who will? Who will provide services related to the nails that are being that are being taken care for each individuals, those services related to nails. He may be specialist and he may run a business for.
+Than nail technician. So likewise there are different traits with which they can get a policy. So to understand that, so these are all the five different products and MPT bed and breakfast office, professional, retail and trade person to know what are all the different rates.
+So for Heron beauty, what you can do is can get into this trade segment and if you philtre with the code, one which refers to.
+Hat and beauty. OK for hat and beauty. We have got this many traits, so if you select anyone of trade for example, let me take Barber.
+Yeah.
+If you type Barber, it will just pop you the trade related to hair and beauty and if you type a trade for example nail technician.
+Just if you type couple of letters it will pull you the trade related to the business which you want to ensure. So once you've select that trade it will take you like what kind of business you are doing whether you own us alone or you rent a chat or a space.
+From a salon or you do a mobile business or you do business working from home. So likewise the question whatever has to get a policy it just.
+Pops up and you can just select all the questions and you can pass through it to get a quote. OK like what kind of questions have been asked to get insurance related to her and beauty as part of DLG insurance offer which.
+They give to their UK customers.
+OK, so that's how you may have to do a quote and buy journey for her and beauty. So this segment one it is referring to her and beauty. So likewise for all the different products we have called the code that will pull you.
+The different traits that are used for all the different products. So for product to have bed and breakfast we just have this four traits. So likewise there are different traits if you just type a guest house here.
+The journey it would be different.
+See the questions. It would be dynamic based on the trade that we select here. So again, the journey code journey it drives based on the trade whatever that we see we select here either it can be a bed and breakfast trade or office retail or a trade person or.
+And beauty, whatever it is, we can just select A create and that drives the quotient by journey, OK.
+So I have shared the trade list here and SME product. This is the link where you can go through the cotton by journey and this is for van can use this example when we are in vehicle registration number and to know more on the product.
+We have discussed this two product Van and her and beauty. You can refer to this pages to understand what that product is all about and what kind of coverage the DLG is offering.
+OK.
+And any questions then definitely I can reach out to us.
+That's where I'll stop for today. Any more from anybody. Any other questions you guys have?
+
+Khetan, Brajesh (Direct Line Group)   47:07
+Can you try to create a code by using the link that you had provided?
+
+B S, Dineshkumar [S]   47:08
+Yeah.
+Yep, yeah, yeah, we can do.
+No, no, no, it's not production here, it's UAT environment. You guys can go and create. So Dinesh, UAT environment, it's fine, right? Yep.
+So it's a UAT environment so shouldn't be an issue. You can go and create.
+OK, if nothing else. Thanks guys. And if you have got any questions, let us know.
+Thank you. Thanks all. We'll connect again tomorrow. Bye.
+
+Khetan, Brajesh (Direct Line Group)   47:52
+Thank you.
+
+Pandian, Aravind [S]   47:53
+Yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   47:53
+Thank you, Manish.
+
+B S, Dineshkumar [S]   47:55
+Yeah.
+
+B S, Dineshkumar [S] stopped transcription
