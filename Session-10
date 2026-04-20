@@ -1,0 +1,657 @@
+CPC - Project Overview on Platforms & Products-20251017_120557-Meeting Recording
+October 17, 2025, 11:05AM
+48m 32s
+
+B S, Dineshkumar [S] started transcription
+
+B S, Dineshkumar [S]   0:03
+Yeah. So in today's session, we are going to see about and integration system. So I'll walk through on the architecture, the 2B architecture of this project like how the system it is going to.
+
+Pandian, Aravind [S]   0:07
+Yeah.
+
+B S, Dineshkumar [S]   0:23
+More and structured and what are different integration system that are integrated to the policy admin system. So all those we will see in today's session. So just to give you a bit more understanding.
+So about the integration, why we want to look on the integration systems very specifically?
+So far what we have seen is the different products that we have got into, we have got a scope into this project with DL4B. We have these products. And then Churchill for business, we have this product and they all.
+Currently in SSP select platform and moving into Edge for us so and we have also seen the policy creation journey. So once we get the customer journey, the web portal that's been created for a policy creation journey.
+We have seen how we will create the policy and also we have seen processing different transactions like MTA cancellation and renewal in contact centre and then in address as well. So after we perform all this transaction say like new business MTA cancellation.
+And and then renewal for each transaction the data it will flow to different other downstream systems.
+For each of transaction, so that'll be. That'll be one of integration system and again we will classify them into two parts. So one that is real time integration and another is the batch process integration.
+So the real time integration something like it will be integrated as part of code and by journey itself. So for example on a van code creation journey you might have seen the first question it was.
+About vendor registration number. So where we have.
+Use this registration number so M2 2BA N so this is one of registration number in UK. After we entered this registration number it will auto populate with the details of make model and then when it was manufactured.
+Sure, whether it's automatic or manual transmission and what type of UL it is using so all those it will automatically populate. So there is an system behind the scene which is which will pull details of all the details related to the.
+Equal registration number so that integration it is called HPA. So we are using again they are another service provider who will have the details of all the vehicle details.
+If we just enter the registration number, it will just pull all the vehicle related details as part of the service we get from HP integration. So that's the main business what they provide to all the insurance. They don't provide this kind of service not only for insurance, they may provide this service.
+For other sectors as well. So this is one of integration which I have set for real time example and there'll when coming to other integration the batch process for example.
+If we are selecting comprehensive coverage while creating a policy for ban, so in comprehensive coverage that there isn't coverage for an windscreen, so windscreen is the front glass that we have in any vehicle. So if any damage that happened to the.
+Windscreen. Then, if we have opted for an comprehensive cover and then a client based against the windscreen coverage, that particular claim it will be handled by an different provider called auto glass.
+OK, so that is again one of separate vendor. So who manages on any claim that is raised against the windscreen and DLG have partnered with auto Glass and we have to send the policy details to auto glass.
+Saying that after we create a new business policy, say like I have selected a comprehensive coverage and I have made a policy and after processing the new business transaction there will be set of details like name, contact detail like e-mail address and their vehicle VR and registration number and.
+And make and model and the policy period start date index. So all this detail we need to share with auto glass to make sure like so and so customer has got policy with us and they have got a windscreen coverage with the policy.
+So they will DLG will share all these details in a file in in one of a file that would be extracted from the data warehouse and we will send that file to 3rd party auto glass and they will again have a track in their system.
+And any claim raised against windscreen again, that will go to auto glass and it would be processed by auto glass. OK, so that's again one of the reason why we send the policy details to third parties through batch process.
+So one what I have said it is related to the real time the vehicle look up where we enter the vehicle registration number, it will pull all the details of VRN and then the other one is the batch process. So there are different real time integrations and then.
+Match process integrations which we are going to see in today's session.
+Yeah. Any questions on what I have explained now?
+Yeah.
+OK, I'll take the test now and I'll just show.
+The architecture diagram. So once you get access to DLG you can access this portal where you will see the architecture diagram.
+OK.
+So this is the to be architecture. I hope you can see it so.
+These are the platforms that we have seen, so the web platforms, the portent by journey, my account and then there will be a contact centre, the call handler which we have seen and these are all the different front end channels. What we have got and.
+About this dotted line something it is going to be managed by DG and below this dotted line all the system it is integrated to Azureus Polygon system and again.
+We have a dotted line here and below to this dotted line. All are different integration system where the policy the data it will flow to all the different systems. OK so the this is the digital platform, the quoted by journey.
+That we have seen a policy creation rate, the portent by the new a new customer creating a policy. So that journey it is going to be built by DLG. So it is been placed in the DLG space.
+And there is an another integration call Genesis where if a customer they are not creating a code through.
+Web portal. Rather than making a call to DLC customer service help desks and they provide all the details and they get the policy. So when they get a call at a time they will get so many calls right to handle all the calls. And I would to respective department.
+That is in system which they will use to manage the call handling. That is the genesis. So from there it will come to the contact centre application, the contact centre application. This is what Ashley showed you all like how we can.
+Once we create the policy in P2C portal, how we can retrieve the same policy and how we can create a new policy in contact centre and processing MTA cancellation transaction. All those we have seen so this contact centre it is something going to be built by Aturist team.
+So the B2C journey, it is going to be built by DLG team and the contact centre, it is going to be built by Azure's team and once the policy creation has been done, so the policy detail it will be stored in Azure's data warehouse.
+So all these are different components that are integrated within this actually score. So in when we say actually score the application that was shown by Ashley yesterday and day before yesterday, we were seeing like retrieving the policy and creating a new policy and we saw.
+Processing MTA cancellation, transaction renewal. So all those transaction. So we have seen but behind the scene there is an component that handles the payments. So premium and handwriting related data using the information that we wait while keying in.
+The policy that isn't rating engine that is integrated to Azure, so that will provide whether we can offer a policy to customer or not. So that will decide whether policy can be issued or not. That'll be set of integration related requirements. It will be built in this rating.
+Which is the Polaris policy rater product rater. So there they will have all the pricing related logics and algorithm and also on rating related requirements it will be built in this Polaris product rater. So when we make a policy creation a call it will come to this Polaris and that.
+Will decide whether we can issue a policy or it has to decline if if we can issue a policy then it will show a premium based on the inputs what we get from either contact centre or B to C and it will show in the front end screen.
+OK, so that is one of the module and then this is the policy admin system naturalist itself that there is an another system that will manage the billing and payments of the policy. And there'll be another system integrated within naturalist that handles all the documents.
+And then this is a watch list. So watch list. It is like if we want to restrict any customer to get the policy they have a provision where we can Add all the customer details whom we think like they are in kind of.
+And fraudulent customer in UK and they will have list of all those customer detail and it would be uploaded to this watch list and it is again integrated to actual score. So when we when we create a policy with your percent detail of the matching list what we have got in this watch list then it will declaim that policy and.
+Restrict that we will not offer a policy to that customer. So that is again one of integration and there are different batch integrations the the one that I explained on auto glass and all this will be integrated in Azure is behind the scene to.
+You the different functionalities what we can use as part of policy creation like getting a premium, making sure like I think rules. Either it can be referral or declined to get triggered and then the documents they get are triggered, correct.
+So all our different components that are integrated with the naturalist and it would be built by actualist as part of this project delivery. So once the policy creation it is done and after we process the new business transaction or it can be any MTA cancellation or renewal.
+All the data it will be stored into this layer which is a WADW is actually is data warehouse that will be enormous number of table it it will have around.
+100 hundred plus tables. I'm just for an example. I'm just saying it will have 100 plus tables in this ADW where it will have a a table for an contact and that'll be a table for a policy. That'll be table for a payments.
+That'll be table for an address, and then correspond and then correspond and address details, and there'll be table foreign coverage related details. So it will have more number of tables.
+With the whatever information that we use to create a policy, so those it will flow into different tables. OK, so this is the base for sharing all the data into different onstream systems. So what?
+We will do from the LGS, so this ADW, it's currently sitting in Aturus architecture. So you can see it right. So above dotted line and this dotted line. So whatever that you see within this dotted line, it's all sitting within aturus.
+Architecture so DLG will not have access to all this components OK and once data it reflects in ADW it will come to STW which is.
+A staging data warehouse. So this is the DL, GS own data warehouse. What it will have is like the it's just a mirror of ADW. Whatever the tables and the data we have in ADW, it will come through this ATK which is actress toolkit.
+So through this axurus toolkit, all the data it will come to this SDW so it sits within DLG architecture. So it's below this actually the dotted line. So it will be within DLGS architecture and whoever have access to DLG so they will.
+DLGS environment. Then they will have access to this STW so from STW there will be a data flow to different systems. What we see here. OK, so this is more on the batch integration where data it will flow from STW and the.
+Real time integration, which I said as an example for vehicle look up. So you can see here. So if you see here we have this four and this three. So this seven are real time integration that would be integrated as part of quota.
+And by Journey, while creating a policy itself, so we will have this world pay that integration we needed if we want to purchase a policy through card payment type. So we need to enter a card details and get the policy purchase. So we are are getting a third party.
+Service named World Pay so that will have an option for DLG to provide the card details and get the policy purchased. And there is a address look up. So after we enter a code post code it will show us the list of post code.
+We can which are the post code in which we want to get the policy insured and then we will select that and proceed with our policy creation generally and then we he could look up and this this is the one that I explained earlier as an example and the bank visa if a customer they are selecting direct.
+Debit payment method. So that'll be sort code and account number which is very similar to the account number and IFSC code which we provide in India. Yeah. So in place of IFIFSE code we use a code here.
+Which we have to key in and that that would be validated against the Bank wizard interface and the account number and sort code. They will set up a direct debit instruction to make sure like monthly installment has been taken from the the from the account which has been shared by a customer. So for that we need.
+This integration, so all the seven we have as in real time integration and there are multiple the downstream system. So here if you see all this are data related apart and the one that you see here, these are all the different.
+Stream system that goes to some of the integration system they are within DL, GS architecture and some are like third parties. From DLG we need to send as a batch file to third parties to make sure like they.
+Have the details of customer.
+They have the details of customer whom DLC have provided a insurance policy so that they will come to know like if any claim that comes to auto glass so they will come to know like OK this customer they have got an insurance policy with DLC already. So a claim has come from DL GS customer.
+So that details it has to be sent to all the different third parties so they are aware of like who has got policy with DLG and this data we will share to all the integration systems for all transaction new business MTA cancellation.
+And then then renewal.
+OK. So that's about the integration like why we need this integration system and the two different classification, the real time and then the patch process. Any questions on this?
+
+Khiwasara, Adarsh (Technology Services)   19:42
+Dinesh, so this world play and all integration world play address look up, vehicle look up at bank results. Those are with actually score or actually is contact centre.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   19:43
+Didn't.
+
+B S, Dineshkumar [S]   19:46
+Hmm.
+Right.
+
+Khiwasara, Adarsh (Technology Services)   20:01
+Oh.
+Yeah.
+Got it. Yeah.
+
+B S, Dineshkumar [S]   20:15
+Actual score. It won't be accessed by customer. OK, so all this real time integration. It's more part of a customer journey.
+
+Khiwasara, Adarsh (Technology Services)   20:28
+OK.
+
+B S, Dineshkumar [S]   20:30
+Yeah.
+
+Pandian, Aravind [S]   20:36
+And this are in here. So I'm I'm sending a snap in the chat OK if we can open that. So if team had read that they would be able to relate this we just open the chat Dinesh our this meeting chat.
+
+B S, Dineshkumar [S]   20:38
+Yeah.
+Yeah.
+Yep. Yep. Yep. Yeah. So if you don't have any questions, yeah, I'll just hand over. Yeah. To aravind. So, Aravind, he will just explain on all the different integrations and what are they about.
+
+Pandian, Aravind [S]   20:58
+Yeah.
+Yeah.
+Yeah.
+
+B S, Dineshkumar [S]   21:04
+OK. Yeah. Yeah, yeah, yeah, yeah. Yeah, yeah, yeah, yeah.
+
+Pandian, Aravind [S]   21:05
+Then it's. Can you just go to the chat, Dinesh or the same chat if we can open this?
+Right.
+Team if you have done some hands on that right in the policy or screen or something, you'll get this screen right. How we're going to use the data, whatever data the customer enters, right? So this is the information that.
+
+B S, Dineshkumar [S]   21:17
+Play song akka.
+
+Pandian, Aravind [S]   21:32
+Relates to all these integration. What we are talking like batch integration or real time integration, right? So we might exchange your information with other insurers, reinsurers or carefully selected third parties to manage your policy and offer the best possible service. And we'll also.
+Ask the credit reference agencies for information number you about you to check the credit status and identity right and these agency also make down any queries but that will not impact any of the credit status right? And similarly all these policies are underwritten by UK limited and they might pass the information to.
+
+B S, Dineshkumar [S]   21:55
+Yeah.
+
+Pandian, Aravind [S]   22:08
+Fraud prevents and agencies, which we'll which we'll see later in in the upcoming session, right? So this is the key which directly says that the data how we are going to utilise the customer data, OK, so I think.
+
+B S, Dineshkumar [S]   22:23
+Yep, so this will come as part of declaration screen while creating policy. So that's what the customer has to read through this and create like their data. It would get flow to all the different third parties. Yeah.
+
+Pandian, Aravind [S]   22:25
+Mm-hmm. Your denisa.
+Agreed.
+Good parties. Yeah. So now, yeah, Dinesh. Now you can go to that. Our architect that integration. Then I can explain the overall project scope for this particular integration. So as Dinesh, yeah, Dinesh mentioned.
+
+B S, Dineshkumar [S]   22:44
+Yep.
+Yeah.
+You want to.
+
+Pandian, Aravind [S]   22:55
+Yeah, yeah. From here. I can explain here. Then we can go down Ganesha.
+
+B S, Dineshkumar [S]   22:58
+Yeah, OK, I'll show this.
+
+Pandian, Aravind [S]   22:59
+So yeah.
+
+B S, Dineshkumar [S]   23:04
+Yep.
+
+Pandian, Aravind [S]   23:04
+So this ADW within actuaries data warehouse, right and similarly DLG is going to have staging data warehouse and this ATK actuaries toolkit is going to pull all the data and make this TW the replica of ADW which is going to be the source for all the integration.
+So the main the key objective like to extract all the van policy data from STW. That is the staging data warehouse and if you can see in the bottom right part specific integration ETL these are all the batch integration like Ln for cosoft MID L2.
+Right. What what the objective is to extract the policy data from STW. That is the staging data warehouse. Then to transform the data to meet the functional specification document for each of the integration that the third parties are the internal system we will have a functional specification given by them.
+So we will have to transform the. I mean we have to send the data, transform the data to meet their specification in a file format right in a file CSV file or the design designated file, right? And we will have to transfer these files to 3rd party via global scape, right? And.
+So they will establish some monitoring and error handling procedures. So the overall objective is to extract the van data, they will transform the data that all this transformation will be handled by SAS team, right? Our objective is to validate the output file, whatever that we're going to send it to.
+The downstream systems right, the third parties are internal system are matching the functional specification or not right? So let me let me start explaining from first. I think Dinesh gave an overview on auto glass. I'll let I'll bit explain in detail.
+So auto glass, right? So it's a third party. It's a glass repair and replacement company in the UK, which requires policy validation and they fix and repair all the broken glass as Dinesh mentioned, right. So that's in case if the broken glass, if they have any issue or.
+This is not only for a particular make and model. This is for all vehicle make, model or any age of the vehicle, right? So in general currently any van product customers, if they require glass repairs through auto glass in many of the other commercial.
+Policy admin they are doing manual process are used to validate the policy details, process claims and that that is causing some delays and some potential errors. OK so now now we are going to have an automated integration.
+Between the DLGS van product policy system and the auto glass E validation platform that is the automated integration between STW staging data warehouse and the third party auto glass, they will extract the data from the staging data warehouse.
+And then transform the data and then transform all these policy details to auto glass. They will just validate all the customer detail and just in case if the customer is having a windscreen cover and if he has damage windscreen cover he can reach out to auto glass and ensure the claim details are handled efficiently. This will the main.
+Main objective of this automated integration right is just the saving reduced operation cost through automation. This is an automated approach then the improved accuracy in billing and payment process right. And also there won't be any delays, there won't be any potential delays. So everything will be handled automatically.
+Right. So when you have this is applicable for DL4V van product, so.
+One minute. Yeah. So in the in the deal for the van product, right, when you create a van policy, you if you have selected windscreen cover and just in case if the customer wants to opt for claim in future and if he has that entitled in his policy, he can claim it through auto, glass, auto glass.
+Will provide the windscreen breakdown just in case if the customer has the policy entitled. Any questions with respect to auto glass, I'm sorry.
+
+Khiwasara, Adarsh (Technology Services)   27:20
+The claim will be handled in the Actually's platform or in the auto glass system itself.
+
+Pandian, Aravind [S]   27:24
+I.
+Yeah. Auto Glass is a third party, right? Auto Glass is a third party. So actuaries, right, they just they have in actuaries. We're just, I mean they're they're helping with the policy admin system, right? So we're the customer's journey will be handled in actuaries.
+
+Khiwasara, Adarsh (Technology Services)   27:26
+In the.
+Yeah.
+
+Pandian, Aravind [S]   27:42
+And all this wind screening claim will be handled by auto glass. This is a third party.
+
+Khiwasara, Adarsh (Technology Services)   27:48
+OK.
+
+Pandian, Aravind [S]   27:50
+Yeah.
+
+B S, Dineshkumar [S]   27:50
+So for raising a claim that is in separate platform on the show through claim Centre, we will create a claim and those claim detail it will come to the policy in naturalist that is in direct integration from claim centre to Actualist core.
+
+Pandian, Aravind [S]   27:55
+Yeah.
+Yeah.
+
+B S, Dineshkumar [S]   28:07
+So whatever the claim that we create in claim centre, it will by searching a policy and create a claim so that will come to the policy and while creating a claim, if we have selected a reason for a windscreen, then it will just notify like the claim has been created for an A windscreen.
+So this data, while we are processing a claim for an windscreen, the client processing team, they will make sure whether the policy holder they are eligible to get a claim for windscreen. So if they are eligible then DLG will send the claim details to auto glass.
+
+Pandian, Aravind [S]   28:34
+Yeah.
+Yeah.
+
+B S, Dineshkumar [S]   28:47
+To process a claim, that's how it works.
+
+Pandian, Aravind [S]   28:50
+Yeah.
+
+Khiwasara, Adarsh (Technology Services)   28:50
+So only if a claim is made, the details are sent to auto glass or all the policy details are sent to auto.
+
+B S, Dineshkumar [S]   28:56
+All the policy on an on a daily basis, we will send all the details like whoever they are opting for an auto glass coverage as part of their policy. Those detail it will be shared for each transaction say like if they are opting that cover for new business.
+
+Pandian, Aravind [S]   28:58
+All the policy details.
+
+Khiwasara, Adarsh (Technology Services)   29:02
+OK.
+
+Pandian, Aravind [S]   29:06
+Yeah.
+
+B S, Dineshkumar [S]   29:14
+So for new business transaction they have this customer, they have opted for auto glass coverage and the windscreen cover and we will share that for a new new business transaction if there is another customer who is getting that coverage as part of MTA transaction or renewal transaction then those detail also we will extract.
+
+Pandian, Aravind [S]   29:18
+Yeah.
+You and.
+
+B S, Dineshkumar [S]   29:34
+For that particular day and we will send it to auto glass on daily basis.
+
+Pandian, Aravind [S]   29:39
+Yeah.
+
+Khiwasara, Adarsh (Technology Services)   29:40
+OK. Thank you. Yeah, got it.
+
+Pandian, Aravind [S]   29:41
+Yep, then.
+
+B S, Dineshkumar [S]   29:41
+Yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   29:42
+Daily basis means the bad share runs only once Ganesh.
+
+B S, Dineshkumar [S]   29:44
+Batch. Yeah, so that there that'll be a time like, for example, early morning or midnight, 1212 PM 12:00 AM. That'll be a scheduled job. So that job, what it will do is it would be that.
+
+Pandian, Aravind [S]   29:45
+Bad job.
+Yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   30:06
+And.
+
+Pandian, Aravind [S]   30:10
+Yeah.
+Play song.
+
+B S, Dineshkumar [S]   30:17
+Say like we need this detail to be shared from DLG so that build it would be done by SAS team by extracting the data from STW and they will have that file in their STW environment and they will also have a batch like.
+Batch process schedule like at what time this file has to be generated and from that time that their batch it will process it will extract all the data for today for all the transaction new business, MTA, cancellation and renewal.
+It will extract all the data and at that time once the file it is created it will transfer the file from DLG server to auto glass server. So all it would be automated schedule process.
+
+Pandian, Aravind [S]   31:09
+Yeah.
+
+B S, Dineshkumar [S]   31:09
+And once they receive the file from auto glass server, then it's their job to manage and process into their system.
+That's how it works.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   31:22
+Once they complete the job, change the the bus, then shield and all, then they will send back to BLG the same format. I mean reverse file loading, yeah.
+
+B S, Dineshkumar [S]   31:36
+Yeah, yeah. If correct. Yeah. If they face any issue, then there'll be an outbound file like error handling file. They will say like so you have sent this file today, but it has got this error. Then can you just make sure this is corrected then?
+
+Thiruchitrambalam, Chellakannan (Cognizant)   31:38
+Mm-hmm.
+Yeah.
+
+Pandian, Aravind [S]   31:47
+Yeah.
+
+B S, Dineshkumar [S]   31:54
+Again, it has to be corrected from DLC end on those policies.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   31:57
+Yeah.
+Yeah.
+OK, sure.
+
+B S, Dineshkumar [S]   32:00
+Yeah. So that's this is the mechanism how the batch process it will work for all this integration which Aravind is going to explain now.
+
+Pandian, Aravind [S]   32:02
+OK.
+Yeah.
+Yeah, the approach is same, but I'll just try to explain what are all those system just to get a clear understanding. Yeah. And next one I'll try to explain the green flag or the micro one, which is an internal system. So I'll explain that first before moving on to the other right. So it relates to the rescue insurance of the breakdown.
+
+B S, Dineshkumar [S]   32:17
+Yeah.
+
+Pandian, Aravind [S]   32:30
+Insurance. So it refers to the breakdown covered provided by Green Flag brand under DLG offering roadside assistance and vehicle recovery. So in general we have that insurance design to help the drivers when their drivers breakdown whether at home or at road or even abroad like.
+
+B S, Dineshkumar [S]   32:42
+Yeah.
+
+Pandian, Aravind [S]   32:50
+Countries. So what it'll do? It'll provide 24 hours, 724 bar. Someone roadside assistance. So just in case they want home call or like if his way get the driver vehicle won't start at home then green flag will come to you and will help you and get get it sorted.
+And if your vehicle can't be fixed on the spot, it will be towed to the nearest garage or to your chosen destination, and they'll help you with all those details, right? Just in case, if a customer makes a call to green flag to report a problem with the vehicle, then green flag will check the microsystem.
+Right. So to to confirm whether the caller is on the record, whether he's having the breakdown cover or not for the vehicle for which the fault is being reported. Similarly for our DL4B van. If the customer has a breakdown cover.
+Right. And in case, if he if if he wants an assistance in future for example.
+If, if if his vehicle got broke down in while driving so he and if he's having this particular coverage enabled as part of his policy, then he can contact green flag or the micro and they will provide you with the necessary assistance.
+So this is with the green flag integration and this is an internal system and similarly we are going to have some automated integration that is we are going to extract the policy data from STW and transform the data and send it to green flag.
+We have global scape. Yeah. So this is with respect to green flag. So this is related to the rescue are the breakdown cover that was selected as part of the policy creation. OK. Any questions with respect to this micro then I'll move on to.
+Mobile MIPD.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   34:39
+Micro is another name for Green Plaza.
+
+Pandian, Aravind [S]   34:42
+Micro is the current platform that this handled by DLG to have they handle both the rescue policies, policy admin system and the rescue claim system CK.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   34:43
+Thank you.
+OK, OK. OK, got it.
+
+Pandian, Aravind [S]   34:56
+Yeah, the green flag is a brand under the brand under DLG which they provide assistance. The green flag is a brand micro is a platform platform. Yeah, yeah. Yeah. Any other questions? Then I'll move on to. We have mini integration to cover.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   35:03
+OK. OK. Mike, it's a platform. OK, got it. OK, sure.
+
+Pandian, Aravind [S]   35:15
+Or we can have all the questions in the yeah, yes, Dinesh.
+
+B S, Dineshkumar [S]   35:18
+Earlier, my micro in place of micro, we had another system, right?
+
+Pandian, Aravind [S]   35:23
+Pulse pulse. Yeah, we had pulse. So we had pulse if you want to. Yeah, I can explain in quickly so yeah.
+
+B S, Dineshkumar [S]   35:24
+The apples, yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   35:27
+Yeah, pulses.
+
+B S, Dineshkumar [S]   35:29
+No, no, no, no, no, no, no, just for CK from pulse. They are migrating to micro. So this is all the project of green flag CK so. So they've the green flag team now they will move to micro and then they will get the policies from.
+
+Pandian, Aravind [S]   35:32
+Yeah.
+Yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   35:35
+Oh.
+
+Pandian, Aravind [S]   35:39
+Green flag, yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   35:40
+Not nothing like that.
+
+Pandian, Aravind [S]   35:43
+Yeah.
+
+B S, Dineshkumar [S]   35:48
+All the different products, whatever the products we have from personal lines and from commercial line, all it will come to micro. So that is all about Green Flag project.
+
+Pandian, Aravind [S]   35:54
+Commercial.
+Yes.
+Yeah, micro is already in place as part of the previous project. So yeah, as you mentioned, yeah, micro is going to hold handle all the rescue policies. This is Q cover and as well as the claim. So as part of R, if you have the breakdown cover then they'll provide the necessary assistance for all the deal for B customers when customers.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   35:58
+OK, OK, sure.
+
+B S, Dineshkumar [S]   36:02
+Yeah.
+
+Pandian, Aravind [S]   36:15
+And yeah, and I'll move on to the the MIPD. So MIPD refers to the motor insurance policy data or they call it as navigate. So this is a new platform which is managed by MIB Motor Insurance Bureau, which replaced the Motor insurance database as of.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   36:16
+Yeah.
+
+Pandian, Aravind [S]   36:34
+April 32,024 the main objective, right? This MIB manages the motor insurance database which holds all the insurance details for all the vehicles in the UK. Right? So this database is integrated with the PNC, which is called the Polish national computer allowing.
+The police officers or the law enforcement officers to instantly check whether a vehicle is insured while out on a patrol or during the stop. So this is a key integration considering all this is going to be the key key integration, maybe I can explain with an example. Yeah. So assume.
+A person named Sara, like she's driving to work in London. Right. I'll explain with the car. Then you can relate with a van insurance. OK, so she recently bought a car insurance, right? And then her insurer send the policy details to MIPD overnight. OK.
+And meanwhile, an officer who's on the traffic cheques he wants to, he sees the Sarah's car and he decides to check if she's injured or not. OK, since that particular policy admin system is connected with the PNC at the MIP navigate.
+The officer can instantly see whether the Sarah's car is insured or not. He can see all those details, like when when the policy started, then the what is the insurer name on the policy number, right? Just in case if that MIP was not connected, if the policy admin system was not connected with the MIPD navigate.
+Then the officer wouldn't know if Sarah car is insured in first place or not. Then he might need to stop her car unnecessarily, and similarly he would need to show her paper proof or to call her insurer and then it will. It is a waste of time and cause stress, right?
+So the main objective here right? You need to relate this with the van insurance like similarly for any commercial van insurance. Sorry.
+Right. So all the policy detail, all the policy information that we we, we will need to send it to MIPD navigate. So MIPD is going to be a central repository, a central database which is going to hold all the vehicle information.
+And this is a necessary integration all.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   38:57
+MAPD is managed by federal government, kind of.
+
+Pandian, Aravind [S]   39:00
+Yeah.
+Yes, the motor insurers. Yep, it it it they can automatically check whether the so and so person is insured or not. So it's a mandatory here, right? To have all the vehicles insured. So this integration.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   39:04
+And.
+But it's a good one.
+
+Pandian, Aravind [S]   39:21
+Is a key integration among all. Yeah, and this is applicable to Van product, both DL4B and C4B, Churchill for business and Direct Line for business. OK. Next I'll move on to L2L2 is nothing but employers liability tracing office, so in the.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   39:25
+Sure.
+
+Pandian, Aravind [S]   39:41
+DL4, BSME and TRP, we have selected the employees liability option right there. There was a cover cover that we have selected or automatically populated employees liability. It deals with that. OK. So it's yeah eltr stands for employers liability tracing office. This is a UK based service designed.
+To help individuals to trace their employer liability insurance policy, especially useful when making claims for work related injuries or illness. So maybe I can explain with you an example. OK, so assume John worked in a ship shipyard in 1980s OK and.
+And was recently diagnosed with some disease. OK, but the ship got closed decades ago. And this guy John doesn't know who insured his employer at that time. OK, So what he does, he used the LTE LTO database to search for the shipyard's name, and finds the employer's liability insurance.
+From 1983, with this information, Jan can now pursue the compensation claim against insurer for his or illness. I hope you're able to relate the example with this one right? Any questions on this elto so this this deals with the real 4 VSME product and the TRP product.
+Correct.
+
+B S, Dineshkumar [S]   41:02
+Yeah.
+
+Pandian, Aravind [S]   41:03
+Any questions?
+
+Thiruchitrambalam, Chellakannan (Cognizant)   41:07
+So coming to OK, this will be all these brand DL burphy SMA, OK. It's applicable for all these brands, right? OK. So we OK.
+
+Pandian, Aravind [S]   41:11
+Yeah.
+Yeah, yeah.
+
+B S, Dineshkumar [S]   41:15
+Yeah, yeah, SME. When we say SME, it will come for all this products. CK SME refers all this five products.
+
+Pandian, Aravind [S]   41:17
+Yeah.
+Yeah.
+Yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   41:27
+Got it, got it. OK.
+
+Pandian, Aravind [S]   41:29
+Yeah.
+
+B S, Dineshkumar [S]   41:30
+No.
+
+Pandian, Aravind [S]   41:30
+Yeah.
+
+B S, Dineshkumar [S]   41:32
+And then one more thing, so this ELTO just to add ELTO core, if we have selected this coverage while creating a policy only then the data it will flow into the ELTO feed file and we will sell to elto.
+
+Pandian, Aravind [S]   41:45
+Yeah.
+Yes.
+
+B S, Dineshkumar [S]   41:49
+If we have not selected this cover, then the policy entry it won't come into the file and if you are selecting this cover at new business for new business itself, it will come. If you're not adding at new business and we are adding at MTA.
+Then it will come after performing MTA transaction like ways for renewal. So all this different scenarios all we will have as in this coverage. So Arvind will work with you all and we will have as in this coverage and we will be validating as part of our integration testing.
+
+Pandian, Aravind [S]   42:08
+Yeah.
+
+B S, Dineshkumar [S]   42:24
+Team.
+
+Pandian, Aravind [S]   42:26
+Yeah.
+
+B S, Dineshkumar [S]   42:27
+Yeah, so discover it is not applicable for when and you can refer this last column like which integration is applicable for which product or brand.
+
+Pandian, Aravind [S]   42:41
+Yeah, so, so far so auto glass for it covers the windscreen cover, yet dill to is like stability, right and can flag with the breakdown cover and Mapd, we'll we'll be sharing it for all. All the policies for.
+
+B S, Dineshkumar [S]   42:51
+Hello.
+
+Pandian, Aravind [S]   42:57
+Or man products DL4B and C4B. OK, now I'll move on to I think Mapd L2, auto glass and green flag are covered. I'll move on to Dash, so yeah.
+
+B S, Dineshkumar [S]   43:09
+Arvind, we will just do this alone and then rest. We can cover in another session, Arvind.
+
+Pandian, Aravind [S]   43:18
+Sure. Sure, Dinesh. Yeah. Yeah. So that's UK was a long standing legal expenses insurer in the UK, OK, so to explain this, I can, I'll tell an example. OK, assume a guy called Tom is a self-employed plumber in Manchester.
+Or in London. So one day he receives a customer and a customer refuses to pay him for his completed job. OK, so this guy Tom wants to take legal action, but he's worried about the cost of hiring a solicitor.
+Or he's unsure how to start the legal process. OK, so but this guy Tom has a commercial insurance policy with DLG. Assume he's having commercial DLG and he has included and his policy detail includes like property damage, public liability and the legal expense cover in case if this guy is having legal expense.
+Then he can opt for the legal expense claim, right? So how this happens though, whenever we the policy data is sent to Dash, Dash will activate the legal expense cover and provide the legal protection for Tom. So if this guy Tom face illegal dispute then he can contact Dash.
+Directly and get this claim sorted. So this relates to the legal expense cover and applicable for the SME product. So you would have seen the legal cover option as one of the coverage right when you create the data. So if that legal legal cover option is enabled and.
+And if he face any legal dispute, any customer face the legal dispute, then they can use this and get it claimed.
+Now, there's other things I've it'll take time. Maybe we can cover in the upcoming sections.
+
+B S, Dineshkumar [S]   45:08
+Yeah.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   45:09
+Yeah. So the new Chinese, there's a legal expenses, a very huge expenses in UK and all hence it should be protected with such a policy. It'll be your problem for in case if you make any damage to the third party.
+
+B S, Dineshkumar [S]   45:15
+None.
+
+Pandian, Aravind [S]   45:19
+Yeah.
+SH.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   45:26
+Thank you.
+
+B S, Dineshkumar [S]   45:27
+Yeah, correct.
+
+Pandian, Aravind [S]   45:27
+No.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   45:28
+That's.
+
+Pandian, Aravind [S]   45:29
+This might be a bit too weak. This discussion which we had, but yeah if you need to. Yeah. Yeah. But if we can understand this and listen, then I think it'll be useful for you guys to understand the overall business, how the insurance commercial insurance is running.
+
+B S, Dineshkumar [S]   45:42
+Play song.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   45:45
+Yeah.
+
+Pandian, Aravind [S]   45:45
+You have you have you guys have any questions or you want us to ask any questions? Yeah, yeah.
+
+B S, Dineshkumar [S]   45:46
+Yeah.
+
+Dhakate, Khushali Ramkishan (Cognizant)   45:49
+Who?
+Arvind, I have a question. Why auto gloss is not applicable for C4B van?
+
+Pandian, Aravind [S]   45:59
+Yeah, it. Yeah, it is it. It should also be applicable, but in the scope, right, Dinesh, it had highlighted that C4B is not in scope that we need to have a discussion. It is applicable for all the van products. So it should be applicable also C4B van.
+But yeah, looks they added a comment in one of the GR ticket. We need to get it our discussed with the programme team and see whether they're up. Even for culture, for business auto glass is going to provide or not.
+
+B S, Dineshkumar [S]   46:21
+Yeah.
+Yeah. OK.
+
+Dhakate, Khushali Ramkishan (Cognizant)   46:26
+Yeah.
+
+Pandian, Aravind [S]   46:27
+Yeah.
+Yeah. Yeah, good question.
+
+Dhakate, Khushali Ramkishan (Cognizant)   46:29
+Yeah. OK.
+
+B S, Dineshkumar [S]   46:30
+Yeah. Yeah. Good spot. Yeah. And I was thinking on that and this one also DAS, I know we have mentioned for DL4 bsme, but there isn't MLE cover for van mode.
+
+Pandian, Aravind [S]   46:39
+Yeah.
+Yeah.
+
+B S, Dineshkumar [S]   46:47
+Early bill expense. So I'm not sure whether that will come into dash or it will be separate thing handled, yeah.
+
+Pandian, Aravind [S]   46:55
+OK, maybe what I can do.
+
+B S, Dineshkumar [S]   46:59
+Yeah, just a note on.
+
+Pandian, Aravind [S]   47:00
+Dance.
+Yeah.
+
+B S, Dineshkumar [S]   47:03
+This legal expense for van as well, and this one anyhow, if they are tracking, then fine.
+
+Pandian, Aravind [S]   47:07
+Yeah.
+Yeah, on top glass, I think they specifically highlighted only DL4B Wan. So yeah, I need to have a discussion on that with another team. Maybe I can provide an update. Yeah, good question. Anything. Any other questions?
+
+B S, Dineshkumar [S]   47:19
+OK.
+
+Pandian, Aravind [S]   47:29
+Yeah.
+
+B S, Dineshkumar [S]   47:35
+OK, silence. We'll take that as no, but yeah, please guys refer to it. So I have shared this Word document probably today's session, a couple of sessions and that we had. I'll add the recording of it. So you can go and have a look.
+And if you have any questions then let us know.
+Otherwise, happy Diwali to everyone. So enjoy your day on Monday will again catch up on Tuesday.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   48:09
+Happy New Ali when they showing wish and all all city members, yeah.
+
+B S, Dineshkumar [S]   48:12
+Yeah, yeah.
+Thanks. Thanks. Take care.
+
+Kumar R A, Dinesh [S]   48:19
+Happy, Divya.
+
+B S, Dineshkumar [S]   48:19
+Thank you. Yeah, thanks.
+
+Kumar R A, Dinesh [S]   48:22
+Bye.
+
+B S, Dineshkumar [S]   48:23
+Yeah. Thank you all. Bye.
+
+Thiruchitrambalam, Chellakannan (Cognizant)   48:25
+Thank you, baby. Bye bye.
+
+Ashly Joseph   48:25
+Thanks, Cindy.
+
+Dhakate, Khushali Ramkishan (Cognizant)   48:27
+Thank you.
+
+Pandian, Aravind [S]   48:28
+Thank you. Thanks Arun.
+
+B S, Dineshkumar [S]   48:28
+Yeah.
+
+B S, Dineshkumar [S] stopped transcription
