@@ -1,0 +1,859 @@
+SDW Overview KT-20251111_121258-Meeting Recording
+November 11, 2025, 12:12PM
+50m 45s
+
+Surya Rabindranath Tagore [S] started transcription
+
+R, Haswanth (Direct Line Group)   0:03
+You just need to use a correct to the sentence. OK, I'll speak longer.
+
+Surya Rabindranath Tagore [S]   0:03
+Yeah.
+
+Speaker 1   0:06
+I have currently I have correctly, but yeah please speak louder. I can't like hear. That's why. Yeah, sorry about that. Thanks.
+
+R, Haswanth (Direct Line Group)   0:10
+Oh, good, good, fine thing, yeah.
+OK, I'm sharing my screen.
+Able to see my screen. Right everyone.
+
+Speaker 1   0:25
+No, just a second.
+It's coming up, yeah.
+
+Surya Rabindranath Tagore [S]   0:31
+But it's unfortunate on this diagram it doesn't show you the area of damage, but it has.
+
+R, Haswanth (Direct Line Group)   0:33
+OK, so in the previous session, what Surajit has explained so far, you would have got an understanding how the tables are there in our STW, how how it is getting connected to each and every other tables. So what I'll be doing is that nothing but then hands on on what.
+
+Surya Rabindranath Tagore [S]   0:41
+Thank you.
+Just.
+That's not.
+
+R, Haswanth (Direct Line Group)   0:51
+Surajit has explained in our last KT session. That's it like I'll be using a policy and I'll be trying to retrieve all the details for a particular policy. Yeah. So what I'm doing here is that I've picked up policy. OK so.
+This is the policy number that you can screen. She's in here in the actually screen, so I'm going to do the STW session and here I'm I'm trying to query that out in our basic policy table. OK if you see.
+Our ER diagram.
+And scroll a bit down.
+After all these client RFQS, you'll be able to see a policy table here. So yeah, So what I'm doing is that I'm trying to query my policy against this policy table here going back here.
+I'll try to execute it.
+OK, so our policy information for this policy number has been retrieved. So we have the policy keys, the client keys, this main main kind of a fact table. We'll have all all the keys related to that policy using which we these keys can be connected to their respective tables to get their respective details. So for example.
+Here we have the client key here, so you can use this client key to join it with this policy key and get the client details from the client table. So I'll go back again to the actual screen.
+Yeah. And this policy, right, this got there was an yesterday. There isn't actually this DB reference I believe. So all these policy details the main details like the company name and the primary contact name all got sophisticated. So you are seeing hashes, hash symbols here, but in the SCW.
+You'll be seeing the proper names, so if this is the contact session, OK and we have all the client details here like the primary contact, the work, the e-mail, the location, everything. So what are we doing is that using this client key that they got from my policy table, I'll be trying.
+To query it against my client table. So what we'll be getting here is then basic client details.
+
+Surya Rabindranath Tagore [S]   3:14
+Once again, that data obfuscation, right? Yeah. Yesterday actually is went for refresh, so the data will be obfuscated because we will not have, I mean the functional team does not have feed any new transactions, but in the existing STW instance they will not do the I mean.
+They will not clean up the data so we can look the old existing data. That's why the values are there. But if you look into the same insured policy number in STW also I think it might have a hash value only hushwant.
+
+R, Haswanth (Direct Line Group)   3:35
+OK.
+But I'm able to see the client names. Yeah, I tried querying it like just before this call and I was able to see the client name, though I assumed it was there.
+
+Surya Rabindranath Tagore [S]   3:51
+You are able to see the value.
+Oh, OK.
+OK. But generally it will be obfuscated here as well. That is my understanding, OK.
+
+R, Haswanth (Direct Line Group)   4:06
+OK, clear. Yeah, it usually gets sophisticated here as well. But yeah, I was seeing.
+
+Surya Rabindranath Tagore [S]   4:12
+OK.
+
+R, Haswanth (Direct Line Group)   4:14
+Yeah, maybe the STW job hasn't run or something like that. I'm not sure about that. For office ticketing here. So so I've run this query and we got the basic client key and the client name alone will be getting it from your client key client table here.
+
+Surya Rabindranath Tagore [S]   4:19
+OK, OK.
+
+R, Haswanth (Direct Line Group)   4:30
+OK. And the created date key for this client and every other dates will be available in this client key client table. So if I need to get the other details apart from the client name like the primary contact, the e-mail, the work, the location everything I should be querying against another table called the contact people OK.
+
+Surya Rabindranath Tagore [S]   4:34
+Yeah.
+Play song.
+
+R, Haswanth (Direct Line Group)   4:50
+So using the same client key, I'm querying it here in this table and here I'm able to see the names here and if I scroll a bit to the right you'll be able to see the.
+
+Surya Rabindranath Tagore [S]   5:00
+Yeah.
+Yeah.
+
+R, Haswanth (Direct Line Group)   5:06
+Phone numbers and the emails and everything. So yeah, this is where you'll get the client details. Yeah, and if you need to get the address for this client going back again, to again to the actually screen. So we have the primary location, right? This is the address.
+And even if we go to this people locations tab here in the actuaries see we have two things here, the location this one thing and we're just giving it as a view. So again since the office decision, we are not able to see any address address signs here but yeah, but here you usually see the address actual address and and again the people that are associated.
+To this client. So in this case this is our client himself, so we'll be seeing a. So the address details again using the same client key and querying it against the address table. So yeah, here you can see the address line 1-2 same as what we saw in the actually.
+Then you'll be seeing all the address locations along with the post code here. And again, these last updated the 1st order date and last order dates. We mostly available in all the tables here in actuals.
+This is about the client side, OK and again, these are all the main details for the client. We have another tab called the report questions. OK, where you'll have the corresponding report questions and their answers. So for this what again going to the ER diagram.
+
+Surya Rabindranath Tagore [S]   6:35
+And.
+
+R, Haswanth (Direct Line Group)   6:38
+Just to the client, just at the top. So yeah. If you see in the last video itself, SURAJIT would have explained.
+How we get the report questions thing, how it is interconnected. So with the client table we are first query against the contact report fields of table which is a look up table. So from this table only we'll be again able to connect to the contact report question and its corresponding answers using the contact.
+Report question key. So for this policy, if we see in the actually Sprint and this client again, this is the report question that is there in the contact level. That's why we are searching it in the client. You see the e-mail contact permitted. No, there are few question and answers here right.
+So we'll be able to see all these questions in our STW. So what I'm doing is that again this contact reports fills up this the look up table that we saw it in the ER diagram and using the same client key. I'm just querying it here.
+And we get we we are getting the list of report question keys here. So from these keys I'm again querying against the report Question contact report questions table against these keys. If you understand what I'm trying to say.
+So using these keys and querying against contact report questions and we are getting the list of question text here for these question keys. These are the corresponding question text for that particular client that we saw in the actual Sprint and.
+And using again this question key itself and again querying against the answers for these questions, we have the corresponding answers right. So we'll be getting it from this answers table.
+Yeah, here we are getting right and getting the HTML. Whatever answers that you saw, we'll be getting it from here. So for this particular client, this is how you get the report question and answers.
+
+Surya Rabindranath Tagore [S]   8:41
+Uh ashwinth uh. In the contact report answer, like for this particular client key only you got this and this how we will identify it.
+
+R, Haswanth (Direct Line Group)   8:42
+Thank you.
+That again, we have to join, I believe interconnect this right Surya like I'm taking it separately. But if you join all these do using this left join then you'll be getting for this particular client whatever answers alone you'll be getting that.
+
+Surya Rabindranath Tagore [S]   9:02
+Yeah.
+Mm-hmm.
+
+R, Haswanth (Direct Line Group)   9:10
+Here we are getting it as in general for this question keys yeah.
+
+Surya Rabindranath Tagore [S]   9:12
+OK. Do you have the query that is already at least for this particular client like whatever the question answer text you have taken it like in a single letter, we will be using by vote and all right, you have that.
+
+R, Haswanth (Direct Line Group)   9:23
+Mm-hmm.
+No, I don't. Surya, maybe I can quickly query it. Do you want me to query?
+
+Surya Rabindranath Tagore [S]   9:31
+Or in the last, maybe you explain everything in the last weekend show.
+
+R, Haswanth (Direct Line Group)   9:33
+OK, 8:00 PM.
+Yeah. So this is the thing. So this is client client contact people that where we got all the contact details like the phone number and the client name and everything and here using the address table we'll be getting the address details on all these details are again.
+In the contact level. OK, so in the contact level, we have the main details, the people location and the report questions. And for all these three tabs we have seen where we we need to query in the STW. OK, so again coming to the policy tab.
+So this is how we go to the policy tab here and you see in the main details we have the version reference number, the product name, the insurer number, the start date and end date. All we have it here in the yeah, just.
+
+Surya Rabindranath Tagore [S]   10:23
+Yeah.
+OK, this product is like currently harshvant is showing landlord product but for the CPC programme our product scope is DL4B band and a trade person and DSME. OK so currently we are showing it with the landlord data but our programme scope is DL4B band trade.
+Person and the SME. So if for each product that risk question details will be changing it the remaining like the contact level and the policy level details like columns and the reporting questions will be more or less same across all the products. But for each product that risk detail section can you please click on the risk detail.
+Hush went.
+
+R, Haswanth (Direct Line Group)   11:05
+Yeah.
+
+Surya Rabindranath Tagore [S]   11:12
+Risk like what are the risk information we are capturing? This is for the landlord product, like what is the premises? How many buildings are there or like whether it is a residential or the commercial lock up and see like lot of information, so they will be asking it for the DL4B band product. It will be like a driver vehicle information and the convictions happened or not like.
+Those things already, Dinesh might have explained in the functional, likely from by a contact centre. How we will be creating the SOP ban product, how we will be creating policy or codes in the trade person and SME at the time like what are the questions we will be asking the customer right or the policy holder those questions those.
+Things are captured in the risk details section. Is it clear?
+
+Sai Dharani, K (Direct Line Group)   11:59
+Yes.
+
+Surya Rabindranath Tagore [S]   12:01
+OK. Yeah, and yeah, ashwinth here. Go back.
+
+R, Haswanth (Direct Line Group)   12:05
+Yes. Yep. So again, as I told all these details related to the policy, again, we'll be getting it in our main policy table itself. So just to solve a sample.
+So your the policy key, the client key and.
+
+Surya Rabindranath Tagore [S]   12:24
+In the policy table we have the product as well like product keys there. That is the main like we need to for our product. What are the policies are there? Can you please query product as well ashwinth.
+
+R, Haswanth (Direct Line Group)   12:28
+Product key yes. Well, yeah.
+Yeah.
+Yeah.
+Yeah, this is our product key, Surya for this policy. So yeah, again.
+
+Surya Rabindranath Tagore [S]   12:57
+For the landlord, I think or something. Can you please? Uh query select start from product. I think I have given the product key for ADL 4B1. Do you have it?
+
+R, Haswanth (Direct Line Group)   13:04
+Yeah, OK, yeah, this time.
+The product OK.
+So this is a product named DLG property owner I. So you want to query all those. OK let me.
+
+Surya Rabindranath Tagore [S]   13:37
+Yeah. Can you just query product? We will see whether DL4P ban is there or not?
+
+R, Haswanth (Direct Line Group)   13:47
+Yeah, it's here.
+
+Surya Rabindranath Tagore [S]   13:49
+Yeah. So for the TL4P van, the product key is 35291 and do we have anything trade person or SME or no TL4P fleet is there?
+
+R, Haswanth (Direct Line Group)   14:04
+50 on.
+
+Surya Rabindranath Tagore [S]   14:07
+OK. So anyway, we first we will focus on the DL4B1 product only because that is the product of us going live in March, month next year.
+
+R, Haswanth (Direct Line Group)   14:18
+Yeah.
+Yeah. So, but this is the policy that we took is not a deal for B van. So we are seeing this.
+
+Surya Rabindranath Tagore [S]   14:31
+For the landlord DLG property owners.
+
+R, Haswanth (Direct Line Group)   14:33
+Yeah. So we are seeing this product key, this is the version reference number that we saw here and then the start date and end date and all this policy details will be available in this policy table.
+So along with that, you'll be able to see some business, even key as well. Let me Scroll down to the right.
+
+Surya Rabindranath Tagore [S]   14:57
+I think I mean, prajesh and saitani might have attended this. And you know what is new business in the empty and all right, can you anyone of you explain?
+
+Sai Dharani, K (Direct Line Group)   15:06
+Yes, Surya, new businesses when we create a new policy then the status will be a new business. If we edit any details or if we add any like this details of any other either driver or any property then the status.
+Will be changed from here because it is a mend.
+
+Surya Rabindranath Tagore [S]   15:29
+OK. Yeah.
+Correct and the version ref will be changing for each event if it is a new business, the version reference number will be there and for MTA the version reference number will be changing it. Insurer policy number will be same.
+
+Khetan, Brajesh (Direct Line Group)   15:44
+Yes, yes, yes.
+
+R, Haswanth (Direct Line Group)   15:48
+Yep.
+
+Surya Rabindranath Tagore [S]   15:49
+Yeah.
+
+R, Haswanth (Direct Line Group)   15:50
+So yes, so again here, since this is a new business policy, we have an empty recent key s -, 1 and if you see a the business event key is one, which means it's a new business. I'm querying against the business event table so that we have the description for each of the business.
+Keys. So in our case it's 1, so it's a new business. Again, the status as well is visible in our policy table and for each of the policy key which is available in our policy table, we have this description whether it's live or expired.
+Or it's accepted status so we can see all these details from the business event key and fault status table and then again we saw about the product tables as well and again all these tables, the code table, the RFQ table for each other and area.
+Policy. We'll be having it in this in their respective tables. Going back to the ER diagram.
+
+Surya Rabindranath Tagore [S]   16:54
+Oh, one second. Ashwin, can you do you have the data dictionary open?
+
+R, Haswanth (Direct Line Group)   16:55
+Yeah.
+Yes.
+
+Surya Rabindranath Tagore [S]   16:59
+Can you please open it?
+
+R, Haswanth (Direct Line Group)   17:01
+Just a minute.
+Yep.
+
+Surya Rabindranath Tagore [S]   17:06
+OK, like here they have mentioned like the contact module code policy, risk details and all under each module if you scroll like can you go to column I.
+
+R, Haswanth (Direct Line Group)   17:17
+For the policy they call on my.
+
+Surya Rabindranath Tagore [S]   17:19
+So anything is fine. Yeah. Like this is where, like they not for all the columns but few columns they might have mapped like in the actually score application. There this particular column is available like a policy section rating amounts like this particular like.
+What is the front end of field that they have mapped it like in order to identify like which column we are going to identify which attribute we need to track it. Please refer this column I guess well like when you start writing queries.
+
+R, Haswanth (Direct Line Group)   17:36
+You.
+Yeah.
+And this is in the sense like good from the policy menu in the main details and this quote up in it will be available here in this corresponding EI mean in the column right Surya.
+
+Surya Rabindranath Tagore [S]   17:55
+Yeah.
+Yes, yes, yes, yes.
+
+R, Haswanth (Direct Line Group)   18:09
+OK.
+
+Surya Rabindranath Tagore [S]   18:10
+Yeah. So we can refer that as well, like for identifying the attributes.
+
+R, Haswanth (Direct Line Group)   18:16
+From actor is to STW mapping if we need to see anything you can refer I call on the comments.
+
+Surya Rabindranath Tagore [S]   18:23
+Yeah, yeah.
+
+R, Haswanth (Direct Line Group)   18:27
+So coming back, so we have so far visited the sorry.
+The client details and the policy details. I mean the main policy details, so coming on to the next tab is our risk details. So if you see here.
+But each policy has its like each product has its own risk questions and answers. So for this DLG property owner product we have all these sections and then under under these E section.
+We'll be having the questions along with the answers here in the actuaries. So what we are going to do is that we are going to map the questions and answers where we are able to locate it in our STW. So.
+So here again, if you see it in the front end itself, so not risk details has multiple parts. OK, so DLG property owner is one part and under under that part we have multiple parts like the core cover section and another building is another part. So we have multiple parts here and.
+Under each part, we'll be having particular questions and answers, and the answers. Again, the questions again might be a simple text box or it can be a drop down or a check box as well. So so this is an since.
+Yeah, we'll be not able to edit here, so if you see a, it's an drop down. So the text box in our STW. How these are stored is that the text answers will be stored in one table and the drop downs or the checkbox answers will be stored in another table.
+So we'll be seeing how it is stored here. So for this policy, I've already prepared some sample queries and I've all all already run them as well because it might take some time to run for each of the. So using this policy key, OK, that we get it in our policy table.
+So I first running, there's a table called. The part I mean I'll. I'll go to the ER diagram once already. Surajit I would have showed some of this here can go then.
+The policy rate, yeah.
+We'll see. So here itself in the ER diagram itself, you can see whichever explained the MTA recent key the policy status key you have all these tables via which you can join the main policy table to get the corresponding details.
+And I'm going searching for the risk questions answer. So your.
+You search it.
+
+Surya Rabindranath Tagore [S]   21:29
+Don't search with the Barto.
+
+R, Haswanth (Direct Line Group)   21:31
+Yeah, yeah, yeah.
+OK.
+Yeah.
+OK, here it's at our table.
+OK.
+So yeah, so this is a part table again. So the I showed you here, right. So each of the sections are a part themselves. So we have to join the part table with our policy table using the policy key.
+OK. And then from this part table, which is our main table for each part that will be corresponding part Question Key. So OK, so all these part question key for these part Question keys will be having the answers in two tables.
+As I told you, one table which is our part answer bridge. OK. In this table all the drop downs and everything not the drop downs. The text answers will be available here.
+And another table is that product drop down table.
+
+Surya Rabindranath Tagore [S]   22:59
+There's a product question answer right where we have dropped off.
+
+R, Haswanth (Direct Line Group)   23:04
+Or a question answer just a minute so.
+We have we have a table called drop down. We have all the drop down answers. OK, so this is the table name. I'm not able to locate it in our in our ER diagram but this is the table where you'll have all the drop down answers and this is the table where we'll have all the text field answers OK.
+So what I'm first doing is that I'm going to get all the part keys using our policy key, so I've already run the query since it is run. So it took me 3 minutes to run the query. So already that's why I already run it. So these are the part keys for our for our policy.
+OK, So what I'm doing is that I'm I'm again trying to query all those part keys that I got from the from a previous query in our part answer bridge table. So if you see her, we got around 62 rows.
+And.
+
+Surya Rabindranath Tagore [S]   23:59
+Mahashwant one second, sorry to interrupt. Can you go to the part one, one second?
+
+R, Haswanth (Direct Line Group)   24:01
+Yeah.
+OK.
+
+Surya Rabindranath Tagore [S]   24:07
+Here you need to understand like the product section key risky and the sub risky like if you go to the actualist module the section can you please go one second yeah.
+
+R, Haswanth (Direct Line Group)   24:12
+Mm-hmm.
+
+Surya Rabindranath Tagore [S]   24:20
+The DLG, the core premises and the cover section is the main one so that those informations will be available in these sections but and the sub risk part I mean building contents, occupancy details will be available in the risk I mean sub risk table. I'm not sure like.
+What is the table column name?
+
+R, Haswanth (Direct Line Group)   24:38
+Yeah.
+Wait a minute. Sweet. I've already have a quick.
+
+Surya Rabindranath Tagore [S]   24:43
+Yeah, that that is the key.
+
+R, Haswanth (Direct Line Group)   24:46
+And.
+So our product part is our main table Surya and after that we'll be having product section table product risk and then sub risk so.
+
+Surya Rabindranath Tagore [S]   24:52
+Yeah.
+
+R, Haswanth (Direct Line Group)   24:59
+It is a product part OK and product section product risk and then product sub risk I believe.
+
+Surya Rabindranath Tagore [S]   25:06
+Yeah.
+So for the DL4B1 product, how the hierarchy is maintained, you need to look into the path section and the risk and understand it, OK.
+
+R, Haswanth (Direct Line Group)   25:08
+So.
+Yeah, yeah. So these parts, right, these are all the parts. OK, but if you see the hierarchy here, the the core premises is under DOG property owner and the building is under core purpose. So each part is sub part of each other so.
+All this support will be stored in another separate table from this part, so that's that is how the hierarchy here is.
+Umm.
+Yeah. If you see this product part right, just the main part table and if in our case that is our DLG property owner.
+This is the from the from the product part, only we'll be getting that TLG property, owner parts details and this is the product section. Again it's the core premises.
+One. So again the building is from the product risk and this is from the sub risk. So each one spots are stored in separate tables here in STW and you can identify the part the level of this part using that policy part level key.
+Since the the 0 meaning the main part and then the subparts from that.
+Yeah, moving on. So yeah, as I've already do, I I read I what we are trying to do is that we are trying to retrieve all the question and answers for a policy. So yeah, I'm trying to query the part table and I for that part for our policy, we have got all the part keys from here.
+And these part keys I'm trying to query it against the part answer bridge table. So in this all our question keys along with the answers mean the answers in the sense the text field answers will be stored here. So see if you see our part keys are there.
+Is the part part Answer Bridge key? The question product question Key. The product key can have a look into the table. You'll have all the relevant keys here and all the product as if we have explained all the section keys, the risky. The suppress key according to the part level will be all the having all the keys here.
+Yeah. And then.
+The answer key. The corresponding answer key as well for this. So if you see here these are all null values.
+And we have some answers here. The null values are here because these are all. If you see here for this you need to look into the drop down answer type key. So drop down answer type key in the sense whichever there are three drop down answer key types.
+02 and -1 zero and two, meaning those are all drop down answers, and -1 meaning those are all text answers. So since these are all text answers, we are getting it in our part product part Answer Bridge table itself.
+So that is why all these answers are visible here for the -1 keys for the two and the 0 keys, since these are all drop down answers, we need to look into the another table called the product drop down answer. So what I'm trying to do is that.
+I'm trying to search in the product drop down answer using our product Question Key along with the answer key that we'll be getting it from this table. Since this is the main answer table, we'll be having all the answer keys that are required so all the drop down answers.
+Will be available in this and if you see here see here. Also we have the question drop product question key drop down answer type key as well. So all the zeros and twos will be available. Answers will be available here.
+So for example, let me show you different back end.
+So this the product DLG property owner, yeah, the company name again. Yeah, it's sophisticated. So I'm not able to show. Let me see if I'm. Yeah. Yeah, that's what I'm I'll be able to show that.
+
+Surya Rabindranath Tagore [S]   29:26
+Like a year of business, yeah.
+
+R, Haswanth (Direct Line Group)   29:32
+Hmm.
+But.
+Was 1990 is it?
+
+Surya Rabindranath Tagore [S]   29:41
+Oh yes.
+
+R, Haswanth (Direct Line Group)   29:41
+19119 hundred.
+Yeah. Let me look into the question you text.
+
+Surya Rabindranath Tagore [S]   29:58
+I don't know whether it will fully match like when this particular policy has been created, like if FTW will not go for refresh right.
+
+R, Haswanth (Direct Line Group)   29:58
+For the question.
+Umm.
+Not sure.
+
+Surya Rabindranath Tagore [S]   30:09
+OK you can.
+
+R, Haswanth (Direct Line Group)   30:12
+And the.
+
+Surya Rabindranath Tagore [S]   30:21
+Look.
+
+R, Haswanth (Direct Line Group)   30:22
+In.
+In the meantime, I'll I'll tell you another thing. If you see here.
+We keep it this way. So these are all the main keys, the level of keys, the product part, key section key risky and their sub to risky. So for the answers for the NAR main core premises, right? I mean the main BLG property owner tab.
+We have all these details, OK and if you see here all these details are there till that the our product part key is there product section key is -1 and from the next tab what's happening is that it is going to.
+Our next section, the part key, that's that means the core premises section. So all these answers will have now these keys and that is how it will be continuing for the subsequent parts as well. So this is the another thing you need to note but coming back.
+It's playful.
+
+Surya Rabindranath Tagore [S]   31:27
+Uh, you can 1990 in a core premises question that your build it is showing uh.
+
+R, Haswanth (Direct Line Group)   31:33
+OK. Is it?
+
+Surya Rabindranath Tagore [S]   31:36
+Yeah.
+
+R, Haswanth (Direct Line Group)   31:40
+Albert is.
+We have all a lot of yes no answers here.
+
+Surya Rabindranath Tagore [S]   31:47
+OK.
+
+R, Haswanth (Direct Line Group)   31:53
+And not sure why it's showing the different details here.
+
+Speaker 1   31:56
+And have a question, sorry. Like how the text will be like showing if it is in multi select option or a single texture value or in drop down value we can identify using part and part and separate but with the multi choice questions how we will get the answer.
+
+R, Haswanth (Direct Line Group)   31:58
+Yeah, yeah.
+Team might be.
+
+Surya Rabindranath Tagore [S]   32:17
+It will be in the product drop down answer only.
+
+R, Haswanth (Direct Line Group)   32:21
+Yeah, yeah, but he's still he's telling how we'll get getting like it will be with commas. I believe Shakti. So for this question, OK, we'll have accident damage, comma escape water, comma standard fire and perils comma this.
+
+Speaker 1   32:29
+OK.
+
+R, Haswanth (Direct Line Group)   32:37
+That is all will be there. I believe about this answers. It's time.
+
+Surya Rabindranath Tagore [S]   32:44
+Maybe you can check it. I don't think so because when we did for a Symphony, right, we have concordinate that value, remember.
+
+R, Haswanth (Direct Line Group)   32:46
+Hmm.
+OK, OK. OK. We can look, I was thinking that it was default.
+
+Surya Rabindranath Tagore [S]   32:55
+It will be in separate row Answer Key was there right Santosh in the for the particular question the answer key will be maybe for the multiple drop down values or the multiple values right? It will be like 1234 and for that the corresponding value will be stored in the answer or we can.
+
+R, Haswanth (Direct Line Group)   32:59
+Then.
+
+Speaker 1   33:02
+Yeah.
+Mm-hmm.
+
+Surya Rabindranath Tagore [S]   33:15
+We can check it out, maybe today. Anyway, functional team will be keying some test data for the van product itself. Ashwinth OK, but I'm not sure whether that data will flow into our landlord STW if it is there. Maybe we can.
+
+R, Haswanth (Direct Line Group)   33:22
+OK. Mm-hmm.
+Mm-hmm.
+
+Surya Rabindranath Tagore [S]   33:30
+Track it and check it, but uh. But this one I think it will be in the for Santosh questions. It will be uh in separate row.
+
+R, Haswanth (Direct Line Group)   33:32
+Uh-huh.
+I think we got the answer. Yeah. So if you see here for this risk management features, so we we have three check boxes and if you see these are all available in a separate row.
+Got it. Right, sandy. See, these are all the same product question keys for this separate rows for each of the check. Yeah, answer keys definitely.
+
+Surya Rabindranath Tagore [S]   34:01
+Answer keys are different.
+
+Speaker 1   34:03
+OK.
+
+R, Haswanth (Direct Line Group)   34:08
+And.
+This is you query again. See here in both the things I think the question text was not there.
+We quickly check it.
+So the question text is not available in all these tables. So for that question text we need to refer to another table called the question. OK, So what I'm trying to do right now is that I'll try to.
+Vary all the questions that are available for a particular product. In this case it's OK. This is not our product key, but yeah, for this product key, these are all all the questions here. It is full to the right.
+Yeah. If you see here the question text column, we have all the list of questions that are available for a particular product and you will have again the product key, the product Question Key. So you're using this key you can join with the.
+Product part Answer bridge table. So here also you'll have the product question Key. You can merge it and then you can get the corresponding question and answer for this. And I already prepared a query but I did not run it. It might take some time to run it.
+I'll show you the query that at least.
+Yeah.
+
+Surya Rabindranath Tagore [S]   35:33
+Can you please run the query in the back end harshvant.
+
+R, Haswanth (Direct Line Group)   35:37
+Yeah. OK.
+With that.
+Moving on, so this it guys. So the part and then part answer bridge and then again the part answer bridge it's all text answers and then.
+3.
+And in the product drop down and set all the product drop down answers plus the check box answers as will will be available.
+And.
+
+Surya Rabindranath Tagore [S]   36:23
+OK. Uh in general, like uh, if you can you open the data dictionary ashwinth.
+Like how we will be writing normal SQL query. It will be same for actuaries as well, except this the question and the answer like three kinds of questions are there like contact level reporting questions, policy level reporting questions and the risk detail questions and the corresponding answers how we are going to retrieve it.
+That is the only part here slightly different from other databases or other that we have got used to work on it, but those are all the main key areas as we do STW data platform and like if you're work writing queries in tap as well, the same concept will be applicable in the raw on the curation layer.
+But also you will having like a part part and separation all the information. All the tables will be available in the tab layer. So if you understand like how to write query how to get that question and answer from STW it will be helpful when you write queries in that platform and the LSN as well.
+OK.
+And I wanted to tell you that can you go to the data dictionary till the query results come this like the receipt, Ledger and payment. If you see here after task those are all the three new modules that actuaries is building as part of the DL4B1 product.
+
+R, Haswanth (Direct Line Group)   37:39
+Yeah.
+And.
+OK.
+
+Surya Rabindranath Tagore [S]   37:57
+We never had this module before. This is the first time we are getting it. So we don't know how these tables and attributes and like we don't have prior experience. So once this is a feature is enabled then only we need to start looking into the data and the relationships and everything the remaining like the contact.
+Policy this little transaction and all it will be like a we have a previously in these modules and we have some sample queries as well. But for you were understanding I want you to write a skill query for one particular policy number and try to.
+Understand the relationships and everything so that you will know.
+OK.
+
+Sai Dharani, K (Direct Line Group)   38:45
+Tell you.
+
+Surya Rabindranath Tagore [S]   38:45
+Any questions so far?
+
+Sai Dharani, K (Direct Line Group)   38:50
+Most of you.
+
+Surya Rabindranath Tagore [S]   38:53
+Brajish.
+
+Khetan, Brajesh (Direct Line Group)   38:58
+Yeah.
+
+Surya Rabindranath Tagore [S]   39:03
+Kathy, do you have any questions?
+Hello.
+
+R, Haswanth (Direct Line Group)   39:19
+Yes, so honey.
+
+Surya Rabindranath Tagore [S]   39:23
+OK, I I don't know. Brijesh, you are there.
+
+Khetan, Brajesh (Direct Line Group)   39:29
+Yes, it is. No.
+
+Surya Rabindranath Tagore [S]   39:30
+Do you have any questions?
+OK.
+
+Khetan, Brajesh (Direct Line Group)   39:35
+Call me.
+
+Surya Rabindranath Tagore [S]   39:40
+OK, Ashwin, yeah.
+
+R, Haswanth (Direct Line Group)   39:43
+Yeah.
+
+Surya Rabindranath Tagore [S]   39:44
+I think the result came.
+
+R, Haswanth (Direct Line Group)   39:45
+So yes, so I'll explain the query one. So what I'm doing is that I'm selecting all the policy key and policy sort of policy number along with the product question key that I got from my question table.
+OK. And then product answer key.
+And then for this answer text alone, we'll be again looking into two tables. As already said, the drop down answer in in case the drop down answer type key is zero or two else will be for the normal text answers we'll be looking into the.
+Part Answer bridge itself. So just the query and then there's the result that we got for our current policy. So yeah, the question takes along with the answer takes so.
+This is it based. This is how you retrieve the details from my risk details.
+
+Surya Rabindranath Tagore [S]   40:45
+Currently, Hashwant has shown only the part part Answer Bridge, but under the Risk detail section you have other tables as well, like the rating notes are there and few other tables are there. Am I right hashwant so those things and all please explore on Varun.
+
+R, Haswanth (Direct Line Group)   40:57
+None.
+Yeah, correct. There are different rating notes and there are different other tabs. This these are you want that you have to think right, so yeah.
+
+Surya Rabindranath Tagore [S]   41:06
+Yeah.
+Yes, like whatever, like a hashmund or the surajit in the previous session, like the main things only we have captured and we have mentioned like which are the tables we need to look on how to write the queries and all. But if any of the tables information is related to rating notes and or premium summary amount all these information so you need to query.
+By looking into the data dictionary and the data model and start working on that. OK, this is like for you to start like Q.
+What is each model is all about, like the sample thing only.
+
+R, Haswanth (Direct Line Group)   41:42
+Yeah. OK. So.
+
+Khetan, Brajesh (Direct Line Group)   41:45
+So that I can log in to actually yes, and see the policy now policy that has amount.
+
+Surya Rabindranath Tagore [S]   41:52
+At your score, you're saying asking uh, British.
+
+Khetan, Brajesh (Direct Line Group)   41:55
+Yeah.
+
+Surya Rabindranath Tagore [S]   41:57
+Umm Dinesh has raised the I mean send the e-mail to actuaries team. I don't know when uh.
+
+Khetan, Brajesh (Direct Line Group)   42:02
+So the previous previous login that I have for any of the videos you don't like 3.
+
+Surya Rabindranath Tagore [S]   42:07
+Can you try it with the previous login like a forgot password, right? If it is working then yeah you can do it. Otherwise also I mean this is like core but you have that website and like the contact centre thing like where Dinesh has given Katie.
+How to create policies from let's say B2C and the CC contact centre that also you can just log in and see like how the risk details are there? What are the questions they were asking? It will not be in the structure but the questions or more or less it will be same only.
+So please go through that.
+And you will understand the full picture.
+
+Khetan, Brajesh (Direct Line Group)   42:52
+And I should where you are able to see this policies. Yeah. Where would where? Where would security then get up for that we have.
+
+Surya Rabindranath Tagore [S]   42:57
+Sorry, Brajesh, your voices not clear, sorry.
+
+R, Haswanth (Direct Line Group)   43:08
+He's asking about this cyber, OK?
+
+Khetan, Brajesh (Direct Line Group)   43:10
+Yeah. Yes, yes, yeah.
+
+R, Haswanth (Direct Line Group)   43:13
+This is the one that we used previously for Symphony Brijesh, so that this where I could like. Not sure whether you are having the access.
+
+Khetan, Brajesh (Direct Line Group)   43:20
+We need to check the access. Yeah. Going to check that with the.
+
+R, Haswanth (Direct Line Group)   43:26
+I I like. I'll like. I'm not sure whether you have the safes and everything. If you have the safes then I'll share you the details that you can connect it to prajesh by way answer.
+
+Surya Rabindranath Tagore [S]   43:35
+Some time.
+
+Khetan, Brajesh (Direct Line Group)   43:36
+Up.
+
+Surya Rabindranath Tagore [S]   43:38
+Shot.
+Ashwin, if I remember correctly, I think they all have that access, right, you when we raise cyber app for.
+Guideware or something at the time itself, the team has raised the request, right?
+
+R, Haswanth (Direct Line Group)   43:50
+None.
+You some couldn't recollect Surya. Most probably everyone should have IBD will check cross shipments.
+
+Surya Rabindranath Tagore [S]   44:02
+OK.
+OK uh, please send the e-mail like which is safe and how to connect with this existing STWI thought the team was already having it.
+
+R, Haswanth (Direct Line Group)   44:14
+Yeah, I'll check it and I'll share it.
+
+Surya Rabindranath Tagore [S]   44:15
+Yeah.
+Yeah. OK.
+
+R, Haswanth (Direct Line Group)   44:19
+Yeah.
+
+Surya Rabindranath Tagore [S]   44:20
+And anyway, one second before dropping off, let me share my screen like whatever the STW that Harshvant was going to show our connectors like Azure STWDL 4B instance. OK, this we will not be doing testing, we will be doing it in AWS STWDL 4B instance.
+
+R, Haswanth (Direct Line Group)   44:25
+What can I go what?
+
+Surya Rabindranath Tagore [S]   44:40
+For this one access is it to be given. I'll share the details as as soon as we received OK.
+
+Speaker 1   44:47
+Will it also be slow as SDW?
+
+Surya Rabindranath Tagore [S]   44:51
+I don't know.
+
+Speaker 1   44:52
+OK.
+
+Surya Rabindranath Tagore [S]   44:55
+I don't think it will be slow as the existing because in the existing STW they didn't do the clean up for each refresh. They have dumped the data. The volume of DL4B instances more as well. Here I don't think so.
+
+Speaker 1   45:10
+OK.
+
+Surya Rabindranath Tagore [S]   45:14
+But again, like we need to do the pivot all those things like we need to transpose as well, right?
+
+Speaker 1   45:20
+Yeah, that, but the but the like. You know a query which will be approximately similar kind of fish, right?
+
+Surya Rabindranath Tagore [S]   45:30
+Approximately, I don't know about that in AWS TW with those things. Yeah, yeah. Let's get the instance first access and see how it is. If it is really very slow in performance, then we will be raising this an issue.
+
+Speaker 1   45:33
+OK, it will. It will come to your conclusion when it's like that, OK.
+OK.
+
+Surya Rabindranath Tagore [S]   45:47
+To the DevOps team so that they will increase.
+
+Speaker 1   45:47
+OK.
+Right.
+
+Surya Rabindranath Tagore [S]   45:52
+Memory and everything. Yeah. Uh, sorry. Ashwanti. You were about to say something.
+
+Speaker 1   45:54
+Yes, thanks.
+
+R, Haswanth (Direct Line Group)   45:59
+Yes. So yeah, we were left out with one part alone regarding the policy report questions you want to complete that task field. Yeah, it will be the same again. Yeah.
+
+Surya Rabindranath Tagore [S]   46:06
+The same it will be same right? Like how the same the table name for the policy reporting and answer might be slightly different. That's it. Let them explore I mean anyway that I was explained by Surajit in the first PT session. OK.
+
+R, Haswanth (Direct Line Group)   46:14
+Yes, yes.
+OK.
+Yeah.
+
+Surya Rabindranath Tagore [S]   46:22
+Yeah. And I'll allocate each module to each one of you and start working mean. First we need to do the mapping exercise, so I will give you list of the attribute information. Please try to map it in STW, which table and the which attribute it is available and the start writing queries.
+For that, I'll send the e-mail today or tomorrow on that.
+And before that, please check and let me know whether you have access to the old STW existing STW or not.
+
+Speaker 1   46:56
+No.
+
+Surya Rabindranath Tagore [S]   46:59
+Sometimes you might ever it you don't have.
+
+Speaker 1   47:02
+No.
+
+Surya Rabindranath Tagore [S]   47:03
+No, I guess.
+
+Speaker 1   47:04
+No. OK.
+
+Surya Rabindranath Tagore [S]   47:07
+I'll add in maybe we can check it in.
+Tap because currently we will be focusing on the non risk part that the client contact those stuff as part of Motability more or less the the able and attribute informations will be there.
+
+Khetan, Brajesh (Direct Line Group)   47:20
+Oh.
+Hello.
+
+Surya Rabindranath Tagore [S]   47:27
+So yeah, we will see.
+
+Khetan, Brajesh (Direct Line Group)   47:30
+I believe I think my cyber.
+
+Speaker 1   47:31
+Yeah.
+
+Surya Rabindranath Tagore [S]   47:35
+Uh, I can't hear you properly. Brijesh. Your background.
+
+Khetan, Brajesh (Direct Line Group)   47:39
+So I think my father, like, I'll text message will go.
+I'm here for knowledge.
+
+Surya Rabindranath Tagore [S]   47:45
+Can you please ping me? Brijesh, what question you have?
+Akarthi. And do you have any questions?
+Are you there?
+OK, Brijesh mentioned. Fibre access has been revoked. I don't know. Please raise the request one more time and please connect with Ashwin. Then get the details.
+Yeah.
+
+Khetan, Brajesh (Direct Line Group)   48:18
+OK.
+Bye.
+
+Surya Rabindranath Tagore [S]   48:21
+And Santosh, you also Sai Darni also like the Cyber Ark and the Safe account details like what request we need to raise. OK.
+
+Speaker 1   48:30
+Sure.
+
+Surya Rabindranath Tagore [S]   48:32
+Yeah.
+
+Speaker 1   48:32
+Ashwin, this kind of busy, I need to catch up with him, yeah.
+
+Sai Dharani, K (Direct Line Group)   48:34
+I have.
+
+Surya Rabindranath Tagore [S]   48:35
+Ashwin, this busier, OK.
+
+Speaker 1   48:37
+Yeah, I need to have a catch up, yeah.
+
+Surya Rabindranath Tagore [S]   48:40
+OK, I need to drop off for another call. Please go through the recording session. Please go through the data test plan. Next call. I'll ask questions like what you have understood. You need to tell me. OK. Please go through the data test plan and come up with the questions or the clarifications that you have.
+
+Speaker 1   48:44
+OK.
+Oh, my God. OK.
+
+Surya Rabindranath Tagore [S]   48:59
+Yeah.
+
+Speaker 1   49:00
+OK, so your plan is to give up specific modules to people and let them query so that you will have the base query for everything in your hand.
+
+Surya Rabindranath Tagore [S]   49:08
+Yeah, more or less because the same query will be used in DAP as well, right? More or less and not exactly, at least you're on the curation. It will be the same. Maybe a lesson. It will be slightly different. That part, I'm not sure. Let's see, because still, we are waiting for the data mapping certifications from the team by end of November.
+
+Speaker 1   49:10
+Help.
+I think.
+Hmm.
+OK.
+
+Surya Rabindranath Tagore [S]   49:28
+But only we will get it and we need to work like who will be working on which one? Like who'll be honest, who'll be working on tap and who'll be working on LSM part that also we need to figure it out and yeah for everyone it's like a base right to understand how the.
+
+Speaker 1   49:30
+OK. Yeah.
+Mm-hmm.
+OK.
+Yes, yes. Great. Thanks for that. Yeah.
+
+Surya Rabindranath Tagore [S]   49:46
+Datas, yeah.
+OK, I'll share one more thing today like a cope, I'll using copilot, the functional team as writing test cases. OK, so they will a similar thing we need to do it for a data test case as well.
+Please go through the recording that we might have explained. I'll share the recording link and then we will see how we can leverage that for our data testing data test cases by uploading our data mapping specification document, we need to work on that as well.
+
+Speaker 1   50:28
+No guess, yeah.
+
+Surya Rabindranath Tagore [S]   50:30
+Yeah. OK. Thank you all. Yeah, thank you.
+
+S, Sakthi Santhosh (Cognizant)   50:31
+Yeah. Thank you. Thank you, Ashwin, for the amazing explanations. Thanks, surya. Thanks Tim. Bye.
+
+Surya Rabindranath Tagore [S]   50:36
+Play song.
+Thanks, Ashwin. Thank you all. Yeah, bye.
+
+R, Haswanth (Direct Line Group)   50:39
+Thanks then. Yeah, bye.
+
+Surya Rabindranath Tagore [S] stopped transcription
