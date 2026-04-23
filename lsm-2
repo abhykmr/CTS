@@ -1,0 +1,545 @@
+CPC-DL4B Van-LSM Data Model Walkthrough-20260218_110336-Meeting Recording
+February 18, 2026, 11:03AM
+31m 18s
+
+Surya Rabindranath Tagore [S] started transcription
+
+Pandikasala, Firoz (Direct Line Group) [S]   0:03
+Or we can start.
+
+Surya Rabindranath Tagore [S]   0:04
+Like Venkrisha, did you ping? Can you please ping Anshul whether she's joining or not?
+Anjal, whether she's joining or not.
+
+Kanike, Venkatesh (Group CIO)   0:12
+Yes, Surya, I think she is away.
+
+Surya Rabindranath Tagore [S]   0:14
+Yeah, we can. Uh, we are recording the session, right? Uh, let them watch it later.
+
+Pandikasala, Firoz (Direct Line Group) [S]   0:20
+OK, so Surya, if you can also explain us because we are in learning way for in with the court actually. So if you know anything I will ask some question because this is more clarification from side. So as you know, so is it?
+Do you know what is the code journey? How the code things will happen from the front end? Do you have any idea how the journey will happen once a customer?
+
+Surya Rabindranath Tagore [S]   0:47
+Uh, I know.
+Yeah, I mean I have like a high level understanding only for those, but if you want a detailed or depth, maybe I can ask like Dinesh or Ashley because they are doing the functional testing so they can provide more information like whatever clarification you have.
+
+Pandikasala, Firoz (Direct Line Group) [S]   1:04
+OK.
+Yeah.
+
+Surya Rabindranath Tagore [S]   1:08
+Maybe we can check with um, but from my understanding.
+
+Pandikasala, Firoz (Direct Line Group) [S]   1:11
+Yeah, that that will be helpful. Yeah, yeah.
+
+Surya Rabindranath Tagore [S]   1:15
+Yeah, like a from my understanding like a a client, once the client has been created the code will they will be starting with the code and after that like it will go with the different the process and all like.
+That is critical one that is critical for capture and all those information. If everything is working fine and then it automatically the policy will be created. If there is any issues with the pricing or something that the the declines will happen. So that is how I understood and like.
+
+Pandikasala, Firoz (Direct Line Group) [S]   1:47
+OK.
+
+Surya Rabindranath Tagore [S]   1:51
+For MTA and the cancellation, the code will not be created. It will be started from the policy level only.
+
+Pandikasala, Firoz (Direct Line Group) [S]   1:59
+That is more from technical perspective. So we just need to understand is there any business document or requirement which we which DLG has means our commercial team has handover to actuaries and get basically what we are asking. So as you said it's a it's a new business everything is a code table that is more in the.
+But the same thing when there is a renewal also at the end the client will be getting a code and even it is from policy table or code table, they will be getting a copy of what is the code for that renewal or MTA that is only maybe that will be created in actuaries is creating in policy.
+
+Surya Rabindranath Tagore [S]   2:34
+Mm.
+
+Pandikasala, Firoz (Direct Line Group) [S]   2:39
+But it will be as a code format. So is that correct enough? So they will be getting a code first if there is any MTA also that's the by default any insurance things will for any changes or any renewal or any new business they will be getting a quote or one or multiple quote and at the end they will be accepting only one this is.
+Correct.
+
+Surya Rabindranath Tagore [S]   3:02
+Yeah, that is correct. But when the MTA happens, whether the code will be created or not, that part I'm not sure.
+
+Pandikasala, Firoz (Direct Line Group) [S]   3:15
+OK. You can check a bin, not from actuaries side, from the side of actually from a business side there will be a quote against a court only there will be an Mt also. So that change will be there. So then only they will accept and they will tell I need to remove one of the add-ons and what is the premium, they will see that premium then only they will accept that so that.
+That is basically that the code. So that is the normal procedure. I don't know is the same thing for commercial. That's what we are looking and the next question from the code level which we need to understand in whom I know whenever there is a code is there, they will get by default two or three.
+Code it is one is for enhance, one is for the standard and one is for their the new essential kind of that in band. What is our understanding is anytime anybody will ask for a.
+Like comprehensive, complete, comprehensive or third party. So they will get only one code, comprehensive code or third party code. Is it correct understanding or they will get both code?
+
+Surya Rabindranath Tagore [S]   4:19
+I think it is either or option only.
+
+Pandikasala, Firoz (Direct Line Group) [S]   4:25
+One option only and they will not have multiple options. Basically one code will have only one option. It can be enhanced or comprehensive or it can be a third party. OK, I'm just, yeah, yeah, I'm just getting more business what we understood from the data which we are looking at because it's all required. So yeah, yeah, got it.
+
+Surya Rabindranath Tagore [S]   4:28
+OK.
+No.
+Third party, yeah.
+
+Pandikasala, Firoz (Direct Line Group) [S]   4:45
+Now I'll go to, yeah, this thing. Yeah, one minute. Let me.
+
+Surya Rabindranath Tagore [S]   4:46
+Yeah.
+I'll I mean I got the call center functional specification. I'm not sure whether it explains about the code journey or not. Maybe you can have a look like I'll forward to you.
+
+Pandikasala, Firoz (Direct Line Group) [S]   5:02
+Yeah, that will be helpful. Yeah, if we can, if we can do that, yeah, that's good.
+
+Surya Rabindranath Tagore [S]   5:05
+Yeah.
+
+Mathew, Nimmy (Direct Line Group) [S]   5:07
+Surya, when you said the MCA, sorry.
+
+Surya Rabindranath Tagore [S]   5:09
+This is like.
+Sorry again, go ahead.
+
+Mathew, Nimmy (Direct Line Group) [S]   5:15
+Sorry, I was going to say that when you when you when we say that MTA court, when you ask with your team or anyone else for the better understanding, we can very well see that it is even though it is a new version created for the MTA, we can see a new court insurer number has been generated.
+But though it is not appearing there in the court tables, it's it is still present in the policy. It it is completely new court number.
+
+Surya Rabindranath Tagore [S]   5:51
+Um.
+OK, I mean we have done this analysis like maybe in but I need to check that like a the different one trade like the from the core like a functional team they have created some policies like which has like different permutation combination and when they.
+Mt happens whether how it is reflected in the back end. We were shipping that I'm looking for that particular spreadsheet. Maybe I'll try to find it before this call. We can have the look or other ways I need to ask the team to set up the scenarios one more time and we need to check it.
+How it will behave?
+
+Mathew, Nimmy (Direct Line Group) [S]   6:33
+Yeah, OK.
+
+Surya Rabindranath Tagore [S]   6:34
+From the back end, the database perspective, yeah, I understand like you are saying like even if the MTA for business event and there is some code, it is generating it, but that entry is not available in code table. That's what you're saying, right?
+
+Mathew, Nimmy (Direct Line Group) [S]   6:48
+Yeah, it it will have a different court insurance number as well.
+
+Surya Rabindranath Tagore [S]   6:55
+OK, maybe we can discuss later. Yeah.
+
+Mathew, Nimmy (Direct Line Group) [S]   7:01
+Yeah, yeah.
+
+Pandikasala, Firoz (Direct Line Group) [S]   7:03
+OK. I'll share so much of your so fact as I mentioned fact code still it's in the final number of fact tables and defining properly and everything. We'll come back on that one Surya. So currently what we are going to discuss is most on the fact audit risk that's.
+The table, how it is coming and what is the thing and so that's what you need now.
+
+Surya Rabindranath Tagore [S]   7:30
+Uh, yes.
+
+Pandikasala, Firoz (Direct Line Group) [S]   7:31
+OK, so fact quarter is it's like same thing as we discussed in insured risk also it will have all the code for the same code reference number. Also multiple codes will be there for the same person, same vehicle will have multiple all that will be stored in fact quarter risk.
+Everything under score WAN is for this is very specific to WAN and as we mentioned and the all dimensions will be there. Some of the dimensions we are finding some of the challenge stuff. We'll come back to that specifically to take payment schedule and everything payment schedule. The problem is.
+As per the actuaries, they're saying only when the code become a policy then only there is a payment schedule will assign to that policy. So it will not define before by as part of code. I don't know how it come because there is a 10 month deposit and everything whether they will see only that time.
+That's what the confirmation we got it from actuaries as of now. So that we need to see. Maybe in that case we'll only keep the accepted payment schedule, accepted policy, the payment schedule only will keep it there, but or we'll remove it accordingly if there is no usage for this one. That's depends upon that one.
+But otherwise every code, all the code details, every whichever the code raised by from the actuarial and tables will be keeping that is. So we have two different kind of actuarial tables it's deriving from.
+Actually is to our code table. One is directly the code table that you can see. I think it's both our map Nimi.
+Just a moment. Let me just open. I think so.
+
+Kamble, Sahil (CIO) [S]   9:20
+What that means? Uh uh for one is one uh fact table we are loading from port and another will be loading from policy. So there are two sheets. Uh new business is loading loaded from quote Uh and new business.
+
+Mathew, Nimmy (Direct Line Group) [S]   9:21
+Oh.
+
+Pandikasala, Firoz (Direct Line Group) [S]   9:23
+For policy 1/4 and.
+Yeah.
+
+Kamble, Sahil (CIO) [S]   9:33
+And MTA renew is from Uh policy.
+
+Pandikasala, Firoz (Direct Line Group) [S]   9:37
+Police. OK, so this is what your question. So first question Suryana. So we are actually getting it'll be like all the new business will populate from the code apple and all the renewal and MTS will and cancellation also will be from that means cancellation. There won't be any code, it'll be only MTS and.
+
+Mathew, Nimmy (Direct Line Group) [S]   10:02
+Oh.
+
+Pandikasala, Firoz (Direct Line Group) [S]   10:02
+The policy table.
+
+   10:02
+Oh.
+
+Surya Rabindranath Tagore [S]   10:04
+OK, how you will determine whether the particular code is a new business code or the MTA renewal? Because in the code we don't have the business even transaction type only in policy we have.
+
+Pandikasala, Firoz (Direct Line Group) [S]   10:15
+So as per the actuaries, only new business code will be as part of code table. There won't be any new business MTA. I mean so no no renewal or MTA. It's only new business will be there as part of code table in actuaries, all the renewals and.
+MTS won't be part of this code tab. Everything we need to get it from the policy.
+
+Surya Rabindranath Tagore [S]   10:44
+Yeah.
+
+Pandikasala, Firoz (Direct Line Group) [S]   10:46
+And in policy, when we are doing, we'll just check whether it's a renewal or something and then we'll take it accordingly from there.
+We have that policy transaction type, basically renewal and MTA, MTA codes only will get it from there. That's the way it'll be like maybe it's it's from engineering team. If you want to see how this will be populating and this will be a separate insert query from one is from code table, another one is.
+From the policy table, it's only renewal and MTS will be there. This will be only for new business. This is the way we are going to.
+
+Surya Rabindranath Tagore [S]   11:25
+Yeah, technically I'm just trying to understand like for example a client, a client 100 or have five votes, OK.
+
+Pandikasala, Firoz (Direct Line Group) [S]   11:39
+Oh.
+
+Surya Rabindranath Tagore [S]   11:39
+Out of five codes, one might be only converted into the policy.
+
+Pandikasala, Firoz (Direct Line Group) [S]   11:45
+Oh.
+
+Surya Rabindranath Tagore [S]   11:45
+So the remaining 4 codes might be interjected status of decline or whatever it is like different different status that will be there or the customer might accept that that particular code. So you were saying when it comes to LSM for that particular client, we will have like 5 entries here.
+
+Pandikasala, Firoz (Direct Line Group) [S]   11:52
+Yeah, OK.
+Yep.
+
+Surya Rabindranath Tagore [S]   12:04
+Um.
+
+Pandikasala, Firoz (Direct Line Group) [S]   12:05
+Yeah, that quoted risk, correct.
+
+Surya Rabindranath Tagore [S]   12:07
+Fact code address as part of the new business one and then uh.
+
+Pandikasala, Firoz (Direct Line Group) [S]   12:10
+Oh yeah.
+
+Surya Rabindranath Tagore [S]   12:14
+As part of MTA, if for that particular policy, if any MTA happens, then we will have like one more entry called fix the entry, but that will come from the policy table.
+
+Pandikasala, Firoz (Direct Line Group) [S]   12:26
+Yes, correct, exactly, exactly. That will come from here and both the if the MTA also is accepted, there is a accepted flag is there that will be like we'll put it as one. In that case it's basically accepted flag.
+
+Surya Rabindranath Tagore [S]   12:44
+So cancellation also.
+
+Pandikasala, Firoz (Direct Line Group) [S]   12:48
+Cancellation. There won't be any code for cancellation.
+It's just a cancellation. It is from policy center. No, it's not part of code. Cancellation is part of policy only policy LSM. It can that can you can find only in policy like policy LSM fact insurers.
+
+Surya Rabindranath Tagore [S]   12:53
+But are we capturing?
+OK, then why we are like in code LSM, we are capturing MTA and the renewal like a from the policy side, why anyway that information will be captured in the policy LSM, right?
+
+Pandikasala, Firoz (Direct Line Group) [S]   13:19
+No, because the court and the court, so every court may not be accepted and.
+So only accepted court will be a policy.
+
+Surya Rabindranath Tagore [S]   13:30
+Yes, correct.
+
+Pandikasala, Firoz (Direct Line Group) [S]   13:32
+So when policy LSM will have only whichever is accepted. So for MTA you can check I'm going to add one more add-ons or remove one more add-ons and say what is the code DLG is providing, the commercial is providing and they can.
+Either reject or accept. So that quote anyway it's useful. So some of the analytics that should be as part of our code LSM. It never comes to means unless it is accepted, it never comes to your policy. If it is a only accepted MTS will be there in the policy.
+Ellison.
+
+Surya Rabindranath Tagore [S]   14:09
+But in that case, again back to the first question in the code table, how you will be identifying that this particular code if it belongs to the MTA code?
+
+Pandikasala, Firoz (Direct Line Group) [S]   14:15
+2.
+
+Surya Rabindranath Tagore [S]   14:28
+Sorry, I'm I'm not able to free you like a picture is in it. Can you?
+
+Pandikasala, Firoz (Direct Line Group) [S]   14:28
+Yeah.
+We have, we have policy transaction type and there is a transaction type is there in there itself. Whenever there is a code also there is a transaction type. Is it a MTA code or is it a renewal code or I say new code, new business code?
+
+Surya Rabindranath Tagore [S]   14:48
+In policy table we have it, but in the code we don't have that.
+
+Pandikasala, Firoz (Direct Line Group) [S]   14:51
+OK.
+In court also we have transcertain type is there.
+
+Surya Rabindranath Tagore [S]   14:55
+Is it there?
+
+Pandikasala, Firoz (Direct Line Group) [S]   14:57
+Yeah, it's there should be.
+
+Surya Rabindranath Tagore [S]   14:57
+OK.
+
+Pandikasala, Firoz (Direct Line Group) [S]   15:00
+Should be there one minute. I'll just see. Yeah, it should be there.
+
+Kamble, Sahil (CIO) [S]   15:01
+It is there, Firoz. It is there.
+
+Pandikasala, Firoz (Direct Line Group) [S]   15:05
+That's why we are actually it's the policy transaction type should be there.
+
+Surya Rabindranath Tagore [S]   15:05
+OK.
+
+Pandikasala, Firoz (Direct Line Group) [S]   15:11
+It is somewhere here. Policy transfer type is there. Yeah, here we have policy transfer type.
+Is there?
+In court also we know whether it's a new business or it's MTA or it's renewal or it's yeah, kind of that which what kind of talk code it is.
+
+Surya Rabindranath Tagore [S]   15:34
+In the code table, how you will be linking that, sorry, the transaction type. Sorry, can you go to the fact table?
+
+Pandikasala, Firoz (Direct Line Group) [S]   15:41
+So if you go OK, so for Kotak new business it is.
+Transaction type it is we are getting from the policy business event key it's there.
+
+Kamble, Sahil (CIO) [S]   15:55
+So uh, we will be joining it.
+
+Surya Rabindranath Tagore [S]   15:55
+You are not.
+
+Kamble, Sahil (CIO) [S]   16:02
+So code table will be joined with policy and we we will get the business event type where for the first record that where the new business, sorry business event in policy table is new business.
+Because from quote table, the first quote number is retained in policy table.
+
+Surya Rabindranath Tagore [S]   16:29
+Do you have any example like that Sahila, like I just want to understand like a with the data because it's very difficult.
+
+Kamble, Sahil (CIO) [S]   16:30
+Yeah.
+
+Pandikasala, Firoz (Direct Line Group) [S]   16:37
+OK, so so I'll I'll tell you. OK, so in this case, in this case, even if you don't have the policy table, we can by default we can add code. This is into new business because whichever is the code is coming from the code table, it's all new business.
+There is no confusion, yeah. And for policy, anyway you know what is the policy. Once you go to policy transaction, what is the transaction type that can be a new business or MTA is already there. So we can get that as samples. Maybe Sai, you can take some of the samples and just send to Surya in that case, yeah.
+
+Kamble, Sahil (CIO) [S]   16:54
+Yes.
+Yes, yes.
+
+Pandikasala, Firoz (Direct Line Group) [S]   17:15
+Yeah, but we have that policy transition type as part of our code table, yeah.
+
+Kamble, Sahil (CIO) [S]   17:22
+There is no business event table, business event key in a quote table, so that is why we had to link via a policy.
+
+Pandikasala, Firoz (Direct Line Group) [S]   17:26
+But if it is, yeah, if you don't have left, left join and if we if by default anything that's coming from code is new business, we don't need to struggle much. Actually in that case just take it ahead. That's by department. It's only new business will be there as part of code. So we don't need to put that much effort there, yeah.
+
+Kamble, Sahil (CIO) [S]   17:34
+Yes, yes.
+
+Pandikasala, Firoz (Direct Line Group) [S]   17:47
+OK. Yeah.
+And yeah.
+
+Surya Rabindranath Tagore [S]   17:54
+Sorry, Amit has raised a hand.
+
+Kumare, Amit (Direct Line Group) [S]   17:55
+Yeah, I I have one query. Actually I joined the session late. So in this new platform there will be two tables, right? One is separate for quote, one separate for policy, is it?
+
+Pandikasala, Firoz (Direct Line Group) [S]   18:08
+Yeah, correct.
+
+Kumare, Amit (Direct Line Group) [S]   18:09
+OK, but in the Evo platform old version, we don't have the code table, right?
+
+Pandikasala, Firoz (Direct Line Group) [S]   18:17
+I'm not very sure about that one because I don't know exactly what is there in the e-mail. Sai, you have any idea on that one? I don't know exactly, that's why.
+
+Kumare, Amit (Direct Line Group) [S]   18:19
+Oh, OK.
+OK.
+OK.
+Because as you mentioned, based upon the transaction type, we are identifying whether that quote is accepted and it turns to policy. We have all those information into a single table that is called RDB policy table. So I just thought to just understand, OK.
+
+Kamble, Sahil (CIO) [S]   18:38
+Yes, yes, yes. RDRDB policy is the staging table in Evo which is later from RDB policy. The semantic table quote is derived and the remaining data is retained in policy table.
+
+Pandikasala, Firoz (Direct Line Group) [S]   18:42
+Yeah.
+
+Kumare, Amit (Direct Line Group) [S]   18:45
+OK.
+OK. OK, fine, fine. Got it. Thank you.
+
+Kamble, Sahil (CIO) [S]   18:57
+OK.
+
+Pandikasala, Firoz (Direct Line Group) [S]   18:59
+But the actuaries is completely different than we are also actually struggling Amit to get all the business how the for data flow basically their technical diagrams and everything even we got the data dictionary and everything still we are learning something every every discussion from with actuaries actually yeah that's right.
+
+Kumare, Amit (Direct Line Group) [S]   19:04
+OK.
+OK.
+So.
+OK.
+OK, OK one one last query I have just now I have seen your mapping document the diagram. It is all like star schema means fact and dimension tables are only available. OK, OK fine.
+
+Pandikasala, Firoz (Direct Line Group) [S]   19:24
+Oh.
+Yes, correct. It is that it is. It's for only for our analytical purposes. Data wares. Yeah, that's the data wares.
+
+Kamble, Sahil (CIO) [S]   19:31
+Yes, yes.
+
+Kumare, Amit (Direct Line Group) [S]   19:36
+OK, OK, fine, fine.
+
+Pandikasala, Firoz (Direct Line Group) [S]   19:41
+OK.
+Any other thing do we need to go or this?
+
+Surya Rabindranath Tagore [S]   19:53
+Um.
+I am OK.
+
+Pandikasala, Firoz (Direct Line Group) [S]   20:04
+And.
+
+Surya Rabindranath Tagore [S]   20:04
+Is the Mt and the renewal, we are taking it from policy, right? Uh, why we need to populate in the Uh code LSM? Is it only for the reporting requirements we are doing it or is there a why we can't take it?
+
+Pandikasala, Firoz (Direct Line Group) [S]   20:05
+Oh.
+It's a reporting requirement and there are many other things basically. OK, so our policy LSM.
+
+Surya Rabindranath Tagore [S]   20:20
+The.
+
+Pandikasala, Firoz (Direct Line Group) [S]   20:27
+I'll put it all these things there and it will be easy. In the policy LSM we have fact insured. Fact insured. This is the major table and fact insured. This will keep only the accepted.
+Codes means it's a policy when it's become a policy, but in court we'll have court LSM will have all the court. So I'll take some of the example for some 400 court reference number I'm seeing there is a court ID. Normally this is the way it's not the same thing.
+So there is a court ID one and there is a court has created with 100 premium with maybe vehicle number V001 same thing and this is the one and it's maybe some of the add-ons were there that's why it's came to and then another one is created for the same.
+Reference number for code key is this one and this will become 9 means another day this created on 1st of Jan 2020 weeks and another one we created on.
+I can talk that.
+Same thing because they said we don't I don't want this add on or something they created and and another one again the same day another one a third one they created. They added one more thing and it's become thousand 105 the same day they created the third one.
+Finally, the customer accepted this one. This is the last one they accepted.
+OK, this is the one accepted. All other thing is declined because maybe some other this one they what we will be keeping in our policy will keep only this record, the latest one.
+This is all for new business.
+
+Surya Rabindranath Tagore [S]   22:42
+Thank you.
+
+Pandikasala, Firoz (Direct Line Group) [S]   22:44
+OK and.
+And there is MTA happened resolved NBA I'm saying so there is a MTA they are looking, they are looking some changes they wants to add one of their windscreen something that add on and windscreen add on they need to add.
+
+Surya Rabindranath Tagore [S]   23:06
+Yeah, maybe they might have a driver or something, yeah.
+
+Pandikasala, Firoz (Direct Line Group) [S]   23:08
+A driver or something, they added something and they need to change there. They want to add that. So reference number maybe it's become one or one and it is something like one or one and this might become 1010.
+No, no, 100 tag. The same thing actually. And this date it is on.
+Second of first of Feb.
+They said they need to add one more. Maybe the driver they need to add they are not completed. This is also it is not accepted and then they another another one one more it is there they need to add and this become 1000.
+115 on.
+2nd of Feb OK and this got accepted. If this got accepted, only this record will be part of our policy. This will not be there.
+This is the normal scenario, but in actuarious case these records are keeping in code table whichever I'm putting in yellow and these records are as part of policy. This is what they are managing with that. If they are keeping that record in the policy table or code table, that doesn't mean it's a.
+
+Surya Rabindranath Tagore [S]   24:11
+1.
+
+Pandikasala, Firoz (Direct Line Group) [S]   24:30
+Completely it's a policy and whatever they are putting this one, it's not policy, it's still quotes. It is not still not accepted. Still it is a quote. When it is accepted then it will become a policy and part of that and we'll keep it here and this is accepted.
+And your question is why do we need this record?
+This specific record instead of this one, do we need this as part of our code or not? Is that your question?
+
+Surya Rabindranath Tagore [S]   24:58
+Yes, yes.
+
+Pandikasala, Firoz (Direct Line Group) [S]   24:59
+Yeah, OK, so there are many like shopping behaviour kind of things will be there whenever the analytical team will do. How many codes they have done before like accepting an MTA? What are the different changes? Which amount actually?
+They are accepted. This kind of scenario we can get only if we have all the different kind of codes. Then only we can do that kind of analysis. That's why we are keeping all the codes here and in many places also the code count is there matching. We cannot tell that code count. We need to put all the code counts also in the renewal how many so in case.
+Of renewal. In this case we are putting another renewal, so we have to keep all these things. There is a renewal. This happened on 2000.
+7 and.
+This may not be accepted or in the first case itself it'll accept, then it'll go to here. If it is not, then we'll be putting maybe another many records will be there. Just putting another 4 records. None of these things, they are not accepted. This is on.
+Uh.
+2nd this is on 3rd and this is on 4th. This can happen different amount. This is on 13.
+None of these things accepted, then it will not be part of policy tab, but we need this data. These all coming from again policy. So we need all this data to check how many codes we have actually created but how many accepted. So in this case it's we have.
+Created 4 codes but still not received any any acceptance. So we need all this list. We cannot put this thing in our policy because it's never become a policy.
+And it's still a code.
+
+Surya Rabindranath Tagore [S]   27:18
+OK, so in that case, like currently I'll just ping you the different policy status in STW. So we have these many policy status in the policy table, accepted, declined, error, expired.
+
+Pandikasala, Firoz (Direct Line Group) [S]   27:27
+Oh.
+Mm.
+
+Surya Rabindranath Tagore [S]   27:35
+OK, so you are seeing like out of these many status like accepted and the line only it will go to the policy LSM remaining whatever entry, everything will go to the code LSM.
+
+Pandikasala, Firoz (Direct Line Group) [S]   27:35
+Mhm.
+Yes, correct.
+T
+Yes, correct. Exactly. Our FAT policy LSM will have only accepted. That's what we attempt. So anytime we are telling this many policies means it's accepted policies only we are calling.
+
+Surya Rabindranath Tagore [S]   28:03
+But that what about a a live? Also we will be taking it right? Accepted and live.
+
+Pandikasala, Firoz (Direct Line Group) [S]   28:08
+Live was accepted live or maybe lapse also will be taking means lapse means it's already it was live and it is that date is over. That's lapse also will be part of this one.
+
+Surya Rabindranath Tagore [S]   28:20
+OK. Can we have this in the mapping specification like in the policy LSM so that it will be clear somewhere can be mentioned this one like only this particular status we will be taking into the policy LSM the remaining whatever the status we have like on the declined update.
+
+Pandikasala, Firoz (Direct Line Group) [S]   28:21
+This.
+
+Surya Rabindranath Tagore [S]   28:40
+In the pending endorsement like rejected, those things will go to the code and listen. Can we document submit?
+
+Pandikasala, Firoz (Direct Line Group) [S]   28:45
+We can do that one.
+One minute.
+OK, we can do that one. We are not included. So what are the transaction type or something? Yeah, we can do that.
+
+Surya Rabindranath Tagore [S]   29:06
+Yeah.
+Uh, this is.
+
+Pandikasala, Firoz (Direct Line Group) [S]   29:13
+Because we don't know what is the status in actual as we cannot put that based on that one, but we'll put some word actually here.
+
+Surya Rabindranath Tagore [S]   29:15
+OK.
+Yeah, I I pinged you like what are the status we have in policy, like a different status in the chat.
+
+Pandikasala, Firoz (Direct Line Group) [S]   29:26
+We'll we'll we'll take it from there and do that, yeah.
+
+Surya Rabindranath Tagore [S]   29:30
+OK.
+OK. Yeah. Maybe we will go through some of the things and then we can have one more session and then we will come up with a question for us because we are trying to understand the school path, yeah.
+
+Pandikasala, Firoz (Direct Line Group) [S]   29:33
+OK.
+Yeah, so, yeah. So also we will, we'll also come back because quote is one of the things which we have. We are getting more like clarity now based on the mapping and everything. We are adding more tables also there, fact tables.
+It's like now we today we added that trade declined trading table and declined table back code declined table and declined trading table. We are just putting all the definitions and everything and we'll conduct maybe next week or next next week. Once it's completely ready then we'll we'll go through the details with you also.
+2.
+
+Surya Rabindranath Tagore [S]   30:18
+Yeah, sure. Yep. And like from the data like policy listen, we are almost done like a code. We still have pending like a building one. I know we are still waiting for but like if the ETA they have provided or.
+
+Pandikasala, Firoz (Direct Line Group) [S]   30:30
+Yeah, correct.
+Not yet, actually. So we have, we haven't get any response. We'll just put that in today's call also and we'll ask Judson to follow up on that thing, yeah.
+
+Surya Rabindranath Tagore [S]   30:45
+OK.
+Um.
+
+Pandikasala, Firoz (Direct Line Group) [S]   30:51
+That's.
+
+Surya Rabindranath Tagore [S]   30:53
+Anyone have any questions or anything?
+OK. OK. Chris, thank you for your time. We will schedule one more follow up like we will go through it and whatever questions we have, we will take it in the next record. Yeah. Thank you. Yeah, thank you.
+
+Pandikasala, Firoz (Direct Line Group) [S]   31:11
+Yeah, sure, sure, sure. That's all. Thank you.
+
+Kumare, Amit (Direct Line Group) [S]   31:16
+Thank you.
+
+Kanike, Venkatesh (Group CIO) stopped transcription
