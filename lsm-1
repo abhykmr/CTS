@@ -1,0 +1,483 @@
+CPC-DL4B Van-LSM Data Model Walkthrough-20260209_111005-Meeting Recording
+February 9, 2026, 11:10AM
+32m 17s
+
+Kanike, Venkatesh (Group CIO) started transcription
+
+Rabindranath Tagore, Surya (Cognizant)   0:03
+Table level details and all, like a three like policy code, LSM and all it is there, and the fact people and the snapshot, likewise we cannot take it forward, Narendra, you can.
+
+Pandikasala, Firoz (Direct Line Group) [S]   0:11
+The.
+
+Rabindranath Tagore, Surya (Cognizant)   0:17
+Tell me whether that is fine or we need a table wise as well.
+
+Sharma, Narendra (Direct Line Group) [S]   0:21
+At least a high level, like what each table does and all, so it's easier for when put is in all right, and then the factory can do.
+
+Rabindranath Tagore, Surya (Cognizant)   0:24
+Yeah.
+Yeah, sure.
+Yeah, okay.
+
+Pandikasala, Firoz (Direct Line Group) [S]   0:33
+Okay.
+Okay, so I just thinking, okay.
+Yeah.
+
+Mathew, Nimmy (Direct Line Group) [S]   0:49
+So yeah, it's like, have you gone through the PDF version of our model? Like, it has all the tables as well as like a description of what it is.
+
+Pandikasala, Firoz (Direct Line Group) [S]   0:49
+Okay.
+
+Rabindranath Tagore, Surya (Cognizant)   1:03
+Yep, team has, I mean, I have shared the link to the team. Team has gone through it.
+
+Mathew, Nimmy (Direct Line Group) [S]   1:12
+Okay, so in that, Narendra, have you got a chance to look into that? Like if you have any clarifications, you can raise it first because I'm afraid this half an hour or 20 minutes may not be enough to go through each and every tables, maybe.
+
+Sharma, Narendra Kumar (Cognizant)   1:18
+Yeah.
+
+Pandikasala, Firoz (Direct Line Group) [S]   1:22
+Okay.
+
+Sharma, Narendra Kumar (Cognizant)   1:27
+Okay, so my my only point was like the key table only, like the fat and the key dimension table only, like if you just explain right, it is helpful only, like the factory insured versus how it is getting linked.
+And what's the basic scenarios we are going to test? Basic comment is like, like in which case the facts will be updated on a given day.
+
+Pandikasala, Firoz (Direct Line Group) [S]   1:49
+Okay, well, I'll go through her. I'll let me know if we need more clarity or if you don't, if I'm just telling whatever you are already understanding. So we don't want to repeat things and that's what we are asking. So, okay, anyway, we'll start something, then if required, we can set up another call, maybe.
+that, but we'll try to cover most of the things that how to read the Erwin model itself, it will help you how you want to do basically.
+We'll start, I'll just open the airbin model and I'll just start with the CLSM.
+I hope you can see my screen now.
+
+Rabindranath Tagore, Surya (Cognizant)   2:28
+Yes, the.
+
+Sharma, Narendra Kumar (Cognizant)   2:28
+Yeah.
+
+Pandikasala, Firoz (Direct Line Group) [S]   2:30
+Okay, the first subject area which we have is the package service. That is the one of the major table also. So each table, so if you go to the properties, that means if you go to the PDF version, we have included what is that
+This is the central fact table that captures a state of motor policy at the time of the transition. It connects all relevant dimension and contains keys, metric like gross premium amount, contact start date, or flags basically.
+This is the tablet. This is, I'll just give more explanation on this tablet. That insured risk will have all the transactions for a policy. So policy has multiple transactions. Policy has a new business, there is a renewal, there is a policy chain that what we call MTAs, then there is a cancellation.
+There are some cases there is a reinstatements state also. These are the different transactions or a policy in this table will get all the details of different policy transactions.
+So.
+And there are a lot of attributes or measures as part of this fact table that you can see here. So it will be like, I'll just read what are the major things. It will be when the policy number will be there and when the policy has started. All these details you will get if you need any more details that is there in the PDF version, but we are.
+getting what is the contract created, accepted, different kind of policy, transaction details, all the brand, the coverage product, payment schedule. Basically this other dimension module, instead of keeping actual coverage product, we are keeping the ID here and joining with the dimension table and getting that.
+Proper description accordingly here, so these are majorly the attributes of that policy transaction, how the policy transaction happened, what is the original channel, and what is the transaction channel happened like that, we have all the dimension for that.
+policy transaction. And the major dimensions for this fact insured risk majorly it is the insured table. Insured table has for that policy who is the insured. Basically it can be a company, it can be a person. Under that company or under that
+Personal, so if I see here, you see here.
+There is a multiple contacts will be there. So contacts means there will be a primary contact. Under that company, there will be a primary contact, secondary contact, there will be multiple contacts. If it is a person, mostly what is his contact data? That will be the contact.
+And the other major things are the driver. So one policy might have multiple drivers. That's why we have a bridge table keeping. It's a normal dimensional modelling approach. If you have many-to-many relationship, we'll keep a bridge table and all the driver details for the primary.
+the main driver and other driver details you will get from that driver tab.
+Is this okay or do you want more details or how do you want to proceed, Surya?
+
+Rabindranath Tagore, Surya (Cognizant)   5:56
+This is fine.
+
+Sharma, Narendra Kumar (Cognizant)   5:56
+This is OK.
+
+Pandikasala, Firoz (Direct Line Group) [S]   5:59
+This is fine, so you understood, you have, if you have any question, so in this fact insured risk, we'll have means whatever the policy change I said, so if there is MTA, there is MTA, then the major things are coming from here. The what is the premium amount? Premium amount split up in different.
+fees and premiums basically, what are the add-on things and everything. So all premium related things will be here. So this normally we'll get it from the source system, everything we are keeping and we have different access and some flags, whether it's a personal injury that flag is there.
+because these are add-on premiums. So all these things we are keeping and some excess amount, what is the maximum amount they can claim and all these things. As normally any policy has this kind of properties or attributes with it that are keeping in the factory insurance. This can be changed from a new business to a
+empty. So that's why we are keeping all, whichever is as per the transaction, it can change all these things as part of the fact insurance.
+Okay, do you have any questions on these things?
+
+Rabindranath Tagore, Surya (Cognizant)   7:13
+This is fine only the driver thing, Firoz, like, for example, you mentioned a policy have like 5 drivers. OK, so how the driver bridge and the dimension driver will work in that case, like a...
+
+Pandikasala, Firoz (Direct Line Group) [S]   7:16
+Yes.
+
+Rabindranath Tagore, Surya (Cognizant)   7:26
+For example, E.
+
+Pandikasala, Firoz (Direct Line Group) [S]   7:26
+OK, so there is, yeah, so we have driver multiple drivers, and so if I go here, we have...
+So, if you have a driver and we have some...
+Things are there, so there will be multiple drivers we create. How do we actually? So, we'll group it as a list of all these drivers for each policy. We'll group it and create a group ID here, group driver group ID here, and map it everything for that one, then that group ID will be...
+
+Rabindranath Tagore, Surya (Cognizant)   8:03
+S.
+
+Pandikasala, Firoz (Direct Line Group) [S]   8:04
+keeping in the packed insurance. So we don't have any driver ID here that driver Group ID will be part of this.
+
+Rabindranath Tagore, Surya (Cognizant)   8:07
+Exactly.
+Hope you should be.
+Generation 6. OK, so the driver.
+
+Pandikasala, Firoz (Direct Line Group) [S]   8:14
+Normal.
+Leah.
+
+Rabindranath Tagore, Surya (Cognizant)   8:15
+Okay, for example, new business have like 3 drivers and the MTA have one more driver has been added, like for example 4 drivers. So the driver group ID will have like for the new business, the driver group ID is 1 which has linked to the three drivers here. For the MTA transaction, the driver group ID is second and in that dimension driver table we will have 4 drivers.
+
+Pandikasala, Firoz (Direct Line Group) [S]   8:20
+Yeah.
+M.
+M.
+No.
+
+Rabindranath Tagore, Surya (Cognizant)   8:37
+Is my understanding right? OK.
+
+Pandikasala, Firoz (Direct Line Group) [S]   8:38
+Yes, correct. Yeah, correct. We'll add another group ID for that one and we'll keep it that separately.
+
+Rabindranath Tagore, Surya (Cognizant)   8:44
+Okay, thank you.
+
+Pandikasala, Firoz (Direct Line Group) [S]   8:50
+That time, the second option, the second subject area which we created, it's under policy LSM itself, there is a policy premium back. Policy premium, basically, it is the fact policy premium detail. It is nothing but for a specific policy, there will be multiple.
+add-ons will be there like which we already have something.
+Here, let me some more.
+Okay, here, the courtesy van plan is a courtesy van additional add-ons that are taken, motor, legal van, protected. These kind of multiple add-ons will be there. So the premium split up at add-on level will be keeping impact from this policy premium.
+So that is the cover type we'll be adding and that cover type each premium for each policy, for each policy transaction, what are the different kind of premium split up we'll be getting from this tab.
+It's simple, actually. So, it's a subtable of fact insurance. So, if anybody wants, normally majority of our report will be coming from fact insurance. Very rarely, somebody need to see what is the premium split up or something. That time, we'll come back to here and take it from here. I'll tell you from...
+Home and everything we don't need, we we don't keep this as we keep there, but very rarely will come to on this table and get that details.
+majority reports are coming from fact insurance. But you can see this is a subtable of what we have there in the fact insurance. You just join with that policy period ID and you will get for one policy period ID, multiple rows there will be there as part of fact policy premium detail back.
+
+Mathew, Nimmy (Direct Line Group) [S]   10:53
+One more point in that, like here, the split is at the premium and IPT also, like both are in different lines because we are not keeping the individual premium for the add-ons there in the factory. It's just a total for all the add-ons.
+
+Pandikasala, Firoz (Direct Line Group) [S]   10:59
+Yeah, yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   11:14
+Okay.
+
+Pandikasala, Firoz (Direct Line Group) [S]   11:17
+And the next one is policy snapshot. Policy snapshot as I mentioned the name, it's a snapshot tab.
+
+Mathew, Nimmy (Direct Line Group) [S]   11:17
+Yeah.
+
+Pandikasala, Firoz (Direct Line Group) [S]   11:28
+This is so this table will have all the active active policies for each day will keep last 18 months based on the business will normally keep it last 18 months every day. What are the active policies and keep in this table? So any reporting?
+So there are many reporting, basically the enforce policy, IFP is basically calling everywhere in all the reports. They need, month-wise or week-wise, the comparison, what was the last month active policies, this month-wise, month active policies, but normally will.
+and we'll see for that month and date what is the IFPs and just means what is the policies under that date and just report it accordingly. So this is normally it's a reporting purpose and it is mostly coming directly from fact insurance. It's A fact insurance table. It's A derived table from fact insurance.
+So, it's a monthly active policy snapshot.
+Daily level, month is not monthly, it's a daily level. Every day we keep it active policy. So if today some policy has cancelled, it will be there today, but tomorrow onwards it will not be there in this time. So we'll get that count and all the sum of many reports coming from IFP report coming from Act Insurance Snapshot.
+It's a symbol on leaked, majority attributes are directly coming from practice, sure there's some whichever is not very relevant, we are not keeping that attributes in this term.
+
+Sharma, Narendra Kumar (Cognizant)   13:01
+So, so here the value which has to it, it's like you are deleting the basically you are taking a it's it's getting refreshed daily, but with like if you see the product type ID or anything right, so this is something you are taking with the latest record or is it like a new business record for these fields?
+
+Pandikasala, Firoz (Direct Line Group) [S]   13:10
+David.
+No in any any okay so it will be whatever that day later if there is a new business after that is a MTA happen on 2nd of February, 2nd of February when you are populating that record will have that policy will have attributes with the second that MTA related ticket.
+
+Sharma, Narendra Kumar (Cognizant)   13:28
+Mhm.
+
+Pandikasala, Firoz (Direct Line Group) [S]   13:41
+Only one, so each policy has one day, one record.
+
+Rabindranath Tagore, Surya (Cognizant)   13:49
+It's.
+
+Pandikasala, Firoz (Direct Line Group) [S]   13:49
+That policy period, I mean.
+
+Rabindranath Tagore, Surya (Cognizant)   13:51
+So it is generally the policy will be like one year, right? Like for example, it has started from like 1st of February, 2026 to next year, 1st of February, 2027. So, and MTA happened on 15th of February, 2026. So snapshot table, like for example, 1st to 15th of Feb.
+
+Pandikasala, Firoz (Direct Line Group) [S]   13:55
+Yep.
+Yeah.
+Mmh.
+
+Rabindranath Tagore, Surya (Cognizant)   14:12
+new business entry will be there.
+
+Pandikasala, Firoz (Direct Line Group) [S]   14:14
+Yeah, from 15th onwards, it will be 15th whenever that MTA happened that day onwards from the MTA related details will be there.
+
+Rabindranath Tagore, Surya (Cognizant)   14:26
+Okay, like from 1st to 15th of February on daily, like the snapshot date, like 1st of February, the policy number 100, it is there. And the second of February, the policy number 100 is there. Like that, like throughout all 365 days, like for example, if it is a plain vanilla scenario, you will be copying the data. Okay, so what will happen?
+
+Pandikasala, Firoz (Direct Line Group) [S]   14:32
+Yeah.
+Yeah.
+Yes, correct.
+Yes, correct.
+Yes, exactly.
+
+Rabindranath Tagore, Surya (Cognizant)   14:45
+And like for example, 15th of February, MTA has been happened. So I'll like a 15th of snapshot date. So for that 100 policy, the MTA entry will be there. The new business will not be there. How the...
+
+Pandikasala, Firoz (Direct Line Group) [S]   14:49
+Hmm.
+MTA only will be there, not new business will not be there. Only MTA will be there.
+
+Rabindranath Tagore, Surya (Cognizant)   15:07
+What? OK, but that records will be pre-populated, right? It will be of the system. Sorry, I'm not able to.
+
+Pandikasala, Firoz (Direct Line Group) [S]   15:16
+OK, so we'll take, so there is there is a policy number one, so, as you said, it is fast.
+
+Rabindranath Tagore, Surya (Cognizant)   15:17
+Visualise it, yeah.
+
+Pandikasala, Firoz (Direct Line Group) [S]   15:25
+2026.
+This is a simple record, and this happened on.
+Receive period ID.
+Policy number.
+Policy creation date.
+Cortana, session data.
+And contact start date.
+Is that right?
+Premium.
+The data, so there is the transaction happen, as you said, it is same thing, and this is the policy number is saved, the transaction happen on.
+Jaideep.
+This week of 100.
+Nancy.
+This is the transition. What will happen in snapshot tables? Snapshot table we have from here.
+We see them by the same.
+And all other pages will be there as this is snapshot date and what I'll put policy period ID from here to up to 40.
+The same from here onwards to the policy period ID too.
+And...
+This is 100 from here.
+And this is eighty-nine.
+Is it clear?
+
+Rabindranath Tagore, Surya (Cognizant)   19:22
+It was like a first time, like for example, 15th only the MTA is happening. So before MTA happened, like from 1st of February 2026 to 31st of 2027, we will be pre-populating it or...
+
+Pandikasala, Firoz (Direct Line Group) [S]   19:25
+The.
+I am T, yeah.
+Yeah.
+No.
+Will not, will not, no, no, no, we will not repopulate. We'll populate only from whatever the current date, previous day only. So whenever I'm posting today, 9th of February, I'll repopulate for 8 only, populate only for 8, up to 8, not the future date will not be there in this time.
+
+Rabindranath Tagore, Surya (Cognizant)   19:38
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+
+Pandikasala, Firoz (Direct Line Group) [S]   19:56
+So, it's clear, NM, in this case.
+
+Rabindranath Tagore, Surya (Cognizant)   19:58
+Yep.
+
+Pandikasala, Firoz (Direct Line Group) [S]   20:01
+So, that's the structure table, it's a derived table from here, and then we have the is a pack insured and vehicle van. So, EVY is one of the normal, it's also another derived table, and I'll tell you the purpose basically. So, this table.
+Is telling, so I don't know whether I put it that proper description.
+Sheikh.
+This factable store earned from years EV weight data for insurance policies stating, tracking the portion of the year that if a policy was forced within given month, it enables premium allocation and risk assessment over time. So okay, so I'll put it, I'll take the same.
+Case, what will happen? This is the case, and so the every month, so we have from...
+Like, in this case, Deb 2.
+This is a monthly tablet.
+monthly table. So what they need, the reporting period, they don't need each month. So it's only current month only it will populate, previous month it will not be the future. So whatever the month previously, it's 100 premium is there. What is actually it is from this month?
+It will be like in this month we have only 28 days. That means 328 divided by...
+365. This is what we will give this whatever the percentage and what we'll do we'll just put 100.
+multiplied by this amount. So this is the amount earned in this month.
+for this premium. For each premium, we just compute and keep it that what is the earned premium for that month.
+And it will be helpful because this is one of the key metrics or KPA which every majority business people will cheque what is their earned premium up to that month. Even they are getting 400, but that month is not over, it is still not utilized. So they are checking and it will be checking the performance for the insurance and they will be using this number. So that's why
+We have multiple, like, what is the EV by for slot? So, EV by basically this is the column is EV by earned vehicle years, and then what is the earned premium for that one, and EV by cumulative is whatever the cumulative for each month, then we are splitting all the other premium as what is the end premium.
+For that month.
+This is the table which we are using for some of the reporting. This is as part of policy LSM. This is another subject area which we created. These are the four major fact tables as of now we created as part of policy subject area.
+
+Rabindranath Tagore, Surya (Cognizant)   23:20
+Okay.
+
+Pandikasala, Firoz (Direct Line Group) [S]   23:20
+Any, any questions?
+
+Rabindranath Tagore, Surya (Cognizant)   23:21
+OK, for the day one, this insured vehicle also included if it was because I, I, I was not aware that, like, we have added this one.
+
+Pandikasala, Firoz (Direct Line Group) [S]   23:30
+No, no, it was not there initially. We recently added because we are getting some PM1. Initially, we thought whichever is directly getting populated from the source system, we just create, but in parallel, we can create other table, but we got some of the PM1 requirement and everything immediately we have to create, we have created the reason.
+
+Rabindranath Tagore, Surya (Cognizant)   23:33
+Okay.
+
+Pandikasala, Firoz (Direct Line Group) [S]   23:53
+Releases last week release we upgrade.
+
+Rabindranath Tagore, Surya (Cognizant)   23:55
+Okay, from policy LSM perspective, like as of 9th of February, these are the main 4 fact tables in policy LSM.
+
+Pandikasala, Firoz (Direct Line Group) [S]   24:02
+Yeah, yeah, yeah, yeah, yeah, we saw that.
+
+Rabindranath Tagore, Surya (Cognizant)   24:05
+Okay, under like the mapping wise or the LSM wise is it like I can say like 100% is it completed or still we are expecting changes of Firoz.
+
+Pandikasala, Firoz (Direct Line Group) [S]   24:15
+100 of the LSM wise, we are doing some changes. We are getting some feedback from the different team as you also can check. So that feedback we are including from mapping. So as we already told in last week, we have already.
+They done, I think, around 70-80 percentage after the discussion with actuaries and Gary Nilesh. I think, Nimmy, we are done more than 80 now, you know.
+
+Mathew, Nimmy (Direct Line Group) [S]   24:45
+Yes, that's right, but still, you know, that access-related columns are the majorly like missed in the fact. It is because we don't have the data yet, and even from the actuaries also, they have told, like, they have exposed the access-related columns for WAN, so we are still waiting for that, and we have...
+
+Pandikasala, Firoz (Direct Line Group) [S]   24:45
+I don't.
+E.
+
+Mathew, Nimmy (Direct Line Group) [S]   25:04
+We also asked actually to provide some clarity to identify the correct keyword for each and every accesses.
+So otherwise, excluding these type of missing things, we are almost covered everything in our fact.
+
+Pandikasala, Firoz (Direct Line Group) [S]   25:23
+Yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   25:25
+Ohh.
+
+Pandikasala, Firoz (Direct Line Group) [S]   25:25
+So the major important problems are already available, but this, I think, Surya, this we need to get actual support from the actors. We already raised, we sent them the Excel sheet. Maybe we are also planning to send, set up another meeting internally with all leads and just show what are the missing or wherever the gap we have.
+what is there in LSM and we need to cheque with the business team also who has given the business requirement like Isha and Brajesh. We'll cheque with them whether it is very mandatory or is it not required. Then we'll remove from the LSM and mapping. Otherwise, we'll keep it and we'll just put it on.
+Actually, no, that's the plan for that.
+
+Rabindranath Tagore, Surya (Cognizant)   26:09
+Is there any cutoff date because I think by mid of February all the mappings and the model everything should be like at least first iteration we should be signed off like 90 percentage we should complete right that is the original plan.
+
+Pandikasala, Firoz (Direct Line Group) [S]   26:18
+NM.
+Hi.
+So, we can just in that meeting, we can set up because that we need really from actually, we can't do anything serious. One option is we can go and just delete that from the mapping, but that also need to come from the business. We will not delete unless we are getting a confirmation from the team that this is not required as part of our requirement, or we'll keep it for actually to.
+give the proper mapping and that explanation for us. Otherwise, we can't do anything. That's the thing, yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   26:53
+In.
+OK, can you please include our testing team, at least myself and Narendra at that point? Yeah.
+
+Pandikasala, Firoz (Direct Line Group) [S]   26:58
+Yeah, yeah, yeah, yeah, Surya, yeah, Surya, you will be there any meeting, so we are, we are in the process of just consolidating the data, and we'll be doing that by someday, someday in this week.
+
+Rabindranath Tagore, Surya (Cognizant)   27:12
+Sure. And I have one more question regarding the earned vehicle that fact table is there, right? You mentioned like a monthly, we will be calculating the earned premium or unearned premium, whatever it is. To who will be providing the logic like for the new business, this is how the earned premium should calculate and for MTA for the cancellation for the renewal, like we have different transaction type.
+
+Pandikasala, Firoz (Direct Line Group) [S]   27:12
+Yeah.
+Yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   27:31
+So how, who will provide that logic? Is it data modeller or PA? I'm not sure about, I mean.
+
+Pandikasala, Firoz (Direct Line Group) [S]   27:35
+We will provide that one, but this will be confirmed by the business basically. That's as per the business, I don't know. Whatever we learn from home and motto will give the same logic to Team and means our BAs can
+confirm that one. Once that is there, then yeah, you can take it from that.
+
+Rabindranath Tagore, Surya (Cognizant)   27:59
+And will you be reviewing with it because as I see like this earned premium and all those calculation will be used by finance work stream. So you will be reviewing with the finance work stream as well or like the logic should be same, right? More or less.
+
+Pandikasala, Firoz (Direct Line Group) [S]   28:14
+It should be safe, so what we will be doing as a data modeler, we don't have actually, we didn't have any discussion with business as of now. So all discussion happened with BA, basically, Isha and Rakesh. We'll provide this explanation, this is what we are going to implement and get the confirmation from them. So they can cheque with business or something, that depends upon that, but we will be doing it.
+
+Rabindranath Tagore, Surya (Cognizant)   28:37
+OK.
+And for this, it took a mapping sheet is set to prepare, right?
+
+Pandikasala, Firoz (Direct Line Group) [S]   28:44
+Yeah, that this will be more explanation. I don't think there is any mapping. It's a derived table from fact, as I said, so for each span session, will they need to create this will give a detailed explanation to that attention.
+
+Rabindranath Tagore, Surya (Cognizant)   29:00
+Ohh...
+Okay, I mean, this is what like for each transaction type that logic should be different, right?
+
+Pandikasala, Firoz (Direct Line Group) [S]   29:09
+No, it will be same, actually, so, OK.
+That will be safe. So in this case, if you look at the second one that I am doing, first to 14, basically, first to 14 is based on 100. So this is E. I cannot put directly, so this is
+So, 1st to 14 days.
+Only so, OK, so if I'm taking I have it 14 days here that is based on 3 / 365 and another 14 days that is based on divided by.
+The 365 days, and here the premium how to compute the first part this.
+
+Rabindranath Tagore, Surya (Cognizant)   30:02
+That.
+
+Pandikasala, Firoz (Direct Line Group) [S]   30:03
+This one is this one, the year premium.
+
+Rabindranath Tagore, Surya (Cognizant)   30:04
+I can't speak.
+
+Pandikasala, Firoz (Direct Line Group) [S]   30:09
+And the second one is 89.
+
+Rabindranath Tagore, Surya (Cognizant)   30:20
+I will try.
+I want to see.
+Can you see, please?
+
+Pandikasala, Firoz (Direct Line Group) [S]   30:28
+So like this, this is the total should be part of that. It is not directly what seven points this one. If I'm taking only 100, this will not be correct. So they have to do partially if there is any MTA, just split up based on the MTAs if there is a premium change and take it.
+That according, so it's purely computation based on the logic.
+
+Rabindranath Tagore, Surya (Cognizant)   30:52
+But.
+That computation, I mean, that will be given by BA or a data modeler.
+
+Pandikasala, Firoz (Direct Line Group) [S]   31:00
+Data model will be giving, BA will confirm this is the data, this is the logic, yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   31:03
+This one, okay, okay, yeah.
+Thank you. I mean, like, I'll conduct a set up one more meeting for the code LSM because I need to understand like a code LSM there is like 2 tabs there. Sahil has mentioned it for the new business and the MTN renewal. So we need to understand on that. Maybe I'll schedule one follow up session, the speaker later, the speaker.
+
+Pandikasala, Firoz (Direct Line Group) [S]   31:25
+Yeah, yeah, no problem.
+
+Rabindranath Tagore, Surya (Cognizant)   31:27
+Yes.
+
+Pandikasala, Firoz (Direct Line Group) [S]   31:27
+No, you can do that.
+
+Kamble, Sahil (CIO) [S]   31:28
+Sure, sure.
+
+Rabindranath Tagore, Surya (Cognizant)   31:29
+Yeah.
+
+Kamble, Sahil (CIO) [S]   31:30
+Yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   31:33
+Ohh.
+
+Pandikasala, Firoz (Direct Line Group) [S]   31:34
+There is no other things, then we can, yeah, wind up now.
+
+Rabindranath Tagore, Surya (Cognizant)   31:37
+Yeah, Narendra Venkatesh, do you have any questions?
+
+Sharma, Narendra Kumar (Cognizant)   31:43
+Uh, not right now. It just this and all, everything will be generated by DVD, right? It's like a real-time.
+
+Pandikasala, Firoz (Direct Line Group) [S]   31:51
+E.
+
+Kamble, Sahil (CIO) [S]   31:51
+Yes, while inserting of record itself, it will be generated.
+It is auto incremental at say a detail level, right Firoz?
+
+Sharma, Narendra Kumar (Cognizant)   32:01
+Yeah.
+
+Pandikasala, Firoz (Direct Line Group) [S]   32:02
+Yeah, yeah, just by default, it's...
+
+Sharma, Narendra Kumar (Cognizant)   32:08
+Deb.
+
+Kanike, Venkatesh (Group CIO)   32:11
+OK, stop recording.
+
+Kanike, Venkatesh (Group CIO) stopped transcription
