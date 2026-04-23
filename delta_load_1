@@ -1,0 +1,1157 @@
+LSM Delta Loads – Expected Outcomes for Dimensions and Fact Tables-20260420_113618-Meeting Recording
+April 20, 2026, 10:36AM
+55m 40s
+
+K, Barathraj (Direct Line Group) started transcription
+
+Kamble, Sahil (CIO) [S]   0:08
+Okay, so I have pasted notes for various load strategy for SCD1, SCD2, and fact and snapshot table.
+So I'll give you a brief idea how we are expecting data. So for a CD1 tables, so table like dim user, okay, we are having few columns, user ID, user name, and user logon ID. Okay, there what we are expecting is if there are any changes to the new logon ID or logon ID.
+Username, I think. I don't recall the columns correctly. The entire record will be updated as it is. There will not be any history of effective to and effective date from to track the history of dim user. So SCD, dim user is the only table with SCD one, which is SCD one.
+Okay, yeah, static tables, they are just one time insert. There is no load means only when from source if there are records which are coming with different static value, which is not there in our existing dimension. Suppose actuaries added a new status value.
+
+Rabindranath Tagore, Surya (Cognizant)   0:59
+Okay.
+
+Kamble, Sahil (CIO) [S]   1:20
+Suppose XYZ status value actually has added that record when flows to our system, it will not get matched to any of the existing records in our dimension. What will happen then? A minus 1 value will be assigned and that record should get assigned to a data steward to verify if it is correct or not.
+Okay, that is then data steward will say, okay, this is a new status, then add this value. So we will then update the static value in dimension. Till then, the existing value which we have got initially, that will remain.
+Okay, that way only the new statuses will come only when they are flagged by data steward.
+
+Rabindranath Tagore, Surya (Cognizant)   2:03
+Okay, only that new data only will be appended in the third dimension table, is it?
+
+Kamble, Sahil (CIO) [S]   2:09
+Yes, yes, yes, for static tables. OK, no SCD2, so tables like dim contact, dim vulnerability, dim vehicle, dim.
+
+Rabindranath Tagore, Surya (Cognizant)   2:11
+Okay.
+
+Kamble, Sahil (CIO) [S]   2:21
+No dim driver. OK, these are dim driver which is also a CD one. Sorry, I forgot. OK, so yeah, I said one we are having just let me cheque that. I think it is a CD2 only.
+
+Rabindranath Tagore, Surya (Cognizant)   2:32
+Oh.
+So, like, is there any place like these are all the tables which are like a CD type one and a CD type 2 and those like consolidated view?
+
+Kamble, Sahil (CIO) [S]   2:45
+No, no, no, we haven't created that way.
+
+Rabindranath Tagore, Surya (Cognizant)   2:46
+Can we get that document or because otherwise it will be difficult, right?
+
+Kamble, Sahil (CIO) [S]   2:55
+OK, OK, because thing is, from data perspective, what we see is if the effective date to sorry, effective date from is part of composite primary key, it is an SCD tool. OK, so the key combination, like suppose driver code and effective date.
+from becomes using these two columns, if we can uniquely identify a particular record, then it is an SCD row. So if for that driver code, a new effective date form comes, then that will create a history.
+OK, so that way we identify a SCD2, so, for example...
+What we are expecting, I'll just share my screen.
+
+Rabindranath Tagore, Surya (Cognizant)   3:39
+Okay.
+Just.
+Love.
+Hey, Cortana.
+
+Kamble, Sahil (CIO) [S]   4:04
+Let me take an example of a new vehicle.
+In that, we have a...
+Vehicle ID.
+
+Rabindranath Tagore, Surya (Cognizant)   4:16
+But.
+
+Kamble, Sahil (CIO) [S]   4:16
+Vehicle name.
+
+Rabindranath Tagore, Surya (Cognizant)   4:18
+Simplicity.
+
+Kamble, Sahil (CIO) [S]   4:18
+No, for vehicle port.
+
+Rabindranath Tagore, Surya (Cognizant)   4:21
+Perfect.
+Thanks.
+
+Kamble, Sahil (CIO) [S]   4:30
+Or any value which would change is uh.
+And you, my little.
+
+Rabindranath Tagore, Surya (Cognizant)   4:38
+Yes, absent.
+itself.
+Thanks, Steven.
+There is that.
+
+Kamble, Sahil (CIO) [S]   4:54
+OK, suppose this record is loaded with the vehicle code.
+
+Rabindranath Tagore, Surya (Cognizant)   4:59
+Yeah.
+
+Kamble, Sahil (CIO) [S]   5:00
+Holden.
+
+Rabindranath Tagore, Surya (Cognizant)   5:02
+And everything is.
+Yeah.
+
+Kamble, Sahil (CIO) [S]   5:14
+So this is a fresh record which got loaded today. Suppose after some time there is a change.
+
+Rabindranath Tagore, Surya (Cognizant)   5:21
+Okay, yeah.
+
+Kamble, Sahil (CIO) [S]   5:21
+OK, right now, vehicle code and vehicle effective date - these two will form a composite primary key in for HCD2. Now, for same record, a new vehicle ID will be inserted.
+Same way, uh, uh, code.
+But they have updated a...
+Annual mileage.
+So what will happen when this record comes? What our data engineering team will do is they will cheque that for this code, if any existing record is existing or not. If they see that existing record is there, what they will do is they will end it this record and sorry, they will first compare this record.
+from staging data and see if the incoming information has changed or not. So they will see that this information has changed. Okay, so what they will do is they will end it this record. Suppose this record came on.
+21st, sorry, 25th.
+So, they will ended this record.
+And for new, effective date will be null.
+Okay.
+So for what they have to do is right now we can see for this record they are only using vehicle code and effective date from we can uniquely identify this record.
+
+Rabindranath Tagore, Surya (Cognizant)   6:37
+Ohh.
+
+Kamble, Sahil (CIO) [S]   6:49
+Yes, yes, Surya. Any doubt?
+
+Rabindranath Tagore, Surya (Cognizant)   6:51
+Uh, your cycle, like the first entry rate, the vehicle ID one, so the default end date will be null always, is it? And when the update comes, we will end that, like we will update that particular date, and the second entry, effective date two, will be null, is it?
+
+Kamble, Sahil (CIO) [S]   7:07
+Yes, yes, yes.
+
+Rabindranath Tagore, Surya (Cognizant)   7:08
+So it did like across all the SCD dimension, SCD type 2 dimension table. This is how we are populating like effective date too. Is the logic same or like each table it is different?
+
+Kamble, Sahil (CIO) [S]   7:19
+Uh, that uh, let me just cheque if one data engineer could attend this call.
+
+Rabindranath Tagore, Surya (Cognizant)   7:46
+And do we have latest flag column for all the CD type 2 dimension table?
+
+Kamble, Sahil (CIO) [S]   7:52
+Yes, latest flag is also there. So latest flag is like a...
+If effective from date is greater than.
+No, sorry, effective to date.
+No, sorry, yeah, effective to date is greater than current date, then it is latest flag.
+So what will happen on 25th? Effective to date will be not be greater than current date. So it will be marked as zero and this will be marked as one.
+
+Rabindranath Tagore, Surya (Cognizant)   8:27
+Sorry, like how you are calculating latest flag? Are you considering date to effective to date or effective from date?
+
+Kamble, Sahil (CIO) [S]   8:36
+Effective to date.
+
+Rabindranath Tagore, Surya (Cognizant)   8:40
+Okay, effective 2 data, so like...
+Greater than 20. I mean, if it is null, then how you will be calculating it? Sorry, I didn't get that point.
+
+Kamble, Sahil (CIO) [S]   8:48
+No, no, by default, will be it will be considered as end date, right? So it will be one.
+That day, the record will mean when the new record is inserted, and anyway, this will be updated and it will become the condition of current date is greater than effective to rate will be false, so it will be assigned zero and this will be assigned as one.
+
+Rabindranath Tagore, Surya (Cognizant)   9:14
+Okay, if you don't mind, can you please open the dimension vehicle mapping spec? I just want to understand that that is updated in the document as well clearly.
+
+Kamble, Sahil (CIO) [S]   9:39
+Yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   9:59
+Okay.
+But here the effective to date it is mentioned it is a cover in date key.
+
+Kamble, Sahil (CIO) [S]   10:08
+Okay, covering it.
+So, actually, on means it is a let me just cheque it for cover ended keys null or not.
+Because I have not worked personally on this mapping.
+
+Rabindranath Tagore, Surya (Cognizant)   10:24
+Okay.
+
+Kamble, Sahil (CIO) [S]   10:46
+Okay, current date is updated.
+So I think this information for vehicle every year, every renewal, this information, it will create a record in the vehicle.
+
+Rabindranath Tagore, Surya (Cognizant)   11:01
+But that logic, like how it will work for a CD type 2, then like they effective to date, like the same scenario, for example, how it will update.
+
+Kamble, Sahil (CIO) [S]   11:10
+So now suppose what will happen? This is this will be effective to date will be one year that is 19th.
+
+Rabindranath Tagore, Surya (Cognizant)   11:19
+27, right? Yeah.
+
+Kamble, Sahil (CIO) [S]   11:20
+Twenty-seven. OK, and I'll add one more thing. I just told just for reference, this was a business event.
+It was one that is new business. For new business, this record came. Okay, now suppose in between MTA, I don't think from business perspective if they ask to again add the vehicle details. If they do, then for if there is an MTA.
+
+Rabindranath Tagore, Surya (Cognizant)   11:35
+Okay.
+
+Kamble, Sahil (CIO) [S]   11:49
+Then again a new record will be created with the updated details else what will happen for renewal.
+
+Rabindranath Tagore, Surya (Cognizant)   11:57
+No, no, no, sorry. Before going back to the renewal cycle, the same thing, like as part of MTA, there is some vehicle details are changing it, okay? So here you have like the vehicle ID, two vehicle code is updated. So what will happen to the effective to date now for the first year entry, like the row number 5?
+
+Kamble, Sahil (CIO) [S]   11:58
+The bull.
+Okay.
+So what will happen? Suppose MT came on 24th.
+
+Rabindranath Tagore, Surya (Cognizant)   12:22
+Okay.
+
+Kamble, Sahil (CIO) [S]   12:24
+This will be updated because that will become the cover end date in actually for new business record.
+Am I right?
+
+Rabindranath Tagore, Surya (Cognizant)   12:34
+Okay.
+I'm not sure I need to cheque the data, like covering date keys, like when the empty happens, it is updating or not.
+
+Kamble, Sahil (CIO) [S]   12:40
+Okay.
+So this is a policy, insurer policy number 3000 something. Okay, for new business, I'll add the columns.
+
+Rabindranath Tagore, Surya (Cognizant)   12:46
+Okay.
+Yeah.
+Okay.
+Effective from date key again.
+
+Kamble, Sahil (CIO) [S]   13:15
+224 to cover in date was supposed to be 223.
+
+Rabindranath Tagore, Surya (Cognizant)   13:20
+Mhm.
+
+Kamble, Sahil (CIO) [S]   13:20
+And.
+The MT came on to 27.
+That is just three days, and for...
+
+Rabindranath Tagore, Surya (Cognizant)   13:31
+No, that is like the data is not refreshed, I think. Yeah, maybe you can look into the 3rd and the 4th. Yeah.
+
+Kamble, Sahil (CIO) [S]   13:34
+Good.
+Yeah.
+309 and again MD came on 309.
+
+Rabindranath Tagore, Surya (Cognizant)   13:46
+Okay.
+This is fine, but if that is the case, can you scroll? Sorry, go back to your Excel cycle.
+This latest flag, how it will work? It will not work like the effective day to date greater than.
+Current.
+Date, I'm just thinking.
+And.
+
+Kamble, Sahil (CIO) [S]   14:10
+So, if anyway, means current date effective, sorry, if current date is lower than effective to date, that is the current in process record right live record. We cannot have two records with the overlapping effective to date.
+
+Rabindranath Tagore, Surya (Cognizant)   14:22
+Mhm.
+Okay.
+
+Kamble, Sahil (CIO) [S]   14:29
+We will have only one record, right? Anyway, previous record has to be an ended to for a new record to be effective from.
+
+Rabindranath Tagore, Surya (Cognizant)   14:30
+Ohh.
+Okay.
+So, in this case, like a fact insured risk when our fact quoted risk rate, how the value will be populated, like for this, like as part of MTA, there is some vehicle changes, so we got the vehicle ID here. So, what will happen to the fact insured risk van and the quoted risk van table?
+
+Kamble, Sahil (CIO) [S]   14:47
+Yes.
+So now suppose we have data for policy period.
+ID, because this is a new business, uh, so we we will consider one.
+Then what we have effective date.
+some date columns we have contract start date, contract end date, contract created date.
+
+Rabindranath Tagore, Surya (Cognizant)   15:21
+Yeah.
+
+Kamble, Sahil (CIO) [S]   15:23
+OK, but I'll take this to as my date.
+
+Rabindranath Tagore, Surya (Cognizant)   15:24
+Thank you.
+
+Kamble, Sahil (CIO) [S]   15:33
+And then we will have a policy number.
+And then we will have our ID column, so policy transaction.
+
+Rabindranath Tagore, Surya (Cognizant)   15:58
+Type, right?
+
+Kamble, Sahil (CIO) [S]   15:58
+But that is new business coverage product.
+
+Rabindranath Tagore, Surya (Cognizant)   16:00
+Mm.
+
+Kamble, Sahil (CIO) [S]   16:04
+Comprehensive just means you can, we can have lookup values, so I'll just say one comprehensive and 11 will stand for new business comprehensive and then we will have medical ID.
+
+Rabindranath Tagore, Surya (Cognizant)   16:08
+Yeah.
+Yeah.
+
+Kamble, Sahil (CIO) [S]   16:20
+OK, so this is our record, and when it came as new business, it was having end date as this effective to date as this, correct? Now, what happens when there is a MTA?
+
+Rabindranath Tagore, Surya (Cognizant)   16:30
+Mhm.
+
+Kamble, Sahil (CIO) [S]   16:35
+Policy period will change to two.
+
+Rabindranath Tagore, Surya (Cognizant)   16:38
+Okay.
+
+Kamble, Sahil (CIO) [S]   16:43
+OK, and this will be my MTA's end date.
+It actually gives.
+OK, this will be my data.
+
+Rabindranath Tagore, Surya (Cognizant)   17:03
+Okay, so far.
+
+Kamble, Sahil (CIO) [S]   17:03
+What will happen? The new business record will be updated with the end date and sorry, not and updated it. The new business record will be deleted and again reinserted.
+Okay, so then it will have the latest information and the latest MTA record will be inserted.
+
+Rabindranath Tagore, Surya (Cognizant)   17:24
+Okay, so then, like, for example, for the row number 12, like, when it got first loaded into the system, because every time it will delete and update it, right? So we need to use the DAP insert timestamp or like a whole cycle.
+
+Kamble, Sahil (CIO) [S]   17:24
+Okay.
+
+Rabindranath Tagore, Surya (Cognizant)   17:40
+Dap inserted.
+
+Kamble, Sahil (CIO) [S]   17:40
+Ohh.
+So, what do you want to understand? We will, in fact, we will have the latest information.
+
+Rabindranath Tagore, Surya (Cognizant)   17:47
+No, no, like I just want to know when this record had got first inserted into the system, like LSM table.
+
+Kamble, Sahil (CIO) [S]   17:55
+So as this data, now suppose we got the update for this record, it will get deleted.
+We are not updating the fact table. The record will be deleted and new record will be inserted. So if suppose this record got inserted on that insert timestamp.
+The same as this.
+
+Rabindranath Tagore, Surya (Cognizant)   18:21
+Yeah.
+
+Kamble, Sahil (CIO) [S]   18:22
+For day one and for 24th, what will happen?
+This record will be deleted and again reinserted, I will along with this record.
+
+Rabindranath Tagore, Surya (Cognizant)   18:31
+Are you sure, because we have one more column called the update time stamp?
+
+Kamble, Sahil (CIO) [S]   18:33
+Okay, I think this is the way.
+I think this is the way.
+Let me just confirm once.
+Just give me one minute.
+
+Rabindranath Tagore, Surya (Cognizant)   19:00
+Yeah, sure.
+Yeah.
+Good.
+
+Kamble, Sahil (CIO) [S]   19:59
+Hello, Piroz.
+
+Pandikasala, Firoz (Direct Line Group) [S]   20:04
+Yeah, I think, yeah.
+
+Kamble, Sahil (CIO) [S]   20:06
+You know, just wanted to confirm this thing with you.
+So the scenario is we are having one policy, new business policy, which was loaded on 20th. And so when the record came on 20th, it was a new business and with the effective end date as 19, that is exactly one year after the effective date from. And it had a policy transaction type as one.
+
+Pandikasala, Firoz (Direct Line Group) [S]   20:29
+Oh.
+
+Kamble, Sahil (CIO) [S]   20:31
+That is new business and coverage product one comprehensive vehicle ID one, which is the current that is status of the vehicle. OK, and it was inserted on 20th. Now, suppose what happened on 24th, the MTA came, so policy period ID changed, effective date.
+
+Pandikasala, Firoz (Direct Line Group) [S]   20:36
+Ohh.
+Cool.
+Better.
+Oh.
+
+Kamble, Sahil (CIO) [S]   20:51
+Two was updated for new business record and as the effective date from of an MTA record and it will have policy transaction type as two that is MTA and vehicle ID of new vehicle will be populated as two because with it updated the information.
+
+Pandikasala, Firoz (Direct Line Group) [S]   20:54
+Cool.
+
+Kamble, Sahil (CIO) [S]   21:12
+of a vehicle annual mileage, okay?
+
+Pandikasala, Firoz (Direct Line Group) [S]   21:15
+Okay.
+
+Kamble, Sahil (CIO) [S]   21:17
+So now the the doubt was.
+Now, what we are what we are saying to engineering is what we will do is we will for the previous record for the new business record we will delete it when it the policy period matches the engineering team will delete the record and again reinsert the entire record with latest information that is the new updated effective to date.
+
+Pandikasala, Firoz (Direct Line Group) [S]   21:41
+Correct.
+
+Kamble, Sahil (CIO) [S]   21:42
+Correct, so, and that time, the that date that insert timestamp will be updated.
+
+Pandikasala, Firoz (Direct Line Group) [S]   21:49
+Yes, correct.
+
+Kamble, Sahil (CIO) [S]   21:51
+OK, and same day the MTA record will also be inserted with the that day's MTA DAP insert timestamp.
+
+Pandikasala, Firoz (Direct Line Group) [S]   21:58
+Correct.
+
+Rabindranath Tagore, Surya (Cognizant)   21:59
+Ohh.
+
+Kamble, Sahil (CIO) [S]   21:59
+So testing team was asking how we can track when was this record, the new business record was loaded for the first time.
+because we deleted that date, that record in our fact table. So I think only using curation table only they can find the exact history, right?
+
+Pandikasala, Firoz (Direct Line Group) [S]   22:20
+Yes, correct.
+
+Rabindranath Tagore, Surya (Cognizant)   22:21
+Uh, like, we have DAP insert and DAP update time stamp, right? Like, I wasn't understanding or assumption that, uh, for the entry 12th, the DAP insert time stamp, even though you even are deleting it and inserting it again, the first time, whatever the insert time stamp, like 20th of April, that.
+date only it will show and tap update timestamp will be updated to 24th of April because we are deleting and reloading it.
+
+Pandikasala, Firoz (Direct Line Group) [S]   22:49
+So, the so we can go with update and insert, but the actual problem, as this databases has column databases, the update and insert will be more costly than delete and insert, as it is huge data. So, normally we suggest.
+As a standard process, delete and insert any audit things, you can go ahead and get it from Qrush, because it's a performance-related thing; it's nothing actually the process. If somebody wants to go and update and insert, there is no issues we can do, but it has it will have the performance issue.
+
+Rabindranath Tagore, Surya (Cognizant)   23:30
+Okay, in this case, like how we will identify, like for example, fact ensure address, like which one is the latest record, how we will identify it.
+
+Pandikasala, Firoz (Direct Line Group) [S]   23:39
+It is based on the end date you can do, or we can, yeah, that's based on the end date. Whichever the end date is contract end date, that's what it will be the latest record.
+
+Rabindranath Tagore, Surya (Cognizant)   23:57
+Okay.
+So you are saying like a DAP insert and DAP update time stamp on that particular day if it is loading, the system date only it will populate.
+
+Pandikasala, Firoz (Direct Line Group) [S]   24:10
+Help!
+Yes, correct. Because that's the normal way we will do in fact or transaction because of the performance, initially it was update and delete, used to update and insert used to work, but now the majority of databases update will be costlier than
+
+Rabindranath Tagore, Surya (Cognizant)   24:16
+So.
+
+Pandikasala, Firoz (Direct Line Group) [S]   24:34
+Uh, insert and delete, I mean, that's all.
+
+Rabindranath Tagore, Surya (Cognizant)   24:40
+Okay.
+
+Sharma, Narendra (Direct Line Group) [S]   24:42
+So then, what's the user then dev insert and dev update timestamp both are going to be the same?
+
+Pandikasala, Firoz (Direct Line Group) [S]   24:47
+It's very few columns which we are getting updated directly from quote or something, like some columns. That only will happen. As of now, it's not there. In case it is there, for that purpose only, we are keeping that one. As a standard process across all the table, we are keeping that audit column separately. But
+We don't have any issues going update and insert things engineer inside or whoever is doing, but there will be a performance issue you will face later. So that time, that's why we are recommending. So if you are feeling okay, still update and insert, there is no concern. You can go ahead and do that.
+Betterness.
+
+Rabindranath Tagore, Surya (Cognizant)   25:32
+Currently, this is the solution you agreed with the data engineering team.
+
+Pandikasala, Firoz (Direct Line Group) [S]   25:37
+That's what we are proposing; actually, this is our suggestions.
+
+Rabindranath Tagore, Surya (Cognizant)   25:41
+What did they agree that, like, what is the final solution? Like, who can can who can provide that?
+
+Pandikasala, Firoz (Direct Line Group) [S]   25:43
+Not actually, actually, that is what I was suggested that entering team has to tell. Who is there? I think is here. Who is there? Nobody is there.
+We'll cheque and come back, Surya, on that case.
+
+Rabindranath Tagore, Surya (Cognizant)   26:00
+Yeah, sure. Because like a...
+
+Pandikasala, Firoz (Direct Line Group) [S]   26:01
+We have recommended this one, yeah, we are recommended this one later, yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   26:04
+Because, okay, we need to understand like what is the expected behaviour so that we will test it right, like whether it is working fine as per the expected result. So we needed that final outcome, like what we have agreed for the delta load in LSL.
+
+Pandikasala, Firoz (Direct Line Group) [S]   26:17
+Yeah.
+Sure, sure, sure. Sahil, you can just connect with Ajit and see what is there. Are they going following the same thing or do they have any issues? Just cheque that and updates will react to this team.
+Tile.
+
+Kamble, Sahil (CIO) [S]   26:42
+Sorry, I was speaking on mute. Yes, yes, I'll come back on that question.
+
+Pandikasala, Firoz (Direct Line Group) [S]   26:44
+Yeah.
+Yeah.
+
+Kamble, Sahil (CIO) [S]   26:47
+OK, uh, so, uh, uh, both the fact fact in short and fact code address will work in the same way.
+Okay.
+
+Rabindranath Tagore, Surya (Cognizant)   26:56
+Okay, so dimension driver bridge is a type 1 or type 2 cycle.
+
+Kamble, Sahil (CIO) [S]   27:04
+Let me just confirm this.
+
+Rabindranath Tagore, Surya (Cognizant)   27:07
+And can you please either you prepare separate Excel sheet? These are the tables of like type one, type 2, or like each individual mapping sheet. Can you please update this as a CD type 1 dimension or type 2 dimension? So that we will know.
+
+Kamble, Sahil (CIO) [S]   27:09
+Ohh, it's...
+Yes, yes.
+
+Pandikasala, Firoz (Direct Line Group) [S]   27:19
+It's already, I think Nimi has sent a mail on last week, sometime Friday or something. What is type one, type 2 and everything? Yeah, then forward. I think, Surya, you are there and a part of that may change.
+
+Kamble, Sahil (CIO) [S]   27:27
+Yes, yes.
+
+Rabindranath Tagore, Surya (Cognizant)   27:34
+I am, no, I don't think so. From Nimmi, I didn't receive any e-mail.
+
+Pandikasala, Firoz (Direct Line Group) [S]   27:39
+On Friday, last week, but let me just check.
+
+Rabindranath Tagore, Surya (Cognizant)   27:45
+Okay.
+That is.
+
+Pandikasala, Firoz (Direct Line Group) [S]   27:50
+Load type, I think you are not there.
+
+Rabindranath Tagore, Surya (Cognizant)   27:50
+At night.
+On Thursday.
+
+Pandikasala, Firoz (Direct Line Group) [S]   27:55
+On Thursday, yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   27:56
+Okay, yeah, I was there.
+
+Pandikasala, Firoz (Direct Line Group) [S]   27:59
+That's the.
+
+Kamble, Sahil (CIO) [S]   28:05
+So, as there is no date column, it is a type 1 table.
+We will be directly updating the driver group ID and with a new driver ID and driver code.
+
+Rabindranath Tagore, Surya (Cognizant)   28:22
+Sorry, can you please repeat again?
+
+Kamble, Sahil (CIO) [S]   28:24
+So as there is no date column over here, it is a type one table.
+
+Rabindranath Tagore, Surya (Cognizant)   28:27
+Mhm.
+
+Kamble, Sahil (CIO) [S]   28:29
+Okay.
+
+Rabindranath Tagore, Surya (Cognizant)   28:31
+Okay.
+
+Kamble, Sahil (CIO) [S]   28:36
+Check.
+Yeah, it is a type one tip.
+Okay, so final type of table we have is snapshot table. So what we are going to do is we will what the latest information of that day we will keep one record adding every day for each for each policy, sorry, for each policy period and for each.
+quote period, sorry, quoted risk ID, we will add, sorry, only for policy fact in short risk snapshot we have. So for each policy period, we will add one record every day, maintaining its latest information.
+
+Pandikasala, Firoz (Direct Line Group) [S]   29:33
+Sorry, I'm dropping for my next call. Is it okay or do you want anything from me?
+
+Rabindranath Tagore, Surya (Cognizant)   29:38
+No, Feroz, like if anything is there, maybe we will reach out to you. Thank you.
+
+Pandikasala, Firoz (Direct Line Group) [S]   29:42
+We have a governance call now, you know, so that's why I, so you are also part of that governance call, yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   29:45
+Yeah.
+Is it? Let me check, yeah.
+
+Pandikasala, Firoz (Direct Line Group) [S]   29:51
+Okay, yeah, I'll join that call.
+
+Kamble, Sahil (CIO) [S]   29:58
+Sure, you there?
+
+Rabindranath Tagore, Surya (Cognizant)   30:01
+Ohh, yes, I will. I'm there.
+
+Kamble, Sahil (CIO) [S]   30:05
+So what will happen? So 20th April, we first got this record, right, for new business.
+Hello?
+
+Rabindranath Tagore, Surya (Cognizant)   31:01
+If cycle dropped off.
+
+Khetan, Brajesh (Cognizant)   31:22
+Sir, can we cheque like for game driver, game driver, which how they're populating the records?
+
+Rabindranath Tagore, Surya (Cognizant)   31:28
+Um, yes, uh, British, like a driver bridge, it's like type one, right? Yeah, we can check.
+
+Khetan, Brajesh (Cognizant)   31:40
+So, he can shed anyone sample policy and sample example soon.
+Can I get an idea that that is correct or not?
+
+Rabindranath Tagore, Surya (Cognizant)   31:49
+Yes, or like we need to come up with like this is what our expectation is it right or wrong? Maybe we can schedule a follow-up meeting on each of the table and please confirm.
+
+Khetan, Brajesh (Cognizant)   31:55
+Yeah.
+Because we are, I'm already having the query in the sample policy number, so because in as to be writing clear records, but in LSM as a part of our primary key as well, we are having multiple records in LSM. So I'm not sure that which logic they are using or on what they are populating.
+
+Rabindranath Tagore, Surya (Cognizant)   32:16
+Yes, and I'll forward that Excel spreadsheet that the data modeller has shared as well. Let me forward it to the team members. OK.
+Did Zahir mention anything that he is going to drop off or he suddenly got dropped off?
+
+K, Barathraj (Direct Line Group)   32:44
+He suddenly got dropped off, so yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   32:48
+Okay.
+Okay, maybe can I schedule one more meeting like tomorrow again, like with the data modeler?
+
+Khetan, Brajesh (Cognizant)   33:05
+Yesterday.
+
+Rabindranath Tagore, Surya (Cognizant)   33:08
+And for each like a driver and a driver bridge right with a fact or quoted risk, you come up with the expected result, Brijesh. Similarly, like Venkatesh for your dimension table is there, right? Like insured contact of vehicle vulnerability. At least insured contact and the vehicle, yeah.
+Can you please come up with the expected result?
+
+Khetan, Brajesh (Cognizant)   33:30
+No, I think as a part of the team driver and team driver is that Nimi is there from the time of this.
+
+Rabindranath Tagore, Surya (Cognizant)   33:38
+Yes, I think so.
+And Bharata, please come up with the expected result for vulnerability, and...
+dimension vulnerability and the insured and the fact how it is getting populated for the type 2, I mean for the delta records, okay.
+We will review the expected results based on our understanding and whether it is aligned with the data modeller and the engineering team or not. OK, in tomorrow's session.
+
+Sai Dharani, K (Cognizant)   34:01
+Kishan.
+
+Rabindranath Tagore, Surya (Cognizant)   34:13
+Under Priyanka, Jusna, I'm not sure, like, do we have any dimension like a CD type or not type 2 dimension in billing module?
+
+Jyoshna, Anthapu (Cognizant)   34:24
+Think up is the in billing charts and the merchant in channel table chart.
+
+Rabindranath Tagore, Surya (Cognizant)   34:32
+OK, hi-fi.
+
+Kamble, Sahil (CIO) [S]   34:32
+Sorry, team, I got dropped off.
+I'll just share my screen.
+So next type of table is snapshot table, where what will happen for every day, one record will be inserted, which will have the latest version of the policy. Okay, so what happened on 20th April, this new business record came.
+Okay, and as on 21st, this was the latest status, it again updated the same record. Sorry, it again loaded the same record. 22nd, there was no change, it loaded the same record. 23rd, no change, it loaded the same record. But on 24th, what happened? As there is an MTA and this becomes the latest record.
+If this record gets loaded, OK, till this record will be loaded, if there is no further MTA, this record will be loaded till 19407, so for next 365 days till this date, this record will be loaded.
+
+Rabindranath Tagore, Surya (Cognizant)   35:42
+Cycle this record will be loaded like for 365 days on 24th itself or each day it will get inserted each date.
+
+Kamble, Sahil (CIO) [S]   35:48
+No, each day, each day, each day one record will be loaded. For policy, each day, for each policy one record will be loaded. So 365 days, any into number of policies.
+
+Rabindranath Tagore, Surya (Cognizant)   35:52
+Okay.
+
+Kamble, Sahil (CIO) [S]   36:01
+Into it will be our number of records.
+OK, so this is the snapshot table. So, in case if there is an MTA again, a new policy period will come and it will be loaded till the end date of the new business, and then a renewal record will start.
+Okay.
+
+Rabindranath Tagore, Surya (Cognizant)   36:36
+Okay, sir.
+
+Kamble, Sahil (CIO) [S]   36:40
+Are there any doubts apart from this? So we have, I have explained the city one, city two normal pack table, which is our transaction table, and this is snapshot.
+
+Rabindranath Tagore, Surya (Cognizant)   36:46
+Ohh.
+Like, we need to understand on the dimension driver bridge and the dimension driver, and along with the fact insurance, like how you have explained for vehicle, right?
+
+Kamble, Sahil (CIO) [S]   37:02
+So, fact insured risk, so if there is any change in latest information will be loaded and the record will be related in fact table, both fact insured risk and fact quoted risk.
+
+Rabindranath Tagore, Surya (Cognizant)   37:12
+Okay, like for example, can you please add driver group ID in the fact insured risk van and like we just need.
+
+Kamble, Sahil (CIO) [S]   37:17
+Sorry, yeah, yeah, driver group ID. OK, I'll add driver group ID.
+Okay.
+
+Rabindranath Tagore, Surya (Cognizant)   37:28
+OK, so for the same example itself, like vehicle ID, that as part of MTA, there is vehicle changes, OK, but no change in the driver, so at that time.
+what record will populate here like in that driver group ID it will be like the same record.
+
+Kamble, Sahil (CIO) [S]   37:45
+Yes, I'll show you. So suppose we have driver group ID, driver ID.
+Driver.
+Ford.
+And we will have.
+Driver sequence.
+Okay, driver group ID one.
+We are suppose we are having two drivers.
+1112 driver code.
+A BC.
+AAF driver sequence as one is primary and two is secondary. OK.
+Okay.
+Is it OK, Surya?
+
+Rabindranath Tagore, Surya (Cognizant)   38:57
+Sorry, driver group ID for both the things it is 1, but the driver ID is changing, is it?
+
+Kamble, Sahil (CIO) [S]   39:04
+No, so what is the example is there are two drivers for this group. OK, there are two drivers, one is primary driver, another is secondary driver.
+
+Rabindranath Tagore, Surya (Cognizant)   39:08
+Okay.
+Okay, so for example, like MTA happens, like they are removing one driver, okay, as part of the MTA.
+
+Kamble, Sahil (CIO) [S]   39:21
+OK, so new group will be created.
+OK, and uh, it will suppose they remove the secondary driver.
+
+Rabindranath Tagore, Surya (Cognizant)   39:26
+Mhm.
+Okay.
+
+Kamble, Sahil (CIO) [S]   39:41
+This will be information.
+
+Rabindranath Tagore, Surya (Cognizant)   39:45
+In the driver dimension driver table, we will have like a driver ID 11 and 12 only. It will be there. Is it?
+
+Kamble, Sahil (CIO) [S]   39:53
+Yeah, game driver.
+OK, yeah. Nothing will happen to these drivers because the driver can be policy holders of means it can. The driver is confirmed dimension. It can be used for other business as well.
+No, no information will be deleted from here.
+
+Rabindranath Tagore, Surya (Cognizant)   40:30
+Okay, so here also like effective from day to date and latest flag will be there, right?
+
+Kamble, Sahil (CIO) [S]   40:34
+Yes, yes, yes.
+So suppose if there is something like, suppose his citizenship has changed, then only this, it will create a new record for this driver ID. Suppose.
+
+Rabindranath Tagore, Surya (Cognizant)   40:44
+So.
+
+Khetan, Brajesh (Cognizant)   40:44
+Mm.
+
+Kamble, Sahil (CIO) [S]   40:54
+Suppose before for first time it was U.K., and then suppose it got changed to some other country.
+Then only it will create a new record driver ID with 13.
+But driver code will remain same.
+So using the business key only, data engineers will compare the existing data with the new data and cheque if there are any changes. If there are any changes, they will create a new record. If there are no changes, then they will retain the same record.
+
+Rabindranath Tagore, Surya (Cognizant)   41:39
+Okay.
+
+Khetan, Brajesh (Cognizant)   41:41
+So, can I share my screen through example?
+
+Kamble, Sahil (CIO) [S]   41:44
+Sure.
+
+Rabindranath Tagore, Surya (Cognizant)   41:44
+Yes, sir.
+
+Khetan, Brajesh (Cognizant)   41:47
+The.
+So that I'm sharing this time.
+Side for this gym driver we have in the new business main drive only we had the one driver in the empty we had two drivers.
+So, based on the driver code, all these three records will be populated, or only these two records will be populated.
+
+Kamble, Sahil (CIO) [S]   42:19
+No, no, you are in which table is this SDW? OK, so you have created the query using this is the section reference right for driver code.
+
+Khetan, Brajesh (Cognizant)   42:24
+That's true.
+Driver code is the original policy part, right?
+
+Kamble, Sahil (CIO) [S]   42:33
+Okay, okay.
+
+Khetan, Brajesh (Cognizant)   42:37
+So, based on the original policy part key.
+
+Kamble, Sahil (CIO) [S]   42:40
+Mhm.
+
+Khetan, Brajesh (Cognizant)   42:41
+So, for example, we are having these two unique records, right?
+
+Kamble, Sahil (CIO) [S]   42:46
+Yes, so those two will be recorded as two different drivers.
+
+Khetan, Brajesh (Cognizant)   42:52
+So in LSM, in the team driver, we want all these three records, only these two records should be there, like from the MTA.
+
+Kamble, Sahil (CIO) [S]   43:01
+For MTA, it will have two records. Sorry, for MTA, it will have only one record, in fact, insured risk, because it will have a driver group ID.
+
+Khetan, Brajesh (Cognizant)   43:11
+Yeah.
+
+Kamble, Sahil (CIO) [S]   43:11
+Driver group ID will be section rep and then in dim driver we will have two records linked to that driver group ID.
+
+Khetan, Brajesh (Cognizant)   43:20
+For example, if you I will consider this two driver code the team driver table in the lesson.
+
+Kamble, Sahil (CIO) [S]   43:25
+Yes, the way we have considered in our example, there are two dim drivers in dim driver. They are linked to same driver code that is section ref.
+
+Khetan, Brajesh (Cognizant)   43:29
+Okay.
+So.
+Yeah.
+But we are having four records here.
+
+Rabindranath Tagore, Surya (Cognizant)   43:45
+That will be fixed after tomorrow's deployment, Rajesh.
+
+Khetan, Brajesh (Cognizant)   43:50
+Okay.
+So, same thing, for example, this two records should be populated based on the if, if the latest is, if, for example, after empty if cancellation happens, cancellation also this two group ID will be populating again, this two driver code.
+
+Rabindranath Tagore, Surya (Cognizant)   44:06
+No, only, Sahil, correct me if I'm wrong. The driver code only ends with 61 and 37 should be available in the dimension driver table after the code change, right?
+
+Kamble, Sahil (CIO) [S]   44:17
+Yes, yes, yes.
+
+Rabindranath Tagore, Surya (Cognizant)   44:20
+whatever the MTA or cancellation, anything happens on the policy side, Brijesh, if there is no change in the driver, then only
+
+Khetan, Brajesh (Cognizant)   44:29
+Yes, yes, for example, here in the new business, the there is no change in the main driver, so same policy policy part keys populating here again, and a new additional driver is added.
+So, this tool is a populated in that didn't drive a table, right?
+
+Kamble, Sahil (CIO) [S]   44:47
+No, no, 961 and 137, these two.
+
+Khetan, Brajesh (Cognizant)   44:50
+Yeah, and and for this, for example, this is the driver beach table.
+For this 57 policy number, like main driver, and the MTA, there is an additional driver has been added, so in that driver this table, this three records should be populated. Correct me if I'm wrong.
+Based on the business event can group sequence.
+
+Kamble, Sahil (CIO) [S]   45:09
+So, so previously there was only new one driver, so one driver bridge code and sorry driver group ID and one with is associated with it, but in but in MTA another group ID will be created.
+But it will have to the existing driver, main driver, and a new additional driver.
+
+Khetan, Brajesh (Cognizant)   45:29
+Yeah.
+The team driver which table is created based on the this driver group ID, which is session reference.
+
+Kamble, Sahil (CIO) [S]   45:36
+Yes.
+Previous yet?
+
+Khetan, Brajesh (Cognizant)   45:38
+So, here we have two section reference, but this section reference contains 2 sequences, one and two.
+
+Rabindranath Tagore, Surya (Cognizant)   45:48
+Plus.
+
+Kamble, Sahil (CIO) [S]   45:50
+Yes.
+
+Khetan, Brajesh (Cognizant)   45:53
+So, all these records should be to there in the team driver bridge.
+
+Kamble, Sahil (CIO) [S]   46:00
+Yeah, previously.
+
+Rabindranath Tagore, Surya (Cognizant)   46:00
+Sorry.
+
+Kamble, Sahil (CIO) [S]   46:02
+So first record will be the existing driver, sorry, the first driver, which was the main driver, along with the new business records section reference. Then for MTA, a new section reference with the existing driver and the added driver will be there.
+
+Rabindranath Tagore, Surya (Cognizant)   46:03
+Yeah, go ahead for it.
+
+Khetan, Brajesh (Cognizant)   46:19
+Yeah.
+OK, so after the port and this things in this data cost will probably in the team priority.
+Right.
+
+Kamble, Sahil (CIO) [S]   46:33
+Uh, yes, yes, yes.
+
+Khetan, Brajesh (Cognizant)   46:35
+Okay.
+
+Rabindranath Tagore, Surya (Cognizant)   46:36
+Sorry, I'm not understanding the group sequence. What is this one group sequence? Sorry.
+
+Khetan, Brajesh (Cognizant)   46:42
+So, group sequence is mainly, for example, this for new business, we have only one driver. So, what this is the group sequence, that the six is the group driver group ID section reference, and this is the empty, this is the MTA MTA we have two drivers, so for both the drivers, the section reference should be same.
+
+Rabindranath Tagore, Surya (Cognizant)   46:52
+Okay.
+
+Khetan, Brajesh (Cognizant)   47:00
+So, for this section reference, we have two drivers, like, if you based on the part key, if you see the section reference contain the two-part keys.
+39 and 37, 137.
+But this is the main driver, this is the additional driver.
+But for those part, for those part keys section, the reference should be is said. So based on this, we have group, we have group sequence like one and two.
+
+Rabindranath Tagore, Surya (Cognizant)   47:17
+Okay, sock.
+Okay, so as part of MTA, one more driver got added. So for that particular MTA, like the group ID is same, like the section reference is same.
+
+Khetan, Brajesh (Cognizant)   47:37
+Yes, yes, yes, yes.
+
+Rabindranath Tagore, Surya (Cognizant)   47:39
+Okay.
+What?
+And are you done with the driver, Rajesh?
+
+Khetan, Brajesh (Cognizant)   47:49
+What?
+
+Rabindranath Tagore, Surya (Cognizant)   47:51
+No, no is where queries and clarified.
+On the driver driving bridge, yeah.
+
+Khetan, Brajesh (Cognizant)   47:55
+Intel.
+Yes, yes, so after the code fix, you can read it because now we are not getting the proper data in the LSM, so...
+
+Rabindranath Tagore, Surya (Cognizant)   47:58
+Okay.
+No, no, tomorrow or like Wednesday only we can start testing it. I'll keep you posted.
+
+Khetan, Brajesh (Cognizant)   48:08
+Because, for this section reference, we can customise this too, so we are getting 10 records here.
+
+Rabindranath Tagore, Surya (Cognizant)   48:12
+Yeah.
+Yeah, that is fine. They need to fix a data engineering team. As I will, I have one question regarding dimension vulnerability. So dimension vulnerability also is CD type 2 table, right?
+
+Kamble, Sahil (CIO) [S]   48:28
+Yes, yes, Julia.
+
+Rabindranath Tagore, Surya (Cognizant)   48:29
+So we will have latest flag attribute addition as well in the table.
+
+Kamble, Sahil (CIO) [S]   48:34
+Yeah, so right now we have not added it, but later we will add one, three columns, transaction effective date two, date from and latest flag. So what will happen is for vulnerable ID and date combination, if the same vulnerable date
+
+Khetan, Brajesh (Cognizant)   48:49
+The plan.
+The bit maybe.
+
+Kamble, Sahil (CIO) [S]   48:55
+comes with, sorry, one vulnerable ID comes with a different date too, a new record will be created. And according to that, we will create the history.
+
+Khetan, Brajesh (Cognizant)   48:55
+Seven.
+
+Kamble, Sahil (CIO) [S]   49:08
+So as of now, as the reporting team have moved ahead with the existing structure, we are not touching, means we are not taking it at urgent, means we can release it in next version.
+
+Rabindranath Tagore, Surya (Cognizant)   49:08
+Up.
+
+Khetan, Brajesh (Cognizant)   49:08
+Did you get?
+Okay.
+
+Rabindranath Tagore, Surya (Cognizant)   49:21
+Next version when it is cycle.
+
+Kamble, Sahil (CIO) [S]   49:25
+Date is not yet fixed, but I have mentioned date as 30th for in ticket. But if it is getting delayed, then I can make the changes. I can go ahead and give the updated detail to Akshay, then he can deploy it immediately.
+
+Rabindranath Tagore, Surya (Cognizant)   49:35
+The.
+But, okay, we need to have a discussion on that because I was in understanding that all the delta related, like across all the tables, it will be fixed tomorrow. That was our understanding. So if some of the tables, like, is there anything else like this, like dimension vulnerability, you mentioned it, what about...
+other tables.
+anything that we will not be doing it now.
+
+Kamble, Sahil (CIO) [S]   50:13
+So with me only dim vulnerability is pending. I'm not sure what is pending with Nimi.
+Okay, so.
+
+Rabindranath Tagore, Surya (Cognizant)   50:20
+A cycle, I'll set up one more meeting with the, like, I mean, data modeller and data engineering team, like, from testing side, right? Like, from, we need to start the delta load testing. So, what will be available and what we can do the testing, like, which are the tables we can start testing. We need a clarity, so I'll set up one more meeting cycle.
+
+Kamble, Sahil (CIO) [S]   50:29
+Big.
+Oh, OK.
+
+Rabindranath Tagore, Surya (Cognizant)   50:42
+Tomorrow, yeah.
+
+Kamble, Sahil (CIO) [S]   50:43
+Yeah, sure. Now, as of now, you have understood means delta load process.
+
+Rabindranath Tagore, Surya (Cognizant)   50:44
+Okay.
+Yes, yes. Yeah, if we and we will also go through and if we have any questions, maybe we will discuss in the next call.
+
+Khetan, Brajesh (Cognizant)   50:55
+Sell one more thing. For example, if any driver section does not contain main driver question. So in that case, in the rim driver bridge, group sequence will be populated as now only, right?
+
+Rabindranath Tagore, Surya (Cognizant)   50:57
+Yes.
+
+Kamble, Sahil (CIO) [S]   50:57
+Sure.
+No, have you seen this scenario?
+
+Khetan, Brajesh (Cognizant)   51:09
+Yes, yes.
+
+Kamble, Sahil (CIO) [S]   51:11
+Okay, can you give me that example?
+
+Khetan, Brajesh (Cognizant)   51:14
+Yeah.
+Yeah.
+the dim driver bridge for example, this policy number 400040.
+It having two drivers.
+But for this second, second driver, like this part, this part key, it does not contain the question having the main driver, so that's why it is populating it as null.
+
+Kamble, Sahil (CIO) [S]   51:37
+Very good.
+Okay.
+Hello.
+
+Khetan, Brajesh (Cognizant)   51:44
+So, that should that that record should be full.
+
+Kamble, Sahil (CIO) [S]   51:45
+In that case, it is a...
+Means group sequence is assigned as one that is OK, means not an issue because it will be only a primary driver then.
+
+Khetan, Brajesh (Cognizant)   51:48
+So.
+Because the driver group ID is different here, because the session reference is...
+Different only.
+
+Kamble, Sahil (CIO) [S]   52:14
+Can you ping me this insurer policy number?
+
+Khetan, Brajesh (Cognizant)   52:18
+Okay, if you and we have one more thing here as well in the one forty-three, but the last time that Nimi was saying like there's a data issue in this, so that's why for this cancellation record, we don't have any policy number and we don't have any data.
+
+Kamble, Sahil (CIO) [S]   52:33
+So, what is the policy? Sorry, what is the policy transition type for this part key?
+
+Khetan, Brajesh (Cognizant)   52:40
+In translation.
+
+Kamble, Sahil (CIO) [S]   52:45
+Yeah, don't we should not be considering record for of cancellation. What is what happens is during cancellation, they will not ask these questions. We have observed this.
+OK, and that that data should not be loaded to our dimension.
+
+Khetan, Brajesh (Cognizant)   53:01
+Yeah, because in SW, for this policy number, in the cancellation, we don't have any questions for this driver section.
+
+Kamble, Sahil (CIO) [S]   53:08
+Yeah, okay.
+
+Khetan, Brajesh (Cognizant)   53:08
+This 806 drivers 805 does not contain any question.
+
+Kamble, Sahil (CIO) [S]   53:13
+Okay. Yeah, I think we had informed this to, sorry, engineering team that don't consider records when joining with policy of transaction type cancellation.
+
+Khetan, Brajesh (Cognizant)   53:14
+So, that's what it is probably it has not only here.
+The dream driver also, if you see for this cancellation, we don't have any questions here. That's what it is populating, which is null.
+For this session, set 05.
+What is this?
+
+Kamble, Sahil (CIO) [S]   53:52
+Rajesh, in your query, philtre the records with cancellation transaction type.
+Then, cheque if you are getting the same issue.
+I don't think we should only be considering one, sorry, new business empty and renewal to load the dimensions.
+
+Khetan, Brajesh (Cognizant)   54:10
+OK, so we are not considering, we don't need to pop these sections in name driver and name driver bridge.
+
+Kamble, Sahil (CIO) [S]   54:16
+Yes, yes.
+
+Khetan, Brajesh (Cognizant)   54:18
+This driver code should not be there, right? Based on the direct test, MTA should be populated in the driver table you are saying.
+
+Kamble, Sahil (CIO) [S]   54:23
+No, no.
+
+Khetan, Brajesh (Cognizant)   54:30
+Right.
+
+Kamble, Sahil (CIO) [S]   54:31
+Yes.
+
+Khetan, Brajesh (Cognizant)   54:33
+OK, but and what about the effective from last time when we were evaluating this table, so we are observing, like, for this policy number, all the data should be populating, but the effective from data to data is populating is from the latest record, like the cancellation, and apart from this, all the columns should be from this latest empty.
+Good.
+So, all the columns are from that is populating, but effective from return to that is from cancellation.
+
+Kamble, Sahil (CIO) [S]   54:55
+Hello.
+I'll have to cheque this. Can we connect after some time and go through it?
+
+Khetan, Brajesh (Cognizant)   55:09
+Okay.
+
+Kamble, Sahil (CIO) [S]   55:11
+Yeah.
+I have to join another call. British, I'll call you after this, okay?
+
+Khetan, Brajesh (Cognizant)   55:16
+Yeah.
+
+Kamble, Sahil (CIO) [S]   55:29
+Hello, hello.
+
+Khetan, Brajesh (Cognizant)   55:31
+Listen.
+
+Kamble, Sahil (CIO) [S]   55:32
+I'll drop off on a sprint planning call and I'll connect with you, Rajesh, after that.
+
+Khetan, Brajesh (Cognizant)   55:37
+Okay.
+
+Kamble, Sahil (CIO) [S]   55:39
+Thank you.
+
+K, Barathraj (Direct Line Group) stopped transcription
