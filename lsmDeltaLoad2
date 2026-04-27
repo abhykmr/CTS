@@ -1,0 +1,587 @@
+LSM Delta Loads – Expected Outcomes for Dimensions and Fact Tables-20260421_113920-Meeting Recording
+April 21, 2026, 10:39AM
+45m 7s
+
+Kanike, Venkatesh (Group CIO) started transcription
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   0:03
+There are four tables which will come under the category of type 2. That will be dim, like I will start with the like the parent tables first, like that is like the first one is dim intuit. Okay, so this is a type 2.
+Then, with respect to dim, dim insured, like we have, we have dim contact that is also type 2. Let me see then, like dim driver is a type 2 and like one more table is there, it's dim vehicle, so these four tables are type 2. OK.
+Those are type 2, OK? All other other three three dimension table which are dim driver bridge, OK? Dim driver bridge is a kind of like a, it's like a not kind, like it's a bridge table, a mapping table, so it is like it won't be comes under like a type one or type 2.
+Because, as it is a mapping table, right? So, other than that, dim user, we can consider it as a type one, dim vulnerability, we can consider it as a type one, and all the fact tables. So, fact tables are like a fact tables, like, as from as per like a naming, like, like, if we don't need.
+To make it as like a type one or type 2, because like let us data need to be there, that's all for the fact table, so that's the confirmation we got from Nimi on these like a type one, type 2 specific. Okay, so with respect to that, like let's like have a quick look about the unique keys as well with respect to each like each table.
+So, for DIM contact, contact code is the unique key. OK, give me a sec.
+But whenever it is a type 2, you need to understand that, like for type 2, like for type 2, there can be there, like see, like for type one, we will be only having the latest, like latest record over there. There will be only one record with respect to that unique key, but for all the type.
+Two tables, like we will be having multiple records with respect to, like, because like we are actually like a saving, like we are preserving the history as well, right? So there is like a for all the type 2 columns, like we already have a latest flag as well, so for the active record we'll be having this like a latest flag as one over there.
+For all other records, it will be follow all other like a previous record with respect to that contact code, it will be flag will be 0, so that is the symbol logic over here, that's all with respect to logic and everything, okay, so.
+Yeah, then with respect to with respect to our our data loading strategy, it is kind of for all the type one kind of like why we keep keep like for the fact table also like I kept it as type one, it is just because like if we put it as like a truncate and load.
+It it will take like a so much of time time for the DAG DAG to like a DAG to like a run, so because of that, like if it is like a if that part is like a if the data is already present then like and like there is no update happen for that particular record, let it be there. That's the thought process we like a week.
+We when we developed developed this like a developed this logic, so we kept kind of like kind of type like a fact table as a type one, so for the fact table the things which like we are trying to trying to do is that like a whenever like that is all with respect to these unique keys, OK?
+So, let's say for a particular for for fact quarter square, so first day, like if we already have a like a record that is like a that is considered as an insert insert to the table, so it will be inserted the next day when like if we have a delta coming over that like a delta like we are taking the delta with respect.
+To with the respective curation table, where we will be considering only the data which is coming there, like coming in that, like at that particular in the curation table for that particular day only, so for that we always like use like use the latest data, like a like a latest.
+Time updated in that, like updated in the LSM table, so from there we will be taking only that, that like that time frame only, because like let's say like in LSM, like we already updated the data on yesterday, yesterday morning, then we will be checking the curation table with respect.
+to that yesterday morning time frame. So whatever like any insert happened on that base curation table after that time frame, then like we will pick it up. So for those like a for like a to cheque that thing like a we use the base table as well. So for like a for each table like a we already like identified these like a base tables.
+This is OK, so.
+Let's say for like a DIM contact, it's a contact people and like a DIM driver, it can be policy. So in that way, like we already have that, like have that like a first set of logic, which is like which is for getting the delta. So with respect to the base table. So once that like a delta is already available with us, like we will be checking.
+whether any whether whether that like so like we let's say like we got we got like a five records or like a six records outside like a delta delta for that fine day and like we will be checking the insured code is already present like a let's say for dim insured like a whether the same insured code is already present there or not.
+Not for type 2, like, I sorry about that, like I was saying about the type one. Okay, so if that, like, if that, like, let's say for like 5 quarter square, so if that, like, a quarter square is already present in that table for that thing, then, like, it will be treated as an update statement, so it will update over there.
+If that code risk ID is not present there, then that means like that is a new record, so that will be treated on an insert. So, our strategy for type one will be mostly upsert. So, if the record is already present, it will be an update. If it is not there, it will be an insert that goes for type one, type one, like for all the type 1 tables.
+The type 2 tables, all the new delta is treated as a insert statement, because, like, we are we are like actually actually like having the history as well, right? So there won't be any update, there will be only insert, so whenever and like a new insert happens.
+
+Rabindranath Tagore, Surya (Cognizant)   6:53
+Okay.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   6:56
+First, we will insert the data, all the delta delta data over there, like delta is coming with respect to with respect to this base table and like from from the previous diagram. OK, so after that, with respect to delta, like we insert the data and if that like a four.
+Yeah, like then we will cheque the latest contact code, like a for like a for each like that is a logic like which we return inside our like a inside our like a load algorithm, where if we have a like if we have a latest contact code present for that day, then that will be treated as.
+The flag will be one for that data, and the previous data for that previous data, that flag will be updated to 0, so that will happen. So, in the same time, for DAP update timestamp, like for the previous record, we will update the DAP update timestamp as well, because like the flag is updated to 0 over there.
+So, that is the two, like, two things happening over type 2, so this is the basic, basic of, like, basics of this thing, kind of, like, yeah, please. Sorry, I haven't seen your, like, hand raised.
+
+Kamble, Sahil (CIO) [S]   8:10
+So, so Tom, my question was regarding the update upset you are doing. So, what is still Rahul said that you are just for the existing record when code ID or policy key code key or policy gets matched with the incoming data, that is then you will only update the update that update timestamp, you will not update the entire record.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   8:12
+Mm.
+Hmm.
+Hmm.
+
+Kamble, Sahil (CIO) [S]   8:33
+Or is it an enter code gets updated? So, because what happens?
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   8:34
+No.
+See, for like a for the type one, for the type one, it will be an end error code because, like, whatever the change, like a change happened, it need to be updated over there, right?
+
+Kamble, Sahil (CIO) [S]   8:47
+Yes, so update that update time stamp will get updated that that is understood.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   8:49
+Hmm.
+See, for the type one, type one, the entire code is updated, and the latest data will be present over there for all the type ones, type one. OK, for the type 2, like it is treated as an insert statement, so whatever is coming coming down the line, like in that, like a fine day.
+
+Kamble, Sahil (CIO) [S]   9:01
+Yes, yes, yes.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   9:10
+That will be treated as the latest record.
+
+Kamble, Sahil (CIO) [S]   9:14
+Yes, that will be, that will be inserted. Previous record will be end dated, means that insert timestamp, that update timestamp will be end dated, and latest flag will also be updated from one to zero.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   9:18
+The flat, yeah.
+Updated? Yes, true.
+True.
+One to zero, right?
+
+Kamble, Sahil (CIO) [S]   9:29
+Okay, so for type 2, previous record will be end dated and a latest update flag will be unflagged. That is 120, it will be unflagged. After that, the new record will be inserted with latest information, which will have a null update timestamp, only in depth insert timestamp and latest flag equal to 1 will be there.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   9:39
+Hmm.
+Mm.
+Okay, then, like, I will just like quickly go through it like with an example, so like you guys like will be having like what you said is like what you said is absolutely right, like for the other people, like I am just like for the others, like I will just like quickly go to like go through this one. Okay, so let's say it is a type 2.
+Yeah.
+Type 2, let's say, like a there is a unique key, like a let's say contact code or insert code or anything like any any table like you figure it out. So, like I am getting a contact code like that is a unique key as one not one here. OK, so the identity column or the surrogate key will be one here. Insert time stamp will be current date, like that is current.
+Current date update time stamp will be null over there, and the latest flag will be one, because like this is a new record coming over here, so the like it will get an identity and like a unique like a unique is already present, the current time stamp is the current time stamp, the update like there is no update happened on that.
+Particular table, particular like a particular record, so it will be a null and latest flag will be one for this one, so in the very next day, if I am getting the same record, okay, one note one, if it's coming on like the second day, this is regarding type 2, okay, so then the identity column will be.
+the two, let's say the two or like a three or like a, like a, I am saying about like if there is only one, like a one, like a one unique is coming, okay? Because otherwise like there will be multiple, like a, the identity column will be changed, right? So here the current date will be like a, the time like a when it's came, so the current will be the time.
+Time will be, let's say, current two. Okay, so current two will be here again, this will be null. The latest time flag, like a latest flag for this one is 1. This is the first thing happening, like there is an insert will happen. The second thing will happen is that this one, like the previous record, need to be updated, right?
+In such a way that this particular time, like a insert timestamp, will go like a not insert timestamp, like a this like a timestamp will go here, like there is an update happened for this one, what is the update happened like the latest flag like it changed as zero, so this is this will happen over here, okay, this way, so this is the for type 2.
+On like a very, like a next day, like if a record is coming for the same, like a same same code, then like that will be, let's say like a three, then it will be current three.
+So then it will be keeping us null over here first, and the latest flag will be one over here. Then what need to be done, like this one need to be updated. So this one need to be updated with like a node with this time, like this is updating, like an update happening on the current time frame.
+And keeping it as zero, so this way this is the way, like for type 2, the data will be updated. So, with respect to a unique key, like you will be having duplicacy, but with respect to a unique key and latest flag, you should be getting only one record.
+You will be getting the multiple records for zero, but like a for like a for unique key plus like a letters flag equal to 1, like a we like we are expecting only one record for a particular thing, so this is the like a this will be the composite key, like a unique key plus letters flag.
+If you are like, if you are okay with type 2, then like I will like, I will go to type one.
+
+Rabindranath Tagore, Surya (Cognizant)   13:30
+Okay, sorry, Tom, I have one question. Like the insert timestamp, update timestamp, you have mentioned it. Is it like an audit column, like a DAP insert, DAP update based on that you are calculating or like effective date and the end date, we have it in all the dimension tables, which room you are using?
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   13:31
+Hmm.
+Hmm.
+Hmm.
+See, right now, yeah, right now, right now we are like, see, like the flag, like latest flag is calculating with respect to this one, so currently we are inserting, like inserting and updating, updating the insert timestamp and update timestamp only, so I already had a conversation with Nimmi on this one, so, and like Nimmi updated that, like, as you said, like...
+We already have an effective from date and like effective to date is there. So we will be updating that logic as well in the timeline. It will be same as DAP insert timestamp and DAP update timestamp only, but like we will be updating that as well. So right now it is not yet updated because like for any other mapping or like any other report like we all.
+Only taking like a only taking this like a unique plus flag column as of now, we are not like looking into looking into this like a insert time stamp, update time stamp, or like a these effective from date or to date like anywhere as of now.
+So, that's why we updated with this logic, and then laterally I found out that, like, like, Nimi updated that, like, these, like, there are like these like effectives from date and to date is also there for these columns, like, so that, like, we can update that as well, so that, like, we had already that, like, a discussion in place, so, like, we will be updating that code.
+
+Rabindranath Tagore, Surya (Cognizant)   14:43
+Okay.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   15:04
+Logic later, later in the sense, like maybe like a after like a two or three days, something like that.
+
+Rabindranath Tagore, Surya (Cognizant)   15:13
+So you are saying for tomorrow's, it will be effective from date and to date will not be updated. Like for example, the type 2 is happening.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   15:19
+No, no, no.
+See, type 2, like a see for type 2, how it certainly like a for type 2, like a we are actually taking these record, let's say, like a for for dimension. OK, so if like a dimension, like a like a it is a type 2.
+And this dim insured is referred in like a wherever like a in dim contact it is referred and like a in dim vulnerability I guess like vulnerability it is referred and like a in fact insured and also it is referred this dimension wherever it is referred like a how it certainly we are taking the latest record like we are taking the latest record with respect to insured code and latest.
+Flag only, we are like a node utilising these like effective from data to data anywhere, like anywhere in the mapping structure, right? So, because of that, like we haven't, like we haven't like updated that yet, but anyway, like we will be updating that, like those columns as well, right now it's like a business use mail, like it's like a nowhere it is using as of now.
+Not in not in our like a not in our flag table, not in our like a child table or in our reports as well. We always use these like the unique key plus the flag column as of now.
+
+Rabindranath Tagore, Surya (Cognizant)   16:36
+Okay, and the latest flag, okay, latest flag column is calculating based on the DAP insert and DAP update timestamp or like based on the unique key, you will be doing that.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   16:36
+But, like, we will be updating it.
+But.
+See, it is like it is nothing like nothing related with insert timestamp or update timestamp, and like it is something like if the latest record is there, then like that will be treated as a one.
+In that, like, in that, like, in that delta, whenever, like, like, we are calculating with respect to delta, right? Like, as I said earlier, like, we have like a base tables, base tables for each, like each LSM table, like each these are demand file table, so wherever delta is there and like we are getting a new data, that will be a one.
+Always.
+Because that find there, like the latest date, like we got that record. So with respect to that record, like we will be checking the previous records. If that record like is already available like in the previous days, then whatever like whatever is the previous record need to be treated as zero. The latest flag need to be treated as zero.
+That's how we are doing.
+
+Rabindranath Tagore, Surya (Cognizant)   17:45
+Ohh, okay, don't you?
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   17:47
+It is with respect to unique key.
+
+Rabindranath Tagore, Surya (Cognizant)   17:50
+Okay, you can explain type one. I have something that I need discussion with you. I'll pick it up offline now.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   17:58
+Okay, okay.
+Then, for type one.
+The same thing happening, like we have, we got a like a unique key on, like a unique key on, like a one-note one here, OK, and identity column as one.
+OK, and like the current time sign insert time stamp is like a insert time stamp is a current.
+OK, update time stamp will be null.
+And, like, we have, like, we don't have a latest like a flag, but, like, we have another columns, right?
+Call N, let's say.
+N plus one.
+
+Rabindranath Tagore, Surya (Cognizant)   18:47
+This is like a, you're talking about like transaction effective from date and the end date that call.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   18:53
+No, no, no, I'm saying about like a we have a like a we will be having a unique key and like there will be a like a there will be a like a surrogate key as well and like we have like the major major like insert timestamp and like update timestamp as well. After that, like we will be let's say for a fact into score like a other table, so any fact table will be having more than 100 columns, right? I'm saying about those columns.
+
+Rabindranath Tagore, Surya (Cognizant)   19:00
+Okay.
+Yeah.
+Okay.
+Okay.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   19:18
+Okay, let's look at, I don't need to mention those column names, but like a like a our important things are like a here and like a whatever like whatever coming after it's like a it is relevant, but like we don't need like a we don't need these column names at all as of now. Okay, so the thing is that like if we have like a.
+Let's say, like, on like on a particular day, like we got like a we got a record with respect to this unique key, okay? And let's say the next day, next day, like we got the same record.
+Okay, if we got that same record, like a one not one on this like a next day, and like if we having some update to this like a column two or three or anything like a which is having some update update statement. Okay, so what will happen is that like a for the next day, this with respect to this unique key.
+This column will be updated, and again, this update timestamp will be updated with respect to.
+This time, so current to the insert timestamp won't change at all, because this is where the first time this particular unique is like a for this like a record inserted here, so that won't change, but wherever like a change happens, wherever a change happens to the columns, then...
+The current timestamp, this like current timestamp will be updated with respect to that, like it can be current two or current three or like four or five with respect to this unique key. That's the only thing. Wherever a change happens to the additional columns, that will be get updated over the time and this update timestamp will be always updated.
+But the first time when is inserted to this, like a inserted to this, like this table that will be preserved over here, so this won't change, but like this timestamp will be like update timestamp will be changing all the time with respect to a new record coming for the same unique key. This is the way the type one will be.
+Type one will be taken care. That will be an update or insert answer. If there is a new record coming, that will be there. That will be a, let's say, one or two.
+Current two, this will be null at the first time.
+There will be.
+Other like a column data will be there, just like this way.
+Because.
+OK, with this one, OK, in the sense, like, understood about, like, the logic.
+
+Rabindranath Tagore, Surya (Cognizant)   21:57
+Yeah.
+Yeah, I understood the logic. Lucas, Sahil, like you are aligned with this, like for both type one and type 2, like from data modelling perspective.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   22:01
+Ohh.
+Hmm.
+
+Kamble, Sahil (CIO) [S]   22:15
+Yes, yes, sorry.
+So, my concern is more regarding fact table, so once Tom explains fact table, we can proceed ahead.
+
+Rabindranath Tagore, Surya (Cognizant)   22:17
+Okay.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   22:23
+The fact table also like a will be like a kind of like a type one only.
+
+Rabindranath Tagore, Surya (Cognizant)   22:24
+Then he explained.
+
+Kamble, Sahil (CIO) [S]   22:32
+So.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   22:32
+Right, see, like, these are like factorable also currently we are treating it as type one. We are like, we are not going for a trunk and load here because like that will that will create like a more load to that DAC process.
+
+Kamble, Sahil (CIO) [S]   22:45
+No.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   22:45
+We under little, huh, really?
+
+Kamble, Sahil (CIO) [S]   22:48
+We are not expecting truncate and load. So what the way I had suggested to Rahul was Rahul and team that day was that if the code code code risk ID or ensure risk ID if it is present, delete that record and load the latest information with for that record. So what happens like suppose?
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   22:50
+Mm.
+And that, see, that will happen here as well. See, like it won't be getting deleted, but like it will be like getting updated with the latest, like latest data.
+
+Kamble, Sahil (CIO) [S]   23:08
+Ohh.
+Yes, because update is a heavier process compared to delete.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   23:18
+Hmm.
+
+Kamble, Sahil (CIO) [S]   23:22
+On database, so that is why we suggested that you delete the existing rate data and delete the existing record and reinsert the new record with latest information. Now, what happens, like something like code status or policy status? What happens is, once if there is an MTA.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   23:23
+Mm.
+Hmm.
+Mm.
+Hmm.
+Hmm.
+Hmm.
+Hmm.
+
+Kamble, Sahil (CIO) [S]   23:44
+The previous, the new business record, its effective to date or contract end date will get updated with the for the day when MTA was filed, and a new record will be created with that day as the start date and the new business records initial end date as the its.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   23:49
+Mm.
+Hmm.
+
+Kamble, Sahil (CIO) [S]   24:02
+New ended, OK.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   24:03
+Mm mm mm.
+
+Kamble, Sahil (CIO) [S]   24:05
+So, so, or something like a quote, quote, quote undergoes various statuses.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   24:06
+Mm.
+Kind of, there will be two records, two records, one for like one for that like update statement and there will be a new with like a new with the effective like a new effective date. That's what you are saying, right? Hmm, hmm.
+
+Kamble, Sahil (CIO) [S]   24:13
+It.
+Yes, so there will be two records. So what we suggest now, what Rahul yesterday told me that for the existing data, you are just updating the DAP update timestamp and then you are inserting.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   24:24
+Mm.
+Mm.
+No, no, not like a not like a not simply wrap up the time. See, like that is that is like a see like a we already put it as this is like a taken care by mostly by the this one only like a DBT jobs only. Okay, it's like a not like a we are doing in with respect to that.
+So it is kind of like a, we already put the, like a, let's say like a.
+For a fact, let's say for fact, so we already identified, like I identified this is an incremental load, okay? And look at the unique key, like we have the unique key as well, so with respect to this unique key, what it will happen is that it is an incremental load, so that's why I said, like this is an update and insert, and it is...
+taken care by DBT internally. It's like a not like a not us. So if there is like a if there is a new record coming, it will automatically treat it as an insert. If it is like a something with the same with like a same unique key, then it will treat it as an update. So it is like a very fast as well. So we tested it and like a.
+
+Kamble, Sahil (CIO) [S]   25:20
+We did, so OK.
+Okay.
+Cool.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   25:37
+We can see that like it is very fast. We haven't seen like a...
+
+Kamble, Sahil (CIO) [S]   25:40
+OK, it is like merge statement of SQL.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   25:42
+Merge statement, true, true, true. It is a kind of merge.
+
+Kamble, Sahil (CIO) [S]   25:44
+Yes, that is what I was expecting, yes.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   25:47
+That's the most statement, yeah.
+So it is like internally taken care of for the type one. Type one it will be in this way. For type 2, that is like a different logic. We like a we return like a with respect to with respect to comparison logic. Yeah, true, true.
+
+Kamble, Sahil (CIO) [S]   25:58
+Yes, comparison logic.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   26:03
+So that is happening over there.
+
+Kamble, Sahil (CIO) [S]   26:07
+So, Surya, my doubt is cleared for this.
+So I'm aligned with Tom on load data load process for SCD1 and SCD2 and pack tables.
+
+Rabindranath Tagore, Surya (Cognizant)   26:18
+OK, so like Tom, like regarding effective from date and to date on the type 2 dimension, right? You mentioned like it will be done.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   26:20
+Mm.
+
+Rabindranath Tagore, Surya (Cognizant)   26:28
+maybe after three days or something. Is it a record for day one because we cannot keep on changing the codes? I need to understand from that perspective cycle, like from data platform, like modeller and engineer.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   26:40
+See, I will tell you why we, like, see, like, when, like, when we had a, like, we had a, like, we had in the sense, like, we were, like, we were talking in like office, or like, like, you were also present there, right? At that time, like, when we, like, when we go through this one, like, we missed that, like, we missed that part, like, there is, like, there is like 2 columns with, like, this effect.
+from data and to data over there. Okay, so we look at that's why I thought of like I thought of like updating that like a DAP insert like a DAP update timestamp over there. Then later when like when like the code is almost done and like when we were like going through it like a then like I have like a so made.
+Kind of like the logic and like given to our team members as well. After that, like I had an I had a discussion with Nimi and like Nimi said that like there are like these two columns as well there.
+So, at that time, I thought that, like, let's like let's keep it apart for some time, because, as it is like a not directly relating, as I said, like that it is mostly the unique plus like a flag is like a flag is referred in the child tables as well. OK, so at that time, like we thought of like keeping like a...
+Making the things right first, then like we can update like the changing the code is like a very minimal for us because like we just need to use these like a effective from date like a like a dap insert timestamp and like update timestamp logic in the effective from date and to date itself. That's almost safe, right?
+Because whenever there is like a there is a new record inserter, because technically speaking, there are like a there are actually code logic which is like a written by our like a model is model is for these like effective from date and to date. Let's say like at this one, we already have these like at these kind of like.
+Not started and ended like a started and ended is taken care by these like a these like a.
+Um...
+
+Rabindranath Tagore, Surya (Cognizant)   28:41
+From the source table, we are getting the value.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   28:42
+Yeah, from the source itself, yeah, but like at that.
+OK, let's say, like, just for an example, this DIM contact is already having a start date and end date. OK, so our, like, let's say, like, with respect to a mapping or like a mapping or modelling team, our understanding will be something like, whenever there is a code change happen, like an address change happen, that effect is...
+from date and like a start date and end date need to be changed, right? But it is not happening in that way. Whenever that particular contact is ended to the system, that means actuaries, okay, that effective start date will be always there. It will be the end date will be till there, like a till there, that contact is present in that system.
+That is the current effective start date and end date coming from the actuaries. So kind of the current logic, like a logic is kind of like the logic doesn't have any issue, but the thing is that like a VR look at the expected data coming from actuaries is different actually. That is happening for the start date and end date right now.
+So, currently, but certainly the our conversation with Nimmy is that, like, we will be mostly like checking these, like checking this update and like update time stamp and insert time stamp for time being, and like when Nimmy is like on leave today, so like after two, three days, like we need to go through the data and if everything is goes well, then like we can like...
+We need to cheque that like whether we can apply the same logic for that insert timestamp and update timestamp to start date and end date.
+Effective start date and end date. It is kind of same only with respect to with respect to LSM, but again, like we need to get that confirmation from NIMI as well, like whether we can use it or not. That's like a discussion need to be taken place. That's why I said like a two, three days, because to achieve that.
+With respect to, like, at this insert time stamp and update time stamp is like a very easy for us, because, like, we already have the logic, so we simply copy paste that for like a start date and end date, but if it is like a different logic like from Nimi, then like we need to like we need to think about it because, as of now, like a...
+The current effect is started and ended is not coming as proper.
+The discussion is still going on on that.
+
+Rabindranath Tagore, Surya (Cognizant)   31:02
+Okay.
+Lego.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   31:05
+Mm.
+
+Rabindranath Tagore, Surya (Cognizant)   31:06
+I need like a confirmation. Are we going to make the change for day one or like is it are we going to take it for day two like this change?
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   31:16
+Ohh, that legger.
+
+Rabindranath Tagore, Surya (Cognizant)   31:18
+Because we are also in very tight timeline and I cannot, like, for example, tomorrow we will start the delta load testing from LSM perspective. And again, you are going to make some changes with respect to delta load. Our timelines will get postponed and we cannot, again, we need to do the delta testing, like whatever test cases, like the test data set, everything we need to do it.
+One more time.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   31:38
+I will ask like a question to you like regarding that. See.
+It is something like, let's say, like, like you guys are like raising that defect to us, and like we are like we are getting like a looking into that for some of the some of the defects, let's say like a 30 or 40% of the defects, like we are actually going back to the mapping team, like a Sahil, Nimi, or like a and there are like some changes also happening over there. We actually can make like a they also make the changes like a with like a.
+a different version and like we are doing it that like it is a kind of like a we are in the process of agile build. So I cannot say that like a Nimi like a Nimi might be like a coming tomorrow and say that like a change this like then like I will be changing it. So I cannot like say say something over there.
+
+Rabindranath Tagore, Surya (Cognizant)   32:20
+Okay, then.
+No, no, no, I'm not saying that you cannot change it. Like it needs a discussion and agree with the project team. Like if we are going to make changes as well, because it is impacting the testing timelines. I want like data modeler, data engineering and the project manager in that call then. So I agree.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   32:23
+And.
+Hmm.
+And.
+That, I guess, I guess, like, yeah, Sahil can, like, Sahil can, like, yeah, not me, because, like, if this is like, this is something which is already in, like, in discussion, but, like, that day one or day two kind of stuff, like, that, like, that, that, as you said, like, it can be.
+
+Rabindranath Tagore, Surya (Cognizant)   32:43
+Yeah.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   32:54
+It can can be a like a discussion can go to like a project level as well, but like that's yeah, with respect to, yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   33:01
+So I will, like, can you please cheque with the Pharos and Nimmi as well? Like, currently, this is what we have builded, I mean, data engineering team, and like, do we really need to make this change on this goal, like, like for first of June?
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   33:13
+Yeah, yeah, yeah, because, like, we are currently in the like a middle part of the food chain, right? Like, we cannot like a simply take anything, anything top to bottom, yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   33:23
+Yes.
+
+Kamble, Sahil (CIO) [S]   33:25
+Social.
+
+Rabindranath Tagore, Surya (Cognizant)   33:26
+Yeah, and uh, like before making this change, like I want like a project team also to agree to this, like Saumya, Lulu, and like obviously it will impact our testing timelines, like I will say that, so I wanted to know on this, like the effective rate change and everything, yeah.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   33:42
+How it will be like, how it will be like it, like impact to see, like currently, currently with respect to this, like effective time stamp, or like, like, where actually in your test cases like that make an effect? That's where I am not understanding.
+
+Rabindranath Tagore, Surya (Cognizant)   33:44
+Like, you will be making...
+Okay, like a effective from date to date currently we are taking it from the source data, right?
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   34:06
+Ohh, hmm.
+
+Rabindranath Tagore, Surya (Cognizant)   34:07
+Yep, and you meant, like, for the type 2, that ACD type 2, like, for example, if that particular record we are making us zero at that time, effective end date should also populate with the that inserted record, like, for example, on which day the entry came, right? That is.
+how you will be updating it.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   34:29
+That's where the discussion is still in progress.
+
+Rabindranath Tagore, Surya (Cognizant)   34:32
+Yeah, so current, yeah, currently we are not like at least for our tomorrow's deployment, I mean for today for tomorrow's testing effective frame rate and today whatever value we have it in the source that only it will populate. We are not updating anything there.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   34:44
+Yeah.
+No.
+
+Rabindranath Tagore, Surya (Cognizant)   34:47
+Yeah, so with that, whether we can...
+Go like, or like, we need to make that change, yeah.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   34:51
+See, that's what, like I was saying, like, because like you always like a test with respect to that, like a unique and latest flag only for, like, even for the child, wherever, like it is, that's what if, like, unless and otherwise, like you are directly going to the table and like it just going, that's a quick check, right?
+Because, like, there are, like, there are like a four table, there are four tables, like a four type 2 tables are there, like a dim contacts, dimmed like a driver, vehicle and like a vehicle and insured only four table, so there, like, you are like you are saying that like you will need to cheque that like a two two columns start and end date, that's the only test like you will be like you will be having pending.
+
+Rabindranath Tagore, Surya (Cognizant)   35:10
+Like, need to set up.
+No, no, we will not do testing like that. Like we will be checking like functionally as well, like across all the dimension and flag how the MTA is happening.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   35:35
+That's what, like a functionality, that's what, like, that's what my confusion is. Like, I'm not, like, I am not like a directly contradicting with you, but like I am also not understanding where sadly that like a functionality is like a not there in place functionality in the sense like a in the let's say like a that's why I shared my like a the thing is that like even for wherever like it is a reference, let's say dim insured is a reference for dim contact.
+We are checking the functionality is like always with insured code and latest flag. We are nowhere checking or even in the report as well, we will always take the data with respect to insured code and latest flag. We never checked that like a effective from date and to date for like getting that functionality. That's where like my confusion is like a.
+
+Rabindranath Tagore, Surya (Cognizant)   36:16
+Okay, then why we need to make change like our, I mean, if we are not using that, okay.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   36:17
+How?
+See, that's what I said, like we will make changes just as that, like that, like that is with respect to that modeling, then when there is a data model in place.
+But then the old is a it should be a meaningful data, that's what that's one part of it, but like as per the as per the testing part or anything like like the functionality is like a different where like we are checking this like a these like a unique key plus letters flag for like our mapping.
+mapping structure. So whenever you are testing happening, unless and otherwise you are like a directly checking those two columns for these four tables, then you will find the difference. Other than that, like you won't be like you won't be seeing any difference over in the functionality ways.
+
+Rabindranath Tagore, Surya (Cognizant)   37:13
+Yeah.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   37:15
+I know.
+Then, then, that's my understanding.
+
+Rabindranath Tagore, Surya (Cognizant)   37:19
+Narendra, do you have any? I mean, for me, like if we are making changes again, we might need to do like the regression and all those things on the delta we need to do that will take some amount of time. That is my understanding.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   37:32
+Not even delta, like, you can, like, you need to, you might need to cheque that, like, okay, you whenever, like, you are directly checking those tables, like, like, because, like, you are currently checking with the SDW as well, like, the data within the table, right? So, in the table, those columns, like, columns need to be like a columns need, like, when you are checking the columns, there will be a difference in that, like...
+By you, that other than that, like a functionality ways, like I, I'm not thinking anything other than that, like in my, yeah, but like, yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   38:01
+OK, let me OK in the data contract, like at least for the dimension insured, like the effective date to date, as I will like, if you have, I mean my system got disconnected, it is mentioned like when the SCD type 2 happens, this value should get updated. OK, currently our solution.
+Will not make that change.
+And I understand it is not used anywhere like downstream is not using these date columns, but.
+
+Kamble, Sahil (CIO) [S]   38:25
+Yes, yes, sir.
+
+Rabindranath Tagore, Surya (Cognizant)   38:33
+Mapping spec if it should be updated right side on the type 2.
+
+Kamble, Sahil (CIO) [S]   38:39
+Effective to, yeah, effective to date will be updated for the previous record and the new record it will be effective from date will be there.
+
+Rabindranath Tagore, Surya (Cognizant)   38:42
+Mhm.
+Okay, but as per mapping spec, like this effective to date or like from source system side itself, it will get updated, is it? Or like in LSM while loading, we need to make the change. What is your expectation on that side?
+
+Kamble, Sahil (CIO) [S]   39:04
+So, one by one, I'll have to cheque the mapping for four dimensions, because dimension mapping I have not done. Nimi had taken them, so let me discuss this in Nimi once.
+
+Rabindranath Tagore, Surya (Cognizant)   39:11
+Okay.
+Can you?
+Yeah, yeah, please cheque because currently data engineering team is not updating the effective to date in the LSM. Whatever value is coming in the source.
+
+Kamble, Sahil (CIO) [S]   39:21
+Look.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   39:22
+That's what I said, like that will be there for like maybe like two, three days, like once Nimi is, Nimi will be like Nimi took a leave today when she is coming. And when we are also like a little bit like we have breathing space because like currently we are checking this data. The second thing is that like we need to work on this effect.
+
+Rabindranath Tagore, Surya (Cognizant)   39:25
+Yeah.
+Mhm.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   39:41
+Once, like, at least, like a highest and the high priority defect, once it is done, like it will take like another like one to two days, right? At least after that, like, we will, like, we will make the changes, that's it.
+
+Rabindranath Tagore, Surya (Cognizant)   39:50
+Yeah, yeah, that is there, like from testing team, like I want, like if we are making changes one more time, I definitely need why it is record for day one. Do we really need to make that change? That question again, like from data modelling team and data engineering team, I'll ask.
+Don't, that's it.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   40:10
+That's where like a that's where like a my question is like a you are like a not directly looking into that data like a for like a anywhere like a those.
+
+Rabindranath Tagore, Surya (Cognizant)   40:12
+Okay.
+The code, right? Like, we need to do regression as well, right? If you are making something changes, so...
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   40:23
+Yeah, I am not commenting on that, but let's...
+
+Rabindranath Tagore, Surya (Cognizant)   40:26
+Okay.
+Yeah, thank you.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   40:30
+Yeah, okay.
+
+Rabindranath Tagore, Surya (Cognizant)   40:31
+And is anyone having any other questions?
+Team.
+
+Sharma, Narendra Kumar (Cognizant)   40:38
+Yes, we only one thing to add is like, uh, our channel, if we keep changing or like touching the code right on what code will be getting sign off.
+Because, so when you give sign a sign off, it will go to maybe UAT or the production like.
+
+Rabindranath Tagore, Surya (Cognizant)   40:54
+Yes.
+
+Sharma, Narendra Kumar (Cognizant)   40:54
+So like we need to keep some timeline for like our regression. Like this is the version which we are happy and it has to go up. That's the only concern I'm having.
+
+Rabindranath Tagore, Surya (Cognizant)   41:06
+Yes, I'm also having same thing only, yeah.
+Maybe we need to cheque with the project team, like with the data modeller engineering and Saumya and Lulu, the four of us, and then we can agree, like if we are making changes, is it really required, and if it will impact the testing timelines.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   41:26
+Hmm, that's what the thing is, like it won't impact the testing timeline, that's where, like, that's where, like, I will contradict, OK, because, like, it won't, like, it won't affect any functionality testing, that's for sure, OK.
+
+Rabindranath Tagore, Surya (Cognizant)   41:37
+But we need to do some regression kind of testing. It will take some time as well. Like we need to complete all the testing by next week.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   41:43
+Maybe 15 minutes just for four tables to call us. OK, so that I will contradict, like, if, like, if it is coming to my table, OK, that for sure, that's one part of it, just leave that, other than that, that, but like you won't be having, see, like, we are, that's what I said, like, whenever, like, you are like making any defect, you are like logging any defect.
+
+Rabindranath Tagore, Surya (Cognizant)   41:52
+This is.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   42:03
+We are actually making the changes to the code as well, most of the otherwise, like, how like that defect will be getting fixed, so, like, yeah, so we are actually making the so with respect to that, like, this is also like a one like a kind of like a small like a small code change only, and like it even like it won't touch like a directly on any of your test cases.
+
+Rabindranath Tagore, Surya (Cognizant)   42:10
+That's correct.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   42:24
+That I am sure about it.
+But you can always like put it on the table, but like I will contradict on that, but with respect to with respect to that functionality, because in functionality it won't like it won't touch.
+The code change will be there, yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   42:38
+Okay, yeah, we can. Yeah, no change will be there. That will impact like our thing. That's what we wanted to check.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   42:42
+That it won't impact, yeah, that may impact only if, like, you are directly going to that, like a four tables with, like, with these two columns effective start and end date functionality-wise, it won't make any changes. There can be another, like, a lot of issues with respect to with respect to the data and everything, like...
+The current data, but like a node, like a node with respect to effective start date or end date.
+
+Rabindranath Tagore, Surya (Cognizant)   43:07
+Yeah, we can discuss, like I will also update in that forum, like why it is impacting because we are having dependency with the upstream as well, like a data gain for delta testing especially, and we cannot go round and round to perform the testing because they are also busy. Yeah.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   43:24
+Yeah, sure.
+
+Rabindranath Tagore, Surya (Cognizant)   43:26
+Okay.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   43:28
+OK, yeah.
+
+Rabindranath Tagore, Surya (Cognizant)   43:29
+Yeah, thank you, thank you all.
+
+Pradeep Nellikkunnel, Tomsawyer (Direct Line Group)   43:33
+Yeah, thank you. Bye.
+
+Rabindranath Tagore, Surya (Cognizant)   43:35
+Yeah, right.
+
+Kamble, Sahil (CIO) [S]   43:35
+Thank you.
+
+Jyoshna, Anthapu (Cognizant) stopped transcription
