@@ -1,0 +1,126 @@
+AI-generated content may be incorrect
+
+R, Haswanth (Direct Line Group) started transcription
+RH
+
+R, Haswanth (Direct Line Group)
+0 minutes 5 seconds0:05
+R, Haswanth (Direct Line Group) 0 minutes 5 seconds
+Yeah, fine. So I hope most of you, like, at least half of you, know, like, what is Jira, how does it work, and why do we use it? So I'll just...
+R, Haswanth (Direct Line Group) 0 minutes 17 seconds
+The...
+R, Haswanth (Direct Line Group) 0 minutes 20 seconds
+Explain to you how we are tracking the defects or the test cases in Jira for our CPC project. OK, so.
+R, Haswanth (Direct Line Group) 0 minutes 31 seconds
+Hope my screen is visible. Thank you.
+AJ
+
+Anthapu, Jyoshna (Direct Line Group)
+0 minutes 39 seconds0:39
+Anthapu, Jyoshna (Direct Line Group) 0 minutes 39 seconds
+Yeah, it is visible.
+RH
+
+R, Haswanth (Direct Line Group)
+0 minutes 39 seconds0:39
+R, Haswanth (Direct Line Group) 0 minutes 39 seconds
+Okay.
+R, Haswanth (Direct Line Group) 0 minutes 43 seconds
+So, first of all, I hope everyone has have access to Jira here. So, basically, what we are trying to do in Jira is that, like, whatever test cases that we are exiting, whatever bugs we have racing, or any other task or ticket or story.
+R, Haswanth (Direct Line Group) 1 minute 3 seconds
+that needs to be communicated between teams that will be done over Jira, like the development team, the testing team, if there is any requirement, doubts, all will be tracked in Jira through various different tools here.
+R, Haswanth (Direct Line Group) 1 minute 18 seconds
+So, basically, everyone know we have our test cases that we'll be writing. So, for example, I'll show a test case sheet that we have written. So, if you could see here, this is a sample test case sheet that the team has written for one of the testing, which is...
+R, Haswanth (Direct Line Group) 1 minute 36 seconds
+Activist to STW, I believe. Yeah, okay. So we have around...
+R, Haswanth (Direct Line Group) 18 minutes 39 seconds
+And then, in cases you have any defects or anything, so, for example, you are executing a particular test cases test case, okay, and then that particular test case is not matching. Let's say if you need to compare the data from after this reporting suit to the STW, or let's say curation to LSM while you are validating.
+R, Haswanth (Direct Line Group) 18 minutes 58 seconds
+the data has been mismatching. So for that, you have to raise the defect type. We usually raise the defect using and the work type ID called the bug. Okay, and in this bug, you have multiple things. So you have your basic summary, a one liner of what's the actual issue.
+R, Haswanth (Direct Line Group) 19 minutes 18 seconds
+And then, usually, this component you usually take, since we are from a data testing team, we'll usually set it as data, and you here in the description you will be writing all the things, so what the one line you will be explaining the in detailed explanation of the issue, what exactly and where the issue lies in.
+R, Haswanth (Direct Line Group) 19 minutes 36 seconds
+and then you'll be attaching, making, adding your screenshot and doing your attachments as well here in the description. So you need to write the description so that in order for the development team to properly understand even without connecting with you, so that you need to make the description as more explanatory as possible.
+R, Haswanth (Direct Line Group) 19 minutes 55 seconds
+Okay, and then priority based on, so whether this is a very high blocker or not, whether this needs to be fixed very quickly in order for our testing to move on like that. For example, if the data hasn't loaded from QSM to LSM at all, then that is a very high priority defect which needs to be fixed. So based on that, we can give the.
+R, Haswanth (Direct Line Group) 20 minutes 15 seconds
+If it's a normal bug, you can keep the priority as medium itself until and otherwise the bug is very high, needs to be prioritised very highly, and then here again you have the severity field, okay, and severity in the sense how much it is impacting is what.
+R, Haswanth (Direct Line Group) 20 minutes 34 seconds
+So based on that, you can give the severity as well. Due to this, how many things are getting failed and all. Based on that, you can give your severity. And here you have the assignee as well. So this will be given to the development team whoever is responsible for the particular layer of development. Okay, we usually assign that.
+R, Haswanth (Direct Line Group) 20 minutes 53 seconds
+Okay.
+R, Haswanth (Direct Line Group) 20 minutes 55 seconds
+And here are, currently, we are doing the validations for DL for, so we select the product as DL for, and then applications based on the layer in which you are doing. So, if it's an SDW, it's an SDW. If it's a DAP layer or something, you can keep it as data platform, so you need to cheque the application and.
+R, Haswanth (Direct Line Group) 21 minutes 14 seconds
+OK, and the testing phase as well, but say lesson or DAB or STW, based on that, you can select the application testing phase as well, so these are the fields we in general we give to raise a bug.
+R, Haswanth (Direct Line Group) 21 minutes 29 seconds
+And usually most of you know that in order to, like once you erase your bug, you'll be assigning with that development team and then you'll be usually in this project, right? You need to update your defects daily on a daily basis, okay? Unless in other ways, it is not assigned to your name.
+R, Haswanth (Direct Line Group) 21 minutes 49 seconds
+That defect, like, let in, in some cases, if the development team has fixed and assigned you back the defect, in those cases, you need to update your comments daily. OK, before 3:00 daily, the 3:30 we have defect triage call, we usually like.
+R, Haswanth (Direct Line Group) 22 minutes 8 seconds
+discuss about all the defects and on what needs to be prioritised and everything. So before 3 or 2 P.m. daily, we are expecting all the defects to be commented out properly, whether it's in retest or on what status it is in the retest. Even if it is not started, right, you need to mention that this is not started.
+R, Haswanth (Direct Line Group) 22 minutes 29 seconds
+The retest for that particular defect has not started. We'll be starting in so and so on time due to this problem. So the tracking and all, it's very strict in the defect part. So just make sure if a defect is assigned to your name, you properly update the comments and everything, okay?
+R, Haswanth (Direct Line Group) 22 minutes 51 seconds
+K.
+R, Haswanth (Direct Line Group) 22 minutes 53 seconds
+Is there anything that you wanted to know? Like, I understand that Abhay, Sai and all are new to this, but Jyoshna, Priyanka, is there anything that you wanted to know more about Sri part?
+CP
+
+Chavan, Priyanka (Group CIO)
+23 minutes 8 seconds23:08
+Chavan, Priyanka (Group CIO) 23 minutes 8 seconds
+No, we are good. I just want to know, like under the evidence, are we supposed to give Excel sheet only or these screenshots also we can give?
+RH
+R, Haswanth (Direct Line Group)
+23 minutes 13 seconds23:13
+R, Haswanth (Direct Line Group) 23 minutes 13 seconds
+Mhm.
+R, Haswanth (Direct Line Group) 23 minutes 19 seconds
+If it's in, for example, if it's a data comparison, right, and then you are doing the data comparison in an Excel sheet, then that Excel sheet evidence is fine. But if it's a database execution, or if for example, if it's a DRD,
+CP
+
+Chavan, Priyanka (Group CIO)
+23 minutes 31 seconds23:31
+Chavan, Priyanka (Group CIO) 23 minutes 31 seconds
+Come.
+RH
+R, Haswanth (Direct Line Group)
+23 minutes 37 seconds23:37
+R, Haswanth (Direct Line Group) 23 minutes 37 seconds
+DRDO comparison, right? You need to attach that zip on the DRDO files into a single one and then you can upload that DRDO evidence as well. So based on what type of testing or what screens you have that you can attach, okay? It's not necessary that a single thing only that the Excel need only needs to be uploaded.
+CP
+
+Chavan, Priyanka (Group CIO)
+23 minutes 52 seconds23:52
+Chavan, Priyanka (Group CIO) 23 minutes 52 seconds
+Yeah.
+RH
+R, Haswanth (Direct Line Group)
+23 minutes 57 seconds23:57
+R, Haswanth (Direct Line Group) 23 minutes 57 seconds
+Thing like that.
+CP
+Chavan, Priyanka (Group CIO)
+23 minutes 59 seconds23:59
+Chavan, Priyanka (Group CIO) 23 minutes 59 seconds
+Okay, okay.
+Chavan, Priyanka (Group CIO) 24 minutes 2 seconds
+That's it.
+RH
+R, Haswanth (Direct Line Group)
+24 minutes 5 seconds24:05
+R, Haswanth (Direct Line Group) 24 minutes 5 seconds
+So usually what I would suggest is that if in case you are doing some validations in the Excel and if you can also paste a screenshot of the database output or something, just add that screenshot as well in that Excel sheet itself is what I would suggest.
+R, Haswanth (Direct Line Group) 24 minutes 21 seconds
+Yeah, fine, then.
+CP
+Chavan, Priyanka (Group CIO)
+24 minutes 23 seconds24:23
+Chavan, Priyanka (Group CIO) 24 minutes 23 seconds
+Yeah, yeah.
+RH
+R, Haswanth (Direct Line Group)
+24 minutes 26 seconds24:26
+R, Haswanth (Direct Line Group) 24 minutes 26 seconds
+Stop the recording.
