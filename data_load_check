@@ -1,0 +1,130 @@
+AI-generated content may be incorrect
+
+R, Haswanth (Direct Line Group) started transcription
+RH
+
+R, Haswanth (Direct Line Group)
+0 40:04
+R, Haswanth (Direct Line Group) 0 minutes 4 seconds
+Yeah.
+R, Haswanth (Direct Line Group) 0 minutes 6 seconds
+Okay, fine. So yeah, this call is about the data load stages in our CPC project team. So basically, I quickly share my screen.
+R, Haswanth (Direct Line Group) 0 minutes 25 seconds
+So this might be new for a few members and few of them also would have some knowledges of these bits and piece here and there. But I'll explain the whole picture here now. So we have the actuaries with just our...
+R, Haswanth (Direct Line Group) 0 minutes 44 seconds
+policy administration system. Okay, from actually is the data will be loaded into STW and from STW, there is an intermediate layer called the staging layer. It's in S3 bucket, okay.
+R, Haswanth (Direct Line Group) 1 minute
+And from staging the data goes to our raw.
+R, Haswanth (Direct Line Group) 1 minute 5 seconds
+Duration.
+R, Haswanth (Direct Line Group) 1 minute 12 seconds
+And then you listen. OK, so this call is about the data load cheque daily. OK, so the data loads from across these different layers, right? So, how to cheque whether the data has been loaded into a particular layer or not when we when the data gets loaded and all those details should be discussed in this call. OK.
+R, Haswanth (Direct Line Group) 1 minute 35 seconds
+So, basically, this data, this is the first layer from actors to STW to cheque whether the data has loaded properly or not. We have a table called the session summary log in STW. OK, so in this table.
+R, Haswanth (Direct Line Group) 1 minute 54 seconds
+You will have the logs of all the different dates, whether on a particular day, whether the data has been loaded into STW or not. You can know using this session summary log table. Okay, so if you see here, this is the output of the session summary log, and if you see here.
+R, Haswanth (Direct Line Group) 2 minutes 13 seconds
+you will have an entry, for example, to know whether data has been loaded into STW today or not, you can find it through this entry. Okay. So for 27th date, you can see that there is an entry here in this table and then the status code is 201. So 201.
+R, Haswanth (Direct Line Group) 29 minutes 17 seconds
+K.
+R, Haswanth (Direct Line Group) 29 minutes 19 seconds
+So these are the teams responsible and think I'm not sure about the LSM. I think it's Ajit. I'm not sure about who exactly is looking for the data load. Maybe you guys might be aware of that. Yeah.
+R, Haswanth (Direct Line Group) 29 minutes 33 seconds
+This is what the contact points whom you need to check, reach out to if you have any failures in the problem. OK.
+R, Haswanth (Direct Line Group) 29 minutes 42 seconds
+So daily I usually cheque this morning and then for each of the layers I'll be checking and then I'll be updating Surya in our standard call on whether the data has been properly loaded or not. So for example, I'll just show a sample. For example, this
+R, Haswanth (Direct Line Group) 30 minutes 1 second
+Yeah, this staging S3 today morning I checked there was an entry in the.
+R, Haswanth (Direct Line Group) 30 minutes 9 seconds
+In this session summary log, fine, the data has been loaded into S3, and then I came to this S3 bucket and then I saw, okay, fine, today's file has been written, and then in between from the staging to raw, I checked this glue job, but if you see here, usually it completes, it starts at 10:30, and then it usually takes.
+R, Haswanth (Direct Line Group) 30 minutes 29 seconds
+Maximum 10 to 20 minutes, okay. But if you see, till 120, I was not able to see an entry here.
+R, Haswanth (Direct Line Group) 30 minutes 37 seconds
+Okay, so this is an issue, okay, which I have raised to Akshay, who is responsible for this huge job. This is the data engineering team that I showed you here in the Excel. Okay, who is responsible from staging to route to curation as well. I reach out to them and then I got it sorted out. Okay.
+R, Haswanth (Direct Line Group) 30 minutes 58 seconds
+So yeah, again, this is how you cheque the data load across the layers.
+R, Haswanth (Direct Line Group) 31 minutes 4 seconds
+Any of you have any doubts, so we can discuss, or we can wind it up.
+R, Haswanth (Direct Line Group) 31 minutes 15 seconds
+Yes, any response?
+KV
+Kanike, Venkatesh (Group CIO)
+31 minutes 23 seconds31:23
+Kanike, Venkatesh (Group CIO) 31 minutes 23 seconds
+Yes.
+RH
+R, Haswanth (Direct Line Group)
+31 minutes 28 seconds31:28
+R, Haswanth (Direct Line Group) 31 minutes 28 seconds
+Is anyone speaking?
+KV
+Kanike, Venkatesh (Group CIO)
+31 minutes 30 seconds31:30
+Kanike, Venkatesh (Group CIO) 31 minutes 30 seconds
+Thank you.
+Kanike, Venkatesh (Group CIO) 31 minutes 31 seconds
+Yeah, if we get any notes, we will update you.
+RH
+R, Haswanth (Direct Line Group)
+31 minutes 31 seconds31:31
+R, Haswanth (Direct Line Group) 31 minutes 31 seconds
+Yeah, OK.
+R, Haswanth (Direct Line Group) 31 minutes 35 seconds
+Okay, okay, fine, fine. Rudresh, yeah.
+KV
+Kanike, Venkatesh (Group CIO)
+31 minutes 36 seconds31:36
+Kanike, Venkatesh (Group CIO) 31 minutes 36 seconds
+Reach.
+Kanike, Venkatesh (Group CIO) 31 minutes 39 seconds
+Thanks, Asha.
+RH
+R, Haswanth (Direct Line Group)
+31 minutes 39 seconds31:39
+R, Haswanth (Direct Line Group) 31 minutes 39 seconds
+Thanks, Kecia. Thanks for joining.
+KB
+Khetan, Brajesh (Direct Line Group)
+31 minutes 39 seconds31:39
+Khetan, Brajesh (Direct Line Group) 31 minutes 39 seconds
+Have to share the queries and all in this chat.
+RH
+R, Haswanth (Direct Line Group)
+31 minutes 43 seconds31:43
+R, Haswanth (Direct Line Group) 31 minutes 43 seconds
+Yeah, yeah, sure, I'll share it, Brajesh.
+KB
+Khetan, Brajesh (Direct Line Group)
+31 minutes 47 seconds31:47
+Khetan, Brajesh (Direct Line Group) 31 minutes 47 seconds
+You can generate that, OK?
+RH
+R, Haswanth (Direct Line Group)
+31 minutes 49 seconds31:49
+R, Haswanth (Direct Line Group) 31 minutes 49 seconds
+Yeah.
+KB
+Khetan, Brajesh (Direct Line Group)
+31 minutes 51 seconds31:51
+Khetan, Brajesh (Direct Line Group) 31 minutes 51 seconds
+Yeah, thank you, Asha.
+RH
+R, Haswanth (Direct Line Group)
+31 minutes 52 seconds31:52
+R, Haswanth (Direct Line Group) 31 minutes 52 seconds
+Thanks, thanks all. Bye.
+GA
+GM, Asha (Group CIO)
+31 minutes 54 seconds31:54
+GM, Asha (Group CIO) 31 minutes 54 seconds
+Thank you, Shaik.
+KA
+Kumar, Abhay (Group CIO)
+31 minutes 54 seconds31:54
+Kumar, Abhay (Group CIO) 31 minutes 54 seconds
+Thank you. Thank you. Thank you.
+KB
+K, Barathraj (Direct Line Group)
+31 minutes 56 seconds31:56
+K, Barathraj (Direct Line Group) 31 minutes 56 seconds
+Yeah, thank you, Chavan.
